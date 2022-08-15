@@ -11,6 +11,7 @@ import { Welcome } from './screens/Welcome';
 import NunitoItalic from "./assets/fonts/NunitoItalic.ttf"
 import NunitoBold from "./assets/fonts/NunitoBold.ttf"
 import NunitoBoldItalic from "./assets/fonts/NunitoBoldItalic.ttf"
+import NunitoRegular from "./assets/fonts/NunitoRegular.ttf"
 import PlayfairDisplayBold from "./assets/fonts/PlayfairDisplayBold.ttf"
 import PlayfairDisplayRegular from "./assets/fonts/PlayfairDisplayRegular.ttf"
 
@@ -25,7 +26,7 @@ export default function App() {
   useEffect(() => {
     async function prepare() {
       try {
-        await Font.loadAsync({NunitoItalic, NunitoBold, NunitoBoldItalic, PlayfairDisplayBold, PlayfairDisplayRegular});
+        await Font.loadAsync({NunitoItalic, NunitoBold, NunitoBoldItalic, PlayfairDisplayBold, PlayfairDisplayRegular, NunitoRegular});
         await new Promise(resolve => setTimeout(resolve, 2000));
       } catch (e) {
         console.warn(e);
