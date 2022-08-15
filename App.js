@@ -3,25 +3,29 @@ import * as Font from 'expo-font';
 
 import { useEffect, useCallback, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Pressable } from 'react-native';
 
+import { Logo } from './screens/Logo';
 import { Welcome } from './screens/Welcome';
-import { Second } from './screens/Second';
 
 import NunitoItalic from "./assets/fonts/NunitoItalic.ttf"
 import NunitoBold from "./assets/fonts/NunitoBold.ttf"
 import NunitoBoldItalic from "./assets/fonts/NunitoBoldItalic.ttf"
+import PlayfairDisplayBold from "./assets/fonts/PlayfairDisplayBold.ttf"
+import PlayfairDisplayRegular from "./assets/fonts/PlayfairDisplayRegular.ttf"
 
 SplashScreen.preventAutoHideAsync();
 
 
+
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
-  
+  const [screen, setScreen] = useState(<Logo/>)
+
   useEffect(() => {
     async function prepare() {
       try {
-        await Font.loadAsync({NunitoItalic, NunitoBold, NunitoBoldItalic});
+        await Font.loadAsync({NunitoItalic, NunitoBold, NunitoBoldItalic, PlayfairDisplayBold, PlayfairDisplayRegular});
         await new Promise(resolve => setTimeout(resolve, 2000));
       } catch (e) {
         console.warn(e);
@@ -42,9 +46,11 @@ export default function App() {
     return null;
   }
 
+
   return <>
   <StatusBar style='light'/>
   <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
+    <Logo/>
     <Welcome/>
   </SafeAreaView>
   </>

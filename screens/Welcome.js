@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, Pressable, ImageBackground, Dimensions, Image } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ImageBackground } from 'react-native';
+
 const windowWidth = Dimensions.get('window').width + 200;
 const windowHeight = Dimensions.get('window').height + 200;
 
@@ -13,23 +14,11 @@ export const Welcome = () => {
             style={styles.background}
             />
         </View>
-        <View style={styles.logoContainer}>
-            <Image
-                source={require("../assets/images/logo.png")} 
-                resizeMode="contain" 
-                style={styles.rootScreen}
-            />
-        </View>
-        <View style={[styles.textContainer, {transform: [{translateX: - windowWidth/4.5}]}]}>
-            <Text style={styles.text}>
-                powered by UXPlants Team (C) 2022
-            </Text>
-            <Text style={styles.text}>
-                Poject created by Klaudia Ginter
-            </Text>
-            <Text style={styles.text}>
-                Coding by Szymon Gonerko
-            </Text>
+        <View style={styles.contentContiner}>
+            <View style={styles.welcomeText}>
+                <Text style={styles.text}>Witaj</Text>
+                <Text style={styles.text}>w Plantify</Text>
+            </View>
         </View>
 
     </View>
@@ -38,50 +27,49 @@ export const Welcome = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1, 
-        backgroundColor: "red", 
-        justifyContent: "center", 
-        alignItems: "center",
+        flex: 1,
+        position: 'absolute',
+        zIndex: -1,
         width: windowWidth,
-        height: windowHeight
-     },
+        height: windowHeight,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "red"
+    },
     bgcContainer: {
         position: "absolute",
         width: windowWidth,
-        height: windowHeight},
+        height: windowHeight
+    },
     bgcFilter: {
         position: 'absolute',
         zIndex: 2,
         width: windowWidth,
         height: windowHeight,
-        backgroundColor: "#00000070"
+        backgroundColor: "#0d0e2480"
     },
     background: {
         position: 'absolute',
         width: windowWidth,
         height: windowHeight,
     },
-    logoContainer: {
-        position: 'absolute',
-        zIndex: 2
+    contentContiner: {
+        position: 'relative',
+        top: 0,
+        left: 0,
+        zIndex: 2,
+        width: windowWidth,
+        height: windowHeight,
     },
-    rootScreen: {
-        flex: 1,
-        width: windowWidth/ 1.8,
-      },
-    textContainer: {
-        position: "absolute",
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        bottom: 10, 
-        left: "50%",
-        zIndex: 3
+    welcomeText: {
+        position: 'absolute',
+        top: "42%",
+        left: "23%",
+        zIndex: 2,
     },
     text: {
+        fontSize: 42,
         color: "white",
-        fontSize: 15,
-        fontFamily: "NunitoBoldItalic",
-        color: "#646C66"
-}
+        fontFamily: "PlayfairDisplayBold"
+    }
 })
