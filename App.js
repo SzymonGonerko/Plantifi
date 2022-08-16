@@ -3,7 +3,7 @@ import * as Font from 'expo-font';
 
 import { useEffect, useCallback, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, Pressable } from 'react-native';
+import { StyleSheet, SafeAreaView} from 'react-native';
 
 import { Logo } from './screens/Logo';
 import { Welcome } from './screens/Welcome';
@@ -21,7 +21,6 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
-  const [screen, setScreen] = useState(<Logo/>)
 
   useEffect(() => {
     async function prepare() {

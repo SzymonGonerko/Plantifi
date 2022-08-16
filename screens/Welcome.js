@@ -1,11 +1,18 @@
-import { StyleSheet, Text, View, Dimensions, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert } from 'react-native';
 import { Button } from '../components/ui/Button';
 import { Separator } from '../components/ui/Separator';
+import { TextInfo } from '../components/TextInfo';
 
 const windowWidth = Dimensions.get('screen').width;
 const windowHeight = Dimensions.get('window').height + 200;
 
 export const Welcome = () => {
+
+    const onPressHandler = () => {
+        Alert.alert("Pracuję nad tym", "aplikacja jest w fazie testowej. Kliknij zaloguj się", [{text: "okey", style: "default"}])
+    }
+
+
     return <>
     <View style={styles.container}>
         <View style={styles.bgcContainer}>
@@ -24,16 +31,19 @@ export const Welcome = () => {
             <View style={styles.btnsContainer}>
                 <Button styleContainer={{marginHorizontal: 20}}>Zaloguj się</Button>
                 <Separator style={{marginTop: 30}}/>
-                <Button 
+                <Button
+                    onPress={onPressHandler}
                     styleContainer={{marginHorizontal: 20, marginTop: 20}} 
                     styleButton={{backgroundColor: "white"}}
                     styleText={{color: "#54795E"}}>
                         Załóż konto
                 </Button>
             </View>
+            <View style={styles.textContainer}>
+                <TextInfo/>
+            </View>
 
         </View>
-
     </View>
     </>
 }
@@ -77,7 +87,7 @@ const styles = StyleSheet.create({
     welcomeText: {
         position: 'absolute',
         width: "100%",
-        top: "40%",
+        top: "38%",
         left: "10%",
         zIndex: 2,
     },
@@ -89,8 +99,14 @@ const styles = StyleSheet.create({
     },
     btnsContainer: {
         position: 'absolute',
-        top: "57%",
+        top: "55%",
         left: 0,
         width: "100%",
-    }
+    },
+    textContainer: {
+        position: 'absolute',
+        bottom: "13%",
+        left: 0,
+        width: "100%",
+    },
 })
