@@ -7,6 +7,7 @@ import { StyleSheet, SafeAreaView} from 'react-native';
 
 import { Logo } from './screens/Logo';
 import { Welcome } from './screens/Welcome';
+import { Login } from './screens/Login';
 
 import NunitoItalic from "./assets/fonts/NunitoItalic.ttf"
 import NunitoBold from "./assets/fonts/NunitoBold.ttf"
@@ -21,6 +22,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
+  const [anim, setAnim] = useState("")
 
   useEffect(() => {
     async function prepare() {
@@ -47,11 +49,23 @@ export default function App() {
   }
 
 
+  
+
+  const onPressHandlerAnim = () => {
+      setAnim("bounceOutLeft")
+    }
+
+  const onPressHandlerPrev = () => {
+      setAnim("bounceInLeft")
+  }
+
+
   return <>
   <StatusBar style='light'/>
   <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
-    <Logo/>
-    <Welcome/>
+      <Logo/>
+      <Welcome onPressHandlerAnim={onPressHandlerAnim} anim={anim}/>
+      <Login onPressHandlerPrev={onPressHandlerPrev}/>
   </SafeAreaView>
   </>
 }
