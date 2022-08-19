@@ -63,9 +63,9 @@ export default function App() {
   return <>
   <StatusBar style='light'/>
   <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
-      <Logo/>
-      <Welcome onPressHandlerAnim={onPressHandlerAnim} anim={anim}/>
-      <Login onPressHandlerPrev={onPressHandlerPrev}/>
+    <Logo/>
+    <Welcome onPressHandlerAnim={onPressHandlerAnim} anim={anim}/>
+    <Login onPressHandlerPrev={onPressHandlerPrev}/>
   </SafeAreaView>
   </>
 }
