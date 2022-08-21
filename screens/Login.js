@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { SquareButton } from '../components/ui/SquareButton';
 import { Stack, TextInput, IconButton} from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import { TextField, FilledTextField, OutlinedTextField } from 'rn-material-ui-textfield'
+import { LoginForm } from '../components/LoginForm';
 
 const windowWidth = Dimensions.get('screen').width;
 const windowHeight = Dimensions.get('window').height + 200;
@@ -22,24 +24,7 @@ export const Login = ({onPressHandlerPrev}) => {
             <Text style={styles.text}>Zaloguj się</Text>
         </View>
         <View style={styles.areaLogin}>
-
-          <Stack spacing={2} style={{ margin: 16}}>
-            <TextInput
-              label="Email"
-              variant="outlined"
-              leadingContainerStyle={{paddingBottom: 20}}
-              inputContainerStyle={{height: 48, alignItems: "center"}}
-              style={{}}
-          />
-          <TextInput
-            label="Hasło"
-            variant="outlined"
-            inputContainerStyle={{height: 48, alignItems: "center"}}
-            trailing={props => (
-              <IconButton icon={props => <Icon name="eye" {...props} />} {...props} />
-            )}
-          />
-          </Stack>
+          <LoginForm/>
         </View>
         
 
@@ -65,7 +50,7 @@ const styles = StyleSheet.create({
       top: 0,
       left: 0,
       width: "100%",
-      height: windowHeight / 2.3,
+      height: windowHeight / 3,
       borderRadius: 17
   },
   background: {
@@ -79,7 +64,7 @@ const styles = StyleSheet.create({
   img: {borderRadius: 17},
   text: {
     position: 'absolute',
-    top: windowHeight / 2.8,
+    top: windowHeight / 3.5,
     left: 0,
     marginLeft: 20,
     fontFamily: "PlayfairDisplayBold",
@@ -87,8 +72,8 @@ const styles = StyleSheet.create({
   },
   areaLogin: {
     position: 'absolute',
-    backgroundColor: "green",
-    top: windowHeight / 2.25,
+    backgroundColor: "white",
+    top: windowHeight / 2.9,
     bottom: 0,
     left: 8,
     right: 8,
