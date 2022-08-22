@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert, Button } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert, Button, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import { useState } from 'react';
 import { SquareButton } from '../components/ui/SquareButton';
 import { Stack, TextInput, IconButton} from "@react-native-material/core";
@@ -10,8 +10,12 @@ const windowWidth = Dimensions.get('screen').width;
 const windowHeight = Dimensions.get('window').height + 200;
 
 export const Login = ({onPressHandlerPrev}) => {
-
     return <>
+    <KeyboardAvoidingView
+    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    style={styles.containerKey}
+    >
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <View style={styles.container}>
         <View style={styles.bgcContainer}>
             <ImageBackground
@@ -21,68 +25,63 @@ export const Login = ({onPressHandlerPrev}) => {
             imageStyle={styles.img}
             />
             <SquareButton onPress={onPressHandlerPrev} styleContainer={styles.btnSqure}/>
+        </View>
+        <View style={styles.areaLogin }>
+          <View style={{transform: [{translateY: -60}]}}>
             <Text style={styles.text}>Zaloguj się</Text>
+            <LoginForm/>
+          </View>
         </View>
-        <View style={styles.areaLogin}>
-          <LoginForm/>
-        </View>
-        
-
-        
     </View>
+    </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
     </>
 }
 
 const styles = StyleSheet.create({
+  containerKey: {
+    position: 'absolute',
+    flex: 1,
+    top: 0,
+    left: 0,
+    zIndex: -2
+    },
     container: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
+      flex: 1,
       width: windowWidth,
       height: windowHeight,
-      zIndex: -2,
-      backgroundColor: 'red',
-      alignItems: "center"
-
+      backgroundColor: '#dddddd',
     },
     bgcContainer: {
-      position: "relative",
-      top: 0,
-      left: 0,
       width: "100%",
-      height: windowHeight / 3,
+      height: "35%",
       borderRadius: 17
   },
   background: {
-      position: 'absolute',
       width: windowWidth - 20,
       height: "100%",
       marginHorizontal: 10,
       marginVertical: 30
- 
   },
-  img: {borderRadius: 17},
+  img: {
+    borderRadius: 17
+  },
   text: {
-    position: 'absolute',
-    top: windowHeight / 3.5,
-    left: 0,
-    marginLeft: 20,
     fontFamily: "PlayfairDisplayBold",
     fontSize: 36,
+    marginLeft: 10,
+    letterSpacing: -1.5
   },
   areaLogin: {
-    position: 'absolute',
+    flex: 1,
     backgroundColor: "white",
-    top: windowHeight / 2.9,
-    bottom: 0,
-    left: 8,
-    right: 8,
+    marginHorizontal: 10,
     borderRadius: 20
   },
   btnSqure: {
     position: "absolute",
     left: "10%",
-    top: "15%"
+    top: "25%"
   }
   });
   
