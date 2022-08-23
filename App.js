@@ -22,6 +22,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
+  const [theme, setTheme] = useState('light')
   const [anim, setAnim] = useState("")
 
   useEffect(() => {
@@ -59,6 +60,7 @@ export default function App() {
       setAnim("bounceInLeft")
   }
 
+  
 
   return <>
   <StatusBar style='light'/>

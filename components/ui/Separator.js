@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 
-export const Separator = ({style}) => {
+export const Separator = ({styleContainer, styleText, children}) => {
     return <>
-    <View style={[styles.container, style]}>
+    <View style={[styles.container, styleContainer]}>
         <View style={styles.lineLeft}/>
         <View>
-            <Text style={styles.text}>
-                Nie masz jeszcze konta?
+            <Text style={[styles.text, styleText]}>
+                {children}
             </Text>
         </View>
         <View style={styles.lineRight}/>
@@ -16,7 +16,6 @@ export const Separator = ({style}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center"

@@ -35,7 +35,7 @@ export const Welcome = ({anim, onPressHandlerAnim}) => {
             </View>
             <View style={styles.btnsContainer}>
                 <Button onPress={onPressHandlerAnim} styleContainer={{marginHorizontal: 20}}>Zaloguj się</Button>
-                <Separator style={{marginTop: 30}}/>
+                <Separator styleContainer={{marginTop: 30}}>Nie masz jeszcze konta?</Separator>
                 <Button
                     onPress={onPressHandler}
                     styleContainer={{marginHorizontal: 20, marginTop: 20}} 
@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
         height: windowHeight,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "red"
     },
     bgcContainer: {
         position: "absolute",

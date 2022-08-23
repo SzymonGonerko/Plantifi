@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert, Button, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard} from 'react-native';
-import { useState } from 'react';
+import { StyleSheet, Text, View, Dimensions, ImageBackground, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import { SquareButton } from '../components/ui/SquareButton';
-import { Stack, TextInput, IconButton} from "@react-native-material/core";
-import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import { TextField, FilledTextField, OutlinedTextField } from 'rn-material-ui-textfield'
 import { LoginForm } from '../components/LoginForm';
+import { Separator } from '../components/ui/Separator';
+import { CustomIcon } from '../components/ui/CustomIcon';
+
+
 
 const windowWidth = Dimensions.get('screen').width;
 const windowHeight = Dimensions.get('window').height + 200;
@@ -26,11 +26,30 @@ export const Login = ({onPressHandlerPrev}) => {
             />
             <SquareButton onPress={onPressHandlerPrev} styleContainer={styles.btnSqure}/>
         </View>
+
         <View style={styles.areaLogin }>
           <View style={{transform: [{translateY: -60}]}}>
             <Text style={styles.text}>Zaloguj się</Text>
             <LoginForm/>
           </View>
+        </View>
+
+        <View style={{transform: [{translateY: -40}]}}>
+
+          <Separator 
+          styleText={{color: "black", fontFamily: "NunitoBold"}}
+          >
+            Szybkie logowanie
+          </Separator>
+
+
+          <View style={styles.iconsContainer}>
+            <CustomIcon sourceImg={require("../assets/icons/Google.png")}/>
+            <CustomIcon sourceImg={require("../assets/icons/Facebook.png")}/>
+          </View>
+          
+
+
         </View>
     </View>
     </TouchableWithoutFeedback>
@@ -50,7 +69,7 @@ const styles = StyleSheet.create({
       flex: 1,
       width: windowWidth,
       height: windowHeight,
-      backgroundColor: '#dddddd',
+      backgroundColor: 'white',
     },
     bgcContainer: {
       width: "100%",
@@ -73,15 +92,19 @@ const styles = StyleSheet.create({
     letterSpacing: -1.5
   },
   areaLogin: {
-    flex: 1,
     backgroundColor: "white",
     marginHorizontal: 10,
-    borderRadius: 20
+    borderRadius: 20,
   },
   btnSqure: {
     position: "absolute",
     left: "10%",
     top: "25%"
+  },
+  iconsContainer: {
+    flexDirection: "row", 
+    justifyContent: "center", 
+    marginTop: 15
   }
   });
   

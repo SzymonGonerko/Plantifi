@@ -17,7 +17,7 @@ const [form, setForm] = useState({
 
 const onChangeLoginHandler = (e) => {
     setForm(prev => ({login: e, password: prev.password}))
-    if (e === "anna.kowalska@gmail.com") {
+    if (e === "anna.kowalska@gmail.com" || e === "Anna.kowalska@gmail.com") {
         setCorrectLogin(true)
     } else {setCorrectLogin(false)}
 }
@@ -28,6 +28,10 @@ const onChangePasswordHandler = (e) => {
 
 const onSubmitHandler = () => {
     console.log(form)
+}
+
+const onPressPasswordHandler = () => {
+    Alert.alert("Pracuję nad tym...", "aplikacja jest w fazie testowej. Email: anna.kowalska@gmail.com, Hasło: 1234", [{text: "okey", style: "default"}])
 }
 
 
@@ -67,11 +71,17 @@ const onSubmitHandler = () => {
                 textStyle={{textDecorationLine: "none", color: "black", fontSize: 14, fontFamily: "NunitoRegular"}}
                 iconImageStyle={{width: 12, height: 12}}
                 />
-            <Pressable>
+            <Pressable onPress={onPressPasswordHandler}>
                 <Text style={[styles.passwordForgotten, {transform: [{translateY: 4}]}]}>Zapomniałem hasła</Text>
             </Pressable>
             </View>
-            <Button onPress={onSubmitHandler} styleContainer={{height: 48, marginTop: 30}}>Zaczynamy!</Button>
+            <Button 
+                onPress={onSubmitHandler} 
+                styleContainer={{height: 48, marginTop: 30}}
+                icon={<AntDesign name='right' style={styles.iconStyle}/> }
+                >
+                    Zaczynamy!
+            </Button>
         </View>
     </>
 }
@@ -81,11 +91,11 @@ const styles = StyleSheet.create({
         marginTop: 44,
         marginHorizontal: 20,
         justifyContent: "space-between",
-        height: "50%",
     },
     checkboxContainer: {
         flexDirection: "row",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        marginTop: 15
     },
     passwordForgotten: {
         fontSize: 14,
@@ -114,6 +124,13 @@ const styles = StyleSheet.create({
         position: "relative", 
         top: -3,
         fontFamily: "NunitoRegular"
+    },
+    iconStyle: {
+        position: "absolute", 
+        top: "45%", 
+        right: 25, 
+        color: "white", 
+        fontSize: 18
     }
 
 })
