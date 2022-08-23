@@ -8,11 +8,16 @@ import * as Animatable from 'react-native-animatable';
 const windowWidth = Dimensions.get('screen').width;
 const windowHeight = Dimensions.get('window').height + 200;
 
-export const Welcome = ({anim, onPressHandlerAnim}) => {
+export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
 
 
     const onPressHandler = () => {
         Alert.alert("Pracuję nad tym", "aplikacja jest w fazie testowej. Kliknij zaloguj się", [{text: "okey", style: "default"}])
+    }
+
+    const onPressLogin = () => {
+        onPressHandlerAnim()
+        onPressTheme()
     }
 
 
@@ -34,7 +39,7 @@ export const Welcome = ({anim, onPressHandlerAnim}) => {
                 <Text style={styles.text}>w Plantify</Text>
             </View>
             <View style={styles.btnsContainer}>
-                <Button onPress={onPressHandlerAnim} styleContainer={{marginHorizontal: 20}}>Zaloguj się</Button>
+                <Button onPress={onPressLogin} styleContainer={{marginHorizontal: 20}}>Zaloguj się</Button>
                 <Separator styleContainer={{marginTop: 30}}>Nie masz jeszcze konta?</Separator>
                 <Button
                     onPress={onPressHandler}

@@ -22,7 +22,8 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
-  const [theme, setTheme] = useState('light')
+  const [showMainApp, setShowMainApp] = useState(false)
+  const [themeBar, setThemeBar] = useState('light')
   const [anim, setAnim] = useState("")
 
   useEffect(() => {
@@ -60,14 +61,34 @@ export default function App() {
       setAnim("bounceInLeft")
   }
 
-  
+  const onPressThemeBar = () => {
+  setThemeBar(prev => prev === "light" ? "dark": "light")
+  }
+
+  const onPressShowMainApp = () => {
+    setShowMainApp(true)
+    console.log(showMainApp)
+  }
 
   return <>
-  <StatusBar style='light'/>
+  <StatusBar style={themeBar}/>
   <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
-    <Logo/>
-    <Welcome onPressHandlerAnim={onPressHandlerAnim} anim={anim}/>
-    <Login onPressHandlerPrev={onPressHandlerPrev}/>
+    {!showMainApp &&
+    <>
+        <Logo/>
+        <Welcome 
+          onPressHandlerAnim={onPressHandlerAnim} 
+          anim={anim} 
+          onPressTheme={onPressThemeBar}/>
+        <Login 
+          onPressHandlerPrev={onPressHandlerPrev}
+          onPressShowMainApp={onPressShowMainApp}
+          onPressThemeBar={onPressThemeBar}/>
+    </>
+    }
+
+
+  
   </SafeAreaView>
   </>
 }
