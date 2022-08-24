@@ -1,13 +1,16 @@
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 
+
 import { useEffect, useCallback, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, SafeAreaView} from 'react-native';
+import { StyleSheet, SafeAreaView, Text} from 'react-native';
 
 import { Logo } from './screens/Logo';
 import { Welcome } from './screens/Welcome';
 import { Login } from './screens/Login';
+
+import {MainNavigator} from './components/MainNavigator';
 
 import NunitoItalic from "./assets/fonts/NunitoItalic.ttf"
 import NunitoBold from "./assets/fonts/NunitoBold.ttf"
@@ -15,6 +18,7 @@ import NunitoBoldItalic from "./assets/fonts/NunitoBoldItalic.ttf"
 import NunitoRegular from "./assets/fonts/NunitoRegular.ttf"
 import PlayfairDisplayBold from "./assets/fonts/PlayfairDisplayBold.ttf"
 import PlayfairDisplayRegular from "./assets/fonts/PlayfairDisplayRegular.ttf"
+import { View } from 'react-native-animatable';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -67,14 +71,13 @@ export default function App() {
 
   const onPressShowMainApp = () => {
     setShowMainApp(true)
-    console.log(showMainApp)
   }
 
   return <>
+  
   <StatusBar style={themeBar}/>
-  <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
-    {!showMainApp &&
-    <>
+  {!showMainApp &&
+    <View style={styles.container} onLayout={onLayoutRootView}>
         <Logo/>
         <Welcome 
           onPressHandlerAnim={onPressHandlerAnim} 
@@ -84,12 +87,10 @@ export default function App() {
           onPressHandlerPrev={onPressHandlerPrev}
           onPressShowMainApp={onPressShowMainApp}
           onPressThemeBar={onPressThemeBar}/>
-    </>
-    }
-
-
-  
-  </SafeAreaView>
+   
+  </View>
+ }
+ {showMainApp && <MainNavigator/>}
   </>
 }
 
