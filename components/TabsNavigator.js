@@ -12,20 +12,24 @@ import { Shop } from "../screens/Shop";
 
 const Tab = createBottomTabNavigator();
 
+
+
 export const TabsNavigator = () => {
 return <>
     <Tab.Navigator
     screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: styles.tabBar
+        tabBarStyle: styles.tabBar,
+
     }}
     >
         <Tab.Screen 
             name='Plants' 
             component={Plants}
             options={{
-                tabBarIcon: ({focused}) => <NavIcon source={focused ? require("../assets/icons/nav/plantsActive.jpg"): require("../assets/icons/nav/plants.jpg")}/>
+                tabBarItemStyle: {zIndex: 4},
+                tabBarIcon: ({focused}) => <NavIcon text={focused ? "Moje rośliny" : ""} source={focused ? require("../assets/icons/nav/plantsActive.jpg"): require("../assets/icons/nav/plants.jpg")}/>
             }}
         />
 
@@ -34,7 +38,7 @@ return <>
             component={Explore}
             options={{
                 tabBarItemStyle: {zIndex: 4},
-                tabBarIcon: ({focused}) => <NavIcon source={focused ? require("../assets/icons/nav/exploreActive.jpg"): require("../assets/icons/nav/explore.jpg")}/>
+                tabBarIcon: ({focused}) => <NavIcon text={focused ? "Odkrywaj" : ""} source={focused ? require("../assets/icons/nav/exploreActive.jpg"): require("../assets/icons/nav/explore.jpg")}/>
             }}
         />
 
@@ -50,7 +54,7 @@ return <>
             name='Goals' 
             component={Goals}
             options={{
-                tabBarIcon: ({focused}) => <NavIcon source={focused ? require("../assets/icons/nav/goalsActive.jpg"): require("../assets/icons/nav/goals.jpg")}/>
+                tabBarIcon: ({focused}) => <NavIcon text={focused ? "Moje zadania" : ""} source={focused ? require("../assets/icons/nav/goalsActive.jpg"): require("../assets/icons/nav/goals.jpg")}/>
             }}
         />
 
@@ -58,7 +62,7 @@ return <>
             name='Shop' 
             component={Shop}
             options={{
-                tabBarIcon: ({focused}) => <View><Image style={styles.plantsIcon} resizeMode="contain" source={focused ? require("../assets/icons/nav/shopActive.jpg"): require("../assets/icons/nav/shop.jpg")}/></View>
+                tabBarIcon: ({focused}) => <NavIcon foc={focused} text={focused ? "Sklep" : ""} source={focused ? require("../assets/icons/nav/shopActive.jpg"): require("../assets/icons/nav/shop.jpg")}/>
             }}
         />
 
@@ -68,11 +72,14 @@ return <>
 const styles = StyleSheet.create({
     tabBar: {
         position: "absolute",
-        left: 0,
-        right: 0,
+        left: 20,
+        right: 20,
         bottom: 0,
         height: 131,
-        padding: 0
+        padding: 0,
+        backgroundColor: "#ffffff00",
+        elevation: 0,
+        borderWidth: 0,
     },
     plantsIcon: {
         width: 30,

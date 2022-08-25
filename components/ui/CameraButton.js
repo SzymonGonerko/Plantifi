@@ -1,19 +1,18 @@
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Button } from 'react-native';
 
-import Feather from "react-native-vector-icons/Feather"
+import FontAwesome from "react-native-vector-icons/FontAwesome"
+
+const windowWidth = Dimensions.get('screen').width;
 
 export const CameraButton = () => {
 
 
     return <>
     <View style={styles.container}>
-        <View style={styles.whiteCircle} >
+        <ImageBackground style={{width: windowWidth, top: -20, bottom: 0,  position: "absolute"}} source={require("../../assets/icons/nav/Union.png")}/>
             <View style={styles.circle}>
-                <Feather name={"camera"} style={{fontSize: 20}}/>
+                <FontAwesome name={"camera"} color="white" style={{fontSize: 20}}/>
             </View>
-        </View>
-
-
     </View>
     </>
 }
@@ -21,30 +20,16 @@ export const CameraButton = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "green",
         alignItems: "center",
-        position: 'relative'
-    },
-    whiteCircle: {
-        position: 'absolute',
-        zIndex: -2,
-        top: -14,
-        backgroundColor: "white",
-        width: 150,
-        height: 170,
-        justifyContent: "center",
-        alignItems: "center",
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30
+        position: 'relative',
+        width: "100%"
     },
     circle: {
-        borderWidth: 1,
         borderRadius: 200,
-        borderColor: "red",
-        backgroundColor: "yellow",
+        backgroundColor: "#54795E",
         padding: 10,
-        width: 50,
-        height: 50,
+        width: 56,
+        height: 56,
         justifyContent: "center",
         alignItems: "center"
     }
