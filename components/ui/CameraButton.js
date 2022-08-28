@@ -10,9 +10,14 @@ export const CameraButton = () => {
     return <>
     <View style={styles.container}>
         <ImageBackground style={{width: windowWidth, top: -20, bottom: 0,  position: "absolute"}} source={require("../../assets/icons/nav/Union.png")}/>
+
             <View style={styles.circle}>
+            <Pressable style={({pressed}) => pressed ? [styles.circleContainer, styles.pressed] : [styles.circleContainer]}
+                android_ripple={{color: "#9BA9BC"}}>
                 <FontAwesome name={"camera"} color="white" style={{fontSize: 20}}/>
+                </Pressable>
             </View>
+
     </View>
     </>
 }
@@ -22,15 +27,27 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         position: 'relative',
-        width: "100%"
     },
     circle: {
+        overflow: 'hidden',
         borderRadius: 200,
         backgroundColor: "#54795E",
-        padding: 10,
         width: 56,
         height: 56,
         justifyContent: "center",
         alignItems: "center"
-    }
+    },
+    pressed: {
+        opacity: 0.75,
+        borderRadius: 200,
+    },
+    circleContainer: {
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#54795E",
+        borderRadius: 200,
+        elevation: 2,
+        width: "100%",
+        height: "100%"
+    },
 })

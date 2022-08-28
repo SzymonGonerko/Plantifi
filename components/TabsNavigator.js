@@ -1,5 +1,5 @@
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated} from 'react-native';
 import { NavIcon } from "./ui/NavIcon";
 import { CameraButton } from "./ui/CameraButton";
 
@@ -15,6 +15,10 @@ const Tab = createBottomTabNavigator();
 
 
 export const TabsNavigator = () => {
+
+
+
+
 return <>
     <Tab.Navigator
     screenOptions={{
@@ -29,7 +33,7 @@ return <>
             component={Plants}
             options={{
                 tabBarItemStyle: {zIndex: 4},
-                tabBarIcon: ({focused}) => <NavIcon text={focused ? "Moje rośliny" : ""} source={focused ? require("../assets/icons/nav/plantsActive.jpg"): require("../assets/icons/nav/plants.jpg")}/>
+                tabBarIcon: ({focused}) => <NavIcon text={focused ? "Moje\u00A0rośliny" : ""} source={focused ? require("../assets/icons/nav/plantsActive.jpg"): require("../assets/icons/nav/plants.jpg")}/>
             }}
         />
 
@@ -54,7 +58,7 @@ return <>
             name='Goals' 
             component={Goals}
             options={{
-                tabBarIcon: ({focused}) => <NavIcon text={focused ? "Moje zadania" : ""} source={focused ? require("../assets/icons/nav/goalsActive.jpg"): require("../assets/icons/nav/goals.jpg")}/>
+                tabBarIcon: ({focused}) => <NavIcon text={focused ? "Moje\u00A0zadania" : ""} source={focused ? require("../assets/icons/nav/goalsActive.jpg"): require("../assets/icons/nav/goals.jpg")}/>
             }}
         />
 
@@ -72,10 +76,10 @@ return <>
 const styles = StyleSheet.create({
     tabBar: {
         position: "absolute",
-        left: 20,
-        right: 20,
+        left: 10,
+        right: 10,
         bottom: 0,
-        height: 131,
+        height: 121,
         padding: 0,
         backgroundColor: "#ffffff00",
         elevation: 0,
