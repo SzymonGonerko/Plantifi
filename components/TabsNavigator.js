@@ -1,7 +1,10 @@
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated} from 'react-native';
+import { useEffect } from "react";
 import { NavIcon } from "./ui/NavIcon";
+import { useRef, useState } from "react";
 import { CameraButton } from "./ui/CameraButton";
+import * as NavigationBar from 'expo-navigation-bar';
 
 import { Plants } from "../screens/Plants";
 import { Explore } from "../screens/Explore";
@@ -15,6 +18,34 @@ const Tab = createBottomTabNavigator();
 
 
 export const TabsNavigator = () => {
+    const listTab = {
+        fadePlants: useRef(new Animated.Value(1)).current,
+        fadeExplore: useRef(new Animated.Value(0)).current,
+        fadeGoals: useRef(new Animated.Value(0)).current,
+        fadeShop: useRef(new Animated.Value(0)).current
+    }
+
+    const fadeOut = (thisOne) => {
+        Animated.timing(thisOne, {
+          toValue: 0,
+          duration: 1,
+          useNativeDriver: true
+        }).start();
+      };
+
+    const fadeIn = (refComponent) => {
+        Object.entries(listTab).forEach(([_, key]) => fadeOut(key))
+        Animated.timing(refComponent, {
+          toValue: 1,
+          duration: 400,
+          useNativeDriver: true
+        }).start();
+      }
+
+      useEffect(() => {
+        NavigationBar.setPositionAsync("relative")
+        NavigationBar.setBackgroundColorAsync('white')
+      }, [])
 
 
 
@@ -25,31 +56,46 @@ return <>
         headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: styles.tabBar,
-
     }}
     >
         <Tab.Screen 
             name='Plants' 
             component={Plants}
             options={{
-                tabBarItemStyle: {zIndex: 4},
-                tabBarIcon: ({focused}) => <NavIcon text={focused ? "Moje\u00A0rośliny" : ""} source={focused ? require("../assets/icons/nav/plantsActive.jpg"): require("../assets/icons/nav/plants.jpg")}/>
+                tabBarItemStyle: styles.defaultTab,
+                tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadePlants} text={focused ? "Moje\u00A0rośliny" : ""} source={focused ? require("../assets/icons/nav/plantsActive.jpg"): require("../assets/icons/nav/plants.jpg")}/>,
             }}
+            listeners={({ navigation }) => ({
+                tabPress: (e) => {
+                  e.preventDefault();
+                  fadeIn(listTab.fadePlants)
+                  navigation.navigate('Plants');
+                },
+              })}
+        
         />
 
         <Tab.Screen
             name='Explore' 
             component={Explore}
             options={{
-                tabBarItemStyle: {zIndex: 4},
-                tabBarIcon: ({focused}) => <NavIcon text={focused ? "Odkrywaj" : ""} source={focused ? require("../assets/icons/nav/exploreActive.jpg"): require("../assets/icons/nav/explore.jpg")}/>
+                tabBarItemStyle: styles.defaultTab,
+                tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeExplore} text={focused ? "Odkrywaj" : ""} source={focused ? require("../assets/icons/nav/exploreActive.jpg"): require("../assets/icons/nav/explore.jpg")}/>,
             }}
+            listeners={({ navigation }) => ({
+                tabPress: (e) => {
+                  e.preventDefault();
+                  fadeIn(listTab.fadeExplore)
+                  navigation.navigate('Explore');
+                },
+              })}
         />
 
         <Tab.Screen 
             name='Camera' 
             component={Camera}
             options={{
+                tabBarItemStyle: styles.defaultTab,
                 tabBarButton: () => <CameraButton/>
             }}
         />
@@ -58,16 +104,32 @@ return <>
             name='Goals' 
             component={Goals}
             options={{
-                tabBarIcon: ({focused}) => <NavIcon text={focused ? "Moje\u00A0zadania" : ""} source={focused ? require("../assets/icons/nav/goalsActive.jpg"): require("../assets/icons/nav/goals.jpg")}/>
+                tabBarItemStyle: styles.defaultTab,
+                tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeGoals} text={focused ? "Moje\u00A0zadania" : ""} source={focused ? require("../assets/icons/nav/goalsActive.jpg"): require("../assets/icons/nav/goals.jpg")}/>
             }}
+            listeners={({ navigation }) => ({
+                tabPress: (e) => {
+                  e.preventDefault();
+                  fadeIn(listTab.fadeGoals)
+                  navigation.navigate('Goals');
+                },
+              })}
         />
 
         <Tab.Screen 
             name='Shop' 
             component={Shop}
             options={{
-                tabBarIcon: ({focused}) => <NavIcon foc={focused} text={focused ? "Sklep" : ""} source={focused ? require("../assets/icons/nav/shopActive.jpg"): require("../assets/icons/nav/shop.jpg")}/>
+                tabBarItemStyle: styles.defaultTab,
+                tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeShop} text={focused ? "Sklep" : ""} source={focused ? require("../assets/icons/nav/shopActive.jpg"): require("../assets/icons/nav/shop.jpg")}/>
             }}
+            listeners={({ navigation }) => ({
+                tabPress: (e) => {
+                  e.preventDefault();
+                  fadeIn(listTab.fadeShop)
+                  navigation.navigate('Shop');
+                },
+              })}
         />
 
     </Tab.Navigator>
@@ -79,14 +141,18 @@ const styles = StyleSheet.create({
         left: 10,
         right: 10,
         bottom: 0,
-        height: 121,
+        height: 111,
         padding: 0,
         backgroundColor: "#ffffff00",
         elevation: 0,
-        borderWidth: 0,
+        borderWidth: 0
     },
     plantsIcon: {
         width: 30,
         height: 30,
+    },
+    defaultTab: {
+      top: -10,
+      zIndex: 4
     }
 })

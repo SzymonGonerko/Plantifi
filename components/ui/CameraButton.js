@@ -6,10 +6,9 @@ const windowWidth = Dimensions.get('screen').width;
 
 export const CameraButton = () => {
 
-
     return <>
     <View style={styles.container}>
-        <ImageBackground style={{width: windowWidth, top: -20, bottom: 0,  position: "absolute"}} source={require("../../assets/icons/nav/Union.png")}/>
+        <ImageBackground style={styles.imgBackground} source={require("../../assets/icons/nav/Union.png")}/>
 
             <View style={styles.circle}>
             <Pressable style={({pressed}) => pressed ? [styles.circleContainer, styles.pressed] : [styles.circleContainer]}
@@ -35,7 +34,8 @@ const styles = StyleSheet.create({
         width: 56,
         height: 56,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        top: -30,
     },
     pressed: {
         opacity: 0.75,
@@ -50,4 +50,10 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "100%"
     },
+    imgBackground: {
+        position: "absolute",
+        width: windowWidth, 
+        top: -45, 
+        bottom: 0, 
+    }
 })

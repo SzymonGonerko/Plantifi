@@ -1,5 +1,6 @@
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
+import * as NavigationBar from 'expo-navigation-bar';
 
 
 import { useEffect, useCallback, useState } from 'react';
@@ -42,8 +43,12 @@ export default function App() {
       }
     }
     prepare();
+    NavigationBar.setVisibilityAsync("hidden")
+    NavigationBar.setBackgroundColorAsync('transparent')
+    NavigationBar.setPositionAsync('absolute')
   }, []);
 
+  NavigationBar.setVisibilityAsync("hidden")
   const onLayoutRootView = useCallback(async () => {
     if (appIsReady) {
       await SplashScreen.hideAsync();
