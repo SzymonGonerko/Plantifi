@@ -1,12 +1,16 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 
 import AntDesign from "react-native-vector-icons/AntDesign"
+import EvilIcons from "react-native-vector-icons/EvilIcons"
 
-export const SquareButton = ({onPress, styleContainer, styleButton, onPressThemeBar}) => {
+export const SquareButton = ({onPress, styleContainer, styleButton, onPressThemeBar, type}) => {
 
 const onPressButtonHandler = () => {
     onPress()
-    onPressThemeBar()
+    if (onPressThemeBar !== undefined) {
+        onPressThemeBar()
+    }
+    
 }
 
     return <>
@@ -14,7 +18,9 @@ const onPressButtonHandler = () => {
         <Pressable 
         style={({pressed}) => pressed ? [styles.buttonInnerContainer, styles.pressed, styleButton] : [styles.buttonInnerContainer, styleButton]}
         onPress={onPressButtonHandler} android_ripple={{color: "#9BA9BC"}}>
-           <AntDesign name='left' style={{color: "black", fontSize: 25}}/> 
+           {type === "arrow" ? <AntDesign name='left' style={{color: "black", fontSize: 25}}/> : null}
+           {type === "nav" ? <EvilIcons name='navicon' style={{color: "black", fontSize: 25}}/> : null}
+
         </Pressable>
     </View>
     </>
