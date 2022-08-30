@@ -19,7 +19,7 @@ const onPressButtonHandler = () => {
         style={({pressed}) => pressed ? [styles.buttonInnerContainer, styles.pressed, styleButton] : [styles.buttonInnerContainer, styleButton]}
         onPress={onPressButtonHandler} android_ripple={{color: "#9BA9BC"}}>
            {type === "arrow" ? <AntDesign name='left' style={{color: "black", fontSize: 25}}/> : null}
-           {type === "nav" ? <EvilIcons name='navicon' style={{color: "black", fontSize: 25}}/> : null}
+           {type === "nav" ? <EvilIcons name='navicon' style={{color: "#54795E", fontSize: 25}}/> : null}
 
         </Pressable>
     </View>

@@ -22,7 +22,7 @@ export const Header = ({children}) => {
                     <Text style={[styles.headerText, {transform: [{translateY: -3}]}]}>{children}</Text>
                 </View>
                 <View>
-                    <SquareButton type={"nav"} onPress={showMenu} styleContainer={{borderWidth: 1}} styleButton={{backgroundColor: "white"}}/>
+                    <SquareButton type={"nav"} onPress={showMenu} styleContainer={{borderWidth: 1, borderColor: "#54795E"}} styleButton={{backgroundColor: "white"}}/>
                 </View>
             </View>
     </>
