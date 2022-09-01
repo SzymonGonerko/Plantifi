@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 4,
         borderBottomColor: "#e6e7e8",
         elevation: 0,
-        borderWidth: 0
+        borderTopWidth: 0
     },
     plantsIcon: {
         width: 30,
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     },
     label: {
         fontFamily: "NunitoBold",
-        fontSize: 14,
+        fontSize: 15,
         paddingBottom: 10,
     },
 })

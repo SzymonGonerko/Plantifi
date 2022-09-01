@@ -37,7 +37,8 @@ export const PlantsNeeded = ({userName, children, howManyPlants}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: "column"
+        flexDirection: "column",
+        marginTop: 22
     },
     imgs: {
         width: 64,
@@ -45,12 +46,12 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         marginRight: 20,
         elevation: 4,
-        marginBottom: 16
+        marginBottom: 16,
     },
     userNameText: {
         fontFamily: "NunitoBold",
         fontSize: 20,
-        lineHeight: 27
+        lineHeight: 27,
     },
     plantsNeededText: {
         fontFamily: "NunitoRegular",
