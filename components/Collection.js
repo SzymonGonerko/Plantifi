@@ -1,17 +1,15 @@
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
 import { useEffect, useRef, useState } from 'react';
 import { PlantsNeeded } from './PlantsNeeded';
 import { AddNew } from './AddNew';
 import { PlantsSeparator } from './ui/PlantsSeparator';
-import { data } from '../plantsData';
+import { livingroomPlants, bedroomPlants } from '../plantsData';
 import { Card } from './ui/Card';
 
 export const Collection = () => {
 
-
-
     return <>
-
+    <ScrollView>
     <View style={[styles.container]}>
         <PlantsNeeded
             userName={"Karolina"}
@@ -23,16 +21,43 @@ export const Collection = () => {
         <PlantsSeparator styleContainer={{marginTop: 23, marginBottom: 6}}>
             W salonie
         </PlantsSeparator>
-        <FlatList
-            keyExtractor={(item) => item}
-            horizontal
-            data={data}
-            renderItem={({ item, _ }) => (console.log(), <Card src={item[0]}/>)   }
-        />
+        <View style={styles.listContainer}>
+            <FlatList
+                keyExtractor={(item) => item}
+                horizontal
+                data={livingroomPlants}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item, _ }) => 
+                    <Card 
+                        name={item[1].name}
+                        src={item[0]}
+                        takenCare={item[1].takenCare} 
+                        needWater={item[1].needWater}
+                        days={item[1].days}/>}
+            />
 
+        </View>
+        <PlantsSeparator styleContainer={{marginTop: 23, marginBottom: 6}}>
+            W sypialni
+        </PlantsSeparator>
+        <View style={styles.listContainer}>
+            <FlatList
+                    keyExtractor={(item) => item}
+                    horizontal
+                    data={bedroomPlants}
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({ item, _ }) => 
+                        <Card 
+                            name={item[1].name}
+                            src={item[0]}
+                            takenCare={item[1].takenCare} 
+                            needWater={item[1].needWater}
+                            days={item[1].days}/>}
+                />
+
+        </View>
     </View>
-
-
+    </ScrollView>
     </>
 }
 
@@ -42,7 +67,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 24,
     },
     imgCollection: {
-        top: 45
+        top: 45,
+        marginBottom: 250
     },
     imgs: {
         width: 144,
@@ -52,4 +78,7 @@ const styles = StyleSheet.create({
         elevation: 4,
         marginBottom: 16,
     },
+    listContainer: {
+        marginTop: 19,
+    }
 })
