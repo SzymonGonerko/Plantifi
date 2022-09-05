@@ -4,12 +4,13 @@ import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 
 
-export const Card = ({src, takenCare, needWater, days, name}) => {
+export const Card = ({src, takenCare, needWater, days, name, description, cardStyle}) => {
     return <>
-    <View style={[styles.container, {marginLeft: 20}]}>
+    <View style={[styles.container, cardStyle]}>
         <View style={styles.tagContainer}>
         {needWater && <MaterialCommunityIcons name='watering-can' style={{color: "#6b6a6a", fontSize: 15, margin: 1}}/>}
             <Text style={styles.tagText}>
+                {description}
                 {takenCare && "Zaopiekowana!"}
                 {needWater && `za ${days} dni`}
             </Text>
@@ -53,6 +54,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
         elevation: 4,
         marginBottom: 16,
+        marginLeft: 20
     },
     imgs: {
         width: "100%",

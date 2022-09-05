@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Dimensions, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, View, Dimensions, SafeAreaView, KeyboardAvoidingView} from 'react-native';
 import { SquareButton } from '../components/ui/SquareButton';
 import { Header } from '../components/ui/Header';
 import { PlantsNavigator } from '../components/plantsNavigation/PlantsNavigator';
@@ -14,9 +14,6 @@ export const Plants = () => {
                 <Header>Moje Rośliny</Header>
                 <PlantsNavigator/>
        
-        
-
-
         </SafeAreaView>
     )
 }
