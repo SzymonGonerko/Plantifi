@@ -28,3 +28,12 @@ export const livingroomPlants = [
     [require("./assets/images/lostPlants/Palma.jpg"), {name: "Palma"}],
     [require("./assets/images/lostPlants/AloeVera.jpg"), {name: "Aloe Vera"}],
   ]
+
+  export const plantsCategory = [
+    [require("./assets/icons/exploreIcons/Sun.png"), {name: "Lubiące Słońce"}],
+    [require("./assets/icons/exploreIcons/Animals.png"), {name: "Przyjazne Zwierzętom"}],
+    [require("./assets/icons/exploreIcons/Garden.png"), {name: "Do ogrodu"}],
+    [require("./assets/icons/exploreIcons/Easy.png"), {name: "Łatwa pielęgnacja"}],
+    [require("./assets/icons/exploreIcons/Bathroom.png"), {name: "Do łazienki"}],
+    [require("./assets/icons/exploreIcons/Air.png"), {name: "Filtrujące powietrze"}],
+  ]

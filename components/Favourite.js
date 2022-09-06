@@ -5,6 +5,7 @@ import AntDesign from "react-native-vector-icons/AntDesign"
 import { searchPlants } from '../plantsData';
 import { Card } from './ui/Card';
 import { IconButton } from "@react-native-material/core";
+import { SearchInput } from './ui/SearchInput';
 
 export const Favourite = () => {
     const [plants, setPlants] = useState(searchPlants)
@@ -19,19 +20,7 @@ export const Favourite = () => {
 
     return <>
     <View style={styles.container}>
-        
-        <OutlinedTextField
-            inputContainerStyle={styles.searchInputContainer}
-            tintColor={"black"}
-            contentInset={{input: 12}}
-            placeholder="Jakiej rośliny szukasz ?"
-            activeLineWidth={0}
-            onChangeText={(e) => onChangeTextHandler(e)}
-            lineWidth={0}
-            style={{fontFamily: "NunitoRegular"}}
-            labelTextStyle={styles.searchLabel}
-            renderRightAccessory={() => <IconButton onPress={() => Keyboard.dismiss()} style={styles.iconButton} icon={<AntDesign name='search1' style={styles.searchIcon}/>} />}
-        />
+        <SearchInput onChange={onChangeTextHandler}/>
 
     </View>
     <FlatList

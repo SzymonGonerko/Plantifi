@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Pressable } from 'react-native';
 import AntDesign from "react-native-vector-icons/AntDesign"
 import EvilIcons from "react-native-vector-icons/EvilIcons"
 import Entypo from "react-native-vector-icons/Entypo"
+import FontAwesome from "react-native-vector-icons/FontAwesome"
 
 export const SquareButton = ({onPress, styleContainer, styleButton, onPressThemeBar, type}) => {
 
@@ -25,6 +26,7 @@ const onPressButtonHandler = () => {
            {type === "arrow" ? <AntDesign name='left' style={{color: "black", fontSize: 25}}/> : null}
            {type === "nav" ? <EvilIcons name='navicon' style={{color: "#54795E", fontSize: 25}}/> : null}
            {type === "add" ? <Entypo name='plus' style={{color: "#54795E", fontSize: 20}}/> : null}
+           {type === "slider" ? <FontAwesome name='sliders' style={{color: "#54795E", fontSize: 23}}/> : null}
 
         </Pressable>
     </View>
