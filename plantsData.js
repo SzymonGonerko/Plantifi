@@ -37,3 +37,14 @@ export const livingroomPlants = [
     [require("./assets/icons/exploreIcons/Bathroom.png"), {name: "Do łazienki"}],
     [require("./assets/icons/exploreIcons/Air.png"), {name: "Filtrujące powietrze"}],
   ]
+
+  export const likedPlants = [
+    [require("./assets/images/likedPlants/RantofelnikMieszańcowy.jpg"), {name: "Rantofelnik Mieszańcowy", liked: 345}],
+    [require("./assets/images/likedPlants/Drobnolistek.jpg"), {name: "Drobnolistek", liked: 215}],
+    [require("./assets/images/likedPlants/OrchideaWytworna.jpg"), {name: "OrchideaWytworna", liked: 122}],
+    [require("./assets/images/likedPlants/KaktusKwiecik.jpg"), {name: "KaktusKwiecik", liked: 113}],
+  ]
+
+  export const dailyPlants = [
+    [require("./assets/images/dailyPlants/Rosiczka.jpg"), {name: "Rosiczka", liked: 345}],
+  ]

@@ -2,15 +2,17 @@ import { useState } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList} from 'react-native';
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
+import AntDesign from "react-native-vector-icons/AntDesign"
 
 
-export const Card = ({src, takenCare, needWater, days, name, description, cardStyle}) => {
+export const Card = ({src, takenCare, needWater, days, name, description, cardStyle, liked}) => {
     return <>
     <View style={[styles.container, cardStyle]}>
         <View style={styles.tagContainer}>
         {needWater && <MaterialCommunityIcons name='watering-can' style={{color: "#6b6a6a", fontSize: 15, margin: 1}}/>}
+        {liked && <AntDesign name='heart' style={{color: "black", fontSize: 11, margin: 1}}/>}
             <Text style={styles.tagText}>
-                {description}
+                {description} {liked}
                 {takenCare && "Zaopiekowana!"}
                 {needWater && `za ${days} dni`}
             </Text>
@@ -20,7 +22,7 @@ export const Card = ({src, takenCare, needWater, days, name, description, cardSt
             <Text style={styles.nameText}>{name}</Text>
         </View>
         
-        <ImageBackground source={src} resizeMode="center" imageStyle={styles.imgs} style={styles.imgs}/>
+        <ImageBackground source={src} resizeMode="cover" imageStyle={styles.imgs} style={styles.imgs}/>
     </View>
     
     </>
