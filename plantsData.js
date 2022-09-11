@@ -48,3 +48,24 @@ export const livingroomPlants = [
   export const dailyPlants = [
     [require("./assets/images/dailyPlants/Rosiczka.jpg"), {name: "Rosiczka", liked: 345}],
   ]
+
+  export const easyCareCollectionPlants = [
+    [require("./assets/images/easyCarePlants/Agawa.jpg"), {name: "Agawa", liked: 248}],
+    [require("./assets/images/easyCarePlants/DieffenbachiaAmoena.jpg"), {name: "Dieffenbachia Amoena", liked: 955}],
+    [require("./assets/images/easyCarePlants/BambusLuckyBamboo.jpg"), {name: "Bambus Lucky Bamboo", liked: 120}],
+    [require("./assets/images/easyCarePlants/Grubosz.jpg"), {name: "Grubosz", liked: 600}],
+    [require("./assets/images/easyCarePlants/Kaktus.jpg"), {name: "Kaktus", liked: 456}],
+    [require("./assets/images/easyCarePlants/KaktusKwitnący.jpg"), {name: "Kaktus Kwitnący", liked: 679}],
+    [require("./assets/images/easyCarePlants/Pieniążek.jpg"), {name: "Pieniążek", liked: 234}],
+    [require("./assets/images/easyCarePlants/RozetkaZnana.jpg"), {name: "Rozetka Znana", liked: 346}],
+    [require("./assets/images/easyCarePlants/Wieżownica.jpg"), {name: "Wieżownica", liked: 645}],
+    [require("./assets/images/easyCarePlants/Zamiokulkas.jpg"), {name: "Zamiokulkas", liked: 324}],
+    [require("./assets/images/easyCarePlants/AloeVera.jpg"), {name: "Aloe Vera", liked: 587}],
+    [require("./assets/images/easyCarePlants/Bananowiec.jpg"), {name: "Bananowiec", liked: 98}],
+    [require("./assets/images/easyCarePlants/RóżaPospolita.jpg"), {name: "Róża Pospolita", liked: 895}],
+    [require("./assets/images/easyCarePlants/TulipanSezonowy.jpg"), {name: "Tulipan Sezonowy", liked: 785}],
+    [require("./assets/images/easyCarePlants/Dziwaczek.jpg"), {name: "Dziwaczek", liked: 345}],
+    [require("./assets/images/easyCarePlants/Amaryllis.jpg"), {name: "Amaryllis", liked: 681}],
+    [require("./assets/images/easyCarePlants/Monstera.jpg"), {name: "Monstera", liked: 899}],
+    [require("./assets/images/easyCarePlants/Fikus.jpg"), {name: "Fikus", liked: 459}],
+  ]

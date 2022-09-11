@@ -49,11 +49,10 @@ const styles = StyleSheet.create({
 
     },
     container: {
-        position: 'relative',
         width: 144,
         height: 204,
-        borderRadius: 100,
-        marginRight: 10,
+        borderRadius: 8,
+        // marginRight: 10,
         elevation: 4,
         marginBottom: 16,
         marginLeft: 20
