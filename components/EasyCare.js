@@ -9,22 +9,36 @@ const sorted = easyCareCollectionPlants.sort((a,b) => a[1].name.localeCompare(b[
 
 export const EasyCare = () => {
     const [sortedEasyCareCollectionPlants, setSortedEasyCareCollectionPlants] = useState(sorted)
+
+
+    const onPressLetterHandler = (letter, index) => {
+        if (index === undefined) {
+            setSortedEasyCareCollectionPlants(sorted)
+        } else {
+            setSortedEasyCareCollectionPlants(sorted)
+            setSortedEasyCareCollectionPlants(prev => prev.filter(el => [...el[1].name][0] === letter))
+        }
+    }
+
+
+
     return <>
         <Text style={styles.plantsCategory}>
             Rośliny łatwe w pielęgnacji
         </Text>
 
-        <View style={{flexDirection: "row", justifyContent: "space-between", flexWrap: "wrap"}}>
+        <View style={styles.easyCareContainer}>
             <View style={styles.cardContainer}>
                 {sortedEasyCareCollectionPlants.map((item, i) => 
                         <Card
+                        cardStyle={{marginLeft: 0, marginRight: 0}}
                         key={i}
                         name={item[1].name}
                         liked={item[1].liked}
                         src={item[0]}/>
                 )}
             </View>
-            <Slider/>
+            <Slider onPress={onPressLetterHandler}/>
         </View>
 
     
@@ -32,8 +46,13 @@ export const EasyCare = () => {
 }
 
 const styles = StyleSheet.create({
+    easyCareContainer: {
+        flexDirection: "row", 
+        justifyContent: "space-between", 
+        flexWrap: "wrap",
+        marginTop: 24
+    },
     cardContainer: {
-        // marginTop: 24,
         flexDirection: "row", 
         flexWrap: "wrap",
         width: "90%",

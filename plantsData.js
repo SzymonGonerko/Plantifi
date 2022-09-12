@@ -68,4 +68,9 @@ export const livingroomPlants = [
     [require("./assets/images/easyCarePlants/Amaryllis.jpg"), {name: "Amaryllis", liked: 681}],
     [require("./assets/images/easyCarePlants/Monstera.jpg"), {name: "Monstera", liked: 899}],
     [require("./assets/images/easyCarePlants/Fikus.jpg"), {name: "Fikus", liked: 459}],
+    [require("./assets/images/easyCarePlants/IrysSyberyjski.jpg"), {name: "Irys Syberyjski", liked: 516}],
+    [require("./assets/images/easyCarePlants/HortensjaOgrodowa.jpg"), {name: "Hortensja Ogrodowa", liked: 768}],
+    [require("./assets/images/easyCarePlants/EchmeaWstęgowata.jpg"), {name: "Echmea Wstęgowata", liked: 348}],
+    [require("./assets/images/easyCarePlants/CisPospolity.jpg"), {name: "Cis Pospolity", liked: 214}],
+    [require("./assets/images/easyCarePlants/JaskierOstry.jpg"), {name: "Jaskier Ostry", liked: 132}],
   ]
