@@ -26,12 +26,13 @@ export const EasyCare = () => {
         <Text style={styles.plantsCategory}>
             Rośliny łatwe w pielęgnacji
         </Text>
-
+        
         <View style={styles.easyCareContainer}>
             <View style={styles.cardContainer}>
                 {sortedEasyCareCollectionPlants.map((item, i) => 
                         <Card
                         cardStyle={{marginLeft: 0, marginRight: 0}}
+                        profile={item[1].profile}
                         key={i}
                         name={item[1].name}
                         liked={item[1].liked}

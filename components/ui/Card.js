@@ -1,34 +1,55 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import AntDesign from "react-native-vector-icons/AntDesign"
+import { ProfilePlants } from '../ProfilePlants';
 
 
-export const Card = ({src, takenCare, needWater, days, name, description, cardStyle, liked}) => {
+export const Card = ({src, takenCare, needWater, days, name, description, cardStyle, liked, profile}) => {
+    const [profileModal, setProfileModal] = useState(false)
+
+
+
     return <>
     <View style={[styles.container, cardStyle]}>
-        <View style={styles.tagContainer}>
-        {needWater && <MaterialCommunityIcons name='watering-can' style={{color: "#6b6a6a", fontSize: 15, margin: 1}}/>}
-        {liked && <AntDesign name='heart' style={{color: "black", fontSize: 11, margin: 1}}/>}
-            <Text style={styles.tagText}>
-                {description} {liked}
-                {takenCare && "Zaopiekowana!"}
-                {needWater && `za ${days} dni`}
-            </Text>
-        </View>
+        <Pressable onPress={() => (setProfileModal(true) ,console.log(profile))}>
+            <View style={styles.tagContainer}>
+            {needWater && <MaterialCommunityIcons name='watering-can' style={{color: "#6b6a6a", fontSize: 15, margin: 1}}/>}
+            {liked && <AntDesign name='heart' style={{color: "black", fontSize: 11, margin: 1}}/>}
+                <Text style={styles.tagText}>
+                    {description} {liked}
+                    {takenCare && "Zaopiekowana!"}
+                    {needWater && `za ${days} dni`}
+                </Text>
+            </View>
 
-        <View style={styles.nameTextContainer}>
-            <Text style={styles.nameText}>{name}</Text>
-        </View>
-        
-        <ImageBackground source={src} resizeMode="cover" imageStyle={styles.imgs} style={styles.imgs}/>
+            <View style={styles.nameTextContainer}>
+                <Text style={styles.nameText}>{name}</Text>
+            </View>
+            
+            <ImageBackground source={src} resizeMode="cover" imageStyle={styles.imgs} style={styles.imgs}/>
+        </Pressable>
     </View>
+    <ProfilePlants 
+    onPressButtonSquare={() => setProfileModal(false)}
+    src={src}
+    name={name}
+    isVisible={profileModal}/>
     
     </>
 }
 
 const styles = StyleSheet.create({
+    modal: {
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        zIndex: 200,
+        backgroundColor: "red"
+    },
     tagContainer: {
         position: 'absolute',
         flexDirection: "row",
@@ -46,7 +67,6 @@ const styles = StyleSheet.create({
     tagText: {
         fontSize: 12,
         fontFamily: "NunitoRegular"
-
     },
     container: {
         width: 144,
