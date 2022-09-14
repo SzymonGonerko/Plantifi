@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
 import { SquareButton } from './ui/SquareButton';
 import { ShortLine } from './ui/ShortLine';
+import { ProfileSwitcherNav } from './ProfileSwitcherNav';
 
 
 export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name}) => {
@@ -23,6 +24,8 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name}) => {
 
             <ShortLine style={{marginTop: 14}}/>
             <Text style={styles.textName}>{name}</Text>
+            <ProfileSwitcherNav/>
+
            
 
         </View>
@@ -50,7 +53,8 @@ const styles = StyleSheet.create({
     textName: {
       fontFamily: "NunitoBold",
       marginLeft: 24,
-      marginTop: 20,
+      marginTop: 15,
+      marginBottom: 15,
       fontSize: 24,
     },
     profileInfo: {
