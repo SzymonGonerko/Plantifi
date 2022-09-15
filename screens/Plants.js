@@ -3,8 +3,6 @@ import { SquareButton } from '../components/ui/SquareButton';
 import { Header } from '../components/ui/Header';
 import { PlantsNavigator } from '../components/plantsNavigation/PlantsNavigator';
 
-const windowWidth = Dimensions.get('window').width + 200;
-const windowHeight = Dimensions.get('window').height + 200;
 
 export const Plants = () => {
 

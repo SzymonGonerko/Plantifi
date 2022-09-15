@@ -4,8 +4,40 @@ import { SquareButton } from './ui/SquareButton';
 import { ShortLine } from './ui/ShortLine';
 import { ProfileSwitcherNav } from './ProfileSwitcherNav';
 
+import {General} from "./General"
+import {Requirements} from "./Requirements"
+import {Care} from "./Care"
+import {Button} from "./ui/Button"
 
-export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name}) => {
+import AntDesign from "react-native-vector-icons/AntDesign"
+
+const windowWidth = Dimensions.get('screen').width;
+const windowHeight = Dimensions.get('window').height;
+
+
+export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profile}) => {
+  const [nav, setNav] = useState({
+    general: true,
+    requirements: false,
+    care: false
+})
+
+
+const onPressHandler = (name) => {
+  setNav(oldState => {
+      let newState
+      Object.entries(oldState).forEach(([key, _]) => {
+          if (key === name) {
+              return newState = {...newState, [key]: true}
+          } else {
+               return newState = {...newState, [key]: false}
+          }
+      })
+      return newState
+  })
+}
+
+
     return <>
     <Modal
     animationType="slide"
@@ -24,13 +56,25 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name}) => {
 
             <ShortLine style={{marginTop: 14}}/>
             <Text style={styles.textName}>{name}</Text>
-            <ProfileSwitcherNav/>
+            <ProfileSwitcherNav
+              general={nav.general}
+              requirements={nav.requirements}
+              care={nav.care}
+              onPress={onPressHandler}
+            />
+            {nav.general && profile && <General profile={profile.general}/>}
+            {nav.requirements && <Requirements profile={profile.requirements}/>}
+            {nav.care && <Care/>}
 
-           
-
+ 
         </View>
         
-
+        
+        
+        <Button
+            icon={<AntDesign name='plus' style={styles.iconStyle}/> }
+            styleContainer={styles.btnStyle}
+            >Dodaj do moich roślin</Button>
     </Modal>
     
     </>
@@ -39,13 +83,14 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name}) => {
 const styles = StyleSheet.create({
       bgcContainer: {
         width: "100%",
-        height: "38%",
+        height: windowHeight/3,
         borderRadius: 17
     },
     background: {
         height: "100%",
         marginHorizontal: 10,
-        marginVertical: 30
+        marginTop: 20,
+        marginBottom: 30
     },
     img: {
       borderRadius: 17,
@@ -58,7 +103,7 @@ const styles = StyleSheet.create({
       fontSize: 24,
     },
     profileInfo: {
-      backgroundColor: "white",
+      backgroundColor: "#FBFBFB",
       marginHorizontal: 10,
       borderRadius: 20,
     },
@@ -67,5 +112,20 @@ const styles = StyleSheet.create({
       left: "10%",
       top: "20%"
     },
+    iconStyle: {
+      position: "absolute", 
+      top: "45%", 
+      right: 25, 
+      color: "white", 
+      fontSize: 18
+  },
+  btnStyle: {
+    height: 50, 
+    marginTop: 10, 
+    position: "absolute", 
+    bottom: 30, 
+    left: 15, 
+    right: 15
+  }
     });
     

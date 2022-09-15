@@ -13,7 +13,7 @@ export const Card = ({src, takenCare, needWater, days, name, description, cardSt
 
     return <>
     <View style={[styles.container, cardStyle]}>
-        <Pressable onPress={() => (setProfileModal(true) ,console.log(profile))}>
+        <Pressable onPress={() => (setProfileModal(true))}>
             <View style={styles.tagContainer}>
             {needWater && <MaterialCommunityIcons name='watering-can' style={{color: "#6b6a6a", fontSize: 15, margin: 1}}/>}
             {liked && <AntDesign name='heart' style={{color: "black", fontSize: 11, margin: 1}}/>}
@@ -35,6 +35,7 @@ export const Card = ({src, takenCare, needWater, days, name, description, cardSt
     onPressButtonSquare={() => setProfileModal(false)}
     src={src}
     name={name}
+    profile={profile}
     isVisible={profileModal}/>
     
     </>

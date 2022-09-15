@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
 import { useEffect, useRef, useState } from 'react';
 
-export const LongLineSeparator = () => {
-return <View style={styles.line}/>
+export const LongLineSeparator = ({style}) => {
+return <View style={[styles.line, style]}/>
 }
 
 const styles = StyleSheet.create({

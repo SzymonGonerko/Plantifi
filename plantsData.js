@@ -54,7 +54,7 @@ export const livingroomPlants = [
       type: "do łazienki",
       size: "do 50 cm",
       care: "łatwy",
-      description: "Agawy pochodzą z Meksyku, ale obecnie rozprzestrzeniły się także w południowej Europie. W czasie wakacyjnych wypraw w rejon Morza Śródziemnego można zauważyć olbrzymie, kilkumetrowe łodygi, na których wyrastają płaskie, żółte baldachy. Z daleka przypominają dziwaczne latarnie – a to właśnie kwitnące agawy. Niestety agawy kwitną dopiero po kilkudziesięciu latach, w dodatku dana roślina kwitnie tylko raz, a potem zamiera. Liście agawy mają lecznicze właściwości, a odmiana sizalowa dostarcza też cennego włókna."
+      description: "Agawy pochodzą z Meksyku, ale obecnie rozprzestrzeniły się także w południowej Europie.W czasie wakacyjnych wypraw w rejon Morza Śródziemnego można zauważyć olbrzymie, kilkumetrowe łodygi, na których wyrastają płaskie, żółte baldachy. Z daleka przypominają dziwaczne latarnie – a to właśnie kwitnące agawy. Niestety agawy kwitną dopiero po kilkudziesięciu latach, w dodatku dana roślina kwitnie tylko raz, a potem zamiera. Liście agawy mają lecznicze właściwości, a odmiana sizalowa dostarcza też cennego włókna."
     },
     requirements: {
       insolation: {inWords: "średnie", inPercentage: 50},
