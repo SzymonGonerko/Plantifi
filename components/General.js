@@ -3,49 +3,52 @@ import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, 
 import { LongLineSeparator } from './ui/LongLineSeparator';
 
 import AntDesign from "react-native-vector-icons/AntDesign"
-const windowHeight = Dimensions.get('window').height;
 
 export const General = ({profile}) => {
 
     return <>
-    <View style={{height: windowHeight/3.3}}>
+        <View style={{height: "50%"}}>
 
-        <View style={styles.tagContainer}>
+            <View style={styles.tagContainer}>
 
-            <View style={styles.tag}>
-                <Text style={[styles.tagText, {textAlign: "left", marginLeft: 10}]}>Typ</Text>
-                <View style={styles.tagParam}>
-                    {profile.type === "do łazienki" ? <Image source={require("../assets/icons/exploreIcons/bathroomIcon.png")}/>: null}
-                    <Text style={styles.defaultText}>{profile.type}</Text>
+                <View style={styles.tag}>
+                    <Text style={[styles.tagText, {textAlign: "left", marginLeft: 10}]}>Typ</Text>
+                    <View style={styles.tagParam}>
+                    {profile.type === "łatwa pielęgnacja" ? <Image style={styles.innerIcon} resizeMode={"contain"} source={require("../assets/icons/exploreIcons/Easy.png")}/>: null}
+                        {profile.type === "do łazienki" ? <Image style={styles.innerIcon} source={require("../assets/icons/exploreIcons/bathroomIcon.png")}/>: null}
+                        {profile.type === "lubiące słońce" ? <Image style={styles.innerIcon} source={require("../assets/icons/exploreIcons/Sun.png")}/>: null}
+                        {profile.type === "przyjazne zwierzętom" ? <Image style={styles.innerIcon} source={require("../assets/icons/exploreIcons/Animals.png")}/>: null}
+                        <Text style={styles.defaultText}>{profile.type}</Text>
+                    </View>
                 </View>
-            </View>
 
-            <View style={styles.tag}>
-                <Text style={styles.tagText}>Rozmiar</Text>
-                <View style={styles.tagParam}>
-                    <Image source={require("../assets/icons/exploreIcons/sizeIcon.png")}/>
-                    <Text style={styles.defaultText}>{profile.size}</Text>
+                <View style={styles.tag}>
+                    <Text style={styles.tagText}>Rozmiar</Text>
+                    <View style={styles.tagParam}>
+                        <Image style={styles.innerIcon} source={require("../assets/icons/exploreIcons/sizeIcon.png")}/>
+                        <Text style={styles.defaultText}>{profile.size}</Text>
+                    </View>
                 </View>
-            </View>
 
-            <View style={styles.tag}>
-                <Text style={styles.tagText}>Opieka</Text>
-                <View style={styles.tagParam}>
-                    <AntDesign name='dotchart' style={styles.iconStyle}/>
-                    <Text style={styles.defaultText}>{profile.care}</Text>
+                <View style={styles.tag}>
+                    <Text style={styles.tagText}>Opieka</Text>
+                    <View style={styles.tagParam}>
+                        <AntDesign name='dotchart' style={styles.iconStyle}/>
+                        <Text style={styles.defaultText}>{profile.care}</Text>
+                    </View>
                 </View>
+
             </View>
+            <LongLineSeparator style={{marginTop: 10}}/>
+            <Text style={styles.textTitleDescription}>OPIS</Text>
+            <ScrollView showsVerticalScrollIndicator={false} >
+                <Text style={styles.textDescription}>
+                {profile.description}
+                </Text>
+            </ScrollView>
 
         </View>
-        <LongLineSeparator style={{marginTop: 10}}/>
-        <Text style={styles.textTitleDescription}>OPIS</Text>
-        <ScrollView >
-            <Text style={styles.textDescription}>
-             {profile.description}
-            </Text>
-        </ScrollView>
 
-    </View>
     
     </>
 }
@@ -66,10 +69,14 @@ const styles = StyleSheet.create({
         fontFamily: "NunitoBold",
         textAlign: "center"
     },
+    innerIcon: {
+        width: 21,
+        height: 21
+    },
     tagParam: {
         marginTop: 6,
         flexDirection: "row", 
-        justifyContent: "center"
+        justifyContent: "center",
     },
     defaultText: {
         fontFamily: "NunitoRegular",

@@ -2,8 +2,8 @@ import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, 
 import { useEffect, useRef, useState } from 'react';
 import {Card} from "../components/ui/Card"
 
-import { dailyPlants } from '../plantsData';
-import { likedPlants } from '../plantsData';
+import { dailyPlants } from '../mainDataPlants';
+import { likedPlants } from '../mainDataPlants';
 
 
 const windowWidth = Dimensions.get('window').width;

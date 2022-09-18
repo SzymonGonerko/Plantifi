@@ -5,11 +5,12 @@ import EvilIcons from "react-native-vector-icons/EvilIcons"
 import Entypo from "react-native-vector-icons/Entypo"
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 
-export const SquareButton = ({onPress, styleContainer, styleButton, onPressThemeBar, type}) => {
+export const SquareButton = ({reset, onPress, styleContainer, styleButton, onPressThemeBar, type}) => {
 
 const onPressButtonHandler = () => {
     if (onPress !== undefined) {
         onPress()
+        reset()
     }
     
     if (onPressThemeBar !== undefined) {

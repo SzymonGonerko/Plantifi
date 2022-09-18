@@ -7,18 +7,18 @@ import Feather from "react-native-vector-icons/Feather"
 export const Requirements = ({profile}) => {
    
     return <>
-    <View style={{height: "52%"}}>
+    <View style={{height: "50%"}}>
 
         <View style={styles.squareContainer}>
             {Object.entries(profile).map(([key, val], i) => {
                 return (
                 <View key={i} style={{width: 48}}>
                     <View  style={styles.squareIcon}>
-                        {key === "insolation" ? <Image source={require("../assets/icons/iconRequirements/sun.png")}/>: null}
-                        {key === "temperature" ? <Image source={require("../assets/icons/iconRequirements/temp.png")}/>: null}
-                        {key === "position" ? <Image source={require("../assets/icons/iconRequirements/position.png")}/>: null}
-                        {key === "whiff" ? <Feather name='wind' style={styles.iconStyle}/>: null}
-                        {key === "humidity" ? <Image source={require("../assets/icons/iconRequirements/humidity.png")}/>: null}
+                        {key === "insolation" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/sun.png")}/>: null}
+                        {key === "temperature" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/temp.png")}/>: null}
+                        {key === "position" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/position.png")}/>: null}
+                        {key === "whiff" ? <Feather name='wind' style={{fontSize: 20}}/>: null}
+                        {key === "humidity" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/humidity.png")}/>: null}
                     </View>
                     <View style={styles.mainLine}>
                         <View style={[styles.currentValueLine, {width: `${val.inPercentage}%`}]}/>
@@ -33,11 +33,11 @@ export const Requirements = ({profile}) => {
             {Object.entries(profile).map(([key, val], i) => {
                 return <View key={i} style={styles.itemList}>
                         <View style={styles.iconList}>
-                            {key === "insolation" ? <Image source={require("../assets/icons/iconRequirements/sun.png")}/>: null}
-                            {key === "temperature" ? <Image source={require("../assets/icons/iconRequirements/temp.png")}/>: null}
-                            {key === "position" ? <Image source={require("../assets/icons/iconRequirements/position.png")}/>: null}
-                            {key === "whiff" ? <Feather name='wind' style={styles.innerIcon}/>: null}
-                            {key === "humidity" ? <Image source={require("../assets/icons/iconRequirements/humidity.png")}/>: null}
+                            {key === "insolation" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/sun.png")}/>: null}
+                            {key === "temperature" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/temp.png")}/>: null}
+                            {key === "position" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/position.png")}/>: null}
+                            {key === "whiff" ? <Feather name='wind' style={{fontSize: 20}}/>: null}
+                            {key === "humidity" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/humidity.png")}/>: null}
                         </View>
                         <View style={styles.keyItemList}>
                             <Text style={styles.defaultText}>
@@ -82,7 +82,8 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     innerIcon: {
-        fontSize: 20
+        width: 21,
+        height: 21
     },
     mainLine: {
         position: "relative", 

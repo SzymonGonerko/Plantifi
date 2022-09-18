@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
 import { useEffect, useRef, useState } from 'react';
 import { Card } from './ui/Card';
-import { easyCareCollectionPlants } from '../plantsData';
+import { easyCareCollectionPlants } from '../mainDataPlants';
 import { Slider } from './ui/Slider';
 
 const sorted = easyCareCollectionPlants.sort((a,b) => a[1].name.localeCompare(b[1].name))

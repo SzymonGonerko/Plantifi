@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, 
 import { useEffect, useRef, useState } from 'react';
 import { OutlinedTextField } from 'rn-material-ui-textfield'
 import AntDesign from "react-native-vector-icons/AntDesign"
-import { searchPlants } from '../plantsData';
+import { searchPlants } from '../mainDataPlants';
 import { Card } from './ui/Card';
 import { IconButton } from "@react-native-material/core";
 import { SearchInput } from './ui/SearchInput';

@@ -1,3 +1,5 @@
+import profileData from "./profileDataPlants"
+
 export const livingroomPlants = [
     [require("./assets/images/livingroomPlants/RadermacheraSinica.jpg"), {name: "Radermachera Sinica", takenCare: false, needWater: true, days: 3}],
     [require("./assets/images/livingroomPlants/Ciemnotka.jpg"), {name: "Ciemnotka", takenCare: true, needWater: false, days: null}],
@@ -49,30 +51,12 @@ export const livingroomPlants = [
     [require("./assets/images/dailyPlants/Rosiczka.jpg"), {name: "Rosiczka", liked: 345}],
   ]
 
-  const agawaProfile = {
-    general: {
-      type: "do łazienki",
-      size: "do 50 cm",
-      care: "łatwy",
-      description: "Agawy pochodzą z Meksyku, ale obecnie rozprzestrzeniły się także w południowej Europie.W czasie wakacyjnych wypraw w rejon Morza Śródziemnego można zauważyć olbrzymie, kilkumetrowe łodygi, na których wyrastają płaskie, żółte baldachy. Z daleka przypominają dziwaczne latarnie – a to właśnie kwitnące agawy. Niestety agawy kwitną dopiero po kilkudziesięciu latach, w dodatku dana roślina kwitnie tylko raz, a potem zamiera. Liście agawy mają lecznicze właściwości, a odmiana sizalowa dostarcza też cennego włókna."
-    },
-    requirements: {
-      insolation: {inWords: "średnie", inPercentage: 50},
-      temperature: {inWords: "24°C", inPercentage: 90},
-      position: {inWords: "Obok", inPercentage: 20},
-      whiff: {inWords: "Brak", inPercentage: 0},
-      humidity: {inWords: "Wysoka", inPercentage: 95},
-    },
-    care: {
-      watering: "Latem obficie podlewamy agawy raz lub dwa razy w tygodniu. Cała bryła korzeniowa powinna być nawodniona. Zimą podlewamy je tylko trochę, tak aby ziemia nie mogła całkowicie wyschnąć.",
-      transplanting: "Ze względu na szybki wzrost, niezbędne jest regularne przesadzanie agawy. Młode rośliny przesadza się każdego roku, a starsze egzemplarze co 3-5 lat. Kiedy po przesadzeniu dolne liście stają się plamiste, żółkną albo się marszczą, należy agawę przesadzić ponownie, ponieważ się nie ukorzeniła."
-    }
-  }
+
 
   export const easyCareCollectionPlants = [
-    [require("./assets/images/easyCarePlants/Agawa.jpg"), {name: "Agawa", liked: 248, profile: agawaProfile}],
-    [require("./assets/images/easyCarePlants/DieffenbachiaAmoena.jpg"), {name: "Dieffenbachia Amoena", liked: 955}],
-    [require("./assets/images/easyCarePlants/BambusLuckyBamboo.jpg"), {name: "Bambus Lucky Bamboo", liked: 120}],
+    [require("./assets/images/easyCarePlants/Agawa.jpg"), {name: "Agawa", liked: 248, profile: profileData.agawa}],
+    [require("./assets/images/easyCarePlants/DieffenbachiaAmoena.jpg"), {name: "Dieffenbachia Amoena", liked: 955, profile: profileData.dieffenbachiaAmoena}],
+    [require("./assets/images/easyCarePlants/BambusLuckyBamboo.jpg"), {name: "Bambus Lucky Bamboo", liked: 120, profile: profileData.bambusLuckyBamboo}],
     [require("./assets/images/easyCarePlants/Grubosz.jpg"), {name: "Grubosz", liked: 600}],
     [require("./assets/images/easyCarePlants/Kaktus.jpg"), {name: "Kaktus", liked: 456}],
     [require("./assets/images/easyCarePlants/KaktusKwitnący.jpg"), {name: "Kaktus Kwitnący", liked: 679}],
@@ -80,7 +64,7 @@ export const livingroomPlants = [
     [require("./assets/images/easyCarePlants/RozetkaZnana.jpg"), {name: "Rozetka Znana", liked: 346}],
     [require("./assets/images/easyCarePlants/Wieżownica.jpg"), {name: "Wieżownica", liked: 645}],
     [require("./assets/images/easyCarePlants/Zamiokulkas.jpg"), {name: "Zamiokulkas", liked: 324}],
-    [require("./assets/images/easyCarePlants/AloeVera.jpg"), {name: "Aloe Vera", liked: 587}],
+    [require("./assets/images/easyCarePlants/AloeVera.jpg"), {name: "Aloe Vera", liked: 587, profile: profileData.aloeVera}],
     [require("./assets/images/easyCarePlants/Bananowiec.jpg"), {name: "Bananowiec", liked: 98}],
     [require("./assets/images/easyCarePlants/RóżaPospolita.jpg"), {name: "Róża Pospolita", liked: 895}],
     [require("./assets/images/easyCarePlants/TulipanSezonowy.jpg"), {name: "Tulipan Sezonowy", liked: 785}],

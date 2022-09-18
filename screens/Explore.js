@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Header } from '../components/ui/Header';
 import { SearchInput } from '../components/ui/SearchInput';
 import { SquareButton } from '../components/ui/SquareButton';
-import { plantsCategory } from '../plantsData';
+import { plantsCategory } from '../mainDataPlants';
 import { CategoryCard } from '../components/ui/CategoryCard';
 import { LongLineSeparator } from '../components/ui/LongLineSeparator';
 import { ExploreStartSection } from '../components/ExploreStartSection';

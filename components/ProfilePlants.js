@@ -1,41 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
 import { SquareButton } from './ui/SquareButton';
 import { ShortLine } from './ui/ShortLine';
-import { ProfileSwitcherNav } from './ProfileSwitcherNav';
+import { ModalPlantsNavigation } from './ModalPlantsNavigation';
+import { AddNewPlants } from './AddNewPlants';
 
-import {General} from "./General"
-import {Requirements} from "./Requirements"
-import {Care} from "./Care"
+
 import {Button} from "./ui/Button"
 
 import AntDesign from "react-native-vector-icons/AntDesign"
 
-const windowWidth = Dimensions.get('screen').width;
-const windowHeight = Dimensions.get('window').height;
 
 
 export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profile}) => {
-  const [nav, setNav] = useState({
-    general: true,
-    requirements: false,
-    care: false
-})
+  const [addPlants, setAddPlants] = useState(false)
 
 
-const onPressHandler = (name) => {
-  setNav(oldState => {
-      let newState
-      Object.entries(oldState).forEach(([key, _]) => {
-          if (key === name) {
-              return newState = {...newState, [key]: true}
-          } else {
-               return newState = {...newState, [key]: false}
-          }
-      })
-      return newState
-  })
-}
+  const resetState = () => {
+    setAddPlants(false)
+  }
 
 
     return <>
@@ -49,32 +32,32 @@ const onPressHandler = (name) => {
             style={styles.background}
             imageStyle={styles.img}
             />
-            <SquareButton styleContainer={styles.btnSqure} onPress={onPressButtonSquare} type={"arrow"}/>
+            <SquareButton styleContainer={styles.btnSqure} reset={resetState} onPress={onPressButtonSquare} type={"arrow"}/>
         </View>
 
         <View style={styles.profileInfo}>
 
             <ShortLine style={{marginTop: 14}}/>
             <Text style={styles.textName}>{name}</Text>
-            <ProfileSwitcherNav
-              general={nav.general}
-              requirements={nav.requirements}
-              care={nav.care}
-              onPress={onPressHandler}
-            />
-            {nav.general && profile && <General profile={profile.general}/>}
-            {nav.requirements && <Requirements profile={profile.requirements}/>}
-            {nav.care && <Care/>}
 
- 
-        </View>
-        
-        
-        
-        <Button
+            {!addPlants &&
+            <ModalPlantsNavigation profile={profile}/>
+            }
+
+            {addPlants && <AddNewPlants/>}
+            
+            <Button
+            onPress={() => setAddPlants(true)}
             icon={<AntDesign name='plus' style={styles.iconStyle}/> }
             styleContainer={styles.btnStyle}
-            >Dodaj do moich roślin</Button>
+            >
+              {addPlants ? "Zapisz do mojej kolekcji" : "Dodaj do moich roślin"}
+            </Button>
+        </View>
+
+        
+
+
     </Modal>
     
     </>
@@ -83,7 +66,7 @@ const onPressHandler = (name) => {
 const styles = StyleSheet.create({
       bgcContainer: {
         width: "100%",
-        height: windowHeight/3,
+        height: "30%",
         borderRadius: 17
     },
     background: {
@@ -120,12 +103,8 @@ const styles = StyleSheet.create({
       fontSize: 18
   },
   btnStyle: {
-    height: 50, 
-    marginTop: 10, 
-    position: "absolute", 
-    bottom: 30, 
-    left: 15, 
-    right: 15
+    height: 50,
+    marginTop: 20, 
   }
     });
     

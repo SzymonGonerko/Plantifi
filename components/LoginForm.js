@@ -6,7 +6,7 @@ import Octicons from "react-native-vector-icons/Octicons"
 import Feather from "react-native-vector-icons/Feather"
 import {Button} from "../components/ui/Button"
 import { IconButton } from "@react-native-material/core";
-import { MemberSubscribe } from './MemberSubscribe';
+import { CustomCheckbox } from './CustomCheckbox';
 
 export const LoginForm = ({onFocusHandler, onBlurHandler, onPressShowMainApp}) => {
 const [correctLogin, setCorrectLogin] = useState(false)
@@ -79,7 +79,10 @@ const setVisiblePassword = () => {
                 <IconButton onPress={setVisiblePassword} style={styles.iconButton} icon={<Feather name={securePassword ? "eye": "eye-off"} style={{fontSize: 20}}/>} />}
             onChangeText={(e) => onChangePasswordHandler(e)}
             />
-            <MemberSubscribe onPressInfoHandler={onPressInfoHandler} />
+            <CustomCheckbox 
+                onPressInfoHandler={onPressInfoHandler}
+                helper={"Zapomniałem hasła"}
+                labelText={"Zapamiętaj mnie"} />
             <Button 
                 onPress={onSubmitHandler} 
                 styleContainer={{height: 48, marginTop: 25}}

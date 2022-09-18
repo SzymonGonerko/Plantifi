@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { PlantsNeeded } from './PlantsNeeded';
 import { AddNew } from './AddNew';
 import { PlantsSeparator } from './ui/PlantsSeparator';
-import { livingroomPlants, bedroomPlants } from '../plantsData';
+import { livingroomPlants, bedroomPlants } from '../mainDataPlants';
 import { Card } from './ui/Card';
 
 export const Collection = () => {
