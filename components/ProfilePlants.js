@@ -44,7 +44,7 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profil
             <ModalPlantsNavigation profile={profile}/>
             }
 
-            {addPlants && <AddNewPlants/>}
+            {addPlants && <AddNewPlants src={src}/>}
             
             <Button
             onPress={() => setAddPlants(true)}
