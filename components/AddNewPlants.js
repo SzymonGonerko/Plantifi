@@ -1,43 +1,93 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View} from 'react-native';
 import { LongLineSeparator } from './ui/LongLineSeparator';
 import { CustomCheckbox } from './CustomCheckbox';
-import { CloseCircle } from './ui/CloseCircle';
+import * as ImagePicker from "expo-image-picker"
+import { PickerImage } from './PickerImage';
+
 
 
 export const AddNewPlants = ({src}) => {
+    const [defaultImg, setDefaultImg] = useState(true)
+    const [rooms, setRooms] = useState(["Łazienka", "Sypialnia", "Kuchnia", "Balkon", "Salon/Pokój", "Ogród"])
+    const [imagesCollection, setImagesCollection] = useState({
+        first: "",
+        second: "",
+        third: ""
+    })
+
+    const pickImage = async (name) => {
+        const result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            aspect: [4,3],
+            quality: 1
+        })
+        if (!result.cancelled) {
+            setImagesCollection(oldState => {
+                let newState
+                Object.entries(oldState).forEach(([key, val]) => {
+                    if (key === name) {
+                        return newState = {...newState, [key]: result.uri}
+                    } else {
+                        return newState = {...newState, [key]: val}
+                    }
+                })
+                return newState
+            })
+        }
+    }
+
+
     return <>
-    <View>
+    <View style={{marginHorizontal: 15}}>
         <LongLineSeparator style={{marginTop: 5, marginBottom: 10}}/>
         <View style={{flexDirection: "column"}}>
-            <Text>Dodaj swoje zdjęcia</Text>
-            <View style={{flexDirection: "row"}}>
-                <View style={styles.square}>
-                    <Image style={{width: 70, height: 67,borderRadius: 8,}} source={src}/>
-                    <CloseCircle/>
-                </View>
-                <View style={styles.square}>
-                    <Image style={{width: 72, height: 69}} source={src}/>
-                </View>
-                <View style={styles.square}>
+            <Text style={styles.titleText}>Dodaj swoje zdjęcia</Text>
+            <View style={{flexDirection: "row", marginTop: 20}}>
 
-                </View>
+                <PickerImage 
+                    addPick={pickImage.bind(this, "first")}
+                    onCancel={() => (setImagesCollection(prev => ({...prev, first: ""})), setDefaultImg(false))}
+                    defaultImg={defaultImg}
+                    src={src}
+                    uri={imagesCollection.first}
+                />
+
+                <PickerImage 
+                    addPick={pickImage.bind(this, "second")}
+                    onCancel={() => setImagesCollection(prev => ({...prev, second: ""}))}
+                    defaultImg={false}
+                    uri={imagesCollection.second}
+                />
+
+                <PickerImage 
+                    addPick={pickImage.bind(this, "third")}
+                    onCancel={() => setImagesCollection(prev => ({...prev, third: ""}))}
+                    defaultImg={false}
+                    uri={imagesCollection.third}
+                />
+
             </View>
             <CustomCheckbox labelText={"Zapamiętaj zdjęcia z encyklopedii"}/>
+        </View>
+        <LongLineSeparator style={{marginTop: 5, marginBottom: 10}}/>
+        <Text style={styles.titleText}>Gdzie znajduje się Twoja roślina?</Text>
+        <View>
+            {rooms.map(el => {
+                return <View>
+                    <Text>{el}</Text>
+                </View>
+            })}
         </View>
     </View>
     </>
 }
 
 const styles = StyleSheet.create({
-    square: {
-        position: 'relative',
-        width: 72,
-        height: 69,
-        borderColor: "green",
-        borderWidth: 1,
-        borderStyle: 'dashed',
-        borderRadius: 8,
-        marginRight: 25,
+    titleText: {
+        fontFamily: "NunitoBold",
+        fontSize: 18,
+        color: "#36455A"
     }
 })
