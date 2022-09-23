@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
+import { useState  } from 'react';
+import { StyleSheet, Text, View, ImageBackground, Modal} from 'react-native';
 import { SquareButton } from './ui/SquareButton';
 import { ShortLine } from './ui/ShortLine';
 import { ModalPlantsNavigation } from './ModalPlantsNavigation';
@@ -7,17 +7,24 @@ import { AddNewPlants } from './AddNewPlants';
 
 
 import {Button} from "./ui/Button"
-
 import AntDesign from "react-native-vector-icons/AntDesign"
 
 
 
-export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profile}) => {
+export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profile, addNewPlantsToCollecton}) => {
   const [addPlants, setAddPlants] = useState(false)
 
 
   const resetState = () => {
     setAddPlants(false)
+  }
+
+  const onPressBtnHandler = () => {
+    setAddPlants(true)
+    if (addPlants) {
+      setAddPlants(false)
+      addNewPlantsToCollecton()
+    }
   }
 
 
@@ -40,14 +47,11 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profil
             <ShortLine style={{marginTop: 14}}/>
             <Text style={styles.textName}>{name}</Text>
 
-            {!addPlants &&
-            <ModalPlantsNavigation profile={profile}/>
-            }
-
+            {!addPlants && <ModalPlantsNavigation profile={profile}/>}
             {addPlants && <AddNewPlants src={src}/>}
             
             <Button
-            onPress={() => setAddPlants(true)}
+            onPress={onPressBtnHandler}
             icon={<AntDesign name='plus' style={styles.iconStyle}/> }
             styleContainer={styles.btnStyle}
             >

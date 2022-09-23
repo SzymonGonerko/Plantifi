@@ -1,15 +1,22 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal, Alert} from 'react-native';
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { ProfilePlants } from '../ProfilePlants';
+import { PopUpSuccess } from './PopUpSuccess';
 
 
 export const Card = ({src, takenCare, needWater, days, name, description, cardStyle, liked, profile}) => {
     const [profileModal, setProfileModal] = useState(false)
+    const [addedNew, setAddedNew] = useState(false)
 
 
+    const addPlantsToCollection = () => {
+        setProfileModal(false)
+        setAddedNew(true)
+        // setTimeout(() => {setAddedNew(false)}, 2000)
+    }
 
     return <>
     <View style={[styles.container, cardStyle]}>
@@ -36,8 +43,10 @@ export const Card = ({src, takenCare, needWater, days, name, description, cardSt
     src={src}
     name={name}
     profile={profile}
+    addNewPlantsToCollecton={addPlantsToCollection}
     isVisible={profileModal}/>
-    
+
+    {addedNew && <PopUpSuccess onPressClose={() => setAddedNew(false)}/>}
     </>
 }
 

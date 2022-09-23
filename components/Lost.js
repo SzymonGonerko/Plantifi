@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         top: 45,
         paddingTop: 22,
         paddingHorizontal: 26,
-        backgroundColor: "white"
+        backgroundColor: "#E5E5E5"
     },
     userNameText: {
         fontFamily: "NunitoBold",
