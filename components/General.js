@@ -14,7 +14,7 @@ export const General = ({profile}) => {
                 <View style={styles.tag}>
                     <Text style={[styles.tagText, {textAlign: "left", marginLeft: 10}]}>Typ</Text>
                     <View style={styles.tagParam}>
-                    {profile.type === "łatwa pielęgnacja" ? <Image style={styles.innerIcon} resizeMode={"contain"} source={require("../assets/icons/exploreIcons/Easy.png")}/>: null}
+                        {profile.type === "łatwa pielęgnacja" ? <Image style={styles.innerIcon} resizeMode={"contain"} source={require("../assets/icons/exploreIcons/Easy.png")}/>: null}
                         {profile.type === "do łazienki" ? <Image style={styles.innerIcon} source={require("../assets/icons/exploreIcons/bathroomIcon.png")}/>: null}
                         {profile.type === "lubiące słońce" ? <Image style={styles.innerIcon} source={require("../assets/icons/exploreIcons/Sun.png")}/>: null}
                         {profile.type === "przyjazne zwierzętom" ? <Image style={styles.innerIcon} source={require("../assets/icons/exploreIcons/Animals.png")}/>: null}

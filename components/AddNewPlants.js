@@ -4,11 +4,15 @@ import { LongLineSeparator } from './ui/LongLineSeparator';
 import { CustomCheckbox } from './CustomCheckbox';
 import * as ImagePicker from "expo-image-picker"
 import { PickerImage } from './PickerImage';
+import { DateRemember } from './ui/DateRemember';
+
+import ToggleSwitch from 'toggle-switch-react-native'
 
 
 
 export const AddNewPlants = ({src}) => {
     const [defaultImg, setDefaultImg] = useState(true)
+    const [remember, setRemember] = useState(false)
     const [rooms, setRooms] = useState([
         {room: "Balkon ", isSelected: false}, 
         {room: "Kuchnia", isSelected: false}, 
@@ -62,7 +66,7 @@ export const AddNewPlants = ({src}) => {
         <LongLineSeparator style={{marginTop: 5, marginBottom: 10}}/>
         <View style={{flexDirection: "column"}}>
             <Text style={styles.titleText}>Dodaj swoje zdjęcia</Text>
-            <View style={{flexDirection: "row", marginTop: 20, marginLeft: 20}}>
+            <View style={{flexDirection: "row", marginTop: 20}}>
 
                 <PickerImage 
                     addPick={pickImage.bind(this, "first")}
@@ -88,7 +92,7 @@ export const AddNewPlants = ({src}) => {
                 
 
             </View>
-            <View style={{marginLeft: 20}}>
+            <View style={{}}>
                 <CustomCheckbox labelText={"Zapamiętaj zdjęcia z encyklopedii"}/>
             </View>
             
@@ -96,7 +100,7 @@ export const AddNewPlants = ({src}) => {
         <LongLineSeparator style={{marginTop: 15, marginBottom: 15}}/>
         
         <Text style={styles.titleText}>Gdzie znajduje się Twoja roślina?</Text>
-        <View style={{width: "100%", flexDirection: "row", flexWrap: "wrap", marginTop: 19}}>
+        <View style={{width: "100%", justifyContent: "space-between" ,flexDirection: "row", flexWrap: "wrap", marginTop: 19}}>
             {rooms.map((el, i) => {
                 return <View key={i} style={[styles.recttangle, (el.isSelected ? styles.selectedRect: null)]}>
                     <Pressable onPress={onPressRoomHandler.bind(this, el.room)} style={styles.pressContainer}>
@@ -106,6 +110,21 @@ export const AddNewPlants = ({src}) => {
                 
             })}
         </View>
+        <View style={{flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: 15}}>
+            <Text style={styles.label}>Ustaw Przypomnienia</Text>
+            <ToggleSwitch
+                isOn={remember}
+                onColor="#54795E"
+                offColor="#B1B8C1"
+                size="large"
+                onToggle={() => setRemember(prev => !prev)}
+            />
+        </View>
+        {remember && <DateRemember/>}
+        
+
+  <View style={{height: 100}}/>
+
     </ScrollView>
     </>
 }
@@ -115,13 +134,11 @@ const styles = StyleSheet.create({
         fontFamily: "NunitoBold",
         fontSize: 18,
         color: "#36455A",
-        marginLeft: 20
     },
     recttangle: {
-        width: 159, 
+        width: "48%", 
         height: 40, 
-        borderRadius: 8 ,
-        marginRight: 10, 
+        borderRadius: 8,
         borderColor: "#9EA09E",
         borderWidth: 1,
         marginBottom: 11
@@ -142,5 +159,10 @@ const styles = StyleSheet.create({
     text: {
         color: "#9EA09E",
         fontFamily: "NunitoBold"
+    },
+    label: {
+        color: "#36455A",
+        fontFamily: "NunitoBold",
+        fontSize: 18,
     }
 })
