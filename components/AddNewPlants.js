@@ -5,12 +5,13 @@ import { CustomCheckbox } from './CustomCheckbox';
 import * as ImagePicker from "expo-image-picker"
 import { PickerImage } from './PickerImage';
 import { DateRemember } from './ui/DateRemember';
+import { RecommendedCare } from './RecommendedCare';
 
 import ToggleSwitch from 'toggle-switch-react-native'
 
 
 
-export const AddNewPlants = ({src}) => {
+export const AddNewPlants = ({src, care}) => {
     const [defaultImg, setDefaultImg] = useState(true)
     const [remember, setRemember] = useState(false)
     const [rooms, setRooms] = useState([
@@ -120,7 +121,11 @@ export const AddNewPlants = ({src}) => {
                 onToggle={() => setRemember(prev => !prev)}
             />
         </View>
-        {remember && <DateRemember/>}
+
+        {remember && <>
+        <DateRemember/>
+        <RecommendedCare profile={care}/>
+        </>}
         
 
   <View style={{height: 100}}/>

@@ -160,7 +160,7 @@ grubosz: {
       transplanting: {
         inWords: "Przesadzać drzewko szczęścia możemy o każdej porze roku, chociaż najlepszym okresem jest wiosna. Przesadzając podcinamy lekko korzenie (około 1-2 cm), aby pobudzić system korzeniowy do szybszej regeneracji.",
         inPercentage: 5
-    },
+      },
       cutting: {
         inWords: "Grubosz rośnie bardzo wolno. Wobec tego nie trzeba go przycinać, zwłaszcza, że w formie naturalnej ma ładny, przypominający małe drzewko",
         inPercentage: 2
