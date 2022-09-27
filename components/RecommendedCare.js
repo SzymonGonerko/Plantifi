@@ -11,7 +11,7 @@ export const RecommendedCare = ({profile}) => {
             <View style={styles.squareContainer}>
                 {Object.entries(profile).map(([key, val], i) => {
                     return (
-                    <View style={{flexDirection: "row", alignItems: "center", justifyContent:"space-between"}}>
+                    <View style={{flexDirection: "row", alignItems: "center", }}>
                         <View key={i} style={{width: 48}}>
                             <View  style={styles.squareIcon}>
                                 {key === "watering" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Watering.png")}/>: null}
@@ -23,7 +23,7 @@ export const RecommendedCare = ({profile}) => {
                                 <View style={[styles.currentValueLine, {width: `${val.inPercentage}%`}]}/>
                             </View>
                         </View>
-                        <View style={{width: "80%", height: "100%"}}>
+                        <View style={{width: "70%", height: "100%", marginLeft: 20}}>
 
                             <SliderContainer
                                 sliderValue={[1]}
