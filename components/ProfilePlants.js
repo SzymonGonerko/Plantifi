@@ -48,7 +48,10 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profil
             <Text style={styles.textName}>{name}</Text>
 
             {!addPlants && <ModalPlantsNavigation profile={profile}/>}
+
+            
             {addPlants && <AddNewPlants care={profile.care} src={src}/>}
+            
             
             <Button
             onPress={onPressBtnHandler}

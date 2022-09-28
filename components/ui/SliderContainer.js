@@ -1,6 +1,6 @@
 import { useState, useEffect} from 'react';
 import React from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View, Image} from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import { Slider } from "@miblanchard/react-native-slider";
 
 
@@ -74,7 +74,6 @@ export const SliderContainer = (props) => {
                         value,
                     });
                 }
-
                 return child;
             },
         );
@@ -82,11 +81,9 @@ export const SliderContainer = (props) => {
 
     return (
         <View style={styles.sliderContainer}>
-            {/* <View style={styles.titleContainer}> */}
                 <Text style={styles.title}>
                     {textContent}
                 </Text>
-            {/* </View> */}
             {renderChildren()}
         </View>
     );
@@ -118,12 +115,7 @@ const styles = StyleSheet.create({
         paddingBottom: 32,
     },
     sliderContainer: {
-        paddingVertical: 16,
-    },
-    titleContainer: {
-        flexDirection: "row",
-        alignItems: 'center',
-        justifyContent: 'center',
+        paddingVertical: 10,
     },
     title: {
         fontFamily: "NunitoBold",

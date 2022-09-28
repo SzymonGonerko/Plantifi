@@ -16,19 +16,24 @@ const profileData = {
           care: {
             watering: {
               inWords: "Latem obficie podlewamy agawy raz lub dwa razy w tygodniu. Cała bryła korzeniowa powinna być nawodniona. Zimą podlewamy je tylko trochę, tak aby ziemia nie mogła całkowicie wyschnąć.",
-              inPercentage: 28
+              inPercentage: 48,
+              step: 2
             },
             transplanting: {
               inWords: "Ze względu na szybki wzrost, niezbędne jest regularne przesadzanie agawy. Młode rośliny przesadza się każdego roku, a starsze egzemplarze co 3-5 lat. Kiedy po przesadzeniu dolne liście stają się plamiste, żółkną albo się marszczą, należy agawę przesadzić ponownie, ponieważ się nie ukorzeniła.",
-              inPercentage: 81
+              inPercentage: 70,
+              step: 1
           },
             cutting: {
               inWords: "Jeżeli liście agawy wyglądają brzydko, mają nienaturalne żółte i pomarszczone plamy, znaczy to, że roślina czuje się źle i jest nieodpowiednio traktowana. Przyczyną są zwykle błędy w pielęgnacji, a szczególnie zbyt mocne podlewanie, którego agawa nie znosi. Odcinając uszkodzone liście, nie wolno zranić głównej łodygi. To osłabiłoby cały organizm i mogło doprowadzić do przedwczesnej śmierci agawy.",
-              inPercentage: 8
+              inPercentage: 8,
+              step: 4
+
             },
             fertilizating: {
               inWords: "Od kwietnia do września co 14 dni warto zasilić agawy nawozem do kaktusów.",
-              inPercentage: 20
+              inPercentage: 30,
+              step: 3
             }
           }
     },
@@ -50,19 +55,23 @@ const profileData = {
         care: {
           watering: {
             inWords: "W zimowej porze roku difenbachia wymaga mniej intensywnego podlewania. Zbyt intensywne podlewanie difenbachii może wywołać u niej śnieć i zgniliznę. Wówczas należy okresowo ograniczyć podlewanie. Porą letnia należy pamiętać o zapewnieniu roślinie odpowiedniej wilgotności. W tym celu najlepiej będzie ułatwić doniczkę z rośliną na kamykach w podstawce z wodą w taki sposób, by dno doniczki nie stało w wodzie. W ten sposób zapewnimy roślinie odpowiednie warunki.",
-            inPercentage: 30
+            inPercentage: 30,
+            step: 3
           },
           transplanting: {
             inWords: "Kwiat difenbachia, należący do roślin doniczkowych, przesadzamy raz w roku lub raz na dwa lata (zwykle w okolicach wiosny, kiedy bryła korzeniowa przerasta doniczkę). Przesadzanie należy wykonać do doniczki większej o dwa wymiary. Kwiat difenbachia preferuje podłoże o odczynie kwaśnym. Często stosuję się tu mieszankę torfu i ziemi kompostowej. Przesadzanie difenbachii dobrze jest rozpocząć od ułożenia na dnie doniczki warstwy drenażowej z kamyków i keramzytu.",
-            inPercentage: 45
+            inPercentage: 40,
+            step: 1
         },
           cutting: {
             inWords: "Okazją staje się moment, kiedy roślina urośnie zbyt wysoka i chcemy ją przyciąć. Odcięty kawałek łodygi łatwo można ukorzenić. Często starsze okazy tracą dolne liście i swój ładny pokrój, trzeba je więc odmłodzić.",
-            inPercentage: 14
+            inPercentage: 14,
+            step: 4
           },
           fertilizating: {
             inWords: "Latem warto też pamiętać o dokarmianiu jej 1-2 razy w tygodniu nawozem płynnym dla roślin o ozdobnych liściach. Najlepsze są nawozy wieloskładnikowe, zawierające potas. Szczególnie jest to ważne wtedy, kiedy roślina wzrasta, czyli wiosną. Ma to pozytywny wpływ na obfitość rozrostu, barwę i ogólny stan kwiatu.",
-            inPercentage: 70
+            inPercentage: 55,
+            step: 2
           }
         }
   },
@@ -84,19 +93,23 @@ const profileData = {
       care: {
         watering: {
           inWords: "Aloes należy podlewać tuż przy ziemi, ponieważ polewanie liści wodą lub nadmierne podlewanie samego aloesu spowoduje gnicie rośliny. Ponadto wodę należy dostarczać wyłącznie korzeniom. Aloes wystarczy podlewać podczas zimy i jesieni raz na dwa tygodnie, natomiast w okresie wiosny i lata raz na tydzień.",
-          inPercentage: 10
+          inPercentage: 42,
+          step: 2
         },
         transplanting: {
           inWords: "Są dwa momenty, gdy powinno się aloes przesadzać. Pierwszy, gdy go właśnie kupiliśmy i doniczka jest niezbyt atrakcyjna lub zbyt mała. Drugi, gdy nasz aloes w jednym pojemniku rośnie już 3 lata, wówczas powinno się go już przesadzić do nowego. Najlepiej jest przesadzać aloes wiosną i latem.",
-          inPercentage: 13
+          inPercentage: 30,
+          step: 2
       },
         cutting: {
           inWords: "Liście, które chorują należy bezwzględnie usunąć i najwygodniej jest je odciąć za pomocą noża. Wybierz nóż gładki (bez ząbków), złap liść aloesu i delikatnie odetnij go za pomocą noża tuż przy podstawie. Jeśli liść jest już mocno zniszczony to można go po prostu oderwać. Powinien sam odpaść od podstawy.",
-          inPercentage: 8
+          inPercentage: 8,
+          step: 4
         },
         fertilizating: {
           inWords: "Nawożenie aloesu powinno odbywać się w okresie wegetacji (czyli od wiosny do jesieni). Można stosować rozcieńczony nawóz wieloskładnikowy lub nawóz do kaktusów i sukulentów.",
-          inPercentage: 61
+          inPercentage: 61,
+          step: 1
         }
       }
 },
@@ -120,19 +133,23 @@ bambusLuckyBamboo: {
     care: {
       watering: {
         inWords: "Lucky Bamboo uprawiany w ziemi wymaga częstego podlewania (podłoże powinno być stale wilgotne). Roślinę trzeba też często zraszać. Woda do spryskiwania powinna być takiej samej jakości, jak woda do podlewania: źródlana, miękka, przegotowana i odstana (albo destylowana) o temperaturze pokojowej.",
-        inPercentage: 83
+        inPercentage: 95,
+        step: 0
       },
       transplanting: {
         inWords: "Przy mocno rozrastających się dracenach, przycinamy jedynie odrosty na łodydze, w ten sposób regulując ich rozmiar. Rozmnażanie możliwe jest poprzez skrócenie głównego pędu i podzielenie go na odcinki, które należy ukorzeniać w wodzie. Przesadzanie do doniczek z ziemią przeprowadzamy wówczas, gdy pojawią się korzenie.",
-        inPercentage: 5
+        inPercentage: 5,
+        step: 4
     },
       cutting: {
         inWords: "Jeśli chodzi o przycinanie Lucky Bamboo, to lepiej skracać odrosty, niż główną łodygę. Łodyga główna nie urośnie już wzwyż, wysokość bambusa zależeć będzie od wysokości odrostów bocznych. Rany po cięciu warto zasklepić woskiem (np. takim ze świeczki), ponieważ mogą nieładnie zaschnąć.",
-        inPercentage: 20
+        inPercentage: 20,
+        step: 3,
       },
       fertilizating: {
         inWords: "Lucky Bamboo możemy także podlewać niegazowaną wodą źródlaną albo wodą destylowaną. Rośliny w uprawie hydroponicznej do prawidłowego wzrostu i rozwoju potrzebują nawożenia. Można do tego celu użyć specjalnego nawozu do roślin hodowanych w wodzie lub zastosować płynny nawóz wieloskładnikowy, odpowiednio rozcieńczony.",
-        inPercentage: 14
+        inPercentage: 14,
+        step: 4
       }
     }
 },
@@ -155,19 +172,23 @@ grubosz: {
     care: {
       watering: {
         inWords: "Grubosza podlewamy w zależności od panującej w domu temperatury. Jeśli temperatura przekracza 20 stopni Celsjusza, podlewamy go raz na dwa tygodnie, wtedy gdy ziemia jest już przesuszona. Gdy temperatura jest niższa, nawadniamy go rzadziej",
-        inPercentage: 27
+        inPercentage: 27,
+        step: 3
       },
       transplanting: {
         inWords: "Przesadzać drzewko szczęścia możemy o każdej porze roku, chociaż najlepszym okresem jest wiosna. Przesadzając podcinamy lekko korzenie (około 1-2 cm), aby pobudzić system korzeniowy do szybszej regeneracji.",
-        inPercentage: 5
+        inPercentage: 5,
+        step: 1
       },
       cutting: {
         inWords: "Grubosz rośnie bardzo wolno. Wobec tego nie trzeba go przycinać, zwłaszcza, że w formie naturalnej ma ładny, przypominający małe drzewko",
-        inPercentage: 2
+        inPercentage: 2,
+        step: 4
       },
       fertilizating: {
         inWords: "Raz na miesiąc zaleca się zasilić grubosza odżywką, najlepiej płynną, taką jak do kaktusów czy innych sukulentów. Najlepszy będzie Florovit, jego systematyczne stosowanie stymuluje rozwój i proces kwitnienia oraz zapewnia zdrowy wygląd rośliny. Zapamiętaj! Grubosza nawozimy od wczesnej wiosny do późnej jesieni.",
-        inPercentage: 23
+        inPercentage: 23,
+        step: 4
       }
     }
 }

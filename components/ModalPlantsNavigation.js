@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
 import {ProfileSwitcherNav} from "../components/ProfileSwitcherNav"
 
 import { General } from './General';

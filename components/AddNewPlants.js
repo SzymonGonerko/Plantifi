@@ -63,7 +63,7 @@ export const AddNewPlants = ({src, care}) => {
 
 
     return <>
-    <ScrollView showsVerticalScrollIndicator={false} style={{height: "42%"}}>
+    <ScrollView showsVerticalScrollIndicator={false} style={{height: "42%", marginHorizontal: 15}}>
         <LongLineSeparator style={{marginTop: 5, marginBottom: 10}}/>
         <View style={{flexDirection: "column"}}>
             <Text style={styles.titleText}>Dodaj swoje zdjęcia</Text>
@@ -122,10 +122,12 @@ export const AddNewPlants = ({src, care}) => {
             />
         </View>
 
+        <View style={{}}>
         {remember && <>
         <DateRemember/>
         <RecommendedCare profile={care}/>
         </>}
+        </View>
         
 
   <View style={{height: 100}}/>
