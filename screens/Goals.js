@@ -1,12 +1,23 @@
 import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert } from 'react-native';
+import {Header} from "../components/ui/Header"
+import { GoalsNavigator } from '../components/goalsNavigation/GoalsNavigator';
 
 
 export const Goals = () => {
     return (
-        <View>
-        <Text>Goals Screen</Text>
+        <View style={styles.container}>
+            <Header>Moje Zadania</Header>
+            <GoalsNavigator/>
+        
         </View>
     )
 
     
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+
+})
