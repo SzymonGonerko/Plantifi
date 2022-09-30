@@ -78,3 +78,9 @@ export const livingroomPlants = [
     [require("./assets/images/easyCarePlants/CisPospolity.jpg"), {name: "Cis Pospolity", liked: 214}],
     [require("./assets/images/easyCarePlants/JaskierOstry.jpg"), {name: "Jaskier Ostry", liked: 132}],
   ]
+
+  export const toDoListPlants = [
+    [require("./assets/images/toDoListPlants/AnturiumScherzera.jpg"), {name: "Anturium Scherzera", whatNeed: "Potrzebuje Wody! (15ml)"}],
+    [require("./assets/images/toDoListPlants/MonsteraAdansoni.jpg"), {name: "Monstera Adansoni", whatNeed: "Potrzebuje przesadzenia!"}],
+    [require("./assets/images/toDoListPlants/CactusParodia.jpg"), {name: "Cactus Parodia", whatNeed: "Potrzebuje drenażu doniczki!"}],
+  ]
