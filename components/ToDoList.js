@@ -8,20 +8,23 @@ import { useState } from 'react';
 
 export const ToDoList = () => {
     const [plantsData, setPlantsData] = useState(toDoListPlants)
+    const [itemHeight, setItemHeight] = useState([120, 120, 120])
 
     const onPressHandler = () => {
         Alert.alert("Pracuję nad tym...", "aplikacja jest w fazie testowej", [{text: "okey", style: "default"}])
     }
 
-    const onSwipeHandler = (item) => {
+    const onSwipeHandler = (key) => {
         setTimeout(() => {
-            setPlantsData(prev => {
-                const newState = prev.filter(el => {return el[1].name !== item})
+            setItemHeight(prev => {
+                prev[key] = 0
+                const newState = [...prev]
                 return newState
             })
         }, 1000)
 
     }
+
 
 
     return <>
@@ -41,11 +44,11 @@ export const ToDoList = () => {
             <GestureHandlerRootView>
                 {plantsData.map((item, i) => { 
                     return <Swipeable
-                    onSwipeableWillOpen={onSwipeHandler.bind(this, item[1].name)}
+                    onSwipeableWillOpen={onSwipeHandler.bind(this, i)}
                     childrenContainerStyle={{backgroundColor: "#F2F2F2"}} 
                     key={i} 
                     renderRightActions={RightSwipeSquare}>
-                        <View style={{paddingHorizontal: 24}}  key={i}>
+                        <View style={{paddingHorizontal: 24, overflow: "hidden", height: itemHeight[i]}} key={i}>
                             <View style={{flexDirection: "row"}}>
                                 <Image source={item[0]} style={{width: 67, height: 80, borderRadius: 8}}/>
                                 <View style={{flexDirection: "column", justifyContent: "space-between", marginLeft: 20}}>

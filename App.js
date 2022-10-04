@@ -19,6 +19,7 @@ import NunitoBoldItalic from "./assets/fonts/NunitoBoldItalic.ttf"
 import NunitoRegular from "./assets/fonts/NunitoRegular.ttf"
 import PlayfairDisplayBold from "./assets/fonts/PlayfairDisplayBold.ttf"
 import PlayfairDisplayRegular from "./assets/fonts/PlayfairDisplayRegular.ttf"
+import Inter from "./assets/fonts/Inter.ttf"
 import { View } from 'react-native-animatable';
 
 SplashScreen.preventAutoHideAsync();
@@ -34,7 +35,7 @@ export default function App() {
   useEffect(() => {
     async function prepare() {
       try {
-        await Font.loadAsync({NunitoItalic, NunitoBold, NunitoBoldItalic, PlayfairDisplayBold, PlayfairDisplayRegular, NunitoRegular});
+        await Font.loadAsync({NunitoItalic, NunitoBold, NunitoBoldItalic, PlayfairDisplayBold, PlayfairDisplayRegular, NunitoRegular, Inter});
         await new Promise(resolve => setTimeout(resolve, 2000));
       } catch (e) {
         console.warn(e);
