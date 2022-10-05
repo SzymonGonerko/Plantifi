@@ -143,7 +143,6 @@ const styles = StyleSheet.create({
         bottom: 0,
         height: 111,
         padding: 0,
-        backgroundColor: "#ffffff00",
         elevation: 0,
         borderWidth: 0
     },

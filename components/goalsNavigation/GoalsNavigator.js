@@ -10,7 +10,9 @@ export const GoalsNavigator = () => {
   return <>
         <Stack.Navigator
           initialRouteName="Root"
-          screenOptions={{headerShown: false}}>
+          
+          screenOptions={{headerShown: false, contentStyle: {backgroundColor: "red"}}}
+          >
           <Stack.Screen name="Root" component={GoalsTabs} />
         </Stack.Navigator>
 </>

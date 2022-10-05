@@ -35,11 +35,6 @@ export const GoalsTabs = () => {
         }).start();
       }
 
-      useEffect(() => {
-        NavigationBar.setPositionAsync("relative")
-        NavigationBar.setBackgroundColorAsync('white')
-      }, [])
-
 
 
 
@@ -48,7 +43,7 @@ return <>
     screenOptions={{
         headerShown: false,
         tabBarShowLabel: true,
-        tabBarStyle: styles.tabBar,
+        tabBarStyle: styles.tabBar,        
     }}
     >
         <Tab.Screen 

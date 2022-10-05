@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert } from 'react-native';
-import { useRef } from 'react';
-import {Calendar, CalendarList, Agenda, LocaleConfig} from 'react-native-calendars';
+import { useRef, useState } from 'react';
+import { CalendarList, LocaleConfig} from 'react-native-calendars';
+import { LongLineSeparator} from "../components/ui/LongLineSeparator"
+import { ScrollView } from 'react-native-gesture-handler';
 
 LocaleConfig.locales['pl'] = {
     monthNames: [
@@ -25,32 +27,54 @@ LocaleConfig.locales['pl'] = {
   LocaleConfig.defaultLocale = 'pl';
 
 export const DataSection = () => {
-    const myView = useRef(null)
-    return <>
+    const [lastClicked, setLastClicked] = useState("")
+
+    const today = new Date()
+    const fewDaysLater = new Date()
+    fewDaysLater.setDate(today.getDate() + 3)
+    const fewDaysLaterDate = fewDaysLater.toISOString().slice(0, 10)
+    const todayDate = today.toISOString().slice(0, 10)
+
+    const handlePress = (date) => {
+        setLastClicked(date)
+    } 
+
+    return <ScrollView>
     <View style={{height: 45}}/>
     <CalendarList
         horizontal={true}
         pagingEnabled={true}
-        pastScrollRange={30} 
-        futureScrollRange={30}
-        onDayPress={day => {
-            console.log('selected day', day);
-          }}
+        pastScrollRange={20} 
+        futureScrollRange={20}
         theme={{
             textDayHeaderFontFamily: 'NunitoBold',
             textSectionTitleColor: 'black',
+            calendarBackground: 'transparent',
         }}
-        dayComponent={({date, state, onLongPress, onPress }) => {
+        markedDates={{
+            [todayDate] : {marked: true},
+            [fewDaysLaterDate]: {marked: true},
+          }}
+
+        renderHeader={(date) => {
+        const month = LocaleConfig.locales.pl.monthNames[parseInt(date.toISOString().slice(5, 7)) -1]
+        return <Text style={styles.header}>{month} {date.getFullYear()}</Text>
+        }}
+        dayComponent={({marking,date,state}) => {
             return (
-                <Pressable onPress={onPress}>
-                    <View ref={myView} style={(state ? styles.today : styles.defaultDay)}>
-                        <Text style={(state ? styles.todayText: styles.defaultText)}>{date.day}</Text>
+                <Pressable onPress={() => handlePress(date.dateString)}>
+                    <View style={(state ? (date.dateString === lastClicked ? [styles.today ,styles.clickedDay] : styles.today) : (date.dateString === lastClicked ? styles.clickedDay : styles.defaultDay))}>
+                        <Text style={(state ? styles.todayText : (date.dateString === lastClicked ? styles.selectedText : styles.defaultText))}>
+                            {date.day}
+                        </Text>
+                        {marking?.marked && <View style={(date.dateString === lastClicked ? styles.selectedDot : styles.dot)}/>}
                     </View>
                 </Pressable>
             );
           }}
     />
-    </>
+    <LongLineSeparator style={styles.separator}/>
+    </ScrollView>
 }
 
 const styles = StyleSheet.create({
@@ -67,22 +91,60 @@ const styles = StyleSheet.create({
         width: 40, 
         height: 40, 
         borderWidth: 1,
-        borderColor: "#DFDFDF",
+        borderColor: "#54795E",
         justifyContent: "center", 
         alignItems: "center", 
         borderRadius: 4,
-        backgroundColor: "#54795E"
     },
     defaultText: {
         color: "black",
         fontFamily: "Inter",
-        fontWeight: "normal"
-        
+        fontSize: 12
     },
     todayText: {
+        color: "black",
+        fontFamily: "Inter",
+        fontWeight: "bold",
+        fontSize: 12
+    },
+    clickedDay: {
+        width: 40, 
+        height: 40, 
+        borderWidth: 1.2,
+        borderColor: "#54795E",
+        backgroundColor: "#54795E",
+        justifyContent: "center",
+        alignItems: "center", 
+        borderRadius: 4
+    },
+    selectedText: {
         color: "white",
         fontFamily: "Inter",
-        fontWeight: "bold"
+        fontSize: 13
+    },
+    dot: {
+        width: 5,
+        height: 5,
+        borderRadius: 50,
+        backgroundColor: "#54795E"
+    },
+    selectedDot: {
+        width: 5,
+        height: 5,
+        borderRadius: 50,
+        backgroundColor: "white"
+    },
+    separator: {
+        backgroundColor: "#54795E",
+        height: 2,
+        marginTop: 0
+    },
+    header: {
+        width: "100%",
+        fontFamily: "NunitoBold",
+        fontSize: 18,
+        marginTop: 15,
+        marginBottom: 15
     }
     
 })
