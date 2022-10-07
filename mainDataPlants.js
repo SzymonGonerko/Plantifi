@@ -84,3 +84,7 @@ export const livingroomPlants = [
     [require("./assets/images/toDoListPlants/MonsteraAdansoni.jpg"), {name: "Monstera Adansoni", whatNeed: "Potrzebuje przesadzenia!"}],
     [require("./assets/images/toDoListPlants/CactusParodia.jpg"), {name: "Cactus Parodia", whatNeed: "Potrzebuje drenażu doniczki!"}],
   ]
+
+  export const calendarPlants = [
+    [require("./assets/images/calendarPlants/FitoniaVerschafelta.jpg"), {name: "FitoniaVerschafelta", whatNeed: "Potrzebuje przesadzenia!"}],
+  ]
