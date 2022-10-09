@@ -6,7 +6,7 @@ import * as NavigationBar from 'expo-navigation-bar';
 
 import { ToDoList } from "../ToDoList";
 import { TabSeparator } from "../ui/TabSeparator";
-import { DataSection } from "../DataSection";
+import { DateSection } from "../DateSection";
 
 const Tab = createBottomTabNavigator();
 
@@ -67,7 +67,7 @@ return <>
 
         <Tab.Screen
             name='Calendar' 
-            component={DataSection}
+            component={DateSection}
             options={{
                 tabBarLabelStyle: styles.label,
                 tabBarIcon: () => <TabSeparator animOpacity={listTab.fadeCalendar}/>,

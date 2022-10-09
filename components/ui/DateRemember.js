@@ -19,7 +19,7 @@ export const DateRemember = () => {
         <View style={styles.wrapper}>
 
             <Text style={styles.bottomText}>
-                Dzisiaj ({days[now.getDay()]}, {now.getDate()}.{now.getMonth()+1 <= 9 ? "0" + (now.getMonth()+1): now.getMonth()+1}.{now.getFullYear()})
+                Dzisiaj ({days[now.getDay()]}, {now.getDate() <= 9 ? "0" + now.getDate(): now.getDate()}.{now.getMonth()+1 <= 9 ? "0" + (now.getMonth()+1): now.getMonth()+1}.{now.getFullYear()})
             </Text>
             <Pressable onPress={onPressHandler}>
                 <Text style={styles.changeText}>Zmień</Text>

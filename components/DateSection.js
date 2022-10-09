@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert, Image } from 'react-native';
 import { useRef, useState } from 'react';
 import { CalendarList, LocaleConfig} from 'react-native-calendars';
-import { LongLineSeparator} from "../components/ui/LongLineSeparator"
+import { LongLineSeparator} from "./ui/LongLineSeparator"
 import { ScrollView } from 'react-native-gesture-handler';
 
 import {toDoListPlants, calendarPlants} from "../mainDataPlants"
@@ -28,21 +28,30 @@ LocaleConfig.locales['pl'] = {
   };
   LocaleConfig.defaultLocale = 'pl';
 
-export const DataSection = () => {
+  const today = new Date()
+  const fewDaysLater = new Date()
+  fewDaysLater.setDate(today.getDate() + 3)
+  const fewDaysLaterDate = fewDaysLater.toISOString().slice(0, 10)
+  const todayDate = today.toISOString().slice(0, 10)
+  const todayDateText = todayDate.split("-").reverse().join(".")
+
+export const DateSection = () => {
     const [lastClicked, setLastClicked] = useState("")
     const [todayTasks, setTodayTasks] = useState(toDoListPlants)
+    const [selectedDate, setSelectedDate] = useState(todayDateText)
 
-    const today = new Date()
-    const fewDaysLater = new Date()
-    fewDaysLater.setDate(today.getDate() + 3)
-    const fewDaysLaterDate = fewDaysLater.toISOString().slice(0, 10)
-    const todayDate = today.toISOString().slice(0, 10)
 
-    const handlePress = (date, currentTasks) => {
+
+    const handlePress = (date, currentTasks, isToday) => {
+        const formatedDate = date.split("-").reverse().join(".")
         setLastClicked(date)
-        // setTodayTasks(currentTasks)
         setTodayTasks(currentTasks)
-    } 
+        if (isToday) {
+            setSelectedDate("Dzisiaj, " + formatedDate)
+        } else {
+            setSelectedDate(formatedDate)
+        }
+    }
 
     return <ScrollView>
     <View style={{height: 45}}/>
@@ -57,7 +66,7 @@ export const DataSection = () => {
             calendarBackground: 'transparent',
         }}
         markedDates={{
-            [todayDate] : {marked: true, tasks: toDoListPlants},
+            [todayDate] : {marked: true, tasks: toDoListPlants, isToday: true},
             [fewDaysLaterDate]: {marked: true, tasks: calendarPlants},
           }}
 
@@ -67,7 +76,7 @@ export const DataSection = () => {
         }}
         dayComponent={({marking,date,state}) => {
             return (
-                <Pressable onPress={() => handlePress(date.dateString, marking?.tasks)}>
+                <Pressable onPress={() => handlePress(date.dateString, marking?.tasks, marking?.isToday)}>
                     <View style={(state ? (date.dateString === lastClicked ? [styles.today, styles.clickedDay] : styles.today) : (date.dateString === lastClicked ? styles.clickedDay : styles.defaultDay))}>
                         <Text style={(state ? styles.todayText : (date.dateString === lastClicked ? styles.selectedText : styles.defaultText))}>
                             {date.day}
@@ -79,6 +88,14 @@ export const DataSection = () => {
           }}
     />
     <LongLineSeparator style={styles.separator}/>
+    <View style={styles.tagDate}>
+        <Text style={styles.headerSec}>
+            {selectedDate}
+        </Text>
+        {todayTasks === undefined && <Text style={styles.taskDescription}>
+            Brak zadań! Twoje rośliny potrzebują jedynie ... cieszyć oko!
+        </Text>}
+    </View>
 
     {todayTasks && todayTasks.map((item, i) => { 
                     return <View style={{paddingHorizontal: 24, overflow: "hidden"}} key={i}>
@@ -98,9 +115,6 @@ export const DataSection = () => {
                             <LongLineSeparator/>
                     </View>
                 })}
-
-
-
 
                 <View style={{height: 300}}/>
     </ScrollView>
@@ -190,5 +204,19 @@ const styles = StyleSheet.create({
         marginLeft: 6,
         marginTop: 2
     },
+    headerSec: {
+        fontFamily: "NunitoBold",
+        fontSize: 20,
+        marginBottom: 12,
+        marginHorizontal: 24
+    },
+    taskDescription: {
+        fontSize: 16,
+        fontFamily: "NunitoRegular",
+        marginHorizontal: 24
+    },
+    tagDate: {
+        marginBottom: 10
+    }
     
 })
