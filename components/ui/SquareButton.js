@@ -10,7 +10,7 @@ export const SquareButton = ({reset, onPress, styleContainer, styleButton, onPre
 const onPressButtonHandler = () => {
     if (onPress !== undefined) {
         onPress()
-        reset()
+        if (reset) reset()
     }
     
     if (onPressThemeBar !== undefined) {

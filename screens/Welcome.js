@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert } from 'react-native';
+import * as NavigationBar from 'expo-navigation-bar';
 import { useState } from 'react';
 import { Button } from '../components/ui/Button';
 import { Separator } from '../components/ui/Separator';
@@ -18,6 +19,9 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
     const onPressLogin = () => {
         onPressHandlerAnim()
         onPressTheme()
+        NavigationBar.setVisibilityAsync("visible")
+        NavigationBar.setBackgroundColorAsync('white')
+        NavigationBar.setPositionAsync('absolute')
     }
 
 

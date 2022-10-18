@@ -42,10 +42,6 @@ export const TabsNavigator = () => {
         }).start();
       }
 
-      useEffect(() => {
-        NavigationBar.setPositionAsync("relative")
-        NavigationBar.setBackgroundColorAsync('white')
-      }, [])
 
 
 
@@ -141,7 +137,7 @@ const styles = StyleSheet.create({
         left: 10,
         right: 10,
         bottom: 0,
-        height: 111,
+        height: 90,
         padding: 0,
         elevation: 0,
         borderWidth: 0

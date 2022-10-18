@@ -9,7 +9,7 @@ import { Card } from './ui/Card';
 export const Collection = () => {
 
     return <>
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
     <View style={[styles.container]}>
         <PlantsNeeded
             userName={"Karolina"}

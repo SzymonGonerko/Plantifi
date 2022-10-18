@@ -15,6 +15,7 @@ import {MainNavigator} from './components/MainNavigator';
 
 import NunitoItalic from "./assets/fonts/NunitoItalic.ttf"
 import NunitoBold from "./assets/fonts/NunitoBold.ttf"
+import NunitoExtraBold from "./assets/fonts/NunitoExtraBold.ttf"
 import NunitoBoldItalic from "./assets/fonts/NunitoBoldItalic.ttf"
 import NunitoRegular from "./assets/fonts/NunitoRegular.ttf"
 import PlayfairDisplayBold from "./assets/fonts/PlayfairDisplayBold.ttf"
@@ -35,7 +36,7 @@ export default function App() {
   useEffect(() => {
     async function prepare() {
       try {
-        await Font.loadAsync({NunitoItalic, NunitoBold, NunitoBoldItalic, PlayfairDisplayBold, PlayfairDisplayRegular, NunitoRegular, Inter});
+        await Font.loadAsync({NunitoItalic, NunitoBold, NunitoBoldItalic, NunitoExtraBold ,PlayfairDisplayBold, PlayfairDisplayRegular, NunitoRegular, Inter});
         await new Promise(resolve => setTimeout(resolve, 2000));
       } catch (e) {
         console.warn(e);
@@ -49,7 +50,6 @@ export default function App() {
     NavigationBar.setPositionAsync('absolute')
   }, []);
 
-  NavigationBar.setVisibilityAsync("hidden")
   const onLayoutRootView = useCallback(async () => {
     if (appIsReady) {
       await SplashScreen.hideAsync();

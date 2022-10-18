@@ -8,7 +8,7 @@ return <View style={[styles.line, style]}/>
 const styles = StyleSheet.create({
     line: {
         height: 1,
-        width: "100%",
+        // width: "100%",
         backgroundColor: "#64768E",
         marginTop: 21,
         marginBottom: 15,
