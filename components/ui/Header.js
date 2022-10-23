@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View, Dimensions, SafeAreaView} from 'react-native';
 import { SquareButton } from './SquareButton';
 
-export const Header = ({children}) => {
+export const Header = ({children, onPressShowMainApp}) => {
 
     const goBack = () => {
+        onPressShowMainApp()
         return null
     }
     

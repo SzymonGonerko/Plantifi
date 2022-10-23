@@ -17,7 +17,7 @@ const Tab = createBottomTabNavigator();
 
 
 
-export const TabsNavigator = () => {
+export const TabsNavigator = ({onPressShowMainApp}) => {
     const listTab = {
         fadePlants: useRef(new Animated.Value(1)).current,
         fadeExplore: useRef(new Animated.Value(0)).current,
@@ -39,7 +39,7 @@ export const TabsNavigator = () => {
           toValue: 1,
           duration: 400,
           useNativeDriver: true
-        }).start();
+        }).start()
       }
 
 
@@ -55,21 +55,20 @@ return <>
     }}
     >
         <Tab.Screen 
-            name='Plants' 
-            component={Plants}
-            options={{
+          name='Plants'
+          options={{
                 tabBarItemStyle: styles.defaultTab,
                 tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadePlants} text={focused ? "Moje\u00A0rośliny" : ""} source={focused ? require("../assets/icons/nav/plantsActive.jpg"): require("../assets/icons/nav/plants.jpg")}/>,
             }}
-            listeners={({ navigation }) => ({
+          listeners={({ navigation }) => ({
                 tabPress: (e) => {
                   e.preventDefault();
                   fadeIn(listTab.fadePlants)
                   navigation.navigate('Plants');
                 },
-              })}
-        
-        />
+              })}>
+            {(props) => <Plants {...props} onPressShowMainApp={onPressShowMainApp} />}
+        </Tab.Screen>
 
         <Tab.Screen
             name='Explore' 

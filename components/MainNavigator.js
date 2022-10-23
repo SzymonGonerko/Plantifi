@@ -7,13 +7,16 @@ const Stack = createNativeStackNavigator();
 
 
 
-export const MainNavigator = () => {
+export const MainNavigator = ({onPressShowMainApp}) => {
+  console.log(onPressShowMainApp)
   return <>
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="Root"
           screenOptions={{headerShown: false}}>
-          <Stack.Screen name="Root" component={TabsNavigator} />
+            <Stack.Screen name="Root">
+              {(props) => <TabsNavigator {...props} onPressShowMainApp={onPressShowMainApp} />}
+            </Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
 </>

@@ -28,7 +28,8 @@ SplashScreen.preventAutoHideAsync();
 
 
 export default function App() {
-  const [appIsReady, setAppIsReady] = useState(false);
+  const [appIsReady, setAppIsReady] = useState(false)
+  const [logoVisibility, setLogoVisiblity] = useState(true)
   const [showMainApp, setShowMainApp] = useState(false)
   const [themeBar, setThemeBar] = useState('light')
   const [anim, setAnim] = useState("")
@@ -60,11 +61,11 @@ export default function App() {
     return null;
   }
 
-
-  
-
   const onPressHandlerAnim = () => {
       setAnim("bounceOutLeft")
+      setTimeout(() => {
+        setLogoVisiblity(false)
+      }, 2000)
     }
 
   const onPressHandlerPrev = () => {
@@ -76,7 +77,7 @@ export default function App() {
   }
 
   const onPressShowMainApp = () => {
-    setShowMainApp(true)
+    setShowMainApp(prev => !prev)
   }
 
   return <>
@@ -84,7 +85,7 @@ export default function App() {
   <StatusBar style={themeBar}/>
   {!showMainApp &&
     <View style={styles.container} onLayout={onLayoutRootView}>
-        <Logo/>
+        {logoVisibility && <Logo/>}
         <Welcome 
           onPressHandlerAnim={onPressHandlerAnim} 
           anim={anim} 
@@ -96,7 +97,7 @@ export default function App() {
    
   </View>
  }
- {showMainApp && <MainNavigator/>}
+ {showMainApp && <MainNavigator onPressShowMainApp={onPressShowMainApp}/>}
   </>
 }
 
