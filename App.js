@@ -46,7 +46,6 @@ export default function App() {
       }
     }
     prepare();
-    NavigationBar.setVisibilityAsync("hidden")
     NavigationBar.setBackgroundColorAsync('transparent')
     NavigationBar.setPositionAsync('absolute')
   }, []);
