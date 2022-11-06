@@ -3,12 +3,14 @@ import {Header} from "../components/ui/Header"
 import { GoalsNavigator } from '../components/goalsNavigation/GoalsNavigator';
 
 
-export const Goals = () => {
+export const Goals = ({onPressShowMainApp, onPressThemeBar}) => {
     return (
         <View style={styles.container}>
-            <Header>Moje Zadania</Header>
+            <Header onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar}>
+                Moje Zadania
+            </Header>
+            
             <GoalsNavigator/>
-        
         </View>
     )
 

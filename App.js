@@ -5,7 +5,7 @@ import * as NavigationBar from 'expo-navigation-bar';
 
 import { useEffect, useCallback, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, SafeAreaView, Text} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import { Logo } from './screens/Logo';
 import { Welcome } from './screens/Welcome';
@@ -77,6 +77,7 @@ export default function App() {
   }
 
   const onPressShowMainApp = () => {
+    setAnim("")
     setShowMainApp(prev => !prev)
   }
 
@@ -94,10 +95,9 @@ export default function App() {
           onPressHandlerPrev={onPressHandlerPrev}
           onPressShowMainApp={onPressShowMainApp}
           onPressThemeBar={onPressThemeBar}/>
-   
-  </View>
+    </View>
  }
- {showMainApp && <MainNavigator onPressShowMainApp={onPressShowMainApp}/>}
+ {showMainApp && <MainNavigator onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp}/>}
   </>
 }
 

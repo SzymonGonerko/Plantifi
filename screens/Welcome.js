@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert } from 'react-native';
 import * as NavigationBar from 'expo-navigation-bar';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '../components/ui/Button';
 import { Separator } from '../components/ui/Separator';
 import { TextInfo } from '../components/TextInfo';
@@ -23,6 +23,12 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
         NavigationBar.setBackgroundColorAsync('white')
         NavigationBar.setPositionAsync('absolute')
     }
+
+    useEffect(() => {
+        // NavigationBar.setVisibilityAsync("hidden")
+        NavigationBar.setBackgroundColorAsync('transparent')
+        NavigationBar.setPositionAsync('absolute')
+    }, [])
 
 
     return <>

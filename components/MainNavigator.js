@@ -7,15 +7,15 @@ const Stack = createNativeStackNavigator();
 
 
 
-export const MainNavigator = ({onPressShowMainApp}) => {
-  console.log(onPressShowMainApp)
+export const MainNavigator = ({onPressShowMainApp, onPressThemeBar}) => {
+
   return <>
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="Root"
           screenOptions={{headerShown: false}}>
             <Stack.Screen name="Root">
-              {(props) => <TabsNavigator {...props} onPressShowMainApp={onPressShowMainApp} />}
+              {(props) => <TabsNavigator {...props} onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar} />}
             </Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>

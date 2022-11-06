@@ -17,7 +17,7 @@ const Tab = createBottomTabNavigator();
 
 
 
-export const TabsNavigator = ({onPressShowMainApp}) => {
+export const TabsNavigator = ({onPressShowMainApp, onPressThemeBar}) => {
     const listTab = {
         fadePlants: useRef(new Animated.Value(1)).current,
         fadeExplore: useRef(new Animated.Value(0)).current,
@@ -67,24 +67,25 @@ return <>
                   navigation.navigate('Plants');
                 },
               })}>
-            {(props) => <Plants {...props} onPressShowMainApp={onPressShowMainApp} />}
+            {(props) => <Plants {...props} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
         </Tab.Screen>
 
         <Tab.Screen
-            name='Explore' 
-            component={Explore}
-            options={{
-                tabBarItemStyle: styles.defaultTab,
-                tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeExplore} text={focused ? "Odkrywaj" : ""} source={focused ? require("../assets/icons/nav/exploreActive.jpg"): require("../assets/icons/nav/explore.jpg")}/>,
-            }}
-            listeners={({ navigation }) => ({
-                tabPress: (e) => {
-                  e.preventDefault();
-                  fadeIn(listTab.fadeExplore)
-                  navigation.navigate('Explore');
+          name='Explore' 
+          options={{
+              tabBarItemStyle: styles.defaultTab,
+              tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeExplore} text={focused ? "Odkrywaj" : ""} source={focused ? require("../assets/icons/nav/exploreActive.jpg"): require("../assets/icons/nav/explore.jpg")}/>,
+          }}
+          listeners={({ navigation }) => ({
+              tabPress: (e) => {
+                e.preventDefault();
+                fadeIn(listTab.fadeExplore)
+                navigation.navigate('Explore');
                 },
-              })}
-        />
+          })}
+        >
+          {(props) => <Explore {...props} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+        </Tab.Screen>
 
         <Tab.Screen 
             name='Camera' 
@@ -95,37 +96,39 @@ return <>
             }}
         />
 
-        <Tab.Screen 
-            name='Goals' 
-            component={Goals}
-            options={{
-                tabBarItemStyle: styles.defaultTab,
-                tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeGoals} text={focused ? "Moje\u00A0zadania" : ""} source={focused ? require("../assets/icons/nav/goalsActive.jpg"): require("../assets/icons/nav/goals.jpg")}/>
-            }}
-            listeners={({ navigation }) => ({
-                tabPress: (e) => {
-                  e.preventDefault();
-                  fadeIn(listTab.fadeGoals)
-                  navigation.navigate('Goals');
-                },
-              })}
-        />
+        <Tab.Screen
+          name='Goals'
+          options={{
+              tabBarItemStyle: styles.defaultTab,
+              tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeGoals} text={focused ? "Moje\u00A0zadania" : ""} source={focused ? require("../assets/icons/nav/goalsActive.jpg"): require("../assets/icons/nav/goals.jpg")}/>
+          }}
+          listeners={({ navigation }) => ({
+              tabPress: (e) => {
+                e.preventDefault();
+                fadeIn(listTab.fadeGoals)
+                navigation.navigate('Goals');
+              },
+            })}
+        >
+            {(props) => <Goals {...props} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+        </Tab.Screen>
 
-        <Tab.Screen 
-            name='Shop' 
-            component={Shop}
-            options={{
-                tabBarItemStyle: styles.defaultTab,
-                tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeShop} text={focused ? "Sklep" : ""} source={focused ? require("../assets/icons/nav/shopActive.jpg"): require("../assets/icons/nav/shop.jpg")}/>
-            }}
-            listeners={({ navigation }) => ({
-                tabPress: (e) => {
-                  e.preventDefault();
-                  fadeIn(listTab.fadeShop)
-                  navigation.navigate('Shop');
-                },
-              })}
-        />
+        <Tab.Screen
+          name='Shop' 
+          options={{
+              tabBarItemStyle: styles.defaultTab,
+              tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeShop} text={focused ? "Sklep" : ""} source={focused ? require("../assets/icons/nav/shopActive.jpg"): require("../assets/icons/nav/shop.jpg")}/>
+          }}
+          listeners={({ navigation }) => ({
+              tabPress: (e) => {
+                e.preventDefault();
+                fadeIn(listTab.fadeShop)
+                navigation.navigate('Shop');
+              },
+            })}
+        >
+          {(props) => <Shop {...props} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+      </Tab.Screen>
 
     </Tab.Navigator>
 </>

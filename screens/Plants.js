@@ -3,11 +3,11 @@ import { Header } from '../components/ui/Header';
 import { PlantsNavigator } from '../components/plantsNavigation/PlantsNavigator';
 
 
-export const Plants = ({onPressShowMainApp}) => {
-console.log("Plants", onPressShowMainApp)
+export const Plants = ({onPressShowMainApp, onPressThemeBar}) => {
+
     return (
         <SafeAreaView style={styles.container}>
-                <Header onPressShowMainApp={onPressShowMainApp}>Moje Rośliny</Header>
+                <Header onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp}>Moje Rośliny</Header>
                 <PlantsNavigator/>
         </SafeAreaView>
     )
