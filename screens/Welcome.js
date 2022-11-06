@@ -25,7 +25,6 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
     }
 
     useEffect(() => {
-        // NavigationBar.setVisibilityAsync("hidden")
         NavigationBar.setBackgroundColorAsync('transparent')
         NavigationBar.setPositionAsync('absolute')
     }, [])

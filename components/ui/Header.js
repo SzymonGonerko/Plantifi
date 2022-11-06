@@ -1,5 +1,6 @@
+import * as NavigationBar from 'expo-navigation-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Modal } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { SquareButton } from './SquareButton';
 import { NavBar } from '../NavBar';
 
@@ -30,7 +31,7 @@ export const Header = ({children, onPressShowMainApp, onPressThemeBar}) => {
                     <SquareButton type={"nav"} onPress={showMenu} styleContainer={{borderWidth: 1, borderColor: "#54795E"}} styleButton={{backgroundColor: "white"}}/>
                 </View>
             </View>
-            <NavBar isVisible={navVisibility} />
+            <NavBar showMenu={showMenu} isVisible={navVisibility} />
     </>
 }
 
