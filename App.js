@@ -81,7 +81,6 @@ export default function App() {
   }
 
   return <>
-  
   <StatusBar style={themeBar}/>
   {!showMainApp &&
     <View style={styles.container} onLayout={onLayoutRootView}>

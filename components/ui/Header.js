@@ -1,7 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Modal } from 'react-native';
 import { SquareButton } from './SquareButton';
+import { NavBar } from '../NavBar';
 
 export const Header = ({children, onPressShowMainApp, onPressThemeBar}) => {
+    const [navVisibility, setNavVisiliblity] = useState(false)
 
     const goBack = () => {
         onPressThemeBar()
@@ -10,7 +13,7 @@ export const Header = ({children, onPressShowMainApp, onPressThemeBar}) => {
     }
     
     const showMenu = () => {
-        return null
+        setNavVisiliblity(prev => !prev)
     }
     
 
@@ -27,6 +30,7 @@ export const Header = ({children, onPressShowMainApp, onPressThemeBar}) => {
                     <SquareButton type={"nav"} onPress={showMenu} styleContainer={{borderWidth: 1, borderColor: "#54795E"}} styleButton={{backgroundColor: "white"}}/>
                 </View>
             </View>
+            <NavBar isVisible={navVisibility} />
     </>
 }
 

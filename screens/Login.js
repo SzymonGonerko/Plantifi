@@ -36,7 +36,7 @@ const onBlurHandler = () => {
               style={styles.background}
               imageStyle={styles.img}
               />
-              <SquareButton type={"arrow"} onPressThemeBar={onPressThemeBar} onPress={onPressHandlerPrev} styleContainer={styles.btnSqure}/>
+              <SquareButton onLogin={true} type={"arrow"} onPressThemeBar={onPressThemeBar} onPress={onPressHandlerPrev} styleContainer={styles.btnSqure}/>
           </View>
 
           <View style={styles.areaLogin }>

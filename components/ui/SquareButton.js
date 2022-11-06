@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native';
+import * as NavigationBar from 'expo-navigation-bar';
 
 import AntDesign from "react-native-vector-icons/AntDesign"
 import EvilIcons from "react-native-vector-icons/EvilIcons"
 import Entypo from "react-native-vector-icons/Entypo"
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 
-export const SquareButton = ({reset, onPress, styleContainer, styleButton, onPressThemeBar, type}) => {
+export const SquareButton = ({reset, onPress, styleContainer, styleButton, onPressThemeBar, type, onLogin}) => {
 
 const onPressButtonHandler = () => {
     if (onPress !== undefined) {
@@ -15,6 +16,9 @@ const onPressButtonHandler = () => {
     
     if (onPressThemeBar !== undefined) {
         onPressThemeBar()
+    }
+    if (onLogin) {
+        NavigationBar.setBackgroundColorAsync('transparent')
     }
     
 }
