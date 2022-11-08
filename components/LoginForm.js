@@ -54,6 +54,7 @@ const setVisiblePassword = () => {
             label="email"
             keyboardType="email-address"
             onFocus={onFocusHandler}
+            activeLineWidth={1.2}
             onBlur={onBlurHandler}
             baseColor={correctLogin ? "green" : "#64768E"}
             inputContainerStyle={styles.loginInputContainer}
@@ -70,6 +71,7 @@ const setVisiblePassword = () => {
             baseColor={correctPasword ? "red" : "#64768E"}
             inputContainerStyle={styles.passwordInputContainer}
             keyboardType={"number-pad"}
+            activeLineWidth={1.2}
             tintColor={correctPasword ? "red" : "black"}
             title={correctPasword ? "Hasło niepoprawne!" : ""}
             secureTextEntry={securePassword}
