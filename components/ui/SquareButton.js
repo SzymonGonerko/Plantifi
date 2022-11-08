@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
 import * as NavigationBar from 'expo-navigation-bar';
 
 import AntDesign from "react-native-vector-icons/AntDesign"
@@ -32,6 +32,7 @@ const onPressButtonHandler = () => {
            {type === "nav" ? <EvilIcons name='navicon' style={{color: "#54795E", fontSize: 25}}/> : null}
            {type === "add" ? <Entypo name='plus' style={{color: "#54795E", fontSize: 20}}/> : null}
            {type === "slider" ? <FontAwesome name='sliders' style={{color: "#54795E", fontSize: 23}}/> : null}
+           {type === "logOut" ? <Image style={{width: 20, height: 20}} resizeMode="contain" source={require("../../assets/images/NavBar/logOut.png")}/> : null}
 
         </Pressable>
     </View>
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
         paddingRight: 1,
         justifyContent: "center",
         alignItems: "center",
-        elevation: 2,
+        // elevation: 2,
     },
     pressed: {
         opacity: 0.75,
