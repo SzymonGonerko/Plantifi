@@ -1,4 +1,15 @@
 import { StyleSheet, View, Alert} from 'react-native';
+
+import * as Notifications from 'expo-notifications';
+
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: true,
+    shouldSetBadge: false,
+  }),
+});
+
 import { useState } from 'react';
 import { OutlinedTextField } from 'rn-material-ui-textfield'
 import AntDesign from "react-native-vector-icons/AntDesign"
@@ -16,6 +27,26 @@ const [form, setForm] = useState({
     login: "",
     password: ""
 })
+
+async function schedulePushNotification() {
+    if (Platform.OS === 'android') {
+      await Notifications.setNotificationChannelAsync('default', {
+        name: 'default',
+        importance: Notifications.AndroidImportance.MAX,
+        vibrationPattern: [0, 250, 250, 250],
+        lightColor: '#FF231F7C',
+      });
+    }
+    await Notifications.scheduleNotificationAsync({
+      content: {
+        title: "Pamiętaj o swoich roślinkach 🪴🌾",
+        body: 'Pielegnuj swoje krzaczki codziennie 😊 Niektóre z nich wymagają podlania 💦 Pozdrawiamy zespół Plantify',
+      },
+      trigger: { seconds: 2 },
+    });
+  }
+  
+
 
 const onChangeLoginHandler = (e) => {
     setForm(prev => ({login: e, password: prev.password}))
@@ -37,6 +68,7 @@ const onSubmitHandler = () => {
     }
     if (form.password === "1234" && (form.login === "anna.kowalska@gmail.com" || form.login === "Anna.kowalska@gmail.com")) {
         onPressShowMainApp()
+        schedulePushNotification()
     }
 }
 
