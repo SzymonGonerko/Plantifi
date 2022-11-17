@@ -46,8 +46,6 @@ export default function App() {
       }
     }
     prepare();
-    NavigationBar.setBackgroundColorAsync('transparent')
-    NavigationBar.setPositionAsync('absolute')
   }, []);
 
   const onLayoutRootView = useCallback(async () => {

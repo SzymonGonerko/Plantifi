@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.szymon1993.plantify"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,15 +34,15 @@
       [
         "expo-notifications",
         {
-          "icon": "./local/assets/icon.png",
           "color": "#54795E",
-          "backgroundColor": "#54795E",
-          "sounds": [
-            "./local/assets/notification-sound.wav",
-            "./local/assets/notification-sound-other.wav"
-          ]
+          "backgroundColor": "#54795E"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "da7f0541-5b37-4ea3-80d5-5cdc115076ad"
+      }
+    }
   }
 }

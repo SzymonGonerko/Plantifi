@@ -42,7 +42,7 @@ async function schedulePushNotification() {
         title: "Pamiętaj o swoich roślinkach 🪴🌾",
         body: 'Pielegnuj swoje krzaczki codziennie 😊 Niektóre z nich wymagają podlania 💦 Pozdrawiamy zespół Plantify',
       },
-      trigger: { seconds: 2 },
+      trigger: { seconds: 10 },
     });
   }
   
