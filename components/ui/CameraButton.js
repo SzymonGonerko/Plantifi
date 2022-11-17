@@ -1,23 +1,28 @@
+import { useState } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Button } from 'react-native';
 
 import FontAwesome from "react-native-vector-icons/FontAwesome"
+import { PhotoInstruction } from '../PhotoInstruction';
 
 const windowWidth = Dimensions.get('screen').width;
 
 export const CameraButton = () => {
+    const [showPhotoInstruction, setShowPhotoInstruction] = useState(false)
 
     return <>
     <View style={styles.container}>
         <ImageBackground style={styles.imgBackground} source={require("../../assets/icons/nav/Union.png")}/>
-
             <View style={styles.circle}>
             <Pressable style={({pressed}) => pressed ? [styles.circleContainer, styles.pressed] : [styles.circleContainer]}
+                onPress={() => setShowPhotoInstruction(prev => !prev)}
                 android_ripple={{color: "#9BA9BC"}}>
                 <FontAwesome name={"camera"} color="white" style={{fontSize: 20}}/>
                 </Pressable>
             </View>
-
     </View>
+    <PhotoInstruction isVisible={showPhotoInstruction}/>
+
+
     </>
 }
 

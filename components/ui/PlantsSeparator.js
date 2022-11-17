@@ -4,7 +4,7 @@ import AntDesign from "react-native-vector-icons/AntDesign"
 
 const windowWidth = Dimensions.get('screen').width;
 
-export const PlantsSeparator = ({styleContainer, styleText, children, onlyText}) => {
+export const PlantsSeparator = ({styleContainer, styleText, children, onlyText, lineStyle}) => {
     return <>
     <View style={[styles.container, styleContainer]}>
         <View style={styles.lineLeft}/>
@@ -13,7 +13,7 @@ export const PlantsSeparator = ({styleContainer, styleText, children, onlyText})
             {children}
         </Text>
       
-        <View style={[styles.lineRight, {width: (onlyText ? "70%": "58%")}]}/>
+        <View style={[styles.lineRight, {width: (onlyText ? "70%": "58%")}, lineStyle]}/>
         {!onlyText &&<View style={styles.iconContainer}>
             <AntDesign name='right' style={{color: "black", fontSize: 18}}/>
         </View>}
