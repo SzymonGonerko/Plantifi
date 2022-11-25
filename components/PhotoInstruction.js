@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Modal, TouchableOpacity, Image } from 'react-native';
 import { Camera, CameraType } from 'expo-camera';
 import { PlantsSeparator } from './ui/PlantsSeparator';
@@ -6,10 +7,9 @@ import AntDesign from "react-native-vector-icons/AntDesign"
 import { useState } from 'react';
 import { CustomCamera } from './CustomCamera';
 
-export const PhotoInstruction = ({isVisible}) => {
-    const [type, setType] = useState(CameraType.back);
+export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressHandler}) => {
     const [permission, requestPermission] = Camera.useCameraPermissions();
-    const [showCamera, setShowCamera] = useState(false)
+
 
     if (!permission) {
         return <View />;
@@ -23,14 +23,7 @@ export const PhotoInstruction = ({isVisible}) => {
           </View>
         );
       }
-    
-      function toggleCameraType() {
-        setType(current => (current === CameraType.back ? CameraType.front : CameraType.back));
-      }
 
-    const onPressHandler = () => {
-       setShowCamera(prev => !prev)
-    }
 
 
 
@@ -76,7 +69,7 @@ export const PhotoInstruction = ({isVisible}) => {
             </View>
         </View>}
 
-        {showCamera && <CustomCamera/>}
+        {showCamera && <CustomCamera onPressHandler={onPressHandler} onPressCamera={onPressCamera}/>}
 
     </Modal>
     </>

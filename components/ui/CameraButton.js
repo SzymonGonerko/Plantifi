@@ -1,6 +1,6 @@
+import React from "react";
 import { useState } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Button } from 'react-native';
-import * as NavigationBar from 'expo-navigation-bar';
 
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 import { PhotoInstruction } from '../PhotoInstruction';
@@ -9,11 +9,16 @@ const windowWidth = Dimensions.get('screen').width;
 
 export const CameraButton = () => {
     const [showPhotoInstruction, setShowPhotoInstruction] = useState(false)
+    const [showCamera, setShowCamera] = useState(false)
 
 
     const onPressCamera = () => {
         setShowPhotoInstruction(prev => !prev)
     }
+
+    const onPressHandler = () => {
+        setShowCamera(prev => !prev)
+     }
 
     return <>
     <View style={styles.container}>
@@ -26,7 +31,7 @@ export const CameraButton = () => {
                 </Pressable>
             </View>
     </View>
-    <PhotoInstruction isVisible={showPhotoInstruction}/>
+    <PhotoInstruction onPressHandler={onPressHandler} showCamera={showCamera} onPressCamera={onPressCamera} isVisible={showPhotoInstruction}/>
 
 
     </>
