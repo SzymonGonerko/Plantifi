@@ -6,12 +6,16 @@ import { ShortLine } from './ui/ShortLine';
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { Button } from './ui/Button';
 import { LongLineSeparator } from "./ui/LongLineSeparator";
+import { PopUpSuccess } from "./ui/PopUpSuccess";
 
 export const PlantDetails = ({onPressSquare}) => {
+  const [addedNew, setAddedNew] = useState(false)
 
 
-const onPressBtnHandler = () => {
-  return null
+  const addPlantsToCollection = () => {
+    setAddedNew(true)
+    setTimeout(() => {onPressSquare()}, 2000)
+    
 }
   
     return <>
@@ -38,20 +42,21 @@ const onPressBtnHandler = () => {
             </ScrollView>
             
             <Button
-            onPress={onPressBtnHandler}
+            onPress={addPlantsToCollection}
             icon={<AntDesign name='plus' style={styles.iconStyle}/> }
             styleContainer={styles.btnStyle}
             >
               Dodaj do moich roślin
             </Button>
         </View>
+        {addedNew && <PopUpSuccess onPressClose={() => setAddedNew(false)}/>}
     </>
 }
 
 const styles = StyleSheet.create({
     bgcContainer: {
       width: "100%",
-      height: "30%",
+      height: "35%",
       borderRadius: 17
   },
   background: {
