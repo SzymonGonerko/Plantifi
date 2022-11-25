@@ -5,6 +5,7 @@ import { Camera, CameraType } from 'expo-camera';
 import { useState, useRef } from 'react';
 import {APP_PLANTID_API_KEY, APP_PLANTID_API_URL} from '@env'
 import {SquareButton} from "../components/ui/SquareButton"
+import { PlantDetails } from "./PlantDetails";
 
 
 export const CustomCamera = ({onPressCamera, onPressHandler}) => {
@@ -12,6 +13,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     const [permission, requestPermission] = Camera.useCameraPermissions();
     const cameraRef = useRef()
     const [photo, setPhoto] = useState()
+    const [plantsIDResponse, setplantsIDResponse] = useState(false)
 
 
     if (!permission) {
@@ -32,44 +34,46 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
       }
 
       const takePhoto = async () => {
-        const options = {
-          quality: 1,
-          base64: true,
-          exif: false
-        }
+      //   const options = {
+      //     quality: 1,
+      //     base64: true,
+      //     exif: false
+      //   }
 
-        let newPhoto = await cameraRef.current.takePictureAsync(options)
-        setPhoto(newPhoto)
+      //   let newPhoto = await cameraRef.current.takePictureAsync(options)
+      //   setPhoto(newPhoto)
 
-        const data = {
-          api_key: APP_PLANTID_API_KEY,
-          images: [newPhoto.base64],
-          modifiers: ["crops_fast", "similar_images"],
-          plant_language: "pl",
-          plant_details: 
-            [
-            "common_names", "classification",
-            "description",
-            "taxonomy",
-            "treatment",
-            "url"
-            ],
-        };
+      //   const data = {
+      //     api_key: APP_PLANTID_API_KEY,
+      //     images: [newPhoto.base64],
+      //     modifiers: ["crops_fast", "similar_images"],
+      //     plant_language: "pl",
+      //     plant_details: 
+      //       [
+      //       "common_names", "classification",
+      //       "description",
+      //       "taxonomy",
+      //       "treatment",
+      //       "url"
+      //       ],
+      //   };
 
-        fetch(APP_PLANTID_API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
-      .then((response) => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+      //   fetch(APP_PLANTID_API_URL, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(data),
+      // })
+      // .then((response) => response.json())
+      // .then(data => {
+      //   console.log('Success:', data);
+      // })
+      // .catch((error) => {
+      //   console.error('Error:', error);
+      // })
+      console.log("zdjęcie !")
+      setplantsIDResponse(true)
       }
 
 
@@ -93,6 +97,8 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
 
     return <>
     <View style={styles.container}>
+        {!plantsIDResponse &&
+          <View style={{flex: 1}}>
             <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={{position: "absolute", top: 20, left: 20, zIndex: 2}}/>
             <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
                 <Image source={require("../assets/icons/frame.png")} resizeMode={"contain"} style={styles.frame}/>
@@ -115,6 +121,13 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
                 </View>
 
             </Camera>
+          </View>
+          }
+
+          {plantsIDResponse && <PlantDetails onPressSquare={onPressSquare}/>}
+
+          
+
     </View>
     </>
 }
@@ -122,7 +135,6 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
       },
       camera: {
         flex: 1,
