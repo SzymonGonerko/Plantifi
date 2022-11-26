@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, View, Alert} from 'react-native';
 
 import * as Notifications from 'expo-notifications';
@@ -39,8 +40,9 @@ async function schedulePushNotification() {
     }
     await Notifications.scheduleNotificationAsync({
       content: {
-        title: "Pamiętaj o swoich roślinkach 🪴🌾",
-        body: 'Pielegnuj swoje krzaczki codziennie 😊 Niektóre z nich wymagają podlania 💦 Pozdrawiamy zespół Plantify',
+        title: "Pamiętaj o swoich krzaczkach🌾",
+        body: 'Jest nam miło, że z nami jesteś! Pielegnuj swoje krzaczki codziennie 😊 Niektóre z nich wymagają podlania 💦 Pozdrawiamy zespół Plantify',
+
       },
       trigger: { seconds: 10 },
     });

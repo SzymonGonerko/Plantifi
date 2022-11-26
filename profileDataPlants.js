@@ -191,8 +191,199 @@ grubosz: {
         step: 4
       }
     }
-}
+},
 
+
+
+kaktus: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 20 cm",
+      care: "łatwy",
+      description: "Kaktusy wywodzą się z rodziny sukulentów, czyli tak zwanych kserofitów. Są to rośliny, które odpowiednio przystosowały się do życia w warunkach z ograniczonym dostępem do wody. W tym celu wykształciły specjalną tkankę, potrafiącą ją gromadzić. Na pewno wyobrażasz sobie kaktusy na pustyni i słusznie – to właśnie suche tereny obu Ameryk są środowiskiem naturalnym tych sukulentów. Cechą charakterystyczną kaktusów są ich ciernie, potocznie zwane kolcami. W rzeczywistości to przekształcone liście, które pokrywają całą łodygę. Gatunek ten ceniony jest za egzotyczny wygląd i ogromną różnorodność rodzajów. Ponieważ równocześnie jest łatwy w uprawie, bardzo chętnie wykorzystuje się go w formie roślin ozdobnych. Kaktusy w doniczce spotkasz w domach, ogrodach i szklarniach na całym świecie."
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 98},
+      temperature: {inWords: "30°C", inPercentage: 80},
+      position: {inWords: "przy", inPercentage: 70},
+      whiff: {inWords: "wysoki", inPercentage: 60},
+      humidity: {inWords: "wysoka", inPercentage: 80},
+    },
+    care: {
+      watering: {
+        inWords: "Wiele osób zadaje sobie pytanie, co ile podlewać kaktusy. Jak już wspomniano, rośliny te nie potrzebują dużo wody – wystarczy im podlewanie raz na 2-3 tygodnie. Nawet jeśli zapomnimy je podlać w danym miesiącu, to nic im się nie stanie. Ważne jest to, aby nie dopuść do tego, aby kaktusy zaczęły się marszczyć.",
+        inPercentage: 10,
+        step: 4
+      },
+      transplanting: {
+        inWords: "Młode okazy można przesadzać nie częściej niż co 2 lata a te starsze nawet co 5 lat. Jeśli roślina nie ma już zbyt ciasnej doniczki, to wystarczy zebrać nieco wierzchniej warstwy ziemi (uważając by nie uszkodzić korzeni) i w to miejsce wsypać mieszankę dedykowaną kaktusom.",
+        inPercentage: 20,
+        step: 3
+      },
+      cutting: {
+        inWords: "Przycinanie kaktusów jest kwestią dość kontrowersyjną i większość hodowców jest zdania, że w przypadku sukulentów doniczkowych nie ma takiej potrzeby. Można jednak to zrobić, gdy chcemy wykorzystać odnogę kaktusa do uzyskania nowej rośliny w osobnej doniczce.",
+        inPercentage: 1,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Okres nawożenia rozpoczyna się w połowie kwietnia lub początkiem maja, natomiast kończymy nawożenie końcem sierpnia. Na częstotliwość nawożenia kaktusowatych duży wpływ ma podłoże w jakim są one uprawiane. Jeżeli uprawiane są w podłożu czysto mineralnym, to znacznie częściej należy je zasilać odpowiednią odżywką, niż uprawiane w podłożu z zawartością ziemi próchniczej.",
+        inPercentage: 15,
+        step: 4
+      }
+    }
+},
+
+kaktusKwitnący: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 50 cm",
+      care: "łatwy",
+      description: "Kwitnące kaktusy to zjawisko rzadkie, tym bardziej cieszy, gdy uda się sprawić, że roślina zakwitła. Są tak kapryśne i wymagające, że trzeba naprawdę mieć wiedzę i sprostać ich wymaganiom, żeby cieszyć się widokiem kwiatka. Są odmiany kaktusów, które mogą zakwitnąć dość szybko, bo już po roku lub dwóch, a są takie, u których pąki kwiatowe można zobaczyć (albo i nie) dopiero po kilkudziesięciu latach. Ciekawostką jest, że kaktusy nie kwitną na niebiesko, za to można zobaczyć kwiaty białe, żółte, seledynowe, różowe, w odcieniach fioletu a także od pomarańczowego po czerwone aż do purpurowych."
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 80},
+      temperature: {inWords: "13°C", inPercentage: 12},
+      position: {inWords: "obok", inPercentage: 40},
+      whiff: {inWords: "niski", inPercentage: 40},
+      humidity: {inWords: "średnia", inPercentage: 60},
+    },
+    care: {
+      watering: {
+        inWords: "Przed nadejściem zimy, od października, ogranicza się podlewanie do tego stopnia, że prawie zasusza się kaktusy. Jeśli będą miały zbyt mokro, zaczną gnić. Natomiast gdy nadchodzi wiosna i zaczynają budzić się do życia zaczyna się od ich zraszania i przechodzi do zraszania i podlewania. ",
+        inPercentage: 7,
+        step: 4
+      },
+      transplanting: {
+        inWords: "Kwitnących kaktusów nie należy przesadzać - poczekaj, aż kwiaty przekwitną i zaschną. Poza tym, jeśli kaktus kwitnie najwyraźniej jest zadowolony z życia i spokojnie może jeszcze poczekać na nową doniczkę.",
+        inPercentage: 0,
+        step: 4
+      },
+      cutting: {
+        inWords: "Epifilum należą do kaktusów dość dużych i szybko rosnących, jeśli wiec chcemy ograniczyć ich wielkość, możemy je przyciąć. Należy jednak robić to ostrożnie, gdyż kwiaty zawiązują się na 2-3 letnich pędach, a wiec jeśli wytniemy ich zbyt dużo, pąki kwiatowe nie będą miały gdzie się zawiązać.",
+        inPercentage: 1,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Najlepsze są nawozy, które zawierają dużo azotu (potrzebują go przede wszystkim do tworzenia zielonej masy) oraz potasu i fosforu (niezbędnych m.in. do kwitnienia). Najwygodniej dodawać nawozy do wody do podlewania albo stosować nawozy w pałeczkach oraz ampułkach.",
+        inPercentage: 35,
+        step: 3
+      }
+    }
+},
+
+pieniążek: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 30 cm",
+      care: "łatwy",
+      description: "Klasyczny pieniążek (pilea) jest sukulentem dorastającym maksymalnie do 20-30 cm wysokości i odznaczającym się ciemnozielonymi, mięsistymi liśćmi, których średnica może sięgać nawet 10 cm! Nietypowy wygląd, który zyskał roślinie popularność w świecie ogrodnictwa, wynika z długich ogonków liści, które w warunkach domowych wyciągają się nawet na 30 cm! Kwiaty pieniążka są bardzo drobne i subtelne, pnące się w górę na dodatkowych pędach, ale w uprawie pod dachem kwitnienie należy do rzadkości. Pieniążek (Peperomioides pilea) cieszy się olbrzymią popularnością zwłaszcza w Skandynawii, głównie dzięki chińskiemu eksportowi Agnara Espergena, i stał się ważnym elementem tamtejszej stylistyki, szczególnie w zakresie wystroju wnętrz."
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 41},
+      temperature: {inWords: "20°C", inPercentage: 48},
+      position: {inWords: "dalej", inPercentage: 20},
+      whiff: {inWords: "średni", inPercentage: 43},
+      humidity: {inWords: "średnia", inPercentage: 52},
+    },
+    care: {
+      watering: {
+        inWords: "Kwiatek lubi umiarkowane podlewanie, dobrze reaguje na delikatne zraszanie liści. Ziemia w doniczce powinna być lekko wilgotna. Nie należy dopuszczać do przelania - wtedy korzenie rośliny mogą niestety zgnić, a listki czernieją i odpadają. Zimą podlewanie nieco ograniczamy.",
+        inPercentage: 45,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Powolny wzrost sprawia, że pieniążek może rosnąć w jednej doniczce kilka lat. Jeśli chcemy go przesadzić, przeznaczmy dla niego nową, o jeden rozmiar większą doniczkę (koniecznie z otworami drenażowym w dnie). Na dno doniczki wsypmy warstwę drenażu - drobny żwir lub keramzyt, po czym podłoże uniwersalne do roślin doniczkowych z domieszką piasku (w stosunku 3:1). Jest to konieczne, ponieważ domieszka piasku zwiększy przepuszczalność podłoża. W czasie przesadzania można od rośliny matecznej oddzielić młode odrosty, które wyrosły od korzeni i posadzić je w osobnych, mniejszych doniczkach pamiętając o zapewnieniu im drenażu i żyznego, przepuszczalnego podłoża. To jedyny możliwy sposób na rozmnażanie pieniążka; nie próbujmy nigdy rośliny przycinać od góry, ponieważ bardzo źle znosi cięcie.",
+        inPercentage: 30,
+        step: 3
+      },
+      cutting: {
+        inWords: "Nie znosi przycinania, ponieważ zabieg mocno ją osłabia. Nie może też rosnąć w zbyt słonecznym miejscu lub za szybą południowego okna, gdyż wtedy silne słońce parzy jej liście. Zabójcza jest dla niej również niska temperatura, która powoduje czernienie i opadanie liści, a nawet zamieranie całych roślin ",
+        inPercentage: 0,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Pieniążka warto nawozić w okresie wiosenno letnim preparatami do roślin zielonych lub specjalnymi nawozami np. do sukulentów. Nawożenie jednak nie może być zbyt obfite, dlatego najlepiej stosować nawóz rozcieńczony w wodzie w proporcji 1:1",
+        inPercentage: 46,
+        step: 2
+      }
+    }
+},
+
+wieżownica: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 100 cm",
+      care: "łatwy",
+      description: "Sansewieria, zwana także wężownicą, to wyjątkowy kwiat, który dzięki swojej prostocie i charakterystycznej formie zyskał miłośników wśród ludzi na całym świecie. W czym tkwi wyjątkowość tej rośliny? Jak o nią dbać, by wyglądała okazale? Sansewieria obejmuje kilkadziesiąt gatunków wężownic, których naturalnym środowiskiem są ziemie Afryki, południowej Azji oraz Madagaskaru. Gruba powierzchnia podłużnych liści sukulentów oznacza, że jest to roślina przystosowana do wymagającego kamienistego i suchego podłoża. Dzięki tym właściwościom wężownicę poleca się tym osobom, które nie mają ręki do kwiatów. Nieregularne podlewanie czy pozostawienie donicy na słońcu nie sprawi, że będziesz musiał pożegnać się z tą zieloną dekoracją. Warto dodać, że sansewieria (wężownica) zawsze prezentuje się rewelacyjnie, mimo że nie trzeba o nią szczególnie dbać. Miłośnicy minimalizmu doceniają żółto-zieloną barwę liści oraz ich prosty podłużny kształt – atrybuty te sprawiają, że egzotyczna roślina pasuje do każdego, nawet najbardziej eleganckiego i surowego wnętrza. "
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 55},
+      temperature: {inWords: "23°C", inPercentage: 56},
+      position: {inWords: "pod", inPercentage: 72},
+      whiff: {inWords: "wysokie", inPercentage: 58},
+      humidity: {inWords: "wysoka", inPercentage: 61},
+    },
+    care: {
+      watering: {
+        inWords: "Sansewierię latem podlewamy raz na tydzień lub raz na dwa tygodnie, zimą podlewanie ograniczamy w myśl zasady: im chłodniej, tym mniej wody. Czasem wystarczy podlać ją raz na trzy-cztery tygodnie (dopiero kiedy ziemia w doniczce wyraźnie przeschnie).",
+        inPercentage: 60,
+        step: 1
+      },
+      transplanting: {
+        inWords: "Przesadzanie sansewierii wykonuje się wiosną, gdy korzenie rośliny nie mieszczą się już w doniczce (czasem może dojść nawet do rozsadzenia doniczki przez korzenie rośliny). Ponieważ sansewiera dość dobrze radzi sobie w małych doniczkach, kolejną doniczkę dajemy zaledwie o jeden rozmiar większą od poprzedniej.",
+        inPercentage: 45,
+        step: 2
+      },
+      cutting: {
+        inWords: "Przycinanie liści sansewierii należy definitywnie odradzić, ponieważ przycięte pędy więcej nie odrosną.",
+        inPercentage: 0,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Jeśli chodzi o nawożenie to sansewierię należy latem zasilać co około 2-3 tygodnie, zimą natomiast całkowicie zaprzestajemy nawożenia. Najlepszy będzie płynny, wieloskładnikowy nawóz dla roślin ozdobnych z liści, można też używać nawozów przeznaczonych dla kaktusów.",
+        inPercentage: 55,
+        step: 2
+      }
+    }
+},
+
+zamiokulkas: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 150 cm",
+      care: "łatwy",
+      description: "Zamiokulkas zamiolistny w naturalnym środowisku występuje we wschodnich i południowych częściach Afryki (m.in. na Zanzibarze i Tanzanii). Europejskim botanikom zamiokulkas był znany już od XIX wieku, jednak popularnością jako roślina doniczkowa cieszy się dopiero od niedawna (w 1996 roku holenderscy hodowcy wprowadzili na europejski rynek pierwsze sadzonki zamiokulkasa). W naturalnym środowisku zamiokulkas zamiolistny może osiągać wysokość 1-1.5 m, ale w domowych warunkach zazwyczaj nie przekracza 70 cm. Jego rozrost w dużej mierze zależy od warunków i zabiegów pielęgnacyjnych – jeśli odpowiednio o niego zadbamy, odwdzięczy się pięknymi, lśniącymi liśćmi – a nawet kwiatami! Warto wspomnieć kilka słów o budowie i wyglądzie zamiokulkasa, ponieważ to ona jest sekretem jest wytrzymałości. Zamiokulkas pokrojem przypomina krzak. Roślina ma dużą tendencję do „rozkładania się” na boki, warto więc zapewnić jej sporo miejsca. Pod powierzchnią ziemi znajduje się bulwiaste kłącze z korzeniami, w której roślina magazynuje wodę. Podobną funkcję pełnią mięsiste, grube pędy, na których rosną krótkie, jajowato-eliptyczne liście pokryte woskiem."
+    },
+    requirements: {
+      insolation: {inWords: "niskie", inPercentage: 10},
+      temperature: {inWords: "23°C", inPercentage: 56},
+      position: {inWords: "dalej", inPercentage: 4},
+      whiff: {inWords: "wysokie", inPercentage: 58},
+      humidity: {inWords: "wysoka", inPercentage: 61},
+    },
+    care: {
+      watering: {
+        inWords: "Zamiokulkas, podobnie jak kaktusy, jest sukulentem. Oznacza to, iż ma zdolność do gromadzenia wody. Świadczą o tym jego zgrubiałe ogonki liściowe i listki, a także bulwiaste kłącze. Z tego względu zamiokulkasa podlewaj bardzo oszczędnie, dopiero gdy lekko przeschnie podłoże. Zbyt częste podlewanie jest najczęstrzym błędem popełnianym podczas pielęgnacji zamiokulkasa. Do podlewania najlepiej używaj wody odstałej o temperaturze pokojowej. Unikaj polewania liści, bo wtedy pojawiają się na nich brzydkie plamy (osady soli).",
+        inPercentage: 23,
+        step: 3
+      },
+      transplanting: {
+        inWords: "Wiosną, najlepiej w marcu lub kwietniu, wykonuje się przesadzanie zamiokulkasa. Młode okazy przesadza się co roku, starsze - co dwa lub trzy lata. Innym możliwym terminem na przesadzanie zamiokulkasa jest końcówka lata, kiedy kłącza rośliny silnie przyrastają (podczas przesadzania uważaj aby nie uszkodzić delikatnego kłącza). Doniczka powinna być odpowiednio duża, gdyż kłącza zamiokulkasa osiągają stosunkowo duże rozmiary. Nie powinna być jednak zbyt głęboka, a na dnie musi być kilku centymetrowa warstwa drenażu. I oczywiście otwory odpływowe w dnie doniczki. To wszystko zapobiegnie gniciu kłącza.",
+        inPercentage: 45,
+        step: 2
+      },
+      cutting: {
+        inWords: "Zamiokulkas możemy rozmnożyć również z liści odciętych tuż przy nasadzie, jednak jest to bardziej wymagający proces, który najlepiej wykonywać w czerwcu. Odcięte listki należy zasadzić ukośnie w podłożu i poczekać nawet kilka lat na rozwinięcie się pełnowymiarowej rośliny.",
+        inPercentage: 1,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Pielęgnacja zamiokulkasa nie wymaga tak intensywnego nawożenia, jak w przypadku większości innych roślin. Zamiokulkasa w okresie wegetacji wystarczy zasilać co 2 lub 3 tygodnie nawozami wieloskładnikowymi rozcieńczonymi do połowy lub nawet zaledwie 1/4 dawki zalecanej dla większości innych roślin doniczkowych. Zbyt intensywne nawożenie zamikulkasa, podobnie jak zbyt intensywne podlewanie, doprowadzi do gnicia kłącza i liści rośliny.",
+        inPercentage: 76,
+        step: 1
+      }
+    }
+},
 
 
 }
