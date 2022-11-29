@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
 import { useEffect, useRef, useState } from 'react';
 import { PlantsNeeded } from './PlantsNeeded';
@@ -31,6 +32,7 @@ export const Collection = () => {
                     <Card 
                         name={item[1].name}
                         src={item[0]}
+                        profile={item[1].profile}
                         takenCare={item[1].takenCare} 
                         needWater={item[1].needWater}
                         days={item[1].days}/>}

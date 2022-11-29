@@ -34,46 +34,46 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
       }
 
       const takePhoto = async () => {
-      //   const options = {
-      //     quality: 1,
-      //     base64: true,
-      //     exif: false
-      //   }
+        const options = {
+          quality: 1,
+          base64: true,
+          exif: false
+        }
 
-      //   let newPhoto = await cameraRef.current.takePictureAsync(options)
-      //   setPhoto(newPhoto)
+        let newPhoto = await cameraRef.current.takePictureAsync(options)
+        setPhoto(newPhoto)
 
-      //   const data = {
-      //     api_key: APP_PLANTID_API_KEY,
-      //     images: [newPhoto.base64],
-      //     modifiers: ["crops_fast", "similar_images"],
-      //     plant_language: "pl",
-      //     plant_details: 
-      //       [
-      //       "common_names", "classification",
-      //       "description",
-      //       "taxonomy",
-      //       "treatment",
-      //       "url"
-      //       ],
-      //   };
+        const data = {
+          api_key: APP_PLANTID_API_KEY,
+          images: [newPhoto.base64],
+          modifiers: ["crops_fast", "similar_images"],
+          plant_language: "pl",
+          plant_details: 
+            [
+            "common_names", "classification",
+            "description",
+            "taxonomy",
+            "treatment",
+            "url"
+            ],
+        };
 
-      //   fetch(APP_PLANTID_API_URL, {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(data),
-      // })
-      // .then((response) => response.json())
-      // .then(data => {
-      //   console.log('Success:', data);
-      // })
-      // .catch((error) => {
-      //   console.error('Error:', error);
-      // })
-      console.log("zdjęcie !")
-      setplantsIDResponse(true)
+        fetch(APP_PLANTID_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then((response) => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      })
+      // console.log("zdjęcie !")
+      // setplantsIDResponse(true)
       }
 
 

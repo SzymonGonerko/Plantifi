@@ -385,6 +385,575 @@ zamiokulkas: {
     }
 },
 
+bananowiec: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 200 cm",
+      care: "łatwy",
+      description: "Banan pochodzi głównie z południowo-wschodniej Azji, skąd jego odmiany rozprzestrzeniły się na subtropikalne tereny całego świata. Jest to jedna z najstarszych roślin uprawnych przez człowieka. Cechą charakterystyczną rośliny jest brak pnia – liście razem z ogonkami tworzą pień pozorny. Konsekwencja tego jest fakt iż bananowiec nie jest drzewem, mimo tego że przypomina drzewo. Kwiatostany wyrastają bezpośrednio z „pnia pozornego”. W naturalnych warunkach kwiatostany zapylane są przez nietoperze i ptaki. W Polsce w warunkach domowych uprawiane są specjalnie wyhodowane odmiany karłowe. Osiągają one wysokość do 2 metrów, i mają bardziej dekoracyjne liście od dzikich gatunków. Przy sprzyjających warunkach możliwe jest wyhodowanie owoców, ale jest to dość trudne. Owocują dorosłe, starsze okazy. Bananowiec wbrew obiegowym opiniom jest rośliną dość prosta w uprawie, wymaga jednak dość dużej ilości miejsca."
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 89},
+      temperature: {inWords: "24°C", inPercentage: 61},
+      position: {inWords: "pod", inPercentage: 98},
+      whiff: {inWords: "niskie", inPercentage: 10},
+      humidity: {inWords: "wysoka", inPercentage: 71},
+    },
+    care: {
+      watering: {
+        inWords: "Latem podlewamy bardzo obficie, istotne jest aby zapewnić roślinie stale wilgotne podłoże. Zimą podlewamy bananowce nieco oszczędniej Jeśli rośliny podlewane są zbyt rzadko ich liście zaczynają zasychać i brązowieć na brzegach.",
+        inPercentage: 75,
+        step: 1
+      },
+      transplanting: {
+        inWords: "Przesadzanie rośliny może następować nawet każdego roku. Odpowiednią porą jest wczesna wiosna, zanim roślina zacznie rozwijać nowe liście. Za każdym razem należy wybierać doniczkę tylko trochę większą od starej, ponieważ banan zacznie zbyt szybko rosnąć.",
+        inPercentage: 60,
+        step: 2
+      },
+      cutting: {
+        inWords: "Najlepszym momentem na przycinanie bananowca jest zanim wyda on owoce, więc pozostanie tylko jedna łodyga. Pozwól mu rosnąć przez około sześć do ośmiu miesięcy, a następnie ponownie go przycinaj, ale zostaw jedną przyssawkę, aby zastąpić główną łodygę na następny sezon wegetacyjny.",
+        inPercentage: 60,
+        step: 2
+      },
+      fertilizating: {
+        inWords: "W okresie wegetacji bananowca dokarmiaj co 2 tygodnie nawozem dla roślin o ozdobnych liściach (np. Osmocote w płynie). Jesienią i zimą, jeśli roślina pozostaje w jasnym i ciepłym miejscu, zalecane jest nawożenie co 4 tygodnie.",
+        inPercentage: 60,
+        step: 2
+      }
+    }
+},
+
+różaPospolita: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 100 cm",
+      care: "łatwy",
+      description: "Krzewy róż pochodzą z Azji Środkowej, skąd przez Bliski Wschod dotarła do Europy. Na popularność róż składa się wiele cennych cech tej rośliny: piekne kwiaty, zapach i długi okres kwitnienia. Nie bez znaczenia jest łatwość uprawy niektórych odmian róż. W naszych ogrodach uprawia się przede wszystkim róże wielkokwiatowe, rabatowe, krzaczaste, pnące i dzikie. Rzadziej spotyka się róże okrywowe, wysokopienne czy karłowe. Te dwa ostatne rodzaje róż są nieco trudniejsze w pielęgnacji i bardziej wrażliwe na mrozy."
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 45},
+      temperature: {inWords: "od 20°C do 30°C", inPercentage: 50},
+      position: {inWords: "przy", inPercentage: 70},
+      whiff: {inWords: "wysokie", inPercentage: 80},
+      humidity: {inWords: "niska", inPercentage: 36},
+    },
+    care: {
+      watering: {
+        inWords: "Róże należy nawadniać tuż przy ziemi, omijając jej delikatne liście i kwiaty. W okresie letnim najlepiej jest zająć się tym wcześnie rano lub późnym wieczorem, kiedy temperatura nie jest aż tak wysoka i ma się pewność, że woda po prostu nie wyparuje. Te rośliny nie lubią ani bardzo mokrego, ani zbyt suchego miejsca.",
+        inPercentage: 40,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Róża to bardzo delikatny kwiat. Delikatne są jej płatki ale również kruche i delikatne ma korzenie. Im starsza roślina tym jej system korzeniowy jest bardziej rozbudowany i głęboki. Przesadzanie róż, zwłaszcza wiekowych należy traktować jako ostateczność. I naprawdę lepiej kupić nowy okaz niż przesadzać stary. Ale nie ma rzeczy niemożliwych. Przy odpowiednim przygotowaniu przesadzanie róży może zakończyć się pełnym sukcesem. Trzeba jednak spełnić kilka warunków. I szczególną ostrożność zachować przy przesadzaniu wiekowych okazów.",
+        inPercentage: 35,
+        step: 4
+      },
+      cutting: {
+        inWords: "Cięcie róż należy rozpocząć wiosną, tuż po ustąpieniu przymrozków. Połowa kwietnia będzie idealnym momentem. Inną wskazówką jest wybranie na cięcie róż momentu, gdy kwitną forsycje. Ważne, aby róże zostały przycięte, zanim rozpocznie się sezon wegetacyjny i jeszcze nie wypuszczają młodych pędów.",
+        inPercentage: 55,
+        step: 3
+      },
+      fertilizating: {
+        inWords: "Nawożenie róż podobnie jak innych roślin nawozami mineralnymi wymaga dużej ostrożności. Najlepiej stosować nawozy wieloskładnikowe o proporcji składników N:P:K 2:1:3, wzbogacone w mikroelementy. Stosując tradycyjne nawozy wieloskładnikowe trzeba wysiewać je w 2 – 3 dawkach wiosną i wymieszać z podłożem np. pazurkami lub grabkami.",
+        inPercentage: 45,
+        step: 2
+      }
+    }
+},
+
+tulipanSezonowy: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 70 cm",
+      care: "łatwy",
+      description: "Najpopularniejsze rośliny cebulowe kwitnące wiosną w ogrodzie czy na działce to tulipany - po łacinie Tulipa. Nazwa tulipan nadana została tym roślinom ze względu na turbanowaty kształt kwiatów a pochodzi od słowa dolbend, oznaczającego materiał, z którego upina się turban. Naturalne występowanie tulipanów to Azja Mniejsza i Środkowa, a tylko nieliczne gatunki dzikie rosną w Europie i północnej Afryce. Tulipany sprowadzili z Turcji do Europy Zachodniej w końcu XVI wieku kupcy, ich uprawa najpierw rozwijała się we Francji a następnie w Anglii i Holandii - która słynie z ich hodowli i uprawy."
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 65},
+      temperature: {inWords: "około 15°C", inPercentage: 25},
+      position: {inWords: "przy", inPercentage: 70},
+      whiff: {inWords: "średnie", inPercentage: 54},
+      humidity: {inWords: "wysoka", inPercentage: 75},
+    },
+    care: {
+      watering: {
+        inWords: "Tulipany należy podlewać do czasu, gdy zaczną zasychać liście. Po zaschnięciu wszystkich liści, cebule tulipanów należy wykopać, przesuszyć, oczyścić z resztek ziemi i przechować w suchym, przewiewnym i zacienionym miejscu do momentu sadzenia, czyli do jesieni.",
+        inPercentage: 35,
+        step: 3
+      },
+      transplanting: {
+        inWords: "Tulipany długo nie przesadzane kwitną z roku na rok coraz słabiej. Gdy ziemia jest mało żyzna, cebulki „wchodzą” głęboko w ziemię i w końcu zamierają. Dlatego najlepiej wykopywać tulipany minimum co 2-3 lata. Tulipany wykopuje się najczęściej w czerwcu, czasem także w pierwszych dniach lipca (późne odmiany). Trzeba je przechowywać w miejscu suchym i ciemnym (najlepiej w temperaturze 15-20 stopni Celsjusza).",
+        inPercentage: 35,
+        step: 3
+      },
+      cutting: {
+        inWords: "Gdy tulipany przekwitną nie należy przycinać całej nadziemnej części roślin, a więc także liści. Trzeba je koniecznie zostawić. Wycinamy jedynie nisko przy ziemi sam kwiatostan.",
+        inPercentage: 15,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "W marcu tulipany potrzebują najwięcej azotu. Użyć można dowolnego nawozu azotowego, np. mocznik, siarczan amonu, saletra amonowa, saletrzak. Dawka: pół łyżki stołowej na metr kwadratowy powierzchni. Jeżeli tulipany nie były przesadzane rok wcześniej, zamiast nawozu azotowego, można użyć nawozu wieloskładnikowego",
+        inPercentage: 55,
+        step: 1
+      }
+    }
+},
+
+dziwaczek: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 80 cm",
+      care: "łatwy",
+      description: "Dziwaczek jalapa (Mirabilis jalapa), nazywany również dziwaczkiem peruwiańskim lub dziwaczkiem wielobarwnym, to jednoroczna bylina ogrodowa. Kwiat ten przywędrował do nas aż z Meksyku i bardzo dobrze zadomowił się w naszym kraju. Na świecie istnieje ponad 40 gatunków tej rośliny, lecz najbardziej rozpowszechniony jest właśnie dziwaczek jalapa. Dziwaczek osiąga wysokość od 70 do 80 cm, ma szeroki i nieco krzewisty pokrój oraz silnie rozgałęzione pędy z liśćmi w kolorze jaskrawej zieleni. Największym atutem dziwaczków są dzwonkowate kwiaty przybierające różnorodną kolorystyką. Występują one w odcieniu żółtym, pomarańczowym, czerwonym, fioletowym i białym. Kwiaty mogą być też dwubarwne, a jedna sadzonka, w przeciwieństwie do większości gatunków, może wytwarzać różnokolorowe kwiaty."
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 65},
+      temperature: {inWords: "około 21°C", inPercentage: 51},
+      position: {inWords: "przy", inPercentage: 48},
+      whiff: {inWords: "średnie", inPercentage: 54},
+      humidity: {inWords: "wysoka", inPercentage: 60},
+    },
+    care: {
+      watering: {
+        inWords: "Dziwaczek wymaga gleb gliniastych, wilgotnych. Roślina potrzebuje dość regularnego i częstego podlewania. W czasie upalnego lata należy regularnie nawadniać roślinę, szczególnie, jeśli jest posadzona na szybko przesychającym podłożu.",
+        inPercentage: 61,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Nasiona sieje się pod osłonami na początku kwietnia, a rozsadę przesadza się do gruntu po majowych przymrozkach, w odstępach 40-50 cm. Bulwiaste korzenie można jesienią wykopać i przechować do wiosny w chłodnym magazynie, podobnie jak karpy dalii.",
+        inPercentage: 48,
+        step: 2
+      },
+      cutting: {
+        inWords: "Nie zaleca się przycinania dziwaczka, chyba że kondycja liści i całej rośliny budzi obawy.",
+        inPercentage: 1,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Dziwaczki potrzebują nawozów, które charakteryzują się wysoką zawartością fosforu i potasu. Dziwaczek jest rośliną ekspansywną, jednak w początkowej fazie wzrostu potrzebuje odchwaszczania.",
+        inPercentage: 55,
+        step: 3
+      }
+    }
+},
+
+amaryllis: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 70 cm",
+      care: "łatwy",
+      description: "Amarylis kwitnie w stanie bezlistnym (to jedna z cech odróżniająca amarylisa od zwartnicy). Kwiaty są okazałe, lejkowate, zebrane grupowo (6-12) na długim pędzie kwiatostanowym. Mogą mieć różną barwę – najczęściej białą, różową lub czerwoną. Amarylis kwitnie najczęściej od sierpnia do września."
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 54},
+      temperature: {inWords: "do 15°C", inPercentage: 15},
+      position: {inWords: "przy", inPercentage: 80},
+      whiff: {inWords: "średnie", inPercentage: 54},
+      humidity: {inWords: "wysoka", inPercentage: 60},
+    },
+    care: {
+      watering: {
+        inWords: "Amarylis lubi stanowiska jasne, wolne od bezpośredniego nasłonecznienia. Preferuje żyzne, próchnicze, umiarkowanie wilgotne gleby. Zaleca się także stosować warstwę drenażową. Cebule sadzi się w maju na głębokości około 8 cm. ",
+        inPercentage: 61,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Od listopada do grudnia: Przesadzić cebulę do nowej ziemi (zagłębić w ziemi do połowy). Pod koniec listopada lekko podlać. Doniczkę ustawić w jasnym i ciepłym miejscu. Kiedy pęd będzie miał 10 cm, podlewać lekko co tydzień.",
+        inPercentage: 45,
+        step: 2
+      },
+      cutting: {
+        inWords: "Nie zaleca się przycinania amaryllisa, chyba że kondycja liści i całej rośliny budzi obawy.",
+        inPercentage: 1,
+        step: 4
+      },
+      fertilizating: {
+        inWords: " Aby znowu cieszyć się kwiatami jesienią i zimą, w sierpniu przestajemy go podlewać i nawozić. Doniczkę warto wtedy ustawić w chłodniejszym i ciemnym miejscu, na przykład w piwnicy. Cebula powinna pozostać w uśpieniu przez co najmniej 6 tygodni. Potem wyjmujemy ją z ziemi i usuwamy martwe korzenie oraz resztki liści. Sadzimy do świeżej ziemi i zaczynamy ostrożnie podlewać oraz nawozić (co miesiąc).",
+        inPercentage: 55,
+        step: 2
+      }
+    }
+},
+
+monstera: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 20 m",
+      care: "łatwy",
+      description: "Monstera to roślina wiecznie zielona, wieloletnia, występująca naturalnie w lasach tropikalnych. Obejmuje ona prawie 40 zróżnicowanych gatunków, a niektóre z nich, zwłaszcza te rosnące w swoim naturalnym środowisku, mogą osiągać nawet 20 metrów wysokości. Roślina wydaje pnącza o charakterystycznych, zwykle dość dużych liściach o sercowatym kształcie. Młode liście są pełne, natomiast w starszych powstają dziury oraz wcięcia, które stają się tym głębsze im starsza jest roślina. Łodygi są grube i długie, pną się, a z czasem drewnieją. Niektóre gatunki monstery mają płożące się pnącza. Starsze okazy wypuszczają tak zwane korzenie powietrzne, które mogą zwisać z doniczki. W żadnym wypadku nie należy tych korzeni ścinać. Monstera to roślina, która kwitnie bardzo rzadko, a jej kwiaty są złożone z zielonkawej kolby otoczonej białą, dużą pochwą. Gdy roślina rośnie w swoich naturalnych warunkach wydaje jadalne owoce. Mają one stożkowaty kształt, a smakiem przypominają nieco smak ananasa. Owoce takie mogą wywoływać podrażnienia błony śluzowej układu pokarmowego, więc mimo tego, iż są jadalne, nie poleca się ich spożywania. Do jedzenia nadają się jedynie w pełni dojrzałe owoce, niedojrzałe zawierają szczawiany wapnia i mają piekący smak. Dojrzałe owoce mają żółty kolor i bardzo łatwo zdjąć z nich skórkę. Miąższ owoców monstery jest słodki, delikatny i kremowy, w Ameryce owoce te wykorzystuje się między innymi jako dodatek do lodów, sałatek oraz deserów."
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 36},
+      temperature: {inWords: "ok 20°C", inPercentage: 48},
+      position: {inWords: "obok", inPercentage: 43},
+      whiff: {inWords: "średnie", inPercentage: 54},
+      humidity: {inWords: "wysoka", inPercentage: 82},
+    },
+    care: {
+      watering: {
+        inWords: "Monstera należy do tego typu roślin, które nie przepadają za zbyt wilgotnym podłożem (lubią jednak wilgotne powietrze - dlatego w sezonie grzewczym możesz je trzymać w pobliżu atomizera). Wiosną oraz latem należy podlewać ją obficie jedynie raz w tygodniu. Po upływie 30-60 minut należy pozbyć się nadmiaru wody, który zgromadzi się na podstawce donicy, ponieważ nie chcemy przelać naszej rośliny. Jesienią oraz zimą należy jeszcze rzadziej podlewać Monsterę. Przyjmuje się, że wystarczy jej jedno nawodnienie co 10-14 dni. Należy pamiętać, że podlewamy ją tylko, gdy wierzchnia warstwa ziemi będzie już przeschnięta.",
+        inPercentage: 40,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Monstera nie lubi częstego przesadzania. Młode rośliny przesadzamy co roku, starsze rośliny co 3-4 lata lub wymieniamy im wierzchnią (5-7 cm) warstwę ziemi. Dno doniczki powinno mieć grubą warstwę drenażu.",
+        inPercentage: 30,
+        step: 4
+      },
+      cutting: {
+        inWords: "Jeśli Monstera zacznie Ciebie przytłaczać, to możesz ją przyciąć. Takie zabiegi wykonuj na wiosnę, obcinając część wierzchołkową. Monsterę możesz rozmnożyć za pomocą pędów wierzchołkowych, poprzez sadzonkowanie łodyg i za pomocą podłużnego cięcia.",
+        inPercentage: 48,
+        step: 3
+      },
+      fertilizating: {
+        inWords: "Odpowiedni dla monstery będzie płynny nawóz do roślin zielonych, np – Agrecol Mineral Żel do roślin zielonych stosowany co 2-3 tygodnie.",
+        inPercentage: 55,
+        step: 2
+      }
+    }
+},
+
+fikus: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 150 cm",
+      care: "łatwy",
+      description: "Fikus jest nie tylko rośliną pokojową, ale także oczyszcza powietrze w pomieszczeniu z benzoli i fenoli (znakomicie sprawdzają się jako kwiaty do biura), a także oddaje swoją pozytywną energię. Osobliwością tego kwiatu jest to, że woli stałe miejsce i nie reaguje dobrze na częste zmiany. Przed planowanym zakupem należy wybrać dla niego miejsce, uwzględniając jego wymagania w zakresie oświetlenia i temperatury. Fikus preferuje świeże powietrze i światło, dlatego wielu właścicieli tych roślin w sezonie letnim umieszcza je na balkonie, pamiętając, że, roślina źle reaguje na przeciągi. W takich niesprzyjających warunkach fikus może zrzucić liście."
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 45},
+      temperature: {inWords: "od 22°C do 28°C", inPercentage: 60},
+      position: {inWords: "obok", inPercentage: 43},
+      whiff: {inWords: "średnie", inPercentage: 54},
+      humidity: {inWords: "średnia", inPercentage: 52},
+    },
+    care: {
+      watering: {
+        inWords: "Fikus woli regularne umiarkowane podlewanie, aby wykonywać to prawidłowo, trzeba przestrzegać kilku zasad: Podlewać zawsze w tym samym czasie rano lub wieczorem. Nie można używać wody z kranu, woda powinna się stać przez trzy dni. Można podlewać wodą przegotowaną przepuszczoną przez filtr. Woda powinna być ciepła.",
+        inPercentage: 50,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Pielęgnacja fikusa wiąże się z wykonaniem przesadzania w celu normalnego rozwoju rośliny. Należy to zrobić, jeśli występują następujące czynniki: Korzenie rośliny wpadają do otworów drenażowych, roślina jest wyraźnie ściśnięta w doniczce, Fikus został właśnie zakupiony w sklepie, Gleba w doniczce jest zmniejszyła objętość, a roślina przestaje rosnąć, Wymagana jest wymiana drenażu, Jeśli to konieczne, aby rozmnażać kwiata.",
+        inPercentage: 55,
+        step: 2
+      },
+      cutting: {
+        inWords: "Fikusy można ciąć o różnej porze roku, ale optymalny termin to jesień lub przedwiośnie. Jeśli zależy Pani na rozkrzewieniu rośliny, to proszę skrócić lekko pędy. Jeśli fikus ma wypuścić długie pędy główne, to usuwa mu się boczne odgałęzienia. Przy cięciu grubych fragmentów, ranę warto zasmarować maścią ogrodniczą.",
+        inPercentage: 70,
+        step: 1
+      },
+      fertilizating: {
+        inWords: "Wiedząc, jak dbać o fikusa w domu, można wyhodować niektóre gatunki nawet do dwóch lub trzech metrów. Ale do aktywnego wzrostu rośliny wymagają okresowego nawożenia. Należy zacząć dokarmiać fikusa po okresie odpoczynku wczesną wiosną i robić to przez całe lato aż do września. Nawozy zawierające azot są niezbędne do tego, aby fikus uzyskał piękną koronę. Stosuje się je wiosną i wczesnym latem, nie można robić tego jesienią, ponieważ pędy będą cienkie i blade. Aby prawidłowo nawozić fikusa należy stosować nawozy mineralne i organiczne.",
+        inPercentage: 60,
+        step: 1
+      }
+    }
+},
+
+hortensjaOgrodowa: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 2 m",
+      care: "łatwy",
+      description: "Hortensja ogrodowa (Hydrangea macrophylla) jest gatunkiem roślin z rodzaju hortensji, należącego do rodziny hortensjowatych. W Japonii uprawiana była od stuleci, ale jej kontakt ze światem zewnętrznym był mocno utrudniony. W 1587 roku japoński władca Hideyoshi zabronił jej wywozu. Pierwsza wzmianka o hortensji ogrodowej pojawiła się w Europie w 1784 r. za sprawą lekarza Carla Thunberga, ucznia Linneusza, który zetknął się z nią na półwyspie Deshima koło Nagasaki. Około roku 1790 przybyły na nasz kontynent pierwsze egzemplarze tej rośliny. Jednak na pytanie kiedy i kto dokładnie przywiózł z Japonii hortensję ogrodową, trudno jednoznacznie odpowiedzieć. Prawdopodobnie był to wspomniany Thunberg, albo angielski botanik Joseph Bunks."
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 49},
+      temperature: {inWords: "od 15°C do 20°C", inPercentage: 39},
+      position: {inWords: "przy", inPercentage: 41},
+      whiff: {inWords: "wysokie", inPercentage: 60},
+      humidity: {inWords: "średnia", inPercentage: 53},
+    },
+    care: {
+      watering: {
+        inWords: "Ze względu na bujne ulistnienie i obfite kwitnienie, hortensje ogrodowe silnie odczuwają brak wody, szczególnie w okresie kwitnienia. W suche lata oraz gdy rosną na bardziej piaszczystej glebie, należy je intensywnie podlewać. Już mały niedobór wody powoduje usychanie zarówno liści, jak i kwiatostanów. W okresie wzrostu i kwitnienia hortensje ogrodowe podlewamy codziennie, podłoże musi być stale wilgotne, ale nie zalane. Pamiętajmy, aby przy podlewaniu nie lać wody na kwiaty. W przypadku braku wody hortensja ogrodowa łatwo więdnie, zwłaszcza jeśli rośnie w słonecznym miejscu.",
+        inPercentage: 73,
+        step: 1
+      },
+      transplanting: {
+        inWords: "Najlepszą porą roku na przesadzenie hortensji jest wczesna wiosna (marzec-kwiecień). W tym czasie przeznaczony do przeniesienia krzew należy delikatnie wykopać z całą bryłą korzeniową, zachowując jak najwięcej korzeni, co pozwoli zmniejszyć szok związany z przeprowadzką.",
+        inPercentage: 30,
+        step: 2
+      },
+      cutting: {
+        inWords: "Hortensji sadzonych jesienią zwykle się nie przycina, w przeciwieństwie do krzewów sadzonych wczesną wiosną (marzec-kwiecień). W ich przypadku zabieg należy jednak dostosować do wymagań danego gatunku, gdyż rośliny kwitną w różny sposób i przez niewłaściwe cięcie możemy pozbawić się kwiatów w danym sezonie.",
+        inPercentage: 5,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "W okresie intensywnego wzrostu i kwitnienia (wiosna-lato) hortensje nawozi się raz na 1-2 tygodnie nawozami płynnymi lub raz na 1-2 miesiące nawozami granulowanymi. Nawozy o spowolnionym działaniu oraz nawozy organiczne podaje się hortensjom jednorazowo wczesną wiosną.",
+        inPercentage: 60,
+        step: 2
+      }
+    }
+},
+
+echmeaWstęgowata: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 50 cm",
+      care: "łatwy",
+      description: "Echmea wstęgowata pochodzi z Ameryki Południowej, gdzie została odkryta w 1826 roku. Jej zebrane w lejkowatą rozetę rynienkowate liście są zielone i pokryte białym nalotem, tworzącym poprzeczne pręgi. Tworzą piękny kontrast z różowym pędem kwiatostanowym wyrastającym ze środka rozety. Kwiaty właściwe, o barwie fioletowej, skupione są w wierzchołkowej części kwiatostanu, między różowymi przykwiatkami. Istnieją rzadkie odmiany tej rośliny o liściach czysto zielonych lub marmurkowych, żółto-zielonych."
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 62},
+      temperature: {inWords: "do 21°C", inPercentage: 43},
+      position: {inWords: "dalej", inPercentage: 64},
+      whiff: {inWords: "średnie", inPercentage: 46},
+      humidity: {inWords: "wysoka", inPercentage: 77},
+    },
+    care: {
+      watering: {
+        inWords: "Echmea potrzebuje dość wilgotnej ziemi (zwłaszcza przed kwitnieniem), dlatego podlewać należy roślinę dwa razy w tygodniu. Podlewa się podłoże w doniczce, ale także wlewa wodę do lejka rozety (w lejku powinno być około 2,5 cm wody, którą trzeba wymieniać co 3 tygodnie).",
+        inPercentage: 52,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Stara rozeta po przekwitnięciu powoli kurczy się i obumiera, a u jej podstawy rozbijają się 2-3 młode. Rozety potomne rozsadza się do osobnych doniczek.",
+        inPercentage: 30,
+        step: 2
+      },
+      cutting: {
+        inWords: "Po przekwitnięciu kwiat echmei należy usunąć, odcinając go u podstawy ostrym nożem lub sekatorem. ",
+        inPercentage: 10,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Roślina ma niewielkie zapotrzebowanie na składniki odżywcze, dlatego wymaga sporadycznego nawożenia. Wystarczy, że zrobisz to raz w miesiącu. Dawka powinna być niewielka.",
+        inPercentage: 7,
+        step: 4
+      }
+    }
+},
+
+cisPospolity: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 15 m",
+      care: "łatwy",
+      description: "Cis pospolity to niewysokie drzewo dorastające do 15 metrów wysokości, często wielopniowe o pokroju krzaczastym. Bardzo wolno rośnie, na grubość zaczyna przyrastać dopiero w wieku 50-60 lat. W społeczeństwie znany głównie jako roślina ozdobna, uprawiana w przydomowych ogrodach, dobrze znosząca strzyżenie, cieniolubna. Jak u wszystkich drzew iglastych liście cisa to ciemnozielone 2-3 centymetrowe igły, z wierzchu ciemnozielone, od spodu jasne z widocznymi dwoma paskami aparatów szparkowych. Ciekawostka jest to, że w przeciwieństwie do pozostałych drzew iglastych cis nie tworzy szyszek. Pojedyncze nasiona znajdują się w mięsistej jaskrawoczerwonej osnówce."
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 43},
+      temperature: {inWords: "od -10°C do 30°C", inPercentage: 43},
+      position: {inWords: "obok", inPercentage: 50},
+      whiff: {inWords: "średnie", inPercentage: 56},
+      humidity: {inWords: "wysoka", inPercentage: 62},
+    },
+    care: {
+      watering: {
+        inWords: "Jak wszystkie zimozielone krzewy i drzewa, również cis wymaga podlewania zimą. Odparowana przez igły woda musi być uzupełniona. Ponieważ ze zmarzniętej ziemi korzenie mogą pobierać wilgoci, należy rośliny podlewać w dni odwilżowe.",
+        inPercentage: 52,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Ponieważ system korzeniowy cisów jest bardzo zwięzły i gęsty, rośliny można łatwo przesadzać (nawet starsze okazy).",
+        inPercentage: 70,
+        step: 2
+      },
+      cutting: {
+        inWords: "Najlepszym miesiącem będzie maj, ale można to zrobić również w czerwcu, w lipcu. Ważne, żeby usuwać przyrosty wybijające się z kolumnowości rośliny na bieżąco",
+        inPercentage: 23,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Roślina nie wymaga intensywnego nawożenia. Stosujemy tylko nawożenie wiosenne i jesienne, a jedynie co 2-3 lata aplikujemy dodatkowe nawożenie w sezonie letnim. Tę roślinę możesz nawieść na parę sposobów w zależności od preferowanych przez Ciebie składników.",
+        inPercentage: 7,
+        step: 4
+      }
+    }
+},
+
+jaskierOstry: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 90 cm",
+      care: "łatwy",
+      description: "Jaskier ostry jest byliną o wzniesionym, krzaczastym pokroju, dorastającą do 30-90 cm wysokości. Tworzy kłącze, z którego wyrastają grube korzenie. Wczesną wiosną pojawia się rozeta liści odziomkowych, później wyrasta rozgałęziona, owłosiona łodyga kwiatonośna z liśćmi łodygowymi. Liście są dłoniaste, jasnozielone, ząbkowane na brzegach. Pojedyncze liście odziomkowe są podzielone na długie łatki. Jaskier ostry kwitnie od maja do czerwca. Kwiaty są promieniste, koloru żółtego."
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 52},
+      temperature: {inWords: "od 12°C do 15°C", inPercentage: 20},
+      position: {inWords: "przy", inPercentage: 57},
+      whiff: {inWords: "średnie", inPercentage: 53},
+      humidity: {inWords: "średnia", inPercentage: 52},
+    },
+    care: {
+      watering: {
+        inWords: "Wszystkie jaskry lubią wilgotną glebę. Często zarastają wręcz tereny podmokłe, dlatego nie dadzą sobie rady w suchym podłożu. Najlepsza dla nich gleba jest próchnicza i gliniasto-piaszczysta. Konieczne będzie jej częste podlewanie.",
+        inPercentage: 76,
+        step: 1
+      },
+      transplanting: {
+        inWords: "Roślina nie reaguje dobrze na przesadzanie. Wybierz miejsce, które pozwala na pozostawienie go w stanie nienaruszonym przez kilka lat. Warunek ten dotyczy głównie racemów sadzonych w ogrodach. Jaskier domowy nie powinien być jednak również zbyt często przesadzany z doniczki do doniczki.",
+        inPercentage: 2,
+        step: 4
+      },
+      cutting: {
+        inWords: "Najlepszym miesiącem będzie maj, ale można to zrobić również w czerwcu, w lipcu. Ważne, żeby usuwać przyrosty wybijające się z kolumnowości rośliny na bieżąco",
+        inPercentage: 23,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Jakier wymaga przycięcia tylko wtedy gdy kondycja rośliny budzi obawy",
+        inPercentage: 2,
+        step: 4
+      }
+    }
+},
+
+radermacheraSinica: {
+  general: {
+      type: "przyjazne zwierzętom",
+      size: "do 1 m",
+      care: "średni",
+      description: "Radermachera sinica należy do egzotycznej rodziny bignoniowatych (Bignoniaceae). Jej ojczyzną są Chiny, gdzie jako drzewo osiąga kilkanaście metrów wysokości. W domu dorasta do metra, przy dobrych warunkach przyrasta około 20 cm rocznie. Pierzaste liście, soczysto zielone i błyszczące, wyrastają piętrami, co nadaje roślinie delikatny pokrój, będący doskonałym tłem dla roślin kwitnących. W naturze, a sporadycznie także w domu dorosłe egzemplarze kwitną wytwarzając żółte, lekko zwisające, trąbkowe kwiaty. Z wiekiem radermachera gubi dolne liście, dlatego dobrze jest sadzić razem kilka roślin różnej wielkości."
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 52},
+      temperature: {inWords: "od 19°C do 22°C", inPercentage: 52},
+      position: {inWords: "przy", inPercentage: 57},
+      whiff: {inWords: "średnie", inPercentage: 53},
+      humidity: {inWords: "wysokie", inPercentage: 69},
+    },
+    care: {
+      watering: {
+        inWords: "Sinica lubi podłoże lekko wilgotne, roślina bardzo lubi większą wilgotność powietrza i częste zraszanie",
+        inPercentage: 76,
+        step: 1
+      },
+      transplanting: {
+        inWords: "Rademacherę przesadza się, gdy korzenie wypełnia całą doniczkę, należy to robić wiosną. Roślinę rozmnaża się przez sadzonki pędowe.",
+        inPercentage: 30,
+        step: 4
+      },
+      cutting: {
+        inWords: "Przicinać 3 razy w ciągu lata. Jeśli wolicie mieć niższą, ale bardziej bujną wersję to tnijcie śmiało. Radermachera to lubi i szybko wypuści boczne pędy i ładnie się zagęści.",
+        inPercentage: 55,
+        step: 1
+      },
+      fertilizating: {
+        inWords: "Rademacherę zasila się raz na 2–3 tygodnie słabym roztworem nawozów wieloskładnikowych do roślin doniczkowych o ozdobnych liściach.",
+        inPercentage: 57,
+        step: 1
+      }
+    }
+},
+
+ciemnotka: {
+  general: {
+      type: "przyjazne zwierzętom",
+      size: "do 30 cm",
+      care: "średni",
+      description: "Ciemnotka to niewielka roślina dorastająca do ok. 20-30 cm za sprawą licznych, długich pędów, z których niektóre płożą się na boki, a inne wyrastają pionowo do góry. Pokrojem bardzo przypomina więc paprocie. Odróżniają ją jednak wyrastające z brązowych pędów liście. Na każdym pędzie ciemnozielonych listków jest nawet kilkadziesiąt, są niewielkie i owalne, o błyszczącej fakturze. Pomiędzy nimi na pędach można zauważyć drobne, ale ostre włoski. Od spodu liści można niekiedy dostrzec wiele drobnych, ciemnych punktów, które często mylone są z chorobą liści czy insektami. W rzeczywistości są to jednak skupiska nasionek."
+    },
+    requirements: {
+      insolation: {inWords: "niskie", inPercentage: 28},
+      temperature: {inWords: "od 21°C do 23°C", inPercentage: 57},
+      position: {inWords: "przy", inPercentage: 88},
+      whiff: {inWords: "nieskie", inPercentage: 15},
+      humidity: {inWords: "niska", inPercentage: 23},
+    },
+    care: {
+      watering: {
+        inWords: "Ciemnotka lubi w miarę wilgotno, dlatego podlewaj gdy wierzchnie 2 - 3 cm podłoża będą przeschnięte. Jeśli stoi w miejscu bardzo jasnym, podlewaj ją przykładowo raz na około 5-7 dni po uprzednim sprawdzeniu wilgotności gleby.",
+        inPercentage: 76,
+        step: 1
+      },
+      transplanting: {
+        inWords: "Raz w roku przesadzamy ciemnotkę do większej doniczki",
+        inPercentage: 51,
+        step: 4
+      },
+      cutting: {
+        inWords: "Ciemnotkę przycinamy tylko wtedy gdy stan rośliny budzi obawy lub posiada chore liście",
+        inPercentage: 55,
+        step: 1
+      },
+      fertilizating: {
+        inWords: "powinno odbywać się nie częściej niż raz na 2 tygodnie za pomocą nawozów do zielonych roślin, które są dostępne w sklepach ogrodniczych;",
+        inPercentage: 45,
+        step: 1
+      }
+    }
+},
+
+chamedoraWytworna: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 3 m",
+      care: "średni",
+      description: "Chamedora wytworna (Chamaedorea elegans) nazywana palmą koralową, to palma należąca do rodziny arekowatych (Arecaceae). Jej ojczyzną są tropikalne lasy Meksyku i Gwatemali, ale bywa też uprawiana w wielu krajach świata jako roślina pokojowa. Chamedora w naturalnym środowisku dorasta do ok. 3 m wys., jednak w uprawie doniczkowej osiąga ok. 1-1,5 m wys. i wydaje 2-3 liście rocznie. Początkowo posiada krzaczasty, gęsty pokrój, który z czasem się zmienia, gdyż coraz bardziej rośnie w górę, tworząc ogołocony od dołu z liści smukły, sztywny, zielony pęd, zwieńczony na szczycie pióropuszem pierzastych, zielonych liści. Liście rośliny są duże, parzystopierzaste, przewieszające się na końcach. Są osadzone na długich, sztywnych ogonkach. Charakterystyczne jest dla nich też to, że dwa szczytowe listki są ze sobą zrośnięte u nasady."
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 52},
+      temperature: {inWords: "od 13°C do 20°C", inPercentage: 47},
+      position: {inWords: "przy", inPercentage: 88},
+      whiff: {inWords: "średnie", inPercentage: 57},
+      humidity: {inWords: "średnia", inPercentage: 56},
+    },
+    care: {
+      watering: {
+        inWords: "Zimą wystarczy podlewać roślinę raz w tygodniu, a w lecie dwa lub trzy razy na tydzień. Palmę podlewamy dopiero wówczas, gdy wierzchnia część podłoża lekko przeschnie.",
+        inPercentage: 70,
+        step: 1
+      },
+      transplanting: {
+        inWords: "W okresie wiosennym każdego roku trzeba pomyśleć o przesadzeniu palmy do większej donicy. Chamedorę przesadzamy dopiero wówczas, gdy system korzeniowy całkowicie wypełni wnętrze donicy. Ciasne warunki są bowiem nieodzowne dla prawidłowego rozrostu systemu korzeniowego rośliny.",
+        inPercentage: 51,
+        step: 4
+      },
+      cutting: {
+        inWords: "Wystarczy jedynie usuwać z pnia starsze, zeschnięte liście przy pomocy ostrych sekatorów. Można również odciąć suche końce liści zwykłymi nożyczkami domowymi.",
+        inPercentage: 15,
+        step: 2
+      },
+      fertilizating: {
+        inWords: "Chamedorę najlepiej nawozić specjalistycznymi nawozami przeznaczonymi dla palm, które mają zbilansowany skład chemiczny. Palmę koralową można też zasilać dodatkowo rozcieńczonym płynnym nawozem wieloskładnikowym do roślin doniczkowych lub ozdobnych z liści.",
+        inPercentage: 70,
+        step: 1
+      }
+    }
+},
+
+lawenda: {
+  general: {
+      type: "lubiące słońce",
+      size: "do 3 m",
+      care: "łatwa",
+      description: "Krzewinka o licznych, silnie rozgałęzionych łodygach, w dolnych partiach drewniejących, gęsto ulistnionych, wysokości 50-90 cm. Liście drobne, lancetowate, krótkoogonkowe lub siedzące. Łodygi i liście kuternowato owłosione, co powoduje, że lawenda ma srebrzysty odcień. Kwiaty o barwie niebiesko-fioletowej znajdują się w niby-okółkach na szczytach pędów, tworząc kształtne kwiatostany. Cała roślina ma przyjemny, aromatyczny, orzeźwiający zapach. Lawenda już w czasach starożytnych występowała w stanie naturalnym w krajach śródziemnorskich. Do tej pory duże ilości surowca zbierane są w stanie naturalnym. Uprawiana jest w Europie i Ameryce Północnej."
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 89},
+      temperature: {inWords: "od -15°C do 35°C", inPercentage: 10},
+      position: {inWords: "przy", inPercentage: 88},
+      whiff: {inWords: "średnie", inPercentage: 57},
+      humidity: {inWords: "średnia", inPercentage: 56},
+    },
+    care: {
+      watering: {
+        inWords: "Lawenda należy do roślin mało uciążliwych w pielęgnacji. Nie wymaga częstego podlewania (zbytnia wilgoć ziemi może jej zaszkodzić i zmniejszyć odporność na choroby), jednak lepiej nie doprowadzać też do przesuszenia korzeni. Wodę należy wlewać do doniczek w umiarkowanej ilości.",
+        inPercentage: 10,
+        step: 4
+      },
+      transplanting: {
+        inWords: "Kiedy krzewinki rosną zbyt gęsto lub potrzebna jest zmiana miejsca nasadzenia, może nastąpić przesadzanie lawendy na nowe stanowisko. Bezpieczny dla roślin termin zabiegu to wiosna lub wczesna jesień – po przekwitnięciu kwiatów. Przesadzanie lawendy przeprowadzamy z bryłą korzeniową, do obszernego dołka, w którym swobodnie zmieszczą się korzenie. Na dno dołka wysypujemy warstwę drenażu. Pamiętajmy, że nowe stanowisko powinno spełniać wymagania rośliny, preferującej osłonięte słoneczne miejsca, o zasadowym odczynie gleby i przepuszczalnym piaszczystym podłożu.",
+        inPercentage: 40,
+        step: 4
+      },
+      cutting: {
+        inWords: "Z reguły lawendę przycina się dwa razy do roku; można przycinać ją wiosną, latem, a także jesienią (jeśli nie robiliśmy tego wiosną). Wiosenne cięcie przeprowadzamy po koniec marca; letnie – w lipcu i sierpniu, a jesienne w połowie września.",
+        inPercentage: 20,
+        step: 3
+      },
+      fertilizating: {
+        inWords: "Biopon nawóz do lawendy można stosować zarówno do roślin posadzonych w gruncie jaki i w uprawie doniczkowej. Lawendę nawozimy od kwietnia do sierpnia. W czasie kwitnienia i podczas intenstywnego wzrostu: 1 raz w tygodniu, w pozostałym czasie: 1 raz na 2 tygodnie.",
+        inPercentage: 60,
+        step: 2
+      }
+    }
+},
 
 }
 

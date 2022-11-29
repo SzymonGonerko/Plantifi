@@ -40,8 +40,8 @@ async function schedulePushNotification() {
     }
     await Notifications.scheduleNotificationAsync({
       content: {
-        title: "Pamiętaj o swoich krzaczkach🌾",
-        body: 'Jest nam miło, że z nami jesteś! Pielegnuj swoje krzaczki codziennie 😊 Niektóre z nich wymagają podlania 💦 Pozdrawiamy zespół Plantify',
+        title: "Twoje roślinki Cię potrzebują!",
+        body: 'Wygląda na to, że niektóre roślinki wymagają Twojej uwagi. 🤗 Zaopiekuj się nimi!',
 
       },
       trigger: { seconds: 10 },

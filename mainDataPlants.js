@@ -1,10 +1,10 @@
 import profileData from "./profileDataPlants"
 
 export const livingroomPlants = [
-    [require("./assets/images/livingroomPlants/RadermacheraSinica.jpg"), {name: "Radermachera Sinica", takenCare: false, needWater: true, days: 3}],
-    [require("./assets/images/livingroomPlants/Ciemnotka.jpg"), {name: "Ciemnotka", takenCare: true, needWater: false, days: null}],
-    [require("./assets/images/livingroomPlants/ChamedoraWytworna.jpg"), {name: "Chamedora Wytworna", takenCare: true, needWater: false, days: null}],
-    [require("./assets/images/livingroomPlants/Lawenda.jpg"), {name: "Lawenda", takenCare: false, needWater: true, days: 5}],
+    [require("./assets/images/livingroomPlants/RadermacheraSinica.jpg"), {name: "Radermachera Sinica", takenCare: false, needWater: true, days: 3, profile: profileData.radermacheraSinica}],
+    [require("./assets/images/livingroomPlants/Ciemnotka.jpg"), {name: "Ciemnotka", takenCare: true, needWater: false, days: null, profile: profileData.ciemnotka}],
+    [require("./assets/images/livingroomPlants/ChamedoraWytworna.jpg"), {name: "Chamedora Wytworna", takenCare: true, needWater: false, days: null, profile: profileData.chamedoraWytworna}],
+    [require("./assets/images/livingroomPlants/Lawenda.jpg"), {name: "Lawenda", takenCare: false, needWater: true, days: 5, profile: profileData.lawenda}],
   ]
 
   export const bedroomPlants = [
@@ -64,18 +64,17 @@ export const livingroomPlants = [
     [require("./assets/images/easyCarePlants/Wieżownica.jpg"), {name: "Wieżownica", liked: 645, profile: profileData.wieżownica}],
     [require("./assets/images/easyCarePlants/Zamiokulkas.jpg"), {name: "Zamiokulkas", liked: 324, profile: profileData.zamiokulkas}],
     [require("./assets/images/easyCarePlants/AloeVera.jpg"), {name: "Aloe Vera", liked: 587, profile: profileData.aloeVera}],
-    [require("./assets/images/easyCarePlants/Bananowiec.jpg"), {name: "Bananowiec", liked: 98}],
-    [require("./assets/images/easyCarePlants/RóżaPospolita.jpg"), {name: "Róża Pospolita", liked: 895}],
-    [require("./assets/images/easyCarePlants/TulipanSezonowy.jpg"), {name: "Tulipan Sezonowy", liked: 785}],
-    [require("./assets/images/easyCarePlants/Dziwaczek.jpg"), {name: "Dziwaczek", liked: 345}],
-    [require("./assets/images/easyCarePlants/Amaryllis.jpg"), {name: "Amaryllis", liked: 681}],
-    [require("./assets/images/easyCarePlants/Monstera.jpg"), {name: "Monstera", liked: 899}],
-    [require("./assets/images/easyCarePlants/Fikus.jpg"), {name: "Fikus", liked: 459}],
-    [require("./assets/images/easyCarePlants/IrysSyberyjski.jpg"), {name: "Irys Syberyjski", liked: 516}],
-    [require("./assets/images/easyCarePlants/HortensjaOgrodowa.jpg"), {name: "Hortensja Ogrodowa", liked: 768}],
-    [require("./assets/images/easyCarePlants/EchmeaWstęgowata.jpg"), {name: "Echmea Wstęgowata", liked: 348}],
-    [require("./assets/images/easyCarePlants/CisPospolity.jpg"), {name: "Cis Pospolity", liked: 214}],
-    [require("./assets/images/easyCarePlants/JaskierOstry.jpg"), {name: "Jaskier Ostry", liked: 132}],
+    [require("./assets/images/easyCarePlants/Bananowiec.jpg"), {name: "Bananowiec", liked: 98, profile: profileData.bananowiec}],
+    [require("./assets/images/easyCarePlants/RóżaPospolita.jpg"), {name: "Róża Pospolita", liked: 895, profile: profileData.różaPospolita}],
+    [require("./assets/images/easyCarePlants/TulipanSezonowy.jpg"), {name: "Tulipan Sezonowy", liked: 785, profile: profileData.tulipanSezonowy}],
+    [require("./assets/images/easyCarePlants/Dziwaczek.jpg"), {name: "Dziwaczek", liked: 345, profile: profileData.dziwaczek}],
+    [require("./assets/images/easyCarePlants/Amaryllis.jpg"), {name: "Amaryllis", liked: 681, profile: profileData.amaryllis}],
+    [require("./assets/images/easyCarePlants/Monstera.jpg"), {name: "Monstera", liked: 899, profile: profileData.monstera}],
+    [require("./assets/images/easyCarePlants/Fikus.jpg"), {name: "Fikus", liked: 459, profile: profileData.fikus}],
+    [require("./assets/images/easyCarePlants/HortensjaOgrodowa.jpg"), {name: "Hortensja Ogrodowa", liked: 768, profile: profileData.hortensjaOgrodowa}],
+    [require("./assets/images/easyCarePlants/EchmeaWstęgowata.jpg"), {name: "Echmea Wstęgowata", liked: 348, profile: profileData.echmeaWstęgowata}],
+    [require("./assets/images/easyCarePlants/CisPospolity.jpg"), {name: "Cis Pospolity", liked: 214, profile: profileData.cisPospolity}],
+    [require("./assets/images/easyCarePlants/JaskierOstry.jpg"), {name: "Jaskier Ostry", liked: 132, profile: profileData.jaskierOstry}],
   ]
 
   export const toDoListPlants = [
