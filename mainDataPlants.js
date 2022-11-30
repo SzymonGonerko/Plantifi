@@ -8,10 +8,10 @@ export const livingroomPlants = [
   ]
 
   export const bedroomPlants = [
-    [require("./assets/images/bedroomPlants/FitionaVerchafelta.jpg"), {name: "Fitiona Verchafelta", takenCare: false, needWater: true, days: 3}],
-    [require("./assets/images/bedroomPlants/Bananowiec.jpg"), {name: "Bananowiec", takenCare: false, needWater: true, days: 5}],
-    [require("./assets/images/bedroomPlants/AspidistraWyniosła.jpg"), {name: "Aspidistra Wyniosła", takenCare: true, needWater: false, days: null}],
-    [require("./assets/images/bedroomPlants/KaktusGrusona.jpg"), {name: "Kaktus Grusona", takenCare: false, needWater: true, days: 6}],
+    [require("./assets/images/bedroomPlants/FitionaVerchafelta.jpg"), {name: "Fitiona Verchafelta", takenCare: false, needWater: true, days: 3, profile: profileData.fitionaVerchafelta}],
+    [require("./assets/images/bedroomPlants/Bananowiec.jpg"), {name: "Bananowiec", takenCare: false, needWater: true, days: 5, profile: profileData.bananowiec}],
+    [require("./assets/images/bedroomPlants/AspidistraWyniosła.jpg"), {name: "Aspidistra Wyniosła", takenCare: true, needWater: false, days: null, profile: profileData.aspidistraWyniosła}],
+    [require("./assets/images/bedroomPlants/KaktusGrusona.jpg"), {name: "Kaktus Grusona", takenCare: false, needWater: true, days: 6, profile: profileData.kaktusGrusona}],
   ]
 
   export const searchPlants = [

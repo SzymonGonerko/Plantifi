@@ -955,6 +955,120 @@ lawenda: {
     }
 },
 
+fitionaVerchafelta: {
+  general: {
+      type: "do łazienki",
+      size: "do 15 cm",
+      care: "średnia",
+      description: "Fitonia (Fittonia verschaffeltii) należy do rodziny akantowatych (Acanthaceae). W stanie naturalnym jest pnączem i rośnie w tropikalnych lasach deszczowych. Roślina ma płożący pokrój i wytwarza dość kruche pędy dorastające do 15 cm. Cała jest lekko owłosiona. Swoją dekoracyjność zawdzięcza kolorom liści. Wyrastają na łodydze parami i posiadają krótkie, grube ogonki. Liście fitonii mają najczęściej jajowaty kształt i ciemnozieloną blaszkę liściową o gęstym, jasnym unerwieniu. Nerwy, a czasem też plamy, zależnie od odmiany mogą być koloru białego, różowego, czerwonego, żółtego, pomarańczowego lub jasno zielonego. Fitonia doskonale wygląda w kompozycjach w szklanych kulach lub butelkach. Świetnie nadaje się do jasnych łazienek, za to nie sprawdza się w kuchniach i źle się czuje przy kaloryferach, gdzie powietrze potrafi być bardzo suche."
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 39},
+      temperature: {inWords: "od 16°C do 22°C", inPercentage: 46},
+      position: {inWords: "przy", inPercentage: 74},
+      whiff: {inWords: "średnie", inPercentage: 57},
+      humidity: {inWords: "wysokie", inPercentage: 79},
+    },
+    care: {
+      watering: {
+        inWords: "Fitonię należy podlewać regularnie, ale nie doprowadzać do stałej wilgoci w podłożu (roślina może szybko zacząć gnić!) – na brak wilgoci w podłożu bardzo reaguje więdnięciem pędów i liści.",
+        inPercentage: 55,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Fitonię przesadza się co 1-2 lata. W praktyce zamiast przesadzania odmładza się zwykle roślinę z sadzonek, które rosną bardzo szybko.",
+        inPercentage: 2,
+        step: 40
+      },
+      cutting: {
+        inWords: "Fitonię można ciąć i uszczykiwać jej pędy, aby lepiej się rozkrzewiała.",
+        inPercentage: 65,
+        step: 1
+      },
+      fertilizating: {
+        inWords: "Można ją nawozić raz w miesiącu nawozem do roślin o zielonych liściach.",
+        inPercentage: 51,
+        step: 2
+      }
+    }
+},
+
+aspidistraWyniosła: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 60 cm",
+      care: "łatwa",
+      description: "Aspidistra jest leśną byliną, która w naturze rośnie w ciemnych i chłodnych lasach Japonii oraz Chin. Wytwarza podziemne kłącza, z których wyrastają piękne, ciemnozielone i wyprostowane liście. Są one osadzone na krótkich ogonkach, wydłużone, ostro zakończone i mogą osiągać nawet 60 cm długości. Liście są największą ozdobą aspidistry, mają niezwykłe walory dekoracyjne, a ścięte utrzymują długo świeżość, dlatego często są wykorzystywane we florystyce jako dodatek do bukietów. Oprócz niezwykłej urody liści, aspidistra jest uznawana za jedną z najłatwiejszych roślin do uprawy w domu. Jest rośliną ogromnie wytrzymałą i odporną na wszelkie zaniedbania. Rośnie powoli, lecz jest długowieczna. Aspidistra kwitnie rzadko, a czerwonobrunatne niepozorne kwiaty są pojawiają się tuż nad ziemią i bardzo szybko przekwitają"
+    },
+    requirements: {
+      insolation: {inWords: "niskie", inPercentage: 25},
+      temperature: {inWords: "od 10°C do 15°C", inPercentage: 11},
+      position: {inWords: "dalej", inPercentage: 12},
+      whiff: {inWords: "niskie", inPercentage: 32},
+      humidity: {inWords: "wysokie", inPercentage: 79},
+    },
+    care: {
+      watering: {
+        inWords: "Roślinę należy podlewać w lecie 2 razy na tydzień, tak aby podłoże było umiarkowanie wilgotne, a zimą raz w tygodniu.",
+        inPercentage: 30,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Przesadzanie aspidistry wyniosłej wykonuje się raz na kilka lat, gdy doniczka wyraźnie jest zbyt mała. Do wypełnienia nowej doniczki używamy uniwersalnej ziemi dla roślin doniczkowych, pamiętając aby na dnie doniczki utworzyć warstwę drenażu z keramzytu.",
+        inPercentage: 4,
+        step: 35
+      },
+      cutting: {
+        inWords: "Aspidistra wyniosła nie rośnie zbyt wysoko. Przycinanie nie jest więc konieczne. Należy tylko usuwać brzydkie lub przebarwione liście. W ten sposób aspidistra oszczędza energię i zachowuje swoje walory dekoracyjne.",
+        inPercentage: 18,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Aspidistra wyniosła rośnie powoli, dlatego nie potrzebuje intensywnego nawożenia. Umiarkowane nawożenie wpływa jednak pozytywnie na formę aspidistry, przy czym nie należy przekraczać zalecanych ilości nawozu, ponieważ może to być szkodliwe dla aspidistry.",
+        inPercentage: 20,
+        step: 4
+      }
+    }
+},
+
+kaktusGrusona: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 100 cm",
+      care: "łatwa",
+      description: 'Echinokaktus Grusona (Echinocactus grusonii) to roślina należąca do rodziny kaktusowatych (Cactaceae). W środowisku naturalnym występuje na obszarze Meksyku. W uprawie pokojowej echinokaktus dorasta zwykle do 80-100 cm wysokości. Ze względu na okrągły dość regularny kształt i długie (3-6 cm), złociste, ostre ciernie nazywany jest potocznie "poduszką teściowej". W warunkach domowych może kwitnąć po kilku latach uprawy – wytwarza wtedy atrakcyjne, jasnożółte kwiaty.'
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 99},
+      temperature: {inWords: "od 25°C", inPercentage: 98},
+      position: {inWords: "pod", inPercentage: 89},
+      whiff: {inWords: "średnie", inPercentage: 52},
+      humidity: {inWords: "niskie", inPercentage: 13},
+    },
+    care: {
+      watering: {
+        inWords: "Podlewanie dość oszczędne latem, zimą zwykle brak. Przy podlewaniu nie powinno się moczyć rośliny – Echinokaktus Grusona łatwo gnije. ",
+        inPercentage: 4,
+        step: 4
+      },
+      transplanting: {
+        inWords: "Młode rośliny przesadzamy co rok, starsze co kilka lat. Echinokaktusa rozmnażamy przez nasiona wysiewane od wiosny do jesieni. Jeśli roślina wypuści boczne odrosty, można je oddzielić i ukorzenić w osobnych doniczkach.",
+        inPercentage: 4,
+        step: 35
+      },
+      cutting: {
+        inWords: "Roślinki ze względu na swoją budowę nie przycinamy",
+        inPercentage: 0,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Roślinę nawozimy jedynie wiosną i latem, raz w miesiącu, najlepiej płynnym nawozem dla kaktusów. ",
+        inPercentage: 20,
+        step: 4
+      }
+    }
+},
+
 }
 
 export default profileData

@@ -52,6 +52,7 @@ export const Collection = () => {
                         <Card 
                             name={item[1].name}
                             src={item[0]}
+                            profile={item[1].profile}
                             takenCare={item[1].takenCare} 
                             needWater={item[1].needWater}
                             days={item[1].days}/>}
