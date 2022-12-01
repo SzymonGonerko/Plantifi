@@ -1,5 +1,6 @@
+import React from "react";
 import { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal, Alert} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Pressable} from 'react-native';
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import AntDesign from "react-native-vector-icons/AntDesign"
@@ -15,7 +16,6 @@ export const Card = ({src, takenCare, needWater, days, name, description, cardSt
     const addPlantsToCollection = () => {
         setProfileModal(false)
         setAddedNew(true)
-        // setTimeout(() => {setAddedNew(false)}, 2000)
     }
 
     return <>

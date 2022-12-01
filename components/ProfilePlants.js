@@ -1,9 +1,11 @@
+import React from "react";
 import { useState  } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Modal} from 'react-native';
 import { SquareButton } from './ui/SquareButton';
 import { ShortLine } from './ui/ShortLine';
 import { ModalPlantsNavigation } from './ModalPlantsNavigation';
 import { AddNewPlants } from './AddNewPlants';
+import { Heart } from "./ui/Heart"
 
 
 import {Button} from "./ui/Button"
@@ -40,6 +42,7 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profil
             imageStyle={styles.img}
             />
             <SquareButton styleContainer={styles.btnSqure} reset={resetState} onPress={onPressButtonSquare} type={"arrow"}/>
+            <Heart/>
         </View>
 
         <View style={styles.profileInfo}>
@@ -74,7 +77,7 @@ const styles = StyleSheet.create({
       bgcContainer: {
         width: "100%",
         height: "30%",
-        borderRadius: 17
+        borderRadius: 17,
     },
     background: {
         height: "100%",
