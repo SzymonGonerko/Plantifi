@@ -1,10 +1,8 @@
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView, Keyboard} from 'react-native';
-import { useEffect, useRef, useState } from 'react';
-import { OutlinedTextField } from 'rn-material-ui-textfield'
-import AntDesign from "react-native-vector-icons/AntDesign"
+import React from "react";
+import { StyleSheet, View, FlatList} from 'react-native';
+import { useState } from 'react';
 import { searchPlants } from '../mainDataPlants';
 import { Card } from './ui/Card';
-import { IconButton } from "@react-native-material/core";
 import { SearchInput } from './ui/SearchInput';
 
 export const Favourite = () => {
@@ -34,6 +32,7 @@ export const Favourite = () => {
                         <Card
                             cardStyle={{width: "40%"}}
                             name={item[1].name}
+                            profile={item[1].profile}
                             description={item[1].description}
                             src={item[0]}/>}
                 />

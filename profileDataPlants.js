@@ -978,7 +978,7 @@ fitionaVerchafelta: {
       transplanting: {
         inWords: "Fitonię przesadza się co 1-2 lata. W praktyce zamiast przesadzania odmładza się zwykle roślinę z sadzonek, które rosną bardzo szybko.",
         inPercentage: 2,
-        step: 40
+        step: 4
       },
       cutting: {
         inWords: "Fitonię można ciąć i uszczykiwać jej pędy, aby lepiej się rozkrzewiała.",
@@ -1016,7 +1016,7 @@ aspidistraWyniosła: {
       transplanting: {
         inWords: "Przesadzanie aspidistry wyniosłej wykonuje się raz na kilka lat, gdy doniczka wyraźnie jest zbyt mała. Do wypełnienia nowej doniczki używamy uniwersalnej ziemi dla roślin doniczkowych, pamiętając aby na dnie doniczki utworzyć warstwę drenażu z keramzytu.",
         inPercentage: 4,
-        step: 35
+        step: 3
       },
       cutting: {
         inWords: "Aspidistra wyniosła nie rośnie zbyt wysoko. Przycinanie nie jest więc konieczne. Należy tylko usuwać brzydkie lub przebarwione liście. W ten sposób aspidistra oszczędza energię i zachowuje swoje walory dekoracyjne.",
@@ -1054,7 +1054,7 @@ kaktusGrusona: {
       transplanting: {
         inWords: "Młode rośliny przesadzamy co rok, starsze co kilka lat. Echinokaktusa rozmnażamy przez nasiona wysiewane od wiosny do jesieni. Jeśli roślina wypuści boczne odrosty, można je oddzielić i ukorzenić w osobnych doniczkach.",
         inPercentage: 4,
-        step: 35
+        step: 3
       },
       cutting: {
         inWords: "Roślinki ze względu na swoją budowę nie przycinamy",
@@ -1065,6 +1065,158 @@ kaktusGrusona: {
         inWords: "Roślinę nawozimy jedynie wiosną i latem, raz w miesiącu, najlepiej płynnym nawozem dla kaktusów. ",
         inPercentage: 20,
         step: 4
+      }
+    }
+},
+
+aglaonemaZmienna: {
+  general: {
+      type: "lubiące słońce",
+      size: "do 80 cm",
+      care: "średnia",
+      description: 'Aglaonema zmienna (Aglaonema commutatum) to tropikalna roślina zielna należąca do rodziny obrazkowatych (Araceae). W środowisku naturalnym występuje w ciepłych i wilgotnych obszarach Azji (m.in. Indonezja, Filipiny). Porasta poszycie lasów. '
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 43},
+      temperature: {inWords: "od 20°C od 25°C", inPercentage: 61},
+      position: {inWords: "dalej", inPercentage: 34},
+      whiff: {inWords: "wysokie", inPercentage: 67},
+      humidity: {inWords: "wysokie", inPercentage: 57},
+    },
+    care: {
+      watering: {
+        inWords: "Latem podlewa się ją często, choć są obecnie dostępne odmiany, które są bardziej odporne na brak odpowiedniej wilgotności i wytrzymują krótkie przesychanie. Zaleca się używać miękkiej, odstanej wody. Aglaonema lubi zraszanie i mgławianie.",
+        inPercentage: 67,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Aglaonema powinna być przesadzana co roku, najlepiej wiosną. Wtedy także można przeprowadzić rozmnażanie poprzez podział kęp. Młode rośliny, tak jak starsze powinny trafić do próchniczego podłoża.",
+        inPercentage: 53,
+        step: 2
+      },
+      cutting: {
+        inWords: "Roślinkę przycinamy tylko wtedy gdy kondycja kwiatka budzi obawy. Uwaga, Aglaonema jest silnie trującym gatunekiem !",
+        inPercentage: 4,
+        step: 3
+      },
+      fertilizating: {
+        inWords: "Aglaonemę warto nawozić tylko w okresie wzrostu, tj. od wiosny do jesieni. Zaleca się zasilać ją raz na dwa tygodnie specjalnym nawozem do roślin ozdobnych lub zielonych.",
+        inPercentage: 42,
+        step: 2
+      }
+    }
+},
+
+bonsai: {
+  general: {
+      type: "przyjazne zwierzętom",
+      size: "do 150 cm",
+      care: "trudna",
+      description: 'Określenie bonsai pochodzi od słów bon – płaska taca i sai – roślina. Oznacza karłowate drzewo w naczyniu i polega na miniaturyzacji oraz kształtowaniu drzew poprzez ich wieloletnie przycinanie i podwiązywanie. Sztuka bonsai, choć kojarzona głównie z Japonią, w rzeczywistości pochodzi z Chin.'
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 73},
+      temperature: {inWords: "od 15°C od 30°C", inPercentage: 52},
+      position: {inWords: "pod", inPercentage: 65},
+      whiff: {inWords: "niskie", inPercentage: 43},
+      humidity: {inWords: "wysokie", inPercentage: 70},
+    },
+    care: {
+      watering: {
+        inWords: "Bonsai należy podlewać jak tylko podłoże zacznie lekko przesychać. Kiedy roślina domaga się wody, należy całkowicie zmoczyć podłoże, tak aby cały system korzeniowy był przesiąknięty wodą.",
+        inPercentage: 75,
+        step: 1
+      },
+      transplanting: {
+        inWords: "Drzewa młode, szybko rosnące należy przesadzać co dwa lata (w niektórych przypadkach nawet co rok), podczas gdy starsze, bardziej dojrzałe Bonsai powinno przesadzać się co 3-5 lat. Aby sprawdzić czy roślina wymaga przesadzenia należy wczesną wiosną ostrożnie wyjąć roślinę z doniczki.",
+        inPercentage: 10,
+        step: 4
+      },
+      cutting: {
+        inWords: "aby zachować kształt drzewka Bonsai należy wykonywać cięcie pielęgnacyjne. Wystarczy po prostu przycinać gałęzie/nowe pędy, które wyrosły ponad zamierzony kształt i wielkość korony, za pomocą nożyczek lub kleszczy.",
+        inPercentage: 20,
+        step: 2
+      },
+      fertilizating: {
+        inWords: "Bardzo ważny jest wybór odpowiedniego nawozu dla naszych drzewek Bonsai: wczesną wiosną należy użyć nawozów o zwiększonej zawartości azotu (np. NPK 12:6:6), aby pobudzić rośliny do intensywnego wzrostu.",
+        inPercentage: 42,
+        step: 2
+      }
+    }
+},
+
+pandanPachnący: {
+  general: {
+      type: "do łazienki",
+      size: "do 10 m",
+      care: "trudna",
+      description: 'Pandan  (Pandanus), to egzotyczny gigant, którego czasem można jednak uprawiać w doniczce. Dotyczy to głównie młodych egzemplarzy, gdyż starsze osiągają naprawdę niebagatelne rozmiary. W naturze są drzewami lub krzewami dochodzącymi nawet do 10 m. wysokości, w uprawie pokojowej dorastają zwykle do 2-3 m. Dlatego po kilku latach stają się po prostu za duże do uprawy w mieszkaniach. Stanowią natomiast znakomitą ozdobę przestronnych i wysokich holi, oranżerii i innych dużych pomieszczeń, w których ich rozmiary nie będą problemem.'
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 49},
+      temperature: {inWords: "od 18°C od 22°C", inPercentage: 49},
+      position: {inWords: "obok", inPercentage: 45},
+      whiff: {inWords: "niskie", inPercentage: 43},
+      humidity: {inWords: "średnie", inPercentage: 53},
+    },
+    care: {
+      watering: {
+        inWords: "Podlewanie uzależnione jest od stopnia wysuszenia gleby – nie należy nawadniać rośliny, kiedy ziemia w doniczce jest jeszcze wilgotna. ",
+        inPercentage: 62,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Jeśli nadejdzie potrzeba przesadzenia rośliny, należy ten zabieg zaplanować na końcówkę zimy. Podczas pielęgnacji pandanu należy zachować ostrożność, ponieważ istnieje ryzyko skaleczenia się ostrymi liśćmi.",
+        inPercentage: 43,
+        step: 4
+      },
+      cutting: {
+        inWords: "Roślinkę przycinamy tylko wtedy gdy kondycja kwiatka budzi obawy. ",
+        inPercentage: 10,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Nawozimy 3 – 4 razy w okresie wiosny i lata mieszanką nawozów wieloskładnikowych. Na pandany bardzo korzystnie wpływa nawożenie krowieńcem.",
+        inPercentage: 67,
+        step: 3
+      }
+    }
+},
+
+rantofelnikMieszańcowy: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 10 m",
+      care: "łatwa",
+      description: 'Pantofelnik (Calceolaria), potocznie zwany również kalceolarią, należy do rodziny trędownikowatych Scrophulariaceae. Rodzaj ten liczy kilkaset gatunków, występujących głównie w Ameryce Południowej. U nas uprawiany jest jako jednoroczna roślina doniczkowa, którą chętnie ozdabiamy mieszkania na wiosnę i na początku lata. W sklepach ogrodniczych i kwiaciarniach sprzedawane są odmiany mieszańcowe, które powstały poprzez krzyżowanie różnych gatunków jednorocznych. Najpopularniejsze pantofelniki to całolistny, meksykański i dwukwiatowy. Rośliny mają pokrój kępiasty i mogą być różnej wysokości. Największą ozdobą pantofelników są oryginalne kwiaty z dolną wargą rozdętą w kształcie przypominającym pantofelka. Mają około 3-5 cm średnicy i mogą być barwy żółtej, pomarańczowej lub czerwonej, nakrapiane głębszą czerwienią. Kwiaty wyrastają ponad miękkie jajowate liście o karbowanych brzegach, które są gęsto zebrane u podstawy. Po kwitnieniu, które trwa od maja do lipca, roślina zaczyna zamierać.'
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 49},
+      temperature: {inWords: "od 18°C od 22°C", inPercentage: 49},
+      position: {inWords: "obok", inPercentage: 45},
+      whiff: {inWords: "niskie", inPercentage: 43},
+      humidity: {inWords: "średnie", inPercentage: 53},
+    },
+    care: {
+      watering: {
+        inWords: "Podlewanie uzależnione jest od stopnia wysuszenia gleby – nie należy nawadniać rośliny, kiedy ziemia w doniczce jest jeszcze wilgotna. ",
+        inPercentage: 62,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Jeśli nadejdzie potrzeba przesadzenia rośliny, należy ten zabieg zaplanować na końcówkę zimy. Podczas pielęgnacji pandanu należy zachować ostrożność, ponieważ istnieje ryzyko skaleczenia się ostrymi liśćmi.",
+        inPercentage: 43,
+        step: 4
+      },
+      cutting: {
+        inWords: "Roślinkę przycinamy tylko wtedy gdy kondycja kwiatka budzi obawy. ",
+        inPercentage: 10,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Nawozimy 3 – 4 razy w okresie wiosny i lata mieszanką nawozów wieloskładnikowych. Na pandany bardzo korzystnie wpływa nawożenie krowieńcem.",
+        inPercentage: 67,
+        step: 3
       }
     }
 },

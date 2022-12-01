@@ -9,20 +9,20 @@ export const livingroomPlants = [
 
   export const bedroomPlants = [
     [require("./assets/images/bedroomPlants/FitionaVerchafelta.jpg"), {name: "Fitiona Verchafelta", takenCare: false, needWater: true, days: 3, profile: profileData.fitionaVerchafelta}],
-    [require("./assets/images/bedroomPlants/Bananowiec.jpg"), {name: "Bananowiec", takenCare: false, needWater: true, days: 5, profile: profileData.bananowiec}],
+    [require("./assets/images/Bananowiec.jpg"), {name: "Bananowiec", takenCare: false, needWater: true, days: 5, profile: profileData.bananowiec}],
     [require("./assets/images/bedroomPlants/AspidistraWyniosła.jpg"), {name: "Aspidistra Wyniosła", takenCare: true, needWater: false, days: null, profile: profileData.aspidistraWyniosła}],
     [require("./assets/images/bedroomPlants/KaktusGrusona.jpg"), {name: "Kaktus Grusona", takenCare: false, needWater: true, days: 6, profile: profileData.kaktusGrusona}],
   ]
 
   export const searchPlants = [
-    [require("./assets/images/searchPlants/AloeVera.jpg"), {name: "Aloe Vera", description: "do salonu" }],
-    [require("./assets/images/searchPlants/AglaonemaZmienna.jpg"), {name: "Aglaonema Zmienna", description: "na zewnątrz"}],
-    [require("./assets/images/searchPlants/Bonsai.jpg"), {name: "Bonsai", description: "zwierzolubna"}],
-    [require("./assets/images/searchPlants/RóżaPospolita.jpg"), {name: "Róża Pospolita", description: "Cięte"}],
-    [require("./assets/images/searchPlants/TulipanSezonowy.jpg"), {name: "Tulipan Sezonowy", description: "Cięte"}],
-    [require("./assets/images/searchPlants/PandanPachnący.jpg"), {name: "Pandan Pachnący", description: "do łazienki"}],
-    [require("./assets/images/searchPlants/KaktusGrusona.jpg"), {name: "Kaktus Grusona", description: "do sypialni"}],
-    [require("./assets/images/searchPlants/Bananowiec.jpg"), {name: "Bananowiec", description: "do kuchni"}],
+    [require("./assets/images/searchPlants/AloeVera.jpg"), {name: "Aloe Vera", description: "do salonu", profile: profileData.aloeVera}],
+    [require("./assets/images/searchPlants/AglaonemaZmienna.jpg"), {name: "Aglaonema Zmienna", description: "na zewnątrz", profile: profileData.aglaonemaZmienna}],
+    [require("./assets/images/searchPlants/Bonsai.jpg"), {name: "Bonsai", description: "zwierzolubna", profile: profileData.bonsai}],
+    [require("./assets/images/searchPlants/RóżaPospolita.jpg"), {name: "Róża Pospolita", description: "Cięte", profile: profileData.różaPospolita}],
+    [require("./assets/images/searchPlants/TulipanSezonowy.jpg"), {name: "Tulipan Sezonowy", description: "Cięte", profile: profileData.tulipanSezonowy}],
+    [require("./assets/images/searchPlants/PandanPachnący.jpg"), {name: "Pandan Pachnący", description: "do łazienki", profile: profileData.pandanPachnący}],
+    [require("./assets/images/searchPlants/KaktusGrusona.jpg"), {name: "Kaktus Grusona", description: "do sypialni", profile: profileData.kaktusGrusona}],
+    [require("./assets/images/Bananowiec.jpg"), {name: "Bananowiec", description: "do kuchni", profile: profileData.bananowiec}],
   ]
 
   export const lostPlants = [
@@ -42,7 +42,6 @@ export const livingroomPlants = [
 
   export const likedPlants = [
     [require("./assets/images/likedPlants/RantofelnikMieszańcowy.jpg"), {name: "Rantofelnik Mieszańcowy", liked: 345}],
-    [require("./assets/images/likedPlants/Drobnolistek.jpg"), {name: "Drobnolistek", liked: 215}],
     [require("./assets/images/likedPlants/OrchideaWytworna.jpg"), {name: "OrchideaWytworna", liked: 122}],
     [require("./assets/images/likedPlants/KaktusKwiecik.jpg"), {name: "KaktusKwiecik", liked: 113}],
   ]
@@ -64,7 +63,7 @@ export const livingroomPlants = [
     [require("./assets/images/easyCarePlants/Wieżownica.jpg"), {name: "Wieżownica", liked: 645, profile: profileData.wieżownica}],
     [require("./assets/images/easyCarePlants/Zamiokulkas.jpg"), {name: "Zamiokulkas", liked: 324, profile: profileData.zamiokulkas}],
     [require("./assets/images/easyCarePlants/AloeVera.jpg"), {name: "Aloe Vera", liked: 587, profile: profileData.aloeVera}],
-    [require("./assets/images/easyCarePlants/Bananowiec.jpg"), {name: "Bananowiec", liked: 98, profile: profileData.bananowiec}],
+    [require("./assets/images/Bananowiec.jpg"), {name: "Bananowiec", liked: 98, profile: profileData.bananowiec}],
     [require("./assets/images/easyCarePlants/RóżaPospolita.jpg"), {name: "Róża Pospolita", liked: 895, profile: profileData.różaPospolita}],
     [require("./assets/images/easyCarePlants/TulipanSezonowy.jpg"), {name: "Tulipan Sezonowy", liked: 785, profile: profileData.tulipanSezonowy}],
     [require("./assets/images/easyCarePlants/Dziwaczek.jpg"), {name: "Dziwaczek", liked: 345, profile: profileData.dziwaczek}],
