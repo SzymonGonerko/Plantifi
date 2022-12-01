@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
 import { useEffect, useRef, useState } from 'react';
 import {Card} from "../components/ui/Card"
@@ -23,6 +24,7 @@ export const ExploreStartSection = () => {
             <Card
                 name={item[1].name}
                 liked={item[1].liked}
+                profile={item[1].profile}
                 src={item[0]}/>}
         />
         <Text style={styles.plantsCategory}>
@@ -38,6 +40,7 @@ export const ExploreStartSection = () => {
             <Card
                 cardStyle={{width: windowWidth - 40}}
                 name={item[1].name}
+                profile={item[1].profile}
                 liked={item[1].liked}
                 src={item[0]}/>}
         />

@@ -1183,7 +1183,7 @@ pandanPachnący: {
     }
 },
 
-rantofelnikMieszańcowy: {
+pantofelnikMieszańcowy: {
   general: {
       type: "łatwa pielęgnacja",
       size: "do 10 m",
@@ -1199,14 +1199,14 @@ rantofelnikMieszańcowy: {
     },
     care: {
       watering: {
-        inWords: "Podlewanie uzależnione jest od stopnia wysuszenia gleby – nie należy nawadniać rośliny, kiedy ziemia w doniczce jest jeszcze wilgotna. ",
-        inPercentage: 62,
-        step: 2
+        inWords: "Podstawowym zabiegiem w uprawie pantofelnika jest regularne podlewanie. W słoneczne, letnie dni trzeba to robić nawet codziennie. Ponadto źle roślina reaguje na jakość wody – warto używać tej odstanej (przez dobę). Nie można jednocześnie dopuścić do zalewania roślin i zastoin w podstawce.",
+        inPercentage: 78,
+        step: 1
       },
       transplanting: {
-        inWords: "Jeśli nadejdzie potrzeba przesadzenia rośliny, należy ten zabieg zaplanować na końcówkę zimy. Podczas pielęgnacji pandanu należy zachować ostrożność, ponieważ istnieje ryzyko skaleczenia się ostrymi liśćmi.",
-        inPercentage: 43,
-        step: 4
+        inWords: "Ponieważ pantofelnik to roślina jednoroczna, zastępujmy je co rok nowymi. Jeżeli chcemy je przesadzić, zróbmy to w lutym używając uniwersalnej ziemi do kwiatów doniczkowych.",
+        inPercentage: 55,
+        step: 1
       },
       cutting: {
         inWords: "Roślinkę przycinamy tylko wtedy gdy kondycja kwiatka budzi obawy. ",
@@ -1214,9 +1214,123 @@ rantofelnikMieszańcowy: {
         step: 4
       },
       fertilizating: {
-        inWords: "Nawozimy 3 – 4 razy w okresie wiosny i lata mieszanką nawozów wieloskładnikowych. Na pandany bardzo korzystnie wpływa nawożenie krowieńcem.",
-        inPercentage: 67,
+        inWords: "Pantofelnik uprawiamy w uniwersalne ziemi do kwiatów doniczkowych, roślina nie wymaga nawożenia. Kalceolarię rozmnażamy przez wysiew nasion w lipcu lub sierpniu najlepiej w zimnej szklarni.",
+        inPercentage: 12,
+        step: 4
+      }
+    }
+},
+
+orchidea: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 10 m",
+      care: "łatwa",
+      description: 'Pantofelnik (Calceolaria), potocznie zwany również kalceolarią, należy do rodziny trędownikowatych Scrophulariaceae. Rodzaj ten liczy kilkaset gatunków, występujących głównie w Ameryce Południowej. U nas uprawiany jest jako jednoroczna roślina doniczkowa, którą chętnie ozdabiamy mieszkania na wiosnę i na początku lata. W sklepach ogrodniczych i kwiaciarniach sprzedawane są odmiany mieszańcowe, które powstały poprzez krzyżowanie różnych gatunków jednorocznych. Najpopularniejsze pantofelniki to całolistny, meksykański i dwukwiatowy. Rośliny mają pokrój kępiasty i mogą być różnej wysokości. Największą ozdobą pantofelników są oryginalne kwiaty z dolną wargą rozdętą w kształcie przypominającym pantofelka. Mają około 3-5 cm średnicy i mogą być barwy żółtej, pomarańczowej lub czerwonej, nakrapiane głębszą czerwienią. Kwiaty wyrastają ponad miękkie jajowate liście o karbowanych brzegach, które są gęsto zebrane u podstawy. Po kwitnieniu, które trwa od maja do lipca, roślina zaczyna zamierać.'
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 49},
+      temperature: {inWords: "od 18°C od 22°C", inPercentage: 49},
+      position: {inWords: "obok", inPercentage: 45},
+      whiff: {inWords: "niskie", inPercentage: 43},
+      humidity: {inWords: "średnie", inPercentage: 53},
+    },
+    care: {
+      watering: {
+        inWords: "Podstawowym zabiegiem w uprawie pantofelnika jest regularne podlewanie. W słoneczne, letnie dni trzeba to robić nawet codziennie. Ponadto źle roślina reaguje na jakość wody – warto używać tej odstanej (przez dobę). Nie można jednocześnie dopuścić do zalewania roślin i zastoin w podstawce.",
+        inPercentage: 78,
+        step: 1
+      },
+      transplanting: {
+        inWords: "Ponieważ pantofelnik to roślina jednoroczna, zastępujmy je co rok nowymi. Jeżeli chcemy je przesadzić, zróbmy to w lutym używając uniwersalnej ziemi do kwiatów doniczkowych.",
+        inPercentage: 55,
         step: 3
+      },
+      cutting: {
+        inWords: "Roślinkę przycinamy tylko wtedy gdy kondycja kwiatka budzi obawy. ",
+        inPercentage: 10,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Pantofelnik uprawiamy w uniwersalne ziemi do kwiatów doniczkowych, roślina nie wymaga nawożenia. Kalceolarię rozmnażamy przez wysiew nasion w lipcu lub sierpniu najlepiej w zimnej szklarni.",
+        inPercentage: 12,
+        step: 4
+      }
+    }
+},
+
+opuncja: {
+  general: {
+      type: "łatwa pielęgnacja",
+      size: "do 60 cm",
+      care: "łatwa",
+      description: 'Opuncja to roślina należąca do rodziny kaktusowatych. Nazywana jest również figą indyjską i figą kaktusową. Opuncję można uprawiać również jako roślinę doniczkową. Warto jednak pamiętać, że w warunkach domowych nigdy nie osiągnie ona pokaźnych rozmiarów. '
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 100},
+      temperature: {inWords: "od 21°C od 40°C", inPercentage: 99},
+      position: {inWords: "przy", inPercentage: 97},
+      whiff: {inWords: "średnie", inPercentage: 45},
+      humidity: {inWords: "niskie", inPercentage: 40},
+    },
+    care: {
+      watering: {
+        inWords: "Opuncja nie wymaga szczególnej pielęgnacji. Jedyne, o czym musisz bezwzględnie pamiętać, to podlewanie, ale i to nie jest zbyt częste.",
+        inPercentage: 5,
+        step: 4
+      },
+      transplanting: {
+        inWords: "Opuncje drobnokolczaste przesadza się dopiero, gdy prawie przestają się mieścić w doniczce.",
+        inPercentage: 3,
+        step: 4
+      },
+      cutting: {
+        inWords: "Roślinki ze względu na swoją budowę nie przycinamy",
+        inPercentage: 0,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Nawozimy nawozem do kaktusów w zależności od rozwoju rośliny, ja robię to 2-3 razy w okresie wegetacji",
+        inPercentage: 34,
+        step: 3
+      }
+    }
+},
+
+rosiczka: {
+  general: {
+      type: "lubiące słońce",
+      size: "do 30 cm",
+      care: "średnia",
+      description: 'Rosiczka (Drosera) to rodzaj należący do rodziny rosiczkowatych (Droseraceae). Zaliczamy do niego ok. 150 gatunków. Występują one prawie na wszystkich kontynentach z wyjątkiem Antarktydy. Naturalne środowisko rosiczek to jałowe torfowiska i zagłębienia śródwydmowe. Rosiczka to jedna z najbardziej popularnych roślin owadożernych uprawianych w domach. W zależności od odmiany tworzy rozetę z liści o średnicy 2-10 cm. Liście pokryte są włoskami oblepionymi słodko pachnącą, lepką wydzieliną trawienną. Roślina "łapie" owady, które wchodzą na liść – lepka substancja szybko skleja nie tylko odnóża, ale też skrzydła i całe tułowie owada, unieruchamiając go. Mimo, że rosiczka "zamyka się", czyli zwija wolniej niż muchołówka to owad nie jest w stanie uciec. Wydzielany kwas mrówkowy zaczyna rozpuszczać ciało ofiary. Miękkie części zostają strawione, a powstała z nich ciecz wchłonięta przez roślinę.'
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 73},
+      temperature: {inWords: "od 18°C od 25°C", inPercentage: 61},
+      position: {inWords: "przy", inPercentage: 83},
+      whiff: {inWords: "niskie", inPercentage: 20},
+      humidity: {inWords: "wysoka", inPercentage: 70},
+    },
+    care: {
+      watering: {
+        inWords: "Najważniejsza zasada przy podlewaniu rosiczki brzmi: żadnej wody z kranu! Wodę deszczową albo destylowaną roślina zniesie o wiele lepiej, niż zawierającą kamień świeżą wodę z wodociągu. Wodę należy zawsze podawać do podstawki, nigdy nie podlewać z góry. Między kolejnymi porcjami wody powinno się pozwolić na lekkie przeschnięcie podłoża. W chłodniejszym zimowym miejscu potrzeba mniej wody. W żadnym wypadku ziemia nie może zupełnie wyschnąć.",
+        inPercentage: 60,
+        step: 2
+      },
+      transplanting: {
+        inWords: "W pełni dojrzała rosiczka będzie zdobiła nasze mieszkanie po upływie dwóch lat. Przesadzamy rośliny co dwa lata, w okresie wiosennym. Wzrastanie rosiczki możemy przyspieszyć, dostarczając jej żywego pożywienia – po jednej muszce na liść.",
+        inPercentage: 38,
+        step: 4
+      },
+      cutting: {
+        inWords: "Roślinki ze względu na swoją anatomię nie przycinamy",
+        inPercentage: 0,
+        step: 4
+      },
+      fertilizating: {
+        inWords: "Rosiczki nie potrzebują nawożenia. To wynika również z ich słabego systemu korzeniowego, który nie służy do pobierania pokarmu z gleby. Delikatne korzenie mają raczej za zadanie utrzymanie rośliny w podłożu i czerpanie stamtąd wody. Wszystkie potrzebne składniki odżywcze mają do dyspozycji w postaci schwytanych ofiar.",
+        inPercentage: 0,
+        step: 4
       }
     }
 },

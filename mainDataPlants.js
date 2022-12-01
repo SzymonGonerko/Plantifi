@@ -41,13 +41,13 @@ export const livingroomPlants = [
   ]
 
   export const likedPlants = [
-    [require("./assets/images/likedPlants/RantofelnikMieszańcowy.jpg"), {name: "Rantofelnik Mieszańcowy", liked: 345}],
-    [require("./assets/images/likedPlants/OrchideaWytworna.jpg"), {name: "OrchideaWytworna", liked: 122}],
-    [require("./assets/images/likedPlants/KaktusKwiecik.jpg"), {name: "KaktusKwiecik", liked: 113}],
+    [require("./assets/images/likedPlants/PantofelnikMieszańcowy.jpg"), {name: "Pantofelnik Mieszańcowy", liked: 345, profile: profileData.pantofelnikMieszańcowy}],
+    [require("./assets/images/likedPlants/Orchidea.jpg"), {name: "Orchidea", liked: 122, profile: profileData.orchidea}],
+    [require("./assets/images/likedPlants/Opuncja.jpg"), {name: "Opuncja", liked: 113, profile: profileData.opuncja}],
   ]
 
   export const dailyPlants = [
-    [require("./assets/images/dailyPlants/Rosiczka.jpg"), {name: "Rosiczka", liked: 345}],
+    [require("./assets/images/dailyPlants/Rosiczka.jpg"), {name: "Rosiczka", liked: 345, profile: profileData.rosiczka}],
   ]
 
 
