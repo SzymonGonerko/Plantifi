@@ -1,12 +1,15 @@
 import React from "react";
-import { useState  } from 'react';
-import { StyleSheet, Text, View, ImageBackground, ScrollView, Image, FlatList, Dimensions} from 'react-native';
+import { useState, useRef } from 'react';
+import { StyleSheet, Text, View, ImageBackground, ScrollView, Image, FlatList, Dimensions, Animated} from 'react-native';
 import { SquareButton } from './ui/SquareButton';
 import { ShortLine } from './ui/ShortLine';
-import AntDesign from "react-native-vector-icons/AntDesign"
+import AntDesign from "react-native-vector-icons/AntDesign";
 import { Button } from './ui/Button';
 import { LongLineSeparator } from "./ui/LongLineSeparator";
 import { PopUpSuccess } from "./ui/PopUpSuccess";
+import { Pagination } from "./ui/Pagination";
+import { SlideItem } from "./ui/SlideItem";
+import { Heart } from "./ui/Heart"
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -14,6 +17,30 @@ const windowWidth = Dimensions.get('window').width;
 
 export const PlantDetails = ({onPressSquare, data}) => {
   const [addedNew, setAddedNew] = useState(false)
+  const [index, setIndex] = useState(0);
+  const scrollX = useRef(new Animated.Value(0)).current;
+
+  const handleOnScroll = event => {
+    Animated.event(
+      [
+        {
+          nativeEvent: {
+            contentOffset: {
+              x: scrollX,
+            },
+          },
+        },
+      ],
+      {
+        useNativeDriver: false,
+      },
+    )(event);
+  };
+
+  const handleOnItemsChanged = useRef(({viewableItems}) => {
+    setIndex(viewableItems[0].index);
+  }).current;
+
 
 
   const addPlantsToCollection = () => {
@@ -26,17 +53,16 @@ export const PlantDetails = ({onPressSquare, data}) => {
             <FlatList
               data={data.img}
               style={{}}
-              renderItem={({item}) => (
-                  <ImageBackground
-                      source={{uri: item}} 
-                      style={styles.background}
-                      imageStyle={styles.img}
-              />)}
+              renderItem={({item}) => <SlideItem item={item} />}
               horizontal
               pagingEnabled
               snapToAlignment="center"
               showsHorizontalScrollIndicator={false}
+              onScroll={handleOnScroll}
+              onViewableItemsChanged={handleOnItemsChanged}
             />
+            <Pagination data={data.img} scrollX={scrollX} index={index} />
+            <Heart/>
 
             <SquareButton onPress={onPressSquare} styleContainer={styles.btnSqure} type={"arrow"}/>
         </View>
