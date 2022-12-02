@@ -6,6 +6,7 @@ import { useState, useRef } from 'react';
 import {APP_PLANTID_API_KEY, APP_PLANTID_API_URL} from '@env'
 import {SquareButton} from "../components/ui/SquareButton"
 import { PlantDetails } from "./PlantDetails";
+import { ActivityIndicator } from "@react-native-material/core";
 
 
 export const CustomCamera = ({onPressCamera, onPressHandler}) => {
@@ -14,7 +15,9 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     const cameraRef = useRef()
     const [photo, setPhoto] = useState()
     const [plantsIDResponse, setplantsIDResponse] = useState(false)
-
+    const [data, setData] = useState(false)
+    const [isStartRequest, setIsStartRequest] = useState(false)
+    
 
     if (!permission) {
         return <View />;
@@ -34,46 +37,57 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
       }
 
       const takePhoto = async () => {
-        const options = {
-          quality: 1,
-          base64: true,
-          exif: false
+        if (!data) {
+          setIsStartRequest(true)
+          const options = {
+            quality: 0.8,
+            base64: true,
+            exif: false
+          }
+  
+          let newPhoto = await cameraRef.current.takePictureAsync(options)
+          setPhoto(newPhoto)
+  
+          const data = {
+            api_key: APP_PLANTID_API_KEY,
+            images: [newPhoto.base64],
+            modifiers: ["crops_fast", "similar_images"],
+            plant_language: "pl",
+            plant_details: 
+              [
+              "common_names", 
+              "wiki_description",
+              "wiki_image",
+              ],
+          };
+  
+          fetch(APP_PLANTID_API_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+        .then((response) => response.json())
+        .then(data => {
+          setData({
+            name: data.suggestions[0]?.plant_details?.common_names[0],
+            latin: data.suggestions[0]?.plant_details.scientific_name,
+            description: data.suggestions[0]?.plant_details?.wiki_description.value,
+            probability: (data.suggestions[0]?.probability).toFixed(2) * 100,
+            img: data.suggestions[0].plant_details.wiki_image.value
+          })        
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        })          
+        .then(() => {
+          setplantsIDResponse(true)
+        })
+        .then(() => {
+          setIsStartRequest(false)
+        })
         }
-
-        let newPhoto = await cameraRef.current.takePictureAsync(options)
-        setPhoto(newPhoto)
-
-        const data = {
-          api_key: APP_PLANTID_API_KEY,
-          images: [newPhoto.base64],
-          modifiers: ["crops_fast", "similar_images"],
-          plant_language: "pl",
-          plant_details: 
-            [
-            "common_names", "classification",
-            "description",
-            "taxonomy",
-            "treatment",
-            "url"
-            ],
-        };
-
-        fetch(APP_PLANTID_API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
-      .then((response) => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      })
-      // console.log("zdjęcie !")
-      // setplantsIDResponse(true)
       }
 
 
@@ -99,6 +113,9 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     <View style={styles.container}>
         {!plantsIDResponse &&
           <View style={{flex: 1}}>
+                {isStartRequest && <View style={{position: "absolute", zIndex: 5, top: 0, bottom: 0, left: 0, right: 0, backgroundColor: "#357c48a1", justifyContent: "center", alignItems: "center"}}>
+                <ActivityIndicator style={{position: "absolute"}} size={80} color="#35c45c" />
+                </View>}
             <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={{position: "absolute", top: 20, left: 20, zIndex: 2}}/>
             <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
                 <Image source={require("../assets/icons/frame.png")} resizeMode={"contain"} style={styles.frame}/>
@@ -115,16 +132,14 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
                     <View style={{width: 26, height: 26}}>
                       <Pressable onPress={toggleCameraType}>
                         <Image style={{width: 26, height: 26,}} source={require("../assets/icons/camera/arrowCircle.png")}/>
-                      </Pressable>
+                      </Pressable>  
                     </View>
-
                 </View>
-
             </Camera>
           </View>
           }
 
-          {plantsIDResponse && <PlantDetails onPressSquare={onPressSquare}/>}
+          {plantsIDResponse && <PlantDetails data={data} onPressSquare={onPressSquare}/>}
 
           
 

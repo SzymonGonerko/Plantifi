@@ -1,6 +1,6 @@
 import React from "react";
 import { useState  } from 'react';
-import { StyleSheet, Text, View, ImageBackground, ScrollView ,Modal} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, ScrollView, Image} from 'react-native';
 import { SquareButton } from './ui/SquareButton';
 import { ShortLine } from './ui/ShortLine';
 import AntDesign from "react-native-vector-icons/AntDesign"
@@ -8,20 +8,21 @@ import { Button } from './ui/Button';
 import { LongLineSeparator } from "./ui/LongLineSeparator";
 import { PopUpSuccess } from "./ui/PopUpSuccess";
 
-export const PlantDetails = ({onPressSquare}) => {
+
+
+export const PlantDetails = ({onPressSquare, data}) => {
   const [addedNew, setAddedNew] = useState(false)
 
 
   const addPlantsToCollection = () => {
     setAddedNew(true)
     setTimeout(() => {onPressSquare()}, 2000)
-    
 }
   
     return <>
         <View style={styles.bgcContainer}>
             <ImageBackground
-            source={require("../assets/images/background.jpg")} 
+            source={{uri: data.img}} 
             style={styles.background}
             imageStyle={styles.img}
             />
@@ -31,13 +32,16 @@ export const PlantDetails = ({onPressSquare}) => {
         <View style={styles.profileInfo}>
 
             <ShortLine style={{marginTop: 14}}/>
-            <Text style={styles.textName}>sdsdsds</Text>
+            <Text style={styles.name}>{data.name}</Text>
+            <Text style={styles.latin}>łac. {data.latin}</Text>
+            <Text style={styles.probability}>{data.probability}% trafności</Text>
             
             <LongLineSeparator style={{marginTop: 10}}/>
+            
+            <ScrollView showsVerticalScrollIndicator={false} style={{height: "23%"}} >
             <Text style={styles.textTitleDescription}>OPIS</Text>
-            <ScrollView showsVerticalScrollIndicator={false} >
                 <Text style={styles.textDescription}>
-                fdsffsd fsd fsd fsd fsd fsd f sdf sdf sdf sd fsd f sdf dsf dsf sd f sdf sd fsd fsd f ds
+                {data.description}
                 </Text>
             </ScrollView>
             
@@ -56,7 +60,7 @@ export const PlantDetails = ({onPressSquare}) => {
 const styles = StyleSheet.create({
     bgcContainer: {
       width: "100%",
-      height: "35%",
+      height: "40%",
       borderRadius: 17
   },
   background: {
@@ -68,13 +72,25 @@ const styles = StyleSheet.create({
   img: {
     borderRadius: 17,
   },
-  textName: {
+  name: {
     fontFamily: "NunitoBold",
     marginLeft: 24,
     marginTop: 15,
-    marginBottom: 15,
     fontSize: 24,
   },
+  latin: {
+    fontFamily: "NunitoItalic",
+    marginLeft: 24,
+    fontSize: 18,
+  },
+  probability: {
+    fontFamily: "NunitoItalic",
+    marginLeft: 24,
+    marginBottom: 10,
+    fontSize: 16,
+  },
+
+  
   profileInfo: {
     backgroundColor: "#FBFBFB",
     marginHorizontal: 10,
