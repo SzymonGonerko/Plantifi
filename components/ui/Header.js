@@ -1,10 +1,11 @@
 import * as NavigationBar from 'expo-navigation-bar';
+import React from "react";
 import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SquareButton } from './SquareButton';
 import { NavBar } from '../NavBar';
 
-export const Header = ({children, onPressShowMainApp, onPressThemeBar}) => {
+export const Header = ({children, onPressShowMainApp, onPressThemeBar, onHeader}) => {
     const [navVisibility, setNavVisiliblity] = useState(false)
 
     const goBack = () => {
@@ -22,7 +23,7 @@ export const Header = ({children, onPressShowMainApp, onPressThemeBar}) => {
     return <>
             <View style={styles.headerContainer}>
                 <View>
-                    <SquareButton type={"arrow"} onPress={goBack} styleButton={{backgroundColor: "white"}}/>
+                    <SquareButton onHeader={true} type={"arrow"} onPress={goBack} styleButton={{backgroundColor: "white"}}/>
                 </View>
                 <View> 
                     <Text style={[styles.headerText, {transform: [{translateY: -3}]}]}>{children}</Text>

@@ -70,12 +70,13 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
         })
         .then((response) => response.json())
         .then(data => {
+          setData(data)
           setData({
             name: data.suggestions[0]?.plant_details?.common_names[0],
             latin: data.suggestions[0]?.plant_details.scientific_name,
             description: data.suggestions[0]?.plant_details?.wiki_description.value,
             probability: (data.suggestions[0]?.probability).toFixed(2) * 100,
-            img: data.suggestions[0].plant_details.wiki_image.value
+            img: [data.suggestions[0]?.plant_details.wiki_image.value, data.suggestions[0]?.similar_images[0]?.url, data.suggestions[0]?.similar_images[1]?.url]
           })        
         })
         .catch((error) => {

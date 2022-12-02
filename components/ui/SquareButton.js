@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
 import * as NavigationBar from 'expo-navigation-bar';
 
@@ -6,7 +7,7 @@ import EvilIcons from "react-native-vector-icons/EvilIcons"
 import Entypo from "react-native-vector-icons/Entypo"
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 
-export const SquareButton = ({reset, onPress, styleContainer, styleButton, onPressThemeBar, type, onLogin}) => {
+export const SquareButton = ({reset, onPress, styleContainer, styleButton, onPressThemeBar, type, onLogin, onHeader}) => {
 
 const onPressButtonHandler = () => {
     if (onPress !== undefined) {
@@ -28,7 +29,7 @@ const onPressButtonHandler = () => {
         <Pressable 
         style={({pressed}) => pressed ? [styles.buttonInnerContainer, styles.pressed, styleButton] : [styles.buttonInnerContainer, styleButton]}
         onPress={onPressButtonHandler} android_ripple={{color: "#9BA9BC"}}>
-           {type === "arrow" ? <AntDesign name='left' style={{color: "black", fontSize: 25}}/> : null}
+           {type === "arrow" ? <AntDesign name='left' style={{color: (onHeader ? "black": "white"), fontSize: 25}}/> : null}
            {type === "nav" ? <EvilIcons name='navicon' style={{color: "#54795E", fontSize: 25}}/> : null}
            {type === "add" ? <Entypo name='plus' style={{color: "#54795E", fontSize: 20}}/> : null}
            {type === "slider" ? <FontAwesome name='sliders' style={{color: "#54795E", fontSize: 23}}/> : null}
@@ -47,12 +48,11 @@ const styles = StyleSheet.create({
         height: 48
     },
     buttonInnerContainer: {
-        backgroundColor: "#c6cdd3",
+        backgroundColor: "#8d9398ba",
         flex: 1,
         paddingRight: 1,
         justifyContent: "center",
         alignItems: "center",
-        // elevation: 2,
     },
     pressed: {
         opacity: 0.75,

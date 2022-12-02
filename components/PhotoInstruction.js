@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: "PlayfairDisplayBold",
+        paddingHorizontal: 10,
         fontSize: 25,
         textAlign: "center",
         marginTop: 10

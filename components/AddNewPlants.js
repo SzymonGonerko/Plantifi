@@ -1,5 +1,6 @@
+import React from "react";
 import { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View, Dimensions} from 'react-native';
 import { LongLineSeparator } from './ui/LongLineSeparator';
 import { CustomCheckbox } from './CustomCheckbox';
 import * as ImagePicker from "expo-image-picker"
@@ -9,7 +10,7 @@ import { RecommendedCare } from './RecommendedCare';
 
 import ToggleSwitch from 'toggle-switch-react-native'
 
-
+const windowHeight = Dimensions.get('window').height;
 
 export const AddNewPlants = ({src, care}) => {
     const [defaultImg, setDefaultImg] = useState(true)
@@ -63,8 +64,9 @@ export const AddNewPlants = ({src, care}) => {
 
 
     return <>
-    <ScrollView showsVerticalScrollIndicator={false} style={{height: "42%", marginHorizontal: 15}}>
-        <LongLineSeparator style={{marginTop: 5, marginBottom: 10}}/>
+    <LongLineSeparator style={{marginTop: 5, marginBottom: 10}}/>
+    <ScrollView showsVerticalScrollIndicator={false} style={{height: windowHeight/2.5, marginHorizontal: 10}}>
+        
         <View style={{flexDirection: "column"}}>
             <Text style={styles.titleText}>Dodaj swoje zdjęcia</Text>
             <View style={{flexDirection: "row", marginTop: 20}}>

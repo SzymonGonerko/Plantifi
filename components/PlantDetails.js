@@ -1,12 +1,14 @@
 import React from "react";
 import { useState  } from 'react';
-import { StyleSheet, Text, View, ImageBackground, ScrollView, Image} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, ScrollView, Image, FlatList, Dimensions} from 'react-native';
 import { SquareButton } from './ui/SquareButton';
 import { ShortLine } from './ui/ShortLine';
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { Button } from './ui/Button';
 import { LongLineSeparator } from "./ui/LongLineSeparator";
 import { PopUpSuccess } from "./ui/PopUpSuccess";
+
+const windowWidth = Dimensions.get('window').width;
 
 
 
@@ -21,12 +23,22 @@ export const PlantDetails = ({onPressSquare, data}) => {
   
     return <>
         <View style={styles.bgcContainer}>
-            <ImageBackground
-            source={{uri: data.img}} 
-            style={styles.background}
-            imageStyle={styles.img}
+            <FlatList
+              data={data.img}
+              style={{}}
+              renderItem={({item}) => (
+                  <ImageBackground
+                      source={{uri: item}} 
+                      style={styles.background}
+                      imageStyle={styles.img}
+              />)}
+              horizontal
+              pagingEnabled
+              snapToAlignment="center"
+              showsHorizontalScrollIndicator={false}
             />
-            <SquareButton onPress={onPressSquare} styleContainer={styles.btnSqure}  type={"arrow"}/>
+
+            <SquareButton onPress={onPressSquare} styleContainer={styles.btnSqure} type={"arrow"}/>
         </View>
 
         <View style={styles.profileInfo}>
@@ -65,9 +77,10 @@ const styles = StyleSheet.create({
   },
   background: {
       height: "100%",
+      width: windowWidth - 20,
       marginHorizontal: 10,
-      marginTop: 20,
-      marginBottom: 30
+      marginTop: 10,
+      zIndex: -2
   },
   img: {
     borderRadius: 17,
@@ -90,10 +103,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
-  
   profileInfo: {
     backgroundColor: "#FBFBFB",
     marginHorizontal: 10,
+    marginTop: -20,
     borderRadius: 20,
   },
   btnSqure: {

@@ -76,13 +76,13 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profil
 const styles = StyleSheet.create({
       bgcContainer: {
         width: "100%",
-        height: "30%",
+        height: "35%",
         borderRadius: 17,
     },
     background: {
         height: "100%",
         marginHorizontal: 10,
-        marginTop: 20,
+        marginTop: 10,
         marginBottom: 30
     },
     img: {
@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
     },
     profileInfo: {
       backgroundColor: "#FBFBFB",
+      marginTop: -10,
       marginHorizontal: 10,
       borderRadius: 20,
     },

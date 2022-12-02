@@ -67,7 +67,7 @@ export const Heart = () => {
 const styles = StyleSheet.create({
     container: {
         position: "absolute", 
-        bottom: -27, 
+        bottom: -20, 
         right: 30,
         width: 57, 
         height: 57, 
