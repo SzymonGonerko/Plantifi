@@ -62,7 +62,7 @@ export const PlantDetails = ({onPressSquare, data}) => {
               onViewableItemsChanged={handleOnItemsChanged}
             />
             <Pagination data={data.img} scrollX={scrollX} index={index} />
-            <Heart/>
+            <Heart bottomPosition={-8}/>
 
             <SquareButton onPress={onPressSquare} styleContainer={styles.btnSqure} type={"arrow"}/>
         </View>

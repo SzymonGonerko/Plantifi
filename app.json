@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#3b5642"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -18,17 +18,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.szymon1993.plantify"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "plugins": [
       [

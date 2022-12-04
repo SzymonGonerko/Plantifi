@@ -44,7 +44,7 @@ async function schedulePushNotification() {
         body: 'Wygląda na to, że niektóre roślinki wymagają Twojej uwagi. 🤗 Zaopiekuj się nimi!',
 
       },
-      trigger: { seconds: 10 },
+      trigger: { seconds: 40 },
     });
   }
   

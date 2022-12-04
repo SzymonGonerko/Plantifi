@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Modal, TouchableOpacity, Image, Pressable } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Modal, TouchableOpacity, Image, Pressable, Alert } from 'react-native';
 import * as ImagePicker from "expo-image-picker"
 import { Camera, CameraType } from 'expo-camera';
 import { useState, useRef } from 'react';
@@ -15,29 +15,17 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     const cameraRef = useRef()
     const [photo, setPhoto] = useState()
     const [plantsIDResponse, setplantsIDResponse] = useState(false)
-    const [data, setData] = useState(false)
+    const [dataPlant, setDataPlant] = useState(false)
     const [isStartRequest, setIsStartRequest] = useState(false)
     
 
-    if (!permission) {
-        return <View />;
-      }
-    
-      if (!permission.granted) {
-        return (
-          <View style={{position: "absolute", top: "50%", left: "50%"}}>
-            <Text style={{ textAlign: 'center' }}>Platify potrzebuje dostępu do aparatu</Text>
-            <Button onPress={requestPermission} title="udziel dostępu" />
-          </View>
-        );
-      }
     
       const toggleCameraType = () => {
         setType(current => (current === CameraType.back ? CameraType.front : CameraType.back));
       }
 
       const takePhoto = async () => {
-        if (!data) {
+        // if (!dataPlant) {
           setIsStartRequest(true)
           const options = {
             quality: 0.8,
@@ -70,25 +58,25 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
         })
         .then((response) => response.json())
         .then(data => {
-          setData(data)
-          setData({
+          setDataPlant({
             name: data.suggestions[0]?.plant_details?.common_names[0],
             latin: data.suggestions[0]?.plant_details.scientific_name,
             description: data.suggestions[0]?.plant_details?.wiki_description.value,
             probability: (data.suggestions[0]?.probability).toFixed(2) * 100,
             img: [data.suggestions[0]?.plant_details.wiki_image.value, data.suggestions[0]?.similar_images[0]?.url, data.suggestions[0]?.similar_images[1]?.url]
-          })        
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        })          
+          })
+        })       
         .then(() => {
           setplantsIDResponse(true)
-        })
-        .then(() => {
           setIsStartRequest(false)
         })
-        }
+        .catch((error) => {
+          console.log('Error:', error);
+          setplantsIDResponse(false)
+          setIsStartRequest(false)
+          Alert.alert("Upss...", "aplikacja nie rozpoznała rośliny... spróbuj ponownie, pamiętaj o poprawnym zrobieniu zdjęcia")
+        })   
+        // }
       }
 
 
@@ -140,7 +128,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
           </View>
           }
 
-          {plantsIDResponse && <PlantDetails data={data} onPressSquare={onPressSquare}/>}
+          {plantsIDResponse && dataPlant && <PlantDetails data={dataPlant} onPressSquare={onPressSquare}/>}
 
           
 

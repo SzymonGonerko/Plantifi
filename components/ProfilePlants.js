@@ -42,7 +42,7 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profil
             imageStyle={styles.img}
             />
             <SquareButton styleContainer={styles.btnSqure} reset={resetState} onPress={onPressButtonSquare} type={"arrow"}/>
-            <Heart/>
+            <Heart bottomPosition={-18}/>
         </View>
 
         <View style={styles.profileInfo}>

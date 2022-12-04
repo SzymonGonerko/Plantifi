@@ -5,7 +5,7 @@ import { StyleSheet, View, Pressable, Animated} from 'react-native';
 import Entypo from "react-native-vector-icons/Entypo"
 import Feather from "react-native-vector-icons/Feather"
 
-export const Heart = () => {
+export const Heart = ({bottomPosition}) => {
     const heartOpacity = useRef(new Animated.Value(1)).current;
     const heartGrowUp = useRef(new Animated.Value(1)).current;
     const [isFirstTap, setIsFirstTap] = useState(true)
@@ -41,7 +41,7 @@ export const Heart = () => {
 
 
     return <>
-    <View style={styles.container}>
+    <View style={[styles.container, {bottom: bottomPosition}]}>
 
         <Animated.View style={[
           {

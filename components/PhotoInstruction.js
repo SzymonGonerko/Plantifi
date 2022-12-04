@@ -1,31 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Modal, TouchableOpacity, Image } from 'react-native';
-import { Camera, CameraType } from 'expo-camera';
+import { StyleSheet, Text, View, ImageBackground, Modal } from 'react-native';
 import { PlantsSeparator } from './ui/PlantsSeparator';
 import { Button } from './ui/Button';
 import AntDesign from "react-native-vector-icons/AntDesign"
-import { useState } from 'react';
 import { CustomCamera } from './CustomCamera';
 
 export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressHandler}) => {
-    const [permission, requestPermission] = Camera.useCameraPermissions();
-
-
-    if (!permission) {
-        return <View />;
-      }
-    
-      if (!permission.granted) {
-        return (
-          <View>
-            <Text style={{ textAlign: 'center' }}>Platify potrzebuje dostępu do aparatu</Text>
-            <Button onPress={requestPermission} title="udziel dostępu" />
-          </View>
-        );
-      }
-
-
-
 
     return <>
     <Modal animationType="slide" visible={isVisible}>
