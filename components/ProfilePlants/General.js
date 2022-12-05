@@ -1,6 +1,7 @@
+import React from "react";
 import { useState } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal, ScrollView} from 'react-native';
-import { LongLineSeparator } from './ui/LongLineSeparator';
+import { LongLineSeparator } from '../ui/LongLineSeparator';
 
 import AntDesign from "react-native-vector-icons/AntDesign"
 
@@ -14,10 +15,10 @@ export const General = ({profile}) => {
                 <View style={styles.tag}>
                     <Text style={[styles.tagText, {textAlign: "left", marginLeft: 10}]}>Typ</Text>
                     <View style={styles.tagParam}>
-                        {profile.type === "łatwa pielęgnacja" ? <Image style={styles.innerIcon} resizeMode={"contain"} source={require("../assets/icons/exploreIcons/Easy.png")}/>: null}
-                        {profile.type === "do łazienki" ? <Image style={styles.innerIcon} source={require("../assets/icons/exploreIcons/bathroomIcon.png")}/>: null}
-                        {profile.type === "lubiące słońce" ? <Image style={styles.innerIcon} source={require("../assets/icons/exploreIcons/Sun.png")}/>: null}
-                        {profile.type === "przyjazne zwierzętom" ? <Image style={styles.innerIcon} source={require("../assets/icons/exploreIcons/Animals.png")}/>: null}
+                        {profile.type === "łatwa pielęgnacja" ? <Image style={styles.innerIcon} resizeMode={"contain"} source={require("../../assets/icons/exploreIcons/Easy.png")}/>: null}
+                        {profile.type === "do łazienki" ? <Image style={styles.innerIcon} source={require("../../assets/icons/exploreIcons/bathroomIcon.png")}/>: null}
+                        {profile.type === "lubiące słońce" ? <Image style={styles.innerIcon} source={require("../../assets/icons/exploreIcons/Sun.png")}/>: null}
+                        {profile.type === "przyjazne zwierzętom" ? <Image style={styles.innerIcon} source={require("../../assets/icons/exploreIcons/Animals.png")}/>: null}
                         <Text style={styles.defaultText}>{profile.type}</Text>
                     </View>
                 </View>
@@ -25,7 +26,7 @@ export const General = ({profile}) => {
                 <View style={styles.tag}>
                     <Text style={styles.tagText}>Rozmiar</Text>
                     <View style={styles.tagParam}>
-                        <Image style={styles.innerIcon} source={require("../assets/icons/exploreIcons/sizeIcon.png")}/>
+                        <Image style={styles.innerIcon} source={require("../../assets/icons/exploreIcons/sizeIcon.png")}/>
                         <Text style={styles.defaultText}>{profile.size}</Text>
                     </View>
                 </View>

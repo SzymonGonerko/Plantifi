@@ -1,14 +1,14 @@
 import React from "react";
 import { useState  } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Modal} from 'react-native';
-import { SquareButton } from './ui/SquareButton';
-import { ShortLine } from './ui/ShortLine';
+import { SquareButton } from '../ui/SquareButton';
+import { ShortLine } from '../ui/ShortLine';
 import { ModalPlantsNavigation } from './ModalPlantsNavigation';
 import { AddNewPlants } from './AddNewPlants';
-import { Heart } from "./ui/Heart"
+import { Heart } from "../ui/Heart"
 
 
-import {Button} from "./ui/Button"
+import {Button} from "../ui/Button"
 import AntDesign from "react-native-vector-icons/AntDesign"
 
 

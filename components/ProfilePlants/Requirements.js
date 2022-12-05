@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
-import { LongLineSeparator } from './ui/LongLineSeparator';
+import { LongLineSeparator } from '../ui/LongLineSeparator';
 import Feather from "react-native-vector-icons/Feather"
 
 
@@ -14,11 +14,11 @@ export const Requirements = ({profile}) => {
                 return (
                 <View key={i} style={{width: 48}}>
                     <View  style={styles.squareIcon}>
-                        {key === "insolation" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/sun.png")}/>: null}
-                        {key === "temperature" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/temp.png")}/>: null}
-                        {key === "position" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/position.png")}/>: null}
+                        {key === "insolation" ? <Image style={styles.innerIcon} source={require("../../assets/icons/requirementsIcons/sun.png")}/>: null}
+                        {key === "temperature" ? <Image style={styles.innerIcon} source={require("../../assets/icons/requirementsIcons/temp.png")}/>: null}
+                        {key === "position" ? <Image style={styles.innerIcon} source={require("../../assets/icons/requirementsIcons/position.png")}/>: null}
                         {key === "whiff" ? <Feather name='wind' style={{fontSize: 20}}/>: null}
-                        {key === "humidity" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/humidity.png")}/>: null}
+                        {key === "humidity" ? <Image style={styles.innerIcon} source={require("../../assets/icons/requirementsIcons/humidity.png")}/>: null}
                     </View>
                     <View style={styles.mainLine}>
                         <View style={[styles.currentValueLine, {width: `${val.inPercentage}%`}]}/>
@@ -33,11 +33,11 @@ export const Requirements = ({profile}) => {
             {Object.entries(profile).map(([key, val], i) => {
                 return <View key={i} style={styles.itemList}>
                         <View style={styles.iconList}>
-                            {key === "insolation" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/sun.png")}/>: null}
-                            {key === "temperature" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/temp.png")}/>: null}
-                            {key === "position" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/position.png")}/>: null}
+                            {key === "insolation" ? <Image style={styles.innerIcon} source={require("../../assets/icons/requirementsIcons/sun.png")}/>: null}
+                            {key === "temperature" ? <Image style={styles.innerIcon} source={require("../../assets/icons/requirementsIcons/temp.png")}/>: null}
+                            {key === "position" ? <Image style={styles.innerIcon} source={require("../../assets/icons/requirementsIcons/position.png")}/>: null}
                             {key === "whiff" ? <Feather name='wind' style={{fontSize: 20}}/>: null}
-                            {key === "humidity" ? <Image style={styles.innerIcon} source={require("../assets/icons/requirementsIcons/humidity.png")}/>: null}
+                            {key === "humidity" ? <Image style={styles.innerIcon} source={require("../../assets/icons/requirementsIcons/humidity.png")}/>: null}
                         </View>
                         <View style={styles.keyItemList}>
                             <Text style={styles.defaultText}>

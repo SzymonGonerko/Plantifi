@@ -1,5 +1,6 @@
+import React from "react";
 import { useState } from 'react';
-import {ProfileSwitcherNav} from "../components/ProfileSwitcherNav"
+import {ProfileSwitcherNav} from "./ProfileSwitcherNav"
 
 import { General } from './General';
 import { Requirements } from './Requirements';

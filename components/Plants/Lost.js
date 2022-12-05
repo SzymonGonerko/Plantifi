@@ -1,8 +1,9 @@
+import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
 import { useEffect, useRef, useState } from 'react';
-import { lostPlants } from '../mainDataPlants';
-import { LostPlantsCard } from './ui/LostPlantsCard';
-import { Button } from './ui/Button';
+import { lostPlants } from '../../mainDataPlants';
+import { LostPlantsCard } from '../ui/LostPlantsCard';
+import { Button } from '../ui/Button';
 
 
 

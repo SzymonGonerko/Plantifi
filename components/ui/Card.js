@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, ImageBackground, Pressable} from 'react-native'
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import AntDesign from "react-native-vector-icons/AntDesign"
-import { ProfilePlants } from '../ProfilePlants';
+import { ProfilePlants } from '../ProfilePlants/ProfilePlants';
 import { PopUpSuccess } from './PopUpSuccess';
 
 

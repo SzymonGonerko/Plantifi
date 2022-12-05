@@ -1,6 +1,7 @@
+import React from "react";
 import { StyleSheet, Text, View, Dimensions, ImageBackground, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import { SquareButton } from '../components/ui/SquareButton';
-import { LoginForm } from '../components/LoginForm';
+import { LoginForm } from '../components/Login/LoginForm';
 import { Separator } from '../components/ui/Separator';
 import { CustomIcon } from '../components/ui/CustomIcon';
 import { useState } from 'react';

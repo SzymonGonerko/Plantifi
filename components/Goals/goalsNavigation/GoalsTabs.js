@@ -1,11 +1,10 @@
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Animated} from 'react-native';
-import { useEffect } from "react";
 import { useRef } from "react";
-import * as NavigationBar from 'expo-navigation-bar';
 
 import { ToDoList } from "../ToDoList";
-import { TabSeparator } from "../ui/TabSeparator";
+import { TabSeparator } from "../../ui/TabSeparator";
 import { DateSection } from "../DateSection";
 
 const Tab = createBottomTabNavigator();

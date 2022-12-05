@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
+import React from "react";
+import { useState } from 'react';
 import { StyleSheet, View, Modal, Image, Text } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { IconButton } from "@react-native-material/core";
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { LongLineSeparator } from './ui/LongLineSeparator';
 import { Button } from './ui/Button';
-import { SquareButton} from "../components/ui/SquareButton"
+import { SquareButton} from "./ui/SquareButton"
 
-export const NavBar = ({isVisible, showMenu}) => {
+export const RightNavBar = ({isVisible, showMenu}) => {
     const [typeAnimation, setTypeAnimation] = useState("fadeInRight")
 
 

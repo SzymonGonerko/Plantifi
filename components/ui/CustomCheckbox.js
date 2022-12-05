@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, Text, View, Pressable} from 'react-native';
 
 import BouncyCheckbox from "react-native-bouncy-checkbox";

@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal, Platform} from 'react-native';
+import React from "react";
+import { StyleSheet, View, Image, Pressable} from 'react-native';
 import { CloseCircle } from './ui/CloseCircle';
 import Octicons from "react-native-vector-icons/Octicons"
 

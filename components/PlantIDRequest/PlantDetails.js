@@ -1,15 +1,15 @@
 import React from "react";
 import { useState, useRef, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList, Dimensions, Animated, Alert, ScrollView} from 'react-native';
-import { SquareButton } from './ui/SquareButton';
-import { ShortLine } from './ui/ShortLine';
+import { SquareButton } from '../ui/SquareButton';
+import { ShortLine } from '../ui/ShortLine';
 import AntDesign from "react-native-vector-icons/AntDesign";
-import { Button } from './ui/Button';
-import { LongLineSeparator } from "./ui/LongLineSeparator";
-import { PopUpSuccess } from "./ui/PopUpSuccess";
-import { Pagination } from "./ui/Pagination";
-import { SlideItem } from "./ui/SlideItem";
-import { Heart } from "./ui/Heart"
+import { Button } from '../ui/Button';
+import { LongLineSeparator } from "../ui/LongLineSeparator";
+import { PopUpSuccess } from "../ui/PopUpSuccess";
+import { Pagination } from "../ui/Pagination";
+import { SlideItem } from "../ui/SlideItem";
+import { Heart } from "../ui/Heart"
 
 const windowWidth = Dimensions.get('window').width;
 

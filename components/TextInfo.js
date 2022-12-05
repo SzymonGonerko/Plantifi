@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, Text, Pressable, Alert } from 'react-native';
 
 
@@ -21,7 +22,7 @@ export const TextInfo = () => {
             Project created by Klaudia Ginter
         </Text>
         <Text style={[styles.defaultText, styles.textAuthors]}>
-            Coding by Szymon Gonerko
+            Coded by Szymon Gonerko
         </Text>
     </>
 }

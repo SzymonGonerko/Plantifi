@@ -1,3 +1,4 @@
+import React from "react";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated} from 'react-native';
 import { useEffect } from "react";
@@ -7,7 +8,7 @@ import * as NavigationBar from 'expo-navigation-bar';
 import { Collection } from "../Collection";
 import { Favourite } from "../Favourite";
 import { Lost } from "../Lost";
-import { TabSeparator } from "../ui/TabSeparator";
+import { TabSeparator } from "../../ui/TabSeparator";
 
 const Tab = createBottomTabNavigator();
 

@@ -1,10 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
-import { useEffect, useRef, useState } from 'react';
-import {Card} from "../components/ui/Card"
+import { Card } from '../ui/Card';
 
-import { dailyPlants } from '../mainDataPlants';
-import { likedPlants } from '../mainDataPlants';
+import { dailyPlants } from '../../mainDataPlants';
+import { likedPlants } from '../../mainDataPlants';
 
 
 const windowWidth = Dimensions.get('window').width;

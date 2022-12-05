@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, Alert} from 'react-native';
 import { Header } from '../components/ui/Header';
-import { PlantsNavigator } from '../components/plantsNavigation/PlantsNavigator';
+import { PlantsNavigator } from '../components/Plants/plantsNavigation/PlantsNavigator';
 import { Camera } from 'expo-camera';
 
 

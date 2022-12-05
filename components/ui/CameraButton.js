@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Button } from 'react-native';
+import { StyleSheet, View, ImageBackground, Dimensions, Pressable } from 'react-native';
 
 import FontAwesome from "react-native-vector-icons/FontAwesome"
-import { PhotoInstruction } from '../PhotoInstruction';
+import { PhotoInstruction } from '../PlantIDRequest/PhotoInstruction';
 
 const windowWidth = Dimensions.get('screen').width;
 

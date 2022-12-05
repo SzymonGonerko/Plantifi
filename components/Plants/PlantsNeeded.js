@@ -1,14 +1,15 @@
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, ScrollView, FlatList} from 'react-native';
-import { Button } from './ui/Button';
+import React from "react";
+import { StyleSheet, Text, View, Image, FlatList} from 'react-native';
+import { Button } from '../ui/Button';
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { useState } from 'react';
 
 
 export const PlantsNeeded = ({userName, children, howManyPlants}) => {
     const [images, setimages] = useState([
-        require("../assets/images/plants/First.jpg"),
-        require("../assets/images/plants/Second.jpg"),
-        require("../assets/images/plants/Third.jpg"),
+        require("../../assets/images/plants/First.jpg"),
+        require("../../assets/images/plants/Second.jpg"),
+        require("../../assets/images/plants/Third.jpg"),
       ]);
 
 

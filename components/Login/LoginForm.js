@@ -16,9 +16,9 @@ import { OutlinedTextField } from 'rn-material-ui-textfield'
 import AntDesign from "react-native-vector-icons/AntDesign"
 import Octicons from "react-native-vector-icons/Octicons"
 import Feather from "react-native-vector-icons/Feather"
-import {Button} from "../components/ui/Button"
+import {Button} from "../ui/Button"
 import { IconButton } from "@react-native-material/core";
-import { CustomCheckbox } from './CustomCheckbox';
+import { CustomCheckbox } from '../ui/CustomCheckbox';
 
 export const LoginForm = ({onFocusHandler, onBlurHandler, onPressShowMainApp}) => {
 const [correctLogin, setCorrectLogin] = useState(false)
@@ -44,7 +44,7 @@ async function schedulePushNotification() {
         body: 'Wygląda na to, że niektóre roślinki wymagają Twojej uwagi. 🤗 Zaopiekuj się nimi!',
 
       },
-      trigger: { seconds: 40 },
+      trigger: { seconds: 180 },
     });
   }
   

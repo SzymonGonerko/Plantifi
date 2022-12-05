@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
 
 export const ProfileSwitcherNav = ({general, requirements, care, onPress}) => {

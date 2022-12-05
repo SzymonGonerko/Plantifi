@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert } from 'react-native';
-import {Header} from "../components/ui/Header"
-import { GoalsNavigator } from '../components/goalsNavigation/GoalsNavigator';
+import React from "react";
+import { StyleSheet, View } from 'react-native';
+import { Header } from "../components/ui/Header"
+import { GoalsNavigator } from '../components/Goals/goalsNavigation/GoalsNavigator';
 
 
 export const Goals = ({onPressShowMainApp, onPressThemeBar}) => {

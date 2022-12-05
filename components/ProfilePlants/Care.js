@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal, ScrollView} from 'react-native';
-import { LongLineSeparator } from './ui/LongLineSeparator';
+import { LongLineSeparator } from '../ui/LongLineSeparator';
 
 export const Care = ({profile}) => {
     return <>
@@ -10,10 +10,10 @@ export const Care = ({profile}) => {
                     return (
                     <View key={i} style={{width: 48}}>
                         <View  style={styles.squareIcon}>
-                            {key === "watering" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Watering.png")}/>: null}
-                            {key === "transplanting" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Transplanting.png")}/>: null}
-                            {key === "cutting" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Cutting.png")}/>: null}
-                            {key === "fertilizating" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Fertilizating.png")}/>: null}
+                            {key === "watering" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Watering.png")}/>: null}
+                            {key === "transplanting" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Transplanting.png")}/>: null}
+                            {key === "cutting" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Cutting.png")}/>: null}
+                            {key === "fertilizating" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Fertilizating.png")}/>: null}
                         </View>
                         <View style={styles.mainLine}>
                             <View style={[styles.currentValueLine, {width: `${val.inPercentage}%`}]}/>
@@ -28,10 +28,10 @@ export const Care = ({profile}) => {
                         return (
                         <View key={i} style={{flexDirection: "column", marginLeft: 10, marginBottom: 17}}>
                             <View style={{flexDirection: "row", marginBottom: 6}}>
-                                {key === "watering" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Watering.png")}/>: null}
-                                {key === "transplanting" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Transplanting.png")}/>: null}
-                                {key === "cutting" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Cutting.png")}/>: null}
-                                {key === "fertilizating" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Fertilizating.png")}/>: null}
+                                {key === "watering" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Watering.png")}/>: null}
+                                {key === "transplanting" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Transplanting.png")}/>: null}
+                                {key === "cutting" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Cutting.png")}/>: null}
+                                {key === "fertilizating" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Fertilizating.png")}/>: null}
                                 <Text style={styles.titleList}>
                                     {key === "watering" ? "Podlewanie": null}
                                     {key === "transplanting" ? "Przesadzanie": null}

@@ -4,7 +4,7 @@ import * as ImagePicker from "expo-image-picker"
 import { Camera, CameraType } from 'expo-camera';
 import { useState, useRef } from 'react';
 import {APP_PLANTID_API_KEY, APP_PLANTID_API_URL} from '@env'
-import {SquareButton} from "../components/ui/SquareButton"
+import {SquareButton} from "../ui/SquareButton"
 import { PlantDetails } from "./PlantDetails";
 import { ActivityIndicator } from "@react-native-material/core";
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -157,11 +157,11 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
             </View>}
             <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={{position: "absolute", top: 20, left: 20, zIndex: 2}}/>
             <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
-                <Image source={require("../assets/icons/frame.png")} resizeMode={"contain"} style={styles.frame}/>
+                <Image source={require("../../assets/icons/frame.png")} resizeMode={"contain"} style={styles.frame}/>
                 <View style={{position: "absolute", zIndex: 20, bottom: 20, flexDirection: "row", width: "100%", justifyContent: "space-around", alignItems: "center"}}>
                     <View style={{width: 40, height: 40}}>
                       <Pressable onPress={pickImage}>
-                        <Image style={{width: 40, height: 40, borderRadius: 3}} source={require("../assets/icons/camera/gallery.jpg")}/>
+                        <Image style={{width: 40, height: 40, borderRadius: 3}} source={require("../../assets/icons/camera/gallery.jpg")}/>
                       </Pressable>
                     </View>
 
@@ -170,7 +170,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
                     
                     <View style={{width: 26, height: 26}}>
                       <Pressable onPress={toggleCameraType}>
-                        <Image style={{width: 26, height: 26,}} source={require("../assets/icons/camera/arrowCircle.png")}/>
+                        <Image style={{width: 26, height: 26,}} source={require("../../assets/icons/camera/arrowCircle.png")}/>
                       </Pressable>  
                     </View>
                 </View>

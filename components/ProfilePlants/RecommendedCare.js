@@ -1,9 +1,8 @@
-import { useState} from 'react';
 import React from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View, Image, Alert} from 'react-native';
+import { Pressable, StyleSheet, Text, View, Image, Alert} from 'react-native';
 import { Slider } from "@miblanchard/react-native-slider";
-import { SliderContainer } from './ui/SliderContainer';
-import { PlantsSeparator } from './ui/PlantsSeparator';
+import { SliderContainer } from '../ui/SliderContainer';
+import { PlantsSeparator } from '../ui/PlantsSeparator';
 
 
 
@@ -23,10 +22,10 @@ export const RecommendedCare = ({profile}) => {
                     <View key={i} style={{flexDirection: "row", alignItems: "center"}}>
                         <View  style={{width: 48}}>
                             <View  style={styles.squareIcon}>
-                                {key === "watering" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Watering.png")}/>: null}
-                                {key === "transplanting" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Transplanting.png")}/>: null}
-                                {key === "cutting" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Cutting.png")}/>: null}
-                                {key === "fertilizating" ? <Image style={styles.innerIcon} source={require("../assets/icons/careIcons/Fertilizating.png")}/>: null}
+                                {key === "watering" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Watering.png")}/>: null}
+                                {key === "transplanting" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Transplanting.png")}/>: null}
+                                {key === "cutting" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Cutting.png")}/>: null}
+                                {key === "fertilizating" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Fertilizating.png")}/>: null}
                             </View>
                             <View style={styles.mainLine}>
                                 <View style={[styles.currentValueLine, {width: `${val.inPercentage}%`}]}/>

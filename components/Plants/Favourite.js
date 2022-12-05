@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, View, FlatList} from 'react-native';
 import { useState } from 'react';
-import { searchPlants } from '../mainDataPlants';
-import { Card } from './ui/Card';
-import { SearchInput } from './ui/SearchInput';
+import { searchPlants } from '../../mainDataPlants';
+import { Card } from '../ui/Card';
+import { SearchInput } from '../ui/SearchInput';
 
 export const Favourite = () => {
     const [plants, setPlants] = useState(searchPlants)

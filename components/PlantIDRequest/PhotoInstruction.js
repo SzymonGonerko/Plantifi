@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Modal } from 'react-native';
-import { PlantsSeparator } from './ui/PlantsSeparator';
-import { Button } from './ui/Button';
+import { PlantsSeparator } from '../ui/PlantsSeparator';
+import { Button } from '../ui/Button';
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { CustomCamera } from './CustomCamera';
 
@@ -12,7 +12,7 @@ export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressH
         {!showCamera &&
         <View style={{flex: 1}}>
             <View style={{flex: 1}}>
-                <ImageBackground source={require("../assets/images/instructionBackground.png")} style={{position: "absolute" ,width: "100%", height: "100%"}}/>
+                <ImageBackground source={require("../../assets/images/instructionBackground.png")} style={{position: "absolute" ,width: "100%", height: "100%"}}/>
                 <View style={{width: "100%", height: "100%", backgroundColor: "#202327cc"}}/>
             </View>
 

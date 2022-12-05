@@ -1,11 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
-import { useEffect, useRef, useState } from 'react';
+import { StyleSheet, View, FlatList, ScrollView} from 'react-native';
 import { PlantsNeeded } from './PlantsNeeded';
 import { AddNew } from './AddNew';
-import { PlantsSeparator } from './ui/PlantsSeparator';
-import { livingroomPlants, bedroomPlants } from '../mainDataPlants';
-import { Card } from './ui/Card';
+import { PlantsSeparator } from '../ui/PlantsSeparator';
+import { livingroomPlants, bedroomPlants } from '../../mainDataPlants';
+import { Card } from '../ui/Card';
 
 export const Collection = () => {
 

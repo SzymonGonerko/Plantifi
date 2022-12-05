@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View, Dimensions} from 'react-native';
-import { LongLineSeparator } from './ui/LongLineSeparator';
-import { CustomCheckbox } from './CustomCheckbox';
+import { LongLineSeparator } from '../ui/LongLineSeparator';
+import { CustomCheckbox } from '../ui/CustomCheckbox';
 import * as ImagePicker from "expo-image-picker"
-import { PickerImage } from './PickerImage';
-import { DateRemember } from './ui/DateRemember';
+import { PickerImage } from '../PickerImage';
+import { DateRemember } from '../ui/DateRemember';
 import { RecommendedCare } from './RecommendedCare';
 
 import ToggleSwitch from 'toggle-switch-react-native'

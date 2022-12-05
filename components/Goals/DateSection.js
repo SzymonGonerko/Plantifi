@@ -1,12 +1,12 @@
-import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert, Image } from 'react-native';
-import { useRef, useState } from 'react';
-import { CalendarList, LocaleConfig} from 'react-native-calendars';
-import { LongLineSeparator} from "./ui/LongLineSeparator"
+import React from "react";
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { useState } from 'react';
+import { LongLineSeparator} from "../ui/LongLineSeparator"
 import { ScrollView } from 'react-native-gesture-handler';
 
 import { CustomCalendar } from './CustomCalendar';
 
-import {toDoListPlants, calendarPlants} from "../mainDataPlants"
+import { toDoListPlants } from "../../mainDataPlants"
 
 
 const today = new Date()
@@ -53,9 +53,9 @@ export const DateSection = () => {
                                             <View style={{flexDirection: "column", justifyContent: "center", marginLeft: 20}}>
                                                     <Text style={styles.title}>{item[1].name}</Text>
                                                     <View style={{flexDirection: "row", alignItems: "center"}}>
-                                                        {item[1].whatNeed === "Potrzebuje Wody! (15ml)" && <Image resizeMode='contain' style={styles.icons} source={require("../assets/icons/toDoListIcons/Can.png")}/>}
-                                                        {item[1].whatNeed === "Potrzebuje przesadzenia!" && <Image resizeMode='contain' style={styles.icons} source={require("../assets/icons/toDoListIcons/Transplanting.png")}/>}
-                                                        {item[1].whatNeed === "Potrzebuje drenażu doniczki!" && <Image resizeMode='contain' style={styles.icons} source={require("../assets/icons/toDoListIcons/Pot.png")}/>}
+                                                        {item[1].whatNeed === "Potrzebuje Wody! (15ml)" && <Image resizeMode='contain' style={styles.icons} source={require("../../assets/icons/toDoListIcons/Can.png")}/>}
+                                                        {item[1].whatNeed === "Potrzebuje przesadzenia!" && <Image resizeMode='contain' style={styles.icons} source={require("../../assets/icons/toDoListIcons/Transplanting.png")}/>}
+                                                        {item[1].whatNeed === "Potrzebuje drenażu doniczki!" && <Image resizeMode='contain' style={styles.icons} source={require("../../assets/icons/toDoListIcons/Pot.png")}/>}
                                                         <Text style={styles.itemListText}>{item[1].whatNeed}</Text>
                                                     </View>
                                             </View>

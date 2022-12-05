@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert, Image } from 'react-native';
-import { useRef, useState } from 'react';
+import React from "react";
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { CalendarList, LocaleConfig} from 'react-native-calendars';
 import { 
     polishMonthNames, 
     polishDayNamesShort, 
     polishMonthNamesShort, 
     polishDayNames,
-} from '../dateSetup';
+} from '../../dateSetup';
 
-import {toDoListPlants, calendarPlants} from "../mainDataPlants"
+import {toDoListPlants, calendarPlants} from "../../mainDataPlants"
 
 LocaleConfig.locales['pl'] = {
     monthNames: [...polishMonthNames],

@@ -1,13 +1,14 @@
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView, Alert} from 'react-native';
-import { useEffect, useRef, useState } from 'react';
+import React from "react";
+import { StyleSheet, Text, View, FlatList, ScrollView, Alert} from 'react-native';
+import { useEffect, useState } from 'react';
 import { Header } from '../components/ui/Header';
 import { SearchInput } from '../components/ui/SearchInput';
 import { SquareButton } from '../components/ui/SquareButton';
 import { plantsCategory } from '../mainDataPlants';
 import { CategoryCard } from '../components/ui/CategoryCard';
 import { LongLineSeparator } from '../components/ui/LongLineSeparator';
-import { ExploreStartSection } from '../components/ExploreStartSection';
-import { EasyCare } from '../components/EasyCare';
+import { ExploreStartSection } from '../components/Explore/ExploreStartSection';
+import { EasyCare } from '../components/Explore/EasyCare';
 
 
 export const Explore = ({onPressShowMainApp, onPressThemeBar}) => {
