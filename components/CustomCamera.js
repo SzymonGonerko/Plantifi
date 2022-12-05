@@ -25,7 +25,6 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
       }
 
       const takePhoto = async () => {
-        // if (!dataPlant) {
           setIsStartRequest(true)
           const options = {
             quality: 0.8,
@@ -58,25 +57,32 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
         })
         .then((response) => response.json())
         .then(data => {
-          setDataPlant({
-            name: data.suggestions[0]?.plant_details?.common_names[0],
-            latin: data.suggestions[0]?.plant_details.scientific_name,
-            description: data.suggestions[0]?.plant_details?.wiki_description.value,
-            probability: (data.suggestions[0]?.probability).toFixed(2) * 100,
-            img: [data.suggestions[0]?.plant_details.wiki_image.value, data.suggestions[0]?.similar_images[0]?.url, data.suggestions[0]?.similar_images[1]?.url]
-          })
+          if ((data.suggestions[0]?.probability).toFixed(2) * 100 > 40) {
+            setDataPlant({
+              name: data.suggestions[0]?.plant_details?.common_names[0],
+              latin: data.suggestions[0]?.plant_details.scientific_name,
+              description: data.suggestions[0]?.plant_details?.wiki_description.value,
+              probability: (data.suggestions[0]?.probability).toFixed(2) * 100,
+              img: [data.suggestions[0]?.plant_details.wiki_image.value, data.suggestions[0]?.similar_images[0]?.url, data.suggestions[0]?.similar_images[1]?.url]
+            })
+            return true
+          } else {
+            Alert.alert("Niska trafność", "wynik wyszukiwania ma niską trafność, pamiętaj o poprawnym zrobieniu zdjęcia")
+            return false
+          }
+
         })       
-        .then(() => {
-          setplantsIDResponse(true)
+        .then((isHightProbability) => {
+          console.log(isHightProbability)
+          isHightProbability ? setplantsIDResponse(true) : setplantsIDResponse(false)
           setIsStartRequest(false)
         })
         .catch((error) => {
           console.log('Error:', error);
           setplantsIDResponse(false)
           setIsStartRequest(false)
-          Alert.alert("Upss...", "aplikacja nie rozpoznała rośliny... spróbuj ponownie, pamiętaj o poprawnym zrobieniu zdjęcia")
+          Alert.alert("Upss...", "aplikacja nie rozpoznała rośliny...pamiętaj o poprawnym zrobieniu zdjęcia")
         })   
-        // }
       }
 
 
@@ -104,7 +110,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
           <View style={{flex: 1}}>
                 {isStartRequest && <View style={{position: "absolute", zIndex: 5, top: 0, bottom: 0, left: 0, right: 0, backgroundColor: "#357c48a1", justifyContent: "center", alignItems: "center"}}>
                 <ActivityIndicator style={{position: "absolute"}} size={80} color="#35c45c" />
-                </View>}
+          </View>}
             <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={{position: "absolute", top: 20, left: 20, zIndex: 2}}/>
             <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
                 <Image source={require("../assets/icons/frame.png")} resizeMode={"contain"} style={styles.frame}/>

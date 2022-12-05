@@ -1,3 +1,4 @@
+import React from "react";
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import * as NavigationBar from 'expo-navigation-bar';
@@ -7,7 +8,6 @@ import { useEffect, useCallback, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
 
-import { Logo } from './screens/Logo';
 import { Welcome } from './screens/Welcome';
 import { Login } from './screens/Login';
 
@@ -29,7 +29,6 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false)
-  const [logoVisibility, setLogoVisiblity] = useState(true)
   const [showMainApp, setShowMainApp] = useState(false)
   const [themeBar, setThemeBar] = useState('light')
   const [anim, setAnim] = useState("")
@@ -60,9 +59,6 @@ export default function App() {
 
   const onPressHandlerAnim = () => {
       setAnim("bounceOutLeft")
-      setTimeout(() => {
-        setLogoVisiblity(false)
-      }, 2000)
     }
 
   const onPressHandlerPrev = () => {
@@ -82,7 +78,6 @@ export default function App() {
   <StatusBar style={themeBar}/>
   {!showMainApp &&
     <View style={styles.container} onLayout={onLayoutRootView}>
-        {logoVisibility && <Logo/>}
         <Welcome 
           onPressHandlerAnim={onPressHandlerAnim} 
           anim={anim} 
