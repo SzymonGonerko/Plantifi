@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Modal, TouchableOpacity, Image, Pressable, Alert } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Image, Pressable, Alert } from 'react-native';
 import * as ImagePicker from "expo-image-picker"
 import { Camera, CameraType } from 'expo-camera';
 import { useState, useRef } from 'react';
@@ -153,7 +153,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
         {!plantsIDResponse &&
           <View style={{flex: 1}}>
             {isStartRequest && <View style={{position: "absolute", zIndex: 5, top: 0, bottom: 0, left: 0, right: 0, backgroundColor: "#357c48a1", justifyContent: "center", alignItems: "center"}}>
-                <ActivityIndicator style={{position: "absolute"}} size={80} color="#35c45c" />
+                <ActivityIndicator style={{position: "absolute"}} size={60} color="#35c45c" />
             </View>}
             <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={{position: "absolute", top: 20, left: 20, zIndex: 2}}/>
             <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
