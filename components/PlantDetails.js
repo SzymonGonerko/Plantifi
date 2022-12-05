@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useRef } from 'react';
-import { StyleSheet, Text, View, ImageBackground, ScrollView, Image, FlatList, Dimensions, Animated} from 'react-native';
+import { useState, useRef, useEffect } from 'react';
+import { StyleSheet, Text, View, FlatList, Dimensions, Animated, Alert, ScrollView} from 'react-native';
 import { SquareButton } from './ui/SquareButton';
 import { ShortLine } from './ui/ShortLine';
 import AntDesign from "react-native-vector-icons/AntDesign";
@@ -15,10 +15,15 @@ const windowWidth = Dimensions.get('window').width;
 
 
 
-export const PlantDetails = ({onPressSquare, data}) => {
+export const PlantDetails = ({onPressSquare, data, setCorrectGrammar}) => {
   const [addedNew, setAddedNew] = useState(false)
   const [index, setIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
+
+
+  useEffect(() => {
+    Alert.alert("Świetnie!", `aplikacja rozpoznała Twoją roślinę! ${setCorrectGrammar(data.howManyReuqestLeft)}`)
+  }, [])
 
   const handleOnScroll = event => {
     Animated.event(

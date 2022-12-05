@@ -1,8 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, SafeAreaView, View, Alert, PermissionsAndroid, Button} from 'react-native';
+import { StyleSheet, SafeAreaView, Alert} from 'react-native';
 import { Header } from '../components/ui/Header';
 import { PlantsNavigator } from '../components/plantsNavigation/PlantsNavigator';
-import { Camera, CameraType } from 'expo-camera';
+import { Camera } from 'expo-camera';
 
 
 export const Plants = ({onPressShowMainApp, onPressThemeBar}) => {
@@ -15,7 +15,7 @@ export const Plants = ({onPressShowMainApp, onPressThemeBar}) => {
       if (!permission.granted) {
          Alert.alert(
             "Dostęp do aparatu",
-            "Aby rozpoznać Twoją rośline aplikacja Plantify potrzbuje dostępu do aparatu",
+            "Aby rozpoznać Twoją rośline aplikacja Plantify potrzebuje dostępu do aparatu",
             [
               {
                 text: "Odmawiam",      

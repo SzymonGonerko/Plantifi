@@ -7,16 +7,56 @@ import {APP_PLANTID_API_KEY, APP_PLANTID_API_URL} from '@env'
 import {SquareButton} from "../components/ui/SquareButton"
 import { PlantDetails } from "./PlantDetails";
 import { ActivityIndicator } from "@react-native-material/core";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     const [type, setType] = useState(CameraType.back);
-    const [permission, requestPermission] = Camera.useCameraPermissions();
     const cameraRef = useRef()
     const [photo, setPhoto] = useState()
     const [plantsIDResponse, setplantsIDResponse] = useState(false)
     const [dataPlant, setDataPlant] = useState(false)
     const [isStartRequest, setIsStartRequest] = useState(false)
+
+    const setCorrectGrammar = (number) => {
+      switch (number) {
+        case 8: return "Zostało Ci jeszcze 8 zdjęć." 
+        case 7: return "Zostało Ci jeszcze 7 zdjęć."
+        case 6: return "Zostało Ci jeszcze 6 zdjęć."
+        case 5: return "Zostało Ci jeszcze 5 zdjęć."
+        case 4: return "Zostały Ci jeszcze 4 zdjęcia."
+        case 3: return "Zostały Ci jeszcze 3 zdjęcia."
+        case 2: return "Zostały Ci jeszcze 2 zdjęcia."
+        case 1: return "Zostało Ci jeszcze ostatnie zdjęcie! Wykorzystaj je!"
+        case 0: return "Wykorzystałeś już wszystkie zdjęcia. Dziękujemy!"
+        default: return `Liczba zdjęć do wykorzystania to ${number}`
+    }
+      }
+
+    const onPressSquare = () => {
+      onPressHandler()
+      onPressCamera()
+    }
+
+    const setupRequestIntialNumber = async (value) => {
+      let result
+      try {
+        const howManyIsAsString = await AsyncStorage.getItem('howMany')
+        const data = await value
+        if (howManyIsAsString === null) {
+          AsyncStorage.setItem('howMany', data)
+          result = parseInt(data)
+        } else {
+          let number = parseInt(howManyIsAsString)
+          --number
+          AsyncStorage.setItem('howMany', number.toString())
+          result = number
+        }
+      } catch(e) {
+        console.log(e)
+      }
+      return result
+    }
     
 
     
@@ -25,14 +65,22 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
       }
 
       const takePhoto = async () => {
+        const options = {
+          quality: 0.8,
+          base64: true,
+          exif: false
+        }
+        let newPhoto = await cameraRef.current.takePictureAsync(options)
+        setupRequestIntialNumber("8").then((howManyReuqestLeft) => {
+          if (howManyReuqestLeft < 0) return Alert.alert(
+            "Dziękujemy za...", 
+            `skorzystanie z wersji testowej. Mamy nadzieję, że dowiedziałeś/aś się czegoś nowego o roślinach!`,
+            [              {
+              text: "ok",      
+              onPress: () => onPressSquare(),
+            },]
+            )
           setIsStartRequest(true)
-          const options = {
-            quality: 0.8,
-            base64: true,
-            exif: false
-          }
-  
-          let newPhoto = await cameraRef.current.takePictureAsync(options)
           setPhoto(newPhoto)
   
           const data = {
@@ -63,26 +111,26 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
               latin: data.suggestions[0]?.plant_details.scientific_name,
               description: data.suggestions[0]?.plant_details?.wiki_description.value,
               probability: (data.suggestions[0]?.probability).toFixed(2) * 100,
-              img: [data.suggestions[0]?.plant_details.wiki_image.value, data.suggestions[0]?.similar_images[0]?.url, data.suggestions[0]?.similar_images[1]?.url]
+              img: [data.suggestions[0]?.plant_details.wiki_image.value, data.suggestions[0]?.similar_images[0]?.url, data.suggestions[0]?.similar_images[1]?.url],
+              howManyReuqestLeft,
             })
             return true
           } else {
-            Alert.alert("Niska trafność", "wynik wyszukiwania ma niską trafność, pamiętaj o poprawnym zrobieniu zdjęcia")
+            Alert.alert("Niska trafność", `Wynik wyszukiwania ma niską trafność, pamiętaj o poprawnym zrobieniu zdjęcia. ${setCorrectGrammar(howManyReuqestLeft)}`)
             return false
           }
 
         })       
         .then((isHightProbability) => {
-          console.log(isHightProbability)
           isHightProbability ? setplantsIDResponse(true) : setplantsIDResponse(false)
           setIsStartRequest(false)
         })
-        .catch((error) => {
-          console.log('Error:', error);
+        .catch(() => {
           setplantsIDResponse(false)
           setIsStartRequest(false)
-          Alert.alert("Upss...", "aplikacja nie rozpoznała rośliny...pamiętaj o poprawnym zrobieniu zdjęcia")
+          Alert.alert("Upss...", `aplikacja nie rozpoznała rośliny...pamiętaj o poprawnym zrobieniu zdjęcia. ${setCorrectGrammar(howManyReuqestLeft)}`)
         })   
+        })
       }
 
 
@@ -98,19 +146,15 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
       }
       }
 
-      const onPressSquare = () => {
-        onPressHandler()
-        onPressCamera()
-      }
 
 
     return <>
     <View style={styles.container}>
         {!plantsIDResponse &&
           <View style={{flex: 1}}>
-                {isStartRequest && <View style={{position: "absolute", zIndex: 5, top: 0, bottom: 0, left: 0, right: 0, backgroundColor: "#357c48a1", justifyContent: "center", alignItems: "center"}}>
+            {isStartRequest && <View style={{position: "absolute", zIndex: 5, top: 0, bottom: 0, left: 0, right: 0, backgroundColor: "#357c48a1", justifyContent: "center", alignItems: "center"}}>
                 <ActivityIndicator style={{position: "absolute"}} size={80} color="#35c45c" />
-          </View>}
+            </View>}
             <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={{position: "absolute", top: 20, left: 20, zIndex: 2}}/>
             <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
                 <Image source={require("../assets/icons/frame.png")} resizeMode={"contain"} style={styles.frame}/>
@@ -134,7 +178,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
           </View>
           }
 
-          {plantsIDResponse && dataPlant && <PlantDetails data={dataPlant} onPressSquare={onPressSquare}/>}
+          {plantsIDResponse && dataPlant && <PlantDetails setCorrectGrammar={setCorrectGrammar} data={dataPlant} onPressSquare={onPressSquare}/>}
 
           
 
