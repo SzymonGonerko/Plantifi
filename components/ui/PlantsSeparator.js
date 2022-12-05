@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, Pressable, Dimensions } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 
 import AntDesign from "react-native-vector-icons/AntDesign"
 

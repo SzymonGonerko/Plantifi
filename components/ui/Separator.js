@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from 'react-native';
 
 export const Separator = ({styleContainer, styleText, children}) => {
     return <>

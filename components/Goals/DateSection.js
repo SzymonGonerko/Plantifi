@@ -5,7 +5,6 @@ import { LongLineSeparator} from "../ui/LongLineSeparator"
 import { ScrollView } from 'react-native-gesture-handler';
 
 import { CustomCalendar } from './CustomCalendar';
-
 import { toDoListPlants } from "../../mainDataPlants"
 
 

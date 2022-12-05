@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
+import { StyleSheet, Text, View, Pressable} from 'react-native';
 
 export const ProfileSwitcherNav = ({general, requirements, care, onPress}) => {
 
@@ -26,7 +26,7 @@ export const ProfileSwitcherNav = ({general, requirements, care, onPress}) => {
         </View>
         
         <View>
-            <View style={{position: "absolute", left: -10, right: 0, opacity: 0.1 ,zIndex: -2, width: "150%", height: 4, backgroundColor: "#64768E"}} />
+            <View style={styles.underlineItem}/>
         </View>
 
     </View>
@@ -61,5 +61,15 @@ const styles = StyleSheet.create({
         height: 4, 
         backgroundColor: "#54795E",
         borderRadius: 10
+    },
+    underlineItem: {
+        position: "absolute", 
+        left: -10, 
+        right: 0,
+        zIndex: -2, 
+        opacity: 0.1, 
+        width: "150%", 
+        height: 4, 
+        backgroundColor: "#64768E"
     }
 })

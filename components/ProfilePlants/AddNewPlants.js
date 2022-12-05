@@ -100,10 +100,10 @@ export const AddNewPlants = ({src, care}) => {
             </View>
             
         </View>
-        <LongLineSeparator style={{marginTop: 15, marginBottom: 15}}/>
+        <LongLineSeparator style={styles.lineSep}/>
         
         <Text style={styles.titleText}>Gdzie znajduje się Twoja roślina?</Text>
-        <View style={{width: "100%", justifyContent: "space-between" ,flexDirection: "row", flexWrap: "wrap", marginTop: 19}}>
+        <View style={styles.rectWrapper}>
             {rooms.map((el, i) => {
                 return <View key={i} style={[styles.recttangle, (el.isSelected ? styles.selectedRect: null)]}>
                     <Pressable onPress={onPressRoomHandler.bind(this, el.room)} style={styles.pressContainer}>
@@ -113,7 +113,7 @@ export const AddNewPlants = ({src, care}) => {
                 
             })}
         </View>
-        <View style={{flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: 15}}>
+        <View style={styles.toggleItem}>
             <Text style={styles.label}>Ustaw Przypomnienia</Text>
             <ToggleSwitch
                 isOn={remember}
@@ -124,15 +124,12 @@ export const AddNewPlants = ({src, care}) => {
             />
         </View>
 
-        <View style={{}}>
-        {remember && <>
-        <DateRemember/>
-        <RecommendedCare profile={care}/>
-        </>}
+        <View style={{marginBottom: 100}}>
+            {remember && <>
+            <DateRemember/>
+            <RecommendedCare profile={care}/>
+            </>}
         </View>
-        
-
-  <View style={{height: 100}}/>
 
     </ScrollView>
     </>
@@ -143,6 +140,19 @@ const styles = StyleSheet.create({
         fontFamily: "NunitoBold",
         fontSize: 18,
         color: "#36455A",
+    },
+    rectWrapper: {
+        width: "100%", 
+        justifyContent: "space-between", 
+        flexDirection: "row", 
+        flexWrap: "wrap", 
+        marginTop: 19
+    },
+    toggleItem: {
+        flexDirection: "row", 
+        alignItems: "center", 
+        justifyContent: "space-between", 
+        marginTop: 15
     },
     recttangle: {
         width: "48%", 
@@ -173,5 +183,8 @@ const styles = StyleSheet.create({
         color: "#36455A",
         fontFamily: "NunitoBold",
         fontSize: 18,
+    },
+    lineSep: {
+        marginVertical: 15
     }
 })

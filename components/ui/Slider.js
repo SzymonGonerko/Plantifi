@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
-import { useEffect, useRef, useState } from 'react';
+import React from "react";
+import { StyleSheet, Text, View} from 'react-native';
 import { IconButton } from "@react-native-material/core";
 import AntDesign from "react-native-vector-icons/AntDesign"
 

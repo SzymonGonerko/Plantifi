@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
+import { StyleSheet, Text, View, Image} from 'react-native';
 import { LongLineSeparator } from '../ui/LongLineSeparator';
 import Feather from "react-native-vector-icons/Feather"
 
@@ -54,13 +54,9 @@ export const Requirements = ({profile}) => {
                                 {val.inWords}
                             </Text>
                         </View>
-
                 </View>
             })}
-
         </View>
-
-
     </View>
     
     </>

@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal} from 'react-native';
-
+import React from "react";
+import { StyleSheet, View, Pressable} from 'react-native';
 import Ionicons from "react-native-vector-icons/Ionicons"
 
 export const CloseCircle = ({onPress}) => {

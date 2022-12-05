@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, FlatList} from 'react-native';
 import { Button } from '../ui/Button';
-import AntDesign from "react-native-vector-icons/AntDesign"
 import { useState } from 'react';
+import AntDesign from "react-native-vector-icons/AntDesign"
 
 
 export const PlantsNeeded = ({userName, children, howManyPlants}) => {

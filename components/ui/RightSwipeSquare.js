@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, Animated, Dimensions, ImageBackground, Pressable, Alert, FlatList, Image, ScrollView } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View} from 'react-native';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 
 

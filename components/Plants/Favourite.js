@@ -19,23 +19,22 @@ export const Favourite = () => {
     return <>
     <View style={styles.container}>
         <SearchInput onChange={onChangeTextHandler}/>
-
     </View>
     <FlatList
-                    keyExtractor={(item) => item}
-                    numColumns={2}
-                    data={(textInput === "" ? plants  : searchingPlants)}
-                    style={{marginTop: 50, width: "100%"}}
-                    showsVerticalScrollIndicator={false}
-                    ListFooterComponent={<View style={{ height: 0, marginBottom: 200 }}></View>}
-                    renderItem={({ item, _ }) => 
-                        <Card
-                            cardStyle={{width: "40%"}}
-                            name={item[1].name}
-                            profile={item[1].profile}
-                            description={item[1].description}
-                            src={item[0]}/>}
-                />
+        keyExtractor={(item) => item}
+        numColumns={2}
+        data={(textInput === "" ? plants  : searchingPlants)}
+        style={{marginTop: 50, width: "100%"}}
+        showsVerticalScrollIndicator={false}
+        ListFooterComponent={<View style={{ height: 0, marginBottom: 200 }}></View>}
+        renderItem={({ item, _ }) => 
+            <Card
+                cardStyle={{width: "40%"}}
+                name={item[1].name}
+                profile={item[1].profile}
+                description={item[1].description}
+                src={item[0]}/>}
+    />
     </>
 }
 

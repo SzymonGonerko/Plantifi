@@ -5,8 +5,8 @@ import { Camera, CameraType } from 'expo-camera';
 import { useState, useRef } from 'react';
 import {APP_PLANTID_API_KEY, APP_PLANTID_API_URL} from '@env'
 import {SquareButton} from "../ui/SquareButton"
+import { CicleProgress } from "../ui/CicleProgress";
 import { PlantDetails } from "./PlantDetails";
-import { ActivityIndicator } from "@react-native-material/core";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
@@ -152,27 +152,29 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     <View style={styles.container}>
         {!plantsIDResponse &&
           <View style={{flex: 1}}>
-            {isStartRequest && <View style={{position: "absolute", zIndex: 5, top: 0, bottom: 0, left: 0, right: 0, backgroundColor: "#357c48a1", justifyContent: "center", alignItems: "center"}}>
-                <ActivityIndicator style={{position: "absolute"}} size={60} color="#35c45c" />
-            </View>}
-            <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={{position: "absolute", top: 20, left: 20, zIndex: 2}}/>
+            {isStartRequest && <CicleProgress/>}
+            <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={styles.sqr}/>
             <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
+            
                 <Image source={require("../../assets/icons/frame.png")} resizeMode={"contain"} style={styles.frame}/>
-                <View style={{position: "absolute", zIndex: 20, bottom: 20, flexDirection: "row", width: "100%", justifyContent: "space-around", alignItems: "center"}}>
-                    <View style={{width: 40, height: 40}}>
+                <View style={styles.buttonsContainer}>
+
+                    <View style={styles.wrapperGallery}>
                       <Pressable onPress={pickImage}>
-                        <Image style={{width: 40, height: 40, borderRadius: 3}} source={require("../../assets/icons/camera/gallery.jpg")}/>
+                        <Image style={styles.iconGalerry} source={require("../../assets/icons/camera/gallery.jpg")}/>
                       </Pressable>
                     </View>
 
-                    <TouchableOpacity style={{width: 70, height: 70, borderRadius: 200, borderWidth: 3, borderColor: "white"}} onPress={takePhoto}/>
+                    <TouchableOpacity style={styles.takePhotoItem} onPress={takePhoto}/>
                    
                     
-                    <View style={{width: 26, height: 26}}>
+                    <View style={styles.wrapperToggleCamera}>
                       <Pressable onPress={toggleCameraType}>
-                        <Image style={{width: 26, height: 26,}} source={require("../../assets/icons/camera/arrowCircle.png")}/>
+                        <Image style={styles.iconToggleCamera} source={require("../../assets/icons/camera/arrowCircle.png")}/>
                       </Pressable>  
                     </View>
+
+
                 </View>
             </Camera>
           </View>
@@ -200,4 +202,43 @@ const styles = StyleSheet.create({
         height: "60%",
         marginBottom: 50
       },
+      sqr: {
+        position: "absolute", 
+        top: 20, 
+        left: 20, 
+        zIndex: 2
+      },
+      buttonsContainer: {
+        position: "absolute", 
+        zIndex: 20, 
+        bottom: 20, 
+        flexDirection: "row", 
+        width: "100%", 
+        justifyContent: "space-around", 
+        alignItems: "center"
+      },
+      iconGalerry: {
+        width: 40, 
+        height: 40, 
+        borderRadius: 3
+      },
+      takePhotoItem: {
+        width: 70, 
+        height: 70, 
+        borderRadius: 200, 
+        borderWidth: 3, 
+        borderColor: "white"
+      },
+      iconToggleCamera: {
+        width: 26, 
+        height: 26,
+      },
+      wrapperToggleCamera: {
+        width: 26, 
+        height: 26
+      },
+      wrapperGallery: {
+        width: 40, 
+        height: 40
+      }
 })

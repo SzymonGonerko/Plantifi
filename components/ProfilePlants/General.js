@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import { LongLineSeparator } from '../ui/LongLineSeparator';
 
 import AntDesign from "react-native-vector-icons/AntDesign"
@@ -13,7 +12,7 @@ export const General = ({profile}) => {
             <View style={styles.tagContainer}>
 
                 <View style={styles.tag}>
-                    <Text style={[styles.tagText, {textAlign: "left", marginLeft: 10}]}>Typ</Text>
+                    <Text style={styles.tagText}>Typ</Text>
                     <View style={styles.tagParam}>
                         {profile.type === "łatwa pielęgnacja" ? <Image style={styles.innerIcon} resizeMode={"contain"} source={require("../../assets/icons/exploreIcons/Easy.png")}/>: null}
                         {profile.type === "do łazienki" ? <Image style={styles.innerIcon} source={require("../../assets/icons/exploreIcons/bathroomIcon.png")}/>: null}
@@ -68,7 +67,8 @@ const styles = StyleSheet.create({
         textTransform: "uppercase",
         fontSize: 14,
         fontFamily: "NunitoBold",
-        textAlign: "center"
+        textAlign: "left", 
+        marginLeft: 10
     },
     innerIcon: {
         width: 21,

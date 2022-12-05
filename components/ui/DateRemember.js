@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View, Alert} from 'react-native';
+import React from "react";
+import { Pressable, StyleSheet, Text, View, Alert} from 'react-native';
 
 const days = ["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"];
 

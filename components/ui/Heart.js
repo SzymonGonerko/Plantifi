@@ -52,12 +52,12 @@ export const Heart = ({bottomPosition}) => {
           }
         ]}>
             <Pressable style={styles.press} onPress={heartAnimation}>
-                <Entypo name={"heart"} color={"white"} style={{fontSize: 35, marginTop: 5}}/>
+                <Entypo name={"heart"} color={"white"} style={styles.icon}/>
             </Pressable>
         </Animated.View>
 
         <View style={styles.check}>
-            <Feather name={"check"} color={"white"} style={{fontSize: 35, marginTop: 5}}/>
+            <Feather name={"check"} color={"white"} style={styles.icon}/>
         </View>
 
     </View>
@@ -90,6 +90,10 @@ const styles = StyleSheet.create({
         width: "100%", 
         height: "100%", 
         backgroundColor: "#54795E", 
+    },
+    icon: {
+        fontSize: 35, 
+        marginTop: 5
     }
 
 

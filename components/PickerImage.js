@@ -7,7 +7,7 @@ export const PickerImage = ({addPick, onCancel, defaultImg, src, uri}) => {
     return <>
             <View style={styles.square}>
                 <View style={styles.pressContainer}>
-                    <Pressable onPress={addPick} android_ripple={{color: "black"}} style={{width: "100%", height: "100%", justifyContent: "center", alignItems: "center"}}>
+                    <Pressable onPress={addPick} android_ripple={{color: "black"}} style={styles.pressWrapper}>
                         <Octicons name={"plus"} style={{fontSize: 30, color: "#54795E"}}/>
                     </Pressable>
                 </View>
@@ -43,5 +43,11 @@ const styles = StyleSheet.create({
         width: 73, 
         height: 70, 
         borderRadius: 9
+    },
+    pressWrapper: {
+        width: "100%", 
+        height: "100%", 
+        justifyContent: "center", 
+        alignItems: "center"
     }
 })

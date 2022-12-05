@@ -2,8 +2,8 @@ import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Modal } from 'react-native';
 import { PlantsSeparator } from '../ui/PlantsSeparator';
 import { Button } from '../ui/Button';
-import AntDesign from "react-native-vector-icons/AntDesign"
 import { CustomCamera } from './CustomCamera';
+import AntDesign from "react-native-vector-icons/AntDesign"
 
 export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressHandler}) => {
 

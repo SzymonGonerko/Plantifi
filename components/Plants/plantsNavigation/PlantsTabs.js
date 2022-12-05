@@ -1,8 +1,7 @@
 import React from "react";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated} from 'react-native';
-import { useEffect } from "react";
-import { useRef } from "react";
+import { StyleSheet, Animated} from 'react-native';
+import { useEffect, useRef } from "react";
 import * as NavigationBar from 'expo-navigation-bar';
 
 import { Collection } from "../Collection";

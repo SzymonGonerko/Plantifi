@@ -51,8 +51,6 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profil
             <Text style={styles.textName}>{name}</Text>
 
             {!addPlants && <ModalPlantsNavigation profile={profile}/>}
-
-            
             {addPlants && <AddNewPlants care={profile.care} src={src}/>}
             
             
@@ -64,10 +62,6 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profil
               {addPlants ? "Zapisz do mojej kolekcji" : "Dodaj do moich roślin"}
             </Button>
         </View>
-
-        
-
-
     </Modal>
     
     </>

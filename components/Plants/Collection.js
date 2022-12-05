@@ -18,7 +18,7 @@ export const Collection = () => {
     </View>
 
     <View style={styles.imgCollection}>
-        <PlantsSeparator styleContainer={{marginTop: 23, marginBottom: 6}}>
+        <PlantsSeparator styleContainer={styles.plantsSep}>
             W salonie
         </PlantsSeparator>
         <View style={styles.listContainer}>
@@ -38,7 +38,7 @@ export const Collection = () => {
             />
 
         </View>
-        <PlantsSeparator styleContainer={{marginTop: 23, marginBottom: 6}}>
+        <PlantsSeparator styleContainer={styles.plantsSep}>
             W sypialni
         </PlantsSeparator>
         <View style={styles.listContainer}>
@@ -82,5 +82,9 @@ const styles = StyleSheet.create({
     },
     listContainer: {
         marginTop: 19,
+    },
+    plantsSep: {
+        marginTop: 23, 
+        marginBottom: 6
     }
 })

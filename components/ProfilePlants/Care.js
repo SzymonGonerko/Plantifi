@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import { LongLineSeparator } from '../ui/LongLineSeparator';
 
 export const Care = ({profile}) => {
@@ -26,8 +26,8 @@ export const Care = ({profile}) => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 {Object.entries(profile).map(([key, val], i) => {
                         return (
-                        <View key={i} style={{flexDirection: "column", marginLeft: 10, marginBottom: 17}}>
-                            <View style={{flexDirection: "row", marginBottom: 6}}>
+                        <View key={i} style={styles.itemWrapper}>
+                            <View style={styles.iconWrapper}>
                                 {key === "watering" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Watering.png")}/>: null}
                                 {key === "transplanting" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Transplanting.png")}/>: null}
                                 {key === "cutting" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Cutting.png")}/>: null}
@@ -41,8 +41,7 @@ export const Care = ({profile}) => {
                             </View>
                             <Text style={styles.defaultText}>
                                 {val.inWords}
-                            </Text>
-                            
+                            </Text> 
                         </View>
                         )
                     })}
@@ -59,6 +58,15 @@ const styles = StyleSheet.create({
         justifyContent: "space-between", 
         marginTop: 20, 
         marginHorizontal: 10
+    },
+    itemWrapper: {
+        flexDirection: "column", 
+        marginLeft: 10, 
+        marginBottom: 17
+    },
+    iconWrapper: {
+        flexDirection: "row", 
+        marginBottom: 6
     },
     squareIcon: {
         width: 48, 

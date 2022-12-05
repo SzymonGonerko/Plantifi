@@ -1,9 +1,7 @@
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated } from 'react-native';
-import { useEffect, useRef, useState } from 'react';
-import * as Animatable from 'react-native-animatable';
+import React from "react";
+import { StyleSheet, View, ImageBackground, Animated } from 'react-native';
 
 export const NavIcon = ({source, text, fadeAnim}) => {
-
 
     return <>
     <View style={styles.container}>
@@ -18,7 +16,6 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: "center",
         alignItems: "center",
-
     },
     plantsIcon: {
         width: 30,

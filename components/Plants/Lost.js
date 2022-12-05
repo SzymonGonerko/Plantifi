@@ -1,6 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
-import { useEffect, useRef, useState } from 'react';
+import { StyleSheet, Text, View, FlatList} from 'react-native';
 import { lostPlants } from '../../mainDataPlants';
 import { LostPlantsCard } from '../ui/LostPlantsCard';
 import { Button } from '../ui/Button';
@@ -8,7 +7,6 @@ import { Button } from '../ui/Button';
 
 
 export const Lost = () => {
-
 
     return <>
     <View style={styles.container}>
@@ -26,12 +24,7 @@ export const Lost = () => {
         <View style={styles.btnContainer}>
             <Button styleContainer={{height: 46}}>Zapal znicz</Button>
         </View>
-       
-        
-        
-
     </View>
-    
     </>
 }
 
@@ -41,7 +34,6 @@ const styles = StyleSheet.create({
         top: 45,
         paddingTop: 22,
         paddingHorizontal: 26,
-        // backgroundColor: "#E5E5E5"
     },
     userNameText: {
         fontFamily: "NunitoBold",

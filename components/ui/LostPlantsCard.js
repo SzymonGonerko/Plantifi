@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Image} from 'react-native';
 
 export const LostPlantsCard = ({src, name}) => {

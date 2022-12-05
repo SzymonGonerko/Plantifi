@@ -52,9 +52,8 @@ export default function App() {
     }
   }, [appIsReady]);
 
-  if (!appIsReady) {
-    return null;
-  }
+  if (!appIsReady) return null
+  
 
   const onPressHandlerAnim = () => {
       setAnim("bounceOutLeft")

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, ScrollView, FlatList} from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import { SquareButton } from '../ui/SquareButton';
 
 export const AddNew = () => {

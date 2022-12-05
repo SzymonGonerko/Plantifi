@@ -1,5 +1,5 @@
+import React from "react";
 import { StyleSheet, Keyboard} from 'react-native';
-import { useEffect, useRef, useState } from 'react';
 import { IconButton } from "@react-native-material/core";
 import { OutlinedTextField } from 'rn-material-ui-textfield'
 import AntDesign from "react-native-vector-icons/AntDesign"

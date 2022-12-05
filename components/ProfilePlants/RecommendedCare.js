@@ -20,7 +20,7 @@ export const RecommendedCare = ({profile}) => {
                 {Object.entries(profile).map(([key, val], i) => {
                     return (
                     <View key={i} style={{flexDirection: "row", alignItems: "center"}}>
-                        <View  style={{width: 48}}>
+                        <View style={{width: 48}}>
                             <View  style={styles.squareIcon}>
                                 {key === "watering" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Watering.png")}/>: null}
                                 {key === "transplanting" ? <Image style={styles.innerIcon} source={require("../../assets/icons/careIcons/Transplanting.png")}/>: null}
@@ -31,7 +31,7 @@ export const RecommendedCare = ({profile}) => {
                                 <View style={[styles.currentValueLine, {width: `${val.inPercentage}%`}]}/>
                             </View>
                         </View>
-                        <View style={{width: "75%", height: "100%", marginLeft: 20}}>
+                        <View style={styles.sliderWrapper}>
                             <SliderContainer
                                 sliderValue={[val.step]}
                                 type={key}
@@ -52,7 +52,7 @@ export const RecommendedCare = ({profile}) => {
                     )
                 })}
             </View>
-            <PlantsSeparator styleContainer={{marginTop: 20, marginBottom: 10}} styleText={{fontSize: 18}} onlyText={true}>
+            <PlantsSeparator styleContainer={styles.sepStyles} styleText={{fontSize: 18}} onlyText={true}>
                 Pamiętaj!
             </PlantsSeparator>
             <Text style={styles.rememberText}>
@@ -124,6 +124,15 @@ const styles = StyleSheet.create({
     rememberText: {
         fontSize: 12,
         fontFamily: "NunitoRegular",
+    },
+    sliderWrapper: {
+        width: "75%", 
+        height: "100%", 
+        marginLeft: 20
+    },
+    sepStyles:{
+        marginTop: 20, 
+        marginBottom: 10
     }
     
 })
