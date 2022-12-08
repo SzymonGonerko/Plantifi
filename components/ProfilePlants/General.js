@@ -56,6 +56,7 @@ export const General = ({profile}) => {
 const styles = StyleSheet.create({
     tagContainer: {
         flexDirection: "row",
+        width: "100%",
         justifyContent: "space-around",
         marginTop: 20,
     },

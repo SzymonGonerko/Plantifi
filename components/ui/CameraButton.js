@@ -32,8 +32,6 @@ export const CameraButton = () => {
             </View>
     </View>
     <PhotoInstruction onPressHandler={onPressHandler} showCamera={showCamera} onPressCamera={onPressCamera} isVisible={showPhotoInstruction}/>
-
-
     </>
 }
 

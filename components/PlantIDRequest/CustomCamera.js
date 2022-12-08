@@ -5,7 +5,7 @@ import { Camera, CameraType } from 'expo-camera';
 import { useState, useRef } from 'react';
 import {APP_PLANTID_API_KEY, APP_PLANTID_API_URL} from '@env'
 import {SquareButton} from "../ui/SquareButton"
-import { CicleProgress } from "../ui/CicleProgress";
+import { WaitingAnimation } from "../ui/WaitingAnimation";
 import { PlantDetails } from "./PlantDetails";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -152,7 +152,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     <View style={styles.container}>
         {!plantsIDResponse &&
           <View style={{flex: 1}}>
-            {isStartRequest && <CicleProgress/>}
+            {isStartRequest && <WaitingAnimation/>}
             <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={styles.sqr}/>
             <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
             
