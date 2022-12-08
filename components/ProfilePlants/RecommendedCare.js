@@ -38,7 +38,8 @@ export const RecommendedCare = ({profile}) => {
                                 trackMarks={[0, 1, 2, 3, 4]}>
                                 <Slider 
                                     maximumValue={4} 
-                                    minimumValue={0} 
+                                    minimumValue={0}
+                                    value={0}
                                     step={1}
                                     thumbTintColor={"#495566"}
                                     trackStyle={{height: 6}}

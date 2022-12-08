@@ -9,7 +9,7 @@ const borderWidth = 3;
 export const SliderContainer = (props) => {
     const {sliderValue, trackMarks, type} = props;
     const [textContent, setTextContent] = useState("")
-    const [value, setValue] = useState(sliderValue ? sliderValue : DEFAULT_VALUE);
+    const [value, setValue] = useState(sliderValue);
     let renderTrackMarkComponent;
 
     if (trackMarks?.length && (!Array.isArray(value) || value?.length === 1)) {
@@ -67,6 +67,7 @@ export const SliderContainer = (props) => {
             props.children,
             (child) => {
                 if (!!child && child.type === Slider) {
+                    
                     return React.cloneElement(child, {
                         onValueChange: setValue,
                         renderTrackMarkComponent,
@@ -74,6 +75,8 @@ export const SliderContainer = (props) => {
                         value,
                     });
                 }
+                
+                
                 return child;
             },
         );

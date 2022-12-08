@@ -64,11 +64,11 @@ const styles = StyleSheet.create({
     },
     underlineItem: {
         position: "absolute", 
-        left: -10, 
+        left: 0, 
         right: 0,
         zIndex: -2, 
         opacity: 0.1, 
-        width: "150%", 
+        width: "100%", 
         height: 4, 
         backgroundColor: "#64768E"
     }

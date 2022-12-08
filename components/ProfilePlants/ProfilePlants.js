@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     textName: {
       fontFamily: "NunitoBold",
       marginLeft: 24,
-      marginTop: 15,
+      marginTop: 10,
       marginBottom: 15,
       fontSize: 24,
     },
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   },
   btnStyle: {
     height: 50,
-    marginTop: 20, 
+    marginTop: 20,
   }
     });
     

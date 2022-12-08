@@ -55,20 +55,20 @@ export const General = ({profile}) => {
 
 const styles = StyleSheet.create({
     tagContainer: {
-        flexDirection: "row", 
-        justifyContent: "space-between",
+        flexDirection: "row",
+        justifyContent: "space-around",
         marginTop: 20,
     },
     tag: {
-        flexDirection: "column", 
-        width: "33%"
+        flexDirection: "column",
+        alignContent: "space-between",
+        width: "25%"
     },
     tagText: {
         textTransform: "uppercase",
         fontSize: 14,
         fontFamily: "NunitoBold",
-        textAlign: "left", 
-        marginLeft: 10
+        textAlign: "left",
     },
     innerIcon: {
         width: 21,
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     tagParam: {
         marginTop: 6,
         flexDirection: "row", 
-        justifyContent: "center",
+        justifyContent: "flex-start",
     },
     defaultText: {
         fontFamily: "NunitoRegular",
