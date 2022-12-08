@@ -7,8 +7,7 @@ import { Separator } from '../components/ui/Separator';
 import { TextInfo } from '../components/TextInfo';
 import * as Animatable from 'react-native-animatable';
 
-const windowWidth = Dimensions.get('screen').width;
-const windowHeight = Dimensions.get('window').height + 200;
+const {width, height} = Dimensions.get('screen');
 
 export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
 
@@ -50,7 +49,7 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
             </View>
             <View style={styles.btnsContainer}>
                 <Button onPress={onPressLogin} styleContainer={{marginHorizontal: 20}}>Zaloguj się</Button>
-                <Separator styleContainer={{marginTop: 30}}>Nie masz jeszcze konta?</Separator>
+                <Separator styleContainer={{marginTop: 20}}>Nie masz jeszcze konta?</Separator>
                 <Button
                     onPress={onPressHandler}
                     styleContainer={{marginHorizontal: 20, marginTop: 20}} 
@@ -71,44 +70,44 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         position: 'absolute',
         zIndex: -1,
-        width: windowWidth,
-        height: windowHeight,
+        width,
+        height,
         justifyContent: "center",
         alignItems: "center",
     },
     bgcContainer: {
         position: "absolute",
-        width: windowWidth,
-        height: windowHeight
+        width,
+        height,
     },
     bgcFilter: {
         position: 'absolute',
         zIndex: 2,
-        width: windowWidth,
-        height: windowHeight,
+        width,
+        height,
         backgroundColor: "#0d0e2480"
     },
     background: {
         position: 'absolute',
-        width: windowWidth,
-        height: windowHeight,
+        width,
+        height,
     },
     contentContainer: {
         position: 'absolute',
         top: 0,
         left: 0,
         zIndex: 2,
-        width: windowWidth,
-        height: windowHeight,
+        width,
+        height,
     },
     welcomeText: {
         position: 'absolute',
-        width: "100%",
-        top: "38%",
+        top: "35%",
+        bottom: "50%",
         left: "10%",
+        right: 0,
         zIndex: 2,
     },
     text: {
@@ -119,13 +118,13 @@ const styles = StyleSheet.create({
     },
     btnsContainer: {
         position: 'absolute',
-        top: "55%",
+        top: "54%",
         left: 0,
-        width: "100%",
+        right: 0
     },
     textContainer: {
         position: 'absolute',
-        bottom: "13%",
+        bottom: "10%",
         left: 0,
         width: "100%",
     },

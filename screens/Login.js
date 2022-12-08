@@ -6,10 +6,10 @@ import { Separator } from '../components/ui/Separator';
 import { CustomIcon } from '../components/ui/CustomIcon';
 import { useState } from 'react';
 
+const {width, height} = Dimensions.get('screen');
 
 
-const windowWidth = Dimensions.get('screen').width;
-const windowHeight = Dimensions.get('window').height + 200;
+
 
 export const Login = ({onPressHandlerPrev, onPressThemeBar, onPressShowMainApp}) => {
 const [loginText, setLoginText] = useState("Zaloguj się")
@@ -77,8 +77,8 @@ const styles = StyleSheet.create({
     },
     container: {
       flex: 1,
-      width: windowWidth,
-      height: windowHeight,
+      width,
+      height,
       backgroundColor: 'white',
     },
     bgcContainer: {

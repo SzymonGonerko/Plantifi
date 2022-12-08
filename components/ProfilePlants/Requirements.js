@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Image} from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import { LongLineSeparator } from '../ui/LongLineSeparator';
 import Feather from "react-native-vector-icons/Feather"
 
@@ -7,7 +7,7 @@ import Feather from "react-native-vector-icons/Feather"
 export const Requirements = ({profile}) => {
    
     return <>
-    <View style={{height: "50%"}}>
+    <ScrollView style={{ marginTop: 10}} showsVerticalScrollIndicator={false}>
 
         <View style={styles.squareContainer}>
             {Object.entries(profile).map(([key, val], i) => {
@@ -57,7 +57,7 @@ export const Requirements = ({profile}) => {
                 </View>
             })}
         </View>
-    </View>
+    </ScrollView>
     
     </>
 }
@@ -67,7 +67,8 @@ const styles = StyleSheet.create({
         flexDirection: "row", 
         justifyContent: "space-between", 
         marginTop: 20, 
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        zIndex: -4
     },
     squareIcon: {
         width: 48, 

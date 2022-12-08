@@ -13,7 +13,8 @@ import AntDesign from "react-native-vector-icons/AntDesign"
 
 
 
-export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profile, addNewPlantsToCollecton}) => {
+export const ProfilePlants = (props) => {
+  const {isVisible, onPressButtonSquare, src, name, profile, addNewPlantsToCollecton} = props
   const [addPlants, setAddPlants] = useState(false)
 
 
@@ -42,7 +43,7 @@ export const ProfilePlants = ({isVisible, onPressButtonSquare, src, name, profil
             imageStyle={styles.img}
             />
             <SquareButton styleContainer={styles.btnSqure} reset={resetState} onPress={onPressButtonSquare} type={"arrow"}/>
-            <Heart bottomPosition={-18}/>
+            <Heart bottomPosition={-25}/>
         </View>
 
         <View style={styles.profileInfo}>
@@ -90,10 +91,13 @@ const styles = StyleSheet.create({
       fontSize: 24,
     },
     profileInfo: {
+      flex: 1,
       backgroundColor: "#FBFBFB",
-      marginTop: -10,
+      height: "75%",
       marginHorizontal: 10,
-      borderRadius: 20,
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20,
+      overflow: "hidden"
     },
     btnSqure: {
       position: "absolute",
@@ -109,7 +113,7 @@ const styles = StyleSheet.create({
   },
   btnStyle: {
     height: 50,
-    marginTop: 20,
+    marginVertical: 20,
   }
     });
     
