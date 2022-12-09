@@ -43,7 +43,7 @@ export const ProfilePlants = (props) => {
             imageStyle={styles.img}
             />
             <SquareButton styleContainer={styles.btnSqure} reset={resetState} onPress={onPressButtonSquare} type={"arrow"}/>
-            <Heart bottomPosition={-25}/>
+            <Heart bottomPosition={-18}/>
         </View>
 
         <View style={styles.profileInfo}>
@@ -94,10 +94,11 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: "#FBFBFB",
       height: "75%",
+      marginTop: -10,
       marginHorizontal: 10,
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
-      overflow: "hidden"
+      overflow: "hidden",
     },
     btnSqure: {
       position: "absolute",
@@ -113,7 +114,8 @@ const styles = StyleSheet.create({
   },
   btnStyle: {
     height: 50,
-    marginVertical: 20,
+    marginVertical: 15,
+    marginHorizontal: 10
   }
     });
     

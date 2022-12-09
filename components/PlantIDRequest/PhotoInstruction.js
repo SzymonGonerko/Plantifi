@@ -1,11 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Modal } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Modal, Alert } from 'react-native';
 import { PlantsSeparator } from '../ui/PlantsSeparator';
 import { Button } from '../ui/Button';
 import { CustomCamera } from './CustomCamera';
 import AntDesign from "react-native-vector-icons/AntDesign"
 
 export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressHandler}) => {
+
 
     return <>
     <Modal animationType="slide" visible={isVisible}>

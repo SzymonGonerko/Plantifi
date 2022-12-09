@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions, ImageBackground, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ImageBackground, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, Alert} from 'react-native';
 import { SquareButton } from '../components/ui/SquareButton';
 import { LoginForm } from '../components/Login/LoginForm';
 import { Separator } from '../components/ui/Separator';
 import { CustomIcon } from '../components/ui/CustomIcon';
 import { useState } from 'react';
+import { Camera } from 'expo-camera';
 
 const {width, height} = Dimensions.get('screen');
 
@@ -13,6 +14,29 @@ const {width, height} = Dimensions.get('screen');
 
 export const Login = ({onPressHandlerPrev, onPressThemeBar, onPressShowMainApp}) => {
 const [loginText, setLoginText] = useState("Zaloguj się")
+const [permission, requestPermission] = Camera.useCameraPermissions();
+
+if (!permission) {
+    return null;
+  }
+
+  if (!permission.granted) {
+     Alert.alert(
+        "Dostęp do aparatu",
+        "Aby rozpoznać Twoją rośline aplikacja Plantify potrzebuje dostępu do aparatu",
+        [
+          {
+            text: "Odmawiam",      
+            onPress: () => Alert.alert("Dostęp do aparatu", "dostęp do apraratu jest wyłączony. Spróbuj ponownie przy następnym uruchomieniu aplikacji"),
+          },
+          { 
+            text: "Zezwalam", 
+            onPress: () => requestPermission(),
+          }
+        ]
+      );;
+  }
+
 
 
 const onFocusHandler = () => {
@@ -83,7 +107,7 @@ const styles = StyleSheet.create({
     },
     bgcContainer: {
       width: "100%",
-      height: "38%",
+      height: "42%",
       borderRadius: 17
   },
   background: {

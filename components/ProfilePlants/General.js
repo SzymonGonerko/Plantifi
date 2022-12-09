@@ -7,7 +7,7 @@ import AntDesign from "react-native-vector-icons/AntDesign"
 export const General = ({profile}) => {
 
     return <>
-        <View style={{height: "50%"}}>
+        <View style={{flex: 1}}>
 
             <View style={styles.tagContainer}>
 

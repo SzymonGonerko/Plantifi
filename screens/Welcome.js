@@ -13,7 +13,7 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
 
 
     const onPressHandler = () => {
-        Alert.alert("Pracuję nad tym", "aplikacja jest w fazie testowej. Kliknij zaloguj się", [{text: "okey", style: "default"}])
+        Alert.alert("Wpisz", "aplikacja jest w fazie testowej. Login to: anna.kowalska@gmail.com, hasło to: 1234", [{text: "okey", style: "default"}])
     }
 
     const onPressLogin = () => {

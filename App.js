@@ -22,6 +22,7 @@ import PlayfairDisplayRegular from "./assets/fonts/PlayfairDisplayRegular.ttf"
 import Inter from "./assets/fonts/Inter.ttf"
 import { View } from 'react-native-animatable';
 
+
 SplashScreen.preventAutoHideAsync();
 
 
@@ -31,6 +32,7 @@ export default function App() {
   const [showMainApp, setShowMainApp] = useState(false)
   const [themeBar, setThemeBar] = useState('light')
   const [anim, setAnim] = useState("")
+
 
   useEffect(() => {
     async function prepare() {

@@ -4,7 +4,7 @@ import { LongLineSeparator } from '../ui/LongLineSeparator';
 
 export const Care = ({profile}) => {
     return <>
-        <View style={{height: "50%"}}>
+        <View style={{flex: 1}}>
             <View style={styles.squareContainer}>
                 {Object.entries(profile).map(([key, val], i) => {
                     return (
