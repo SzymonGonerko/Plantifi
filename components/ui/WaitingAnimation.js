@@ -1,35 +1,50 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { StyleSheet, Animated } from 'react-native';
+import { StyleSheet, Animated, Text } from 'react-native';
 
 export const WaitingAnimation = () => {
     const [animation, setAnimation] = useState(new Animated.Value(0));
+    const [visible, setVisible] = useState(new Animated.Value(0))
 
     useEffect(() => {
         Animated.timing(animation, {
-          toValue: 11,
-          duration: 7000,
+          toValue: 15,
+          duration: 30000,
           useNativeDriver: false,
-        }).start();
+        }).start()
+
+        setTimeout(() => {
+          Animated.timing(visible, {
+            toValue: 1,
+            duration: 2500,
+            useNativeDriver: false,
+          }).start()
+        }, 7000)
       }, []);
 
     const bgcAnimations = {
         backgroundColor: animation.interpolate({
-          inputRange: [0, 1, 2, 5, 8, 11],
+          inputRange: [0, 0.2, 1, 5, 8, 11, 13, 15],
           outputRange: 
             [
               '#54795e00', 
-              '#23783ac2', 
-              '#237478c2', 
-              '#302378c2', 
-              '#78235dc2', 
-              '#786f23c2'
+              '#2dec45a6', 
+              '#2de9eca6', 
+              '#2d4aeca6', 
+              '#a82deca6', 
+              '#ec2d2da6',
+              '#e9ec2da6',
+              '#2dddeca6'
             ],
         }),
       };
 
 
-    return <Animated.View style={[styles.container, bgcAnimations]}/>
+    return <>
+      <Animated.View style={[styles.container, bgcAnimations]}>
+        <Animated.Text style={[styles.waitingText, {opacity: visible}]}>Jest wolny transfer jeszcze chwila...</Animated.Text>
+      </Animated.View>
+    </>
 }
 
 const styles = StyleSheet.create({
@@ -40,5 +55,13 @@ const styles = StyleSheet.create({
         bottom: 0, 
         left: 0, 
         right: 0,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    waitingText: {
+      width: "50%",
+      fontFamily: "NunitoRegular",
+      textAlign: "center",
+      fontSize: 25
     }
 })
