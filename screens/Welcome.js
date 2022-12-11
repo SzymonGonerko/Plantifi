@@ -1,15 +1,18 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert, Animated } from 'react-native';
 import * as NavigationBar from 'expo-navigation-bar';
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Button } from '../components/ui/Button';
 import { Separator } from '../components/ui/Separator';
 import { TextInfo } from '../components/TextInfo';
 import * as Animatable from 'react-native-animatable';
+import { Team } from "../components/Team";
 
 const {width, height} = Dimensions.get('screen');
 
 export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
+    const [teamVisible, setTeamVisible] = useState(false)
+    const visibility = useRef(new Animated.Value(0)).current
 
 
     const onPressHandler = () => {
@@ -22,6 +25,24 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
         NavigationBar.setVisibilityAsync("visible")
         NavigationBar.setBackgroundColorAsync('white')
         NavigationBar.setPositionAsync('absolute')
+    }
+
+
+    const onPressTeamInfo = () => {
+        if (teamVisible) {
+            Animated.timing(visibility, {
+                toValue: 0,
+                duration: 300,
+                useNativeDriver: true
+              }).start(() => setTeamVisible(false))
+        } else {
+            setTeamVisible(true)
+            Animated.timing(visibility, {
+               toValue: 1,
+               duration: 300,
+               useNativeDriver: true
+             }).start()
+        }
     }
 
     useEffect(() => {
@@ -59,11 +80,12 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
                 </Button>
             </View>
             <View style={styles.textContainer}>
-                <TextInfo/>
+                <TextInfo onPressTeamInfo={onPressTeamInfo}/>
             </View>
 
         </View>
         </Pressable>
+        {teamVisible && <Team visibility={visibility} onPressTeamInfo={onPressTeamInfo}/>}
     </Animatable.View>
     </>
 }

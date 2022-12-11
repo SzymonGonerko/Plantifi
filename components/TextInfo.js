@@ -1,12 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, Pressable, Alert } from 'react-native';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-
-export const TextInfo = () => {
+export const TextInfo = ({onPressTeamInfo}) => {
 
     const onPressHandler = () => {
         Alert.alert("Pracuję nad tym", "aplikacja jest w fazie testowej. Kliknij zaloguj się", [{text: "okey", style: "default"}])
     }
+
 
     return <>
         <Text style={[styles.defaultText]}>Szybki zastrzyk wiedzy?</Text>
@@ -15,15 +16,15 @@ export const TextInfo = () => {
                 Wejdź jako gość
             </Text>
         </Pressable>
-        <Text style={[styles.defaultText, styles.textAuthors]}>
-            powered by UXPlants Team (C) 2022
-        </Text>
-        <Text style={[styles.defaultText, styles.textAuthors]}>
-            Project created by Klaudia Ginter
-        </Text>
-        <Text style={[styles.defaultText, styles.textAuthors]}>
-            Coded by Szymon Gonerko
-        </Text>
+
+        <Pressable style={styles.teamsContainer} onPress={onPressTeamInfo}>
+            <Text style={[styles.defaultText, styles.textTeam]}>
+                Plantify© Team 2022
+            </Text>
+            <FontAwesome name="info-circle" size={11} color="#54795E"/>
+        </Pressable>
+
+
     </>
 }
 
@@ -39,7 +40,14 @@ const styles = StyleSheet.create({
         textDecorationLine: "underline",
         marginVertical: 15
     },
-    textAuthors: {
-       fontFamily: "NunitoItalic"
+    textTeam: {
+       fontFamily: "NunitoItalic",
+       fontSize: 15,
+       textDecorationLine: "underline"
+    },
+    teamsContainer: {
+        flexDirection: "row", 
+        justifyContent: "center", 
+        paddingLeft: 11
     }
 })
