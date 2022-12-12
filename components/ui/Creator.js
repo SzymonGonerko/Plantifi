@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     name: {
         fontSize: 15, 
         color: "white", 
-        backgroundColor: "#666666a1", 
+        backgroundColor: "#474646a1", 
         padding: 7, 
         borderRadius: 8,
         letterSpacing: 0.5,
@@ -31,6 +31,9 @@ const styles = StyleSheet.create({
         fontSize: 15, 
         color: "white",
         fontFamily: "NunitoItalic",
-        textTransform: "uppercase"
+        textTransform: "uppercase",
+        backgroundColor: "#666666c4", 
+        borderRadius: 8,
+        padding: 7, 
     }
 })
