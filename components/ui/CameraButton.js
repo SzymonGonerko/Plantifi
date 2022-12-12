@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
     },
     imgBackground: {
         position: "absolute",
-        width: windowWidth, 
-        top: -45, 
+        width: windowWidth + 50, 
+        top: -48, 
         bottom: 0, 
     }
 })

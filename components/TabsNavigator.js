@@ -1,10 +1,8 @@
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated} from 'react-native';
-import { useEffect } from "react";
+import React, { useRef }  from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { StyleSheet, Animated} from 'react-native';
 import { NavIcon } from "./ui/NavIcon";
-import { useRef, useState } from "react";
 import { CameraButton } from "./ui/CameraButton";
-import * as NavigationBar from 'expo-navigation-bar';
 
 import { Plants } from "../screens/Plants";
 import { Explore } from "../screens/Explore";
@@ -15,9 +13,20 @@ import { Shop } from "../screens/Shop";
 
 const Tab = createBottomTabNavigator();
 
+const dir = {
+  plantsActive: require("../assets/icons/nav/plantsActive.png"),
+  exploreActive: require("../assets/icons/nav/exploreActive.png"),
+  goalsActive: require("../assets/icons/nav/goalsActive.png"),
+  shopActive: require("../assets/icons/nav/shopActive.png"),
+  explore: require("../assets/icons/nav/explore.png"),
+  plants: require("../assets/icons/nav/plants.png"),
+  goals: require("../assets/icons/nav/goals.png"),
+  shop: require("../assets/icons/nav/shop.png"),
+}
 
 
-export const TabsNavigator = ({onPressShowMainApp, onPressThemeBar}) => {
+export const TabsNavigator = (props) => {
+  const {onPressShowMainApp, onPressThemeBar} = props
     const listTab = {
         fadePlants: useRef(new Animated.Value(1)).current,
         fadeExplore: useRef(new Animated.Value(0)).current,
@@ -58,7 +67,7 @@ return <>
           name='Plants'
           options={{
                 tabBarItemStyle: styles.defaultTab,
-                tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadePlants} text={focused ? "Moje\u00A0rośliny" : ""} source={focused ? require("../assets/icons/nav/plantsActive.jpg"): require("../assets/icons/nav/plants.jpg")}/>,
+                tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadePlants} text={focused ? "Moje\u00A0rośliny" : ""} source={focused ? dir.plantsActive: dir.plants}/>,
             }}
           listeners={({ navigation }) => ({
                 tabPress: (e) => {
@@ -74,7 +83,7 @@ return <>
           name='Explore' 
           options={{
               tabBarItemStyle: styles.defaultTab,
-              tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeExplore} text={focused ? "Odkrywaj" : ""} source={focused ? require("../assets/icons/nav/exploreActive.jpg"): require("../assets/icons/nav/explore.jpg")}/>,
+              tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeExplore} text={focused ? "Odkrywaj" : ""} source={focused ? dir.exploreActive: dir.explore}/>,
           }}
           listeners={({ navigation }) => ({
               tabPress: (e) => {
@@ -100,13 +109,13 @@ return <>
           name='Goals'
           options={{
               tabBarItemStyle: styles.defaultTab,
-              tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeGoals} text={focused ? "Moje\u00A0zadania" : ""} source={focused ? require("../assets/icons/nav/goalsActive.jpg"): require("../assets/icons/nav/goals.jpg")}/>
+              tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeGoals} text={focused ? "Moje\u00A0zadania" : ""} source={focused ? dir.goalsActive: dir.goals}/>
           }}
           listeners={({ navigation }) => ({
               tabPress: (e) => {
                 e.preventDefault();
                 fadeIn(listTab.fadeGoals)
-                navigation.navigate('Goals');
+                navigation.navigate('Goals')
               },
             })}
         >
@@ -117,7 +126,7 @@ return <>
           name='Shop' 
           options={{
               tabBarItemStyle: styles.defaultTab,
-              tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeShop} text={focused ? "Sklep" : ""} source={focused ? require("../assets/icons/nav/shopActive.jpg"): require("../assets/icons/nav/shop.jpg")}/>
+              tabBarIcon: ({focused}) => <NavIcon fadeAnim={listTab.fadeShop} text={focused ? "Sklep" : ""} source={focused ? dir.shopActive: dir.shop}/>
           }}
           listeners={({ navigation }) => ({
               tabPress: (e) => {

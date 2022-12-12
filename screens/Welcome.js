@@ -32,14 +32,14 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
         if (teamVisible) {
             Animated.timing(visibility, {
                 toValue: 0,
-                duration: 300,
+                duration: 500,
                 useNativeDriver: true
               }).start(() => setTeamVisible(false))
         } else {
             setTeamVisible(true)
             Animated.timing(visibility, {
                toValue: 1,
-               duration: 300,
+               duration: 1000,
                useNativeDriver: true
              }).start()
         }

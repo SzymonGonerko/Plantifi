@@ -36,14 +36,15 @@ const styles = StyleSheet.create({
         flexDirection: "row", 
         justifyContent: "space-around", 
         alignItems: "center",
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        backgroundColor: "#ffffff00"
     },
     btnContent: {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "row",
         borderRadius: 8,
-        width: "35%", 
+        width: "40%", 
         height: 40, 
         backgroundColor: "#474646c4",
         borderColor: "#4e7c5b",

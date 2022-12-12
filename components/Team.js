@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { StyleSheet, Pressable, Animated } from 'react-native';
-import { View, Text } from "react-native-animatable";
+import { View } from "react-native-animatable";
 import { Creator } from "./ui/Creator";
 import { Video } from 'expo-av';
 import { GithubFigma } from "./GithubFigma";
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { Title } from "./ui/Title";
 
 const config = 
     {
@@ -47,7 +47,7 @@ export const Team = (props) => {
 
     return <>
     <View style={[styles.container, {opacity: visibility}]}>
-        <Pressable style={{flex: 1}} onPress={onPressTeamInfo}>
+        <Pressable style={{flex: 1, backgroundColor: "#ffffff00"}} onPress={onPressTeamInfo}>
             <Video
                 ref={video}
                 style={styles.container}
@@ -58,14 +58,8 @@ export const Team = (props) => {
             />
             
             <View style={styles.content}>
-                <View style={[{flexDirection: "row", justifyContent: "center"}, {opacity: creators.head}]}>
-                    <Text style={styles.title}>
-                        Plantify
-                    </Text>
-                    <View style={{paddingTop: 20}}>
-                        <FontAwesome name="copyright" size={13} color="#ffffff" />
-                    </View>
-            </View>
+                <Title visibility={creators.head}/>
+
                 <Creator who={creators.ap} work={"UX/UI Designer"}>Alicja Popławska</Creator>
                 <Creator who={creators.kg} work={"UX/UI Designer"}>Klaudia Ginter</Creator>
                 <Creator who={creators.jc} work={"UX/UI Designer"}>Jerzy Cwieczkowski</Creator>
@@ -85,21 +79,15 @@ const styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
+        backgroundColor: "#ffffff00"
     },
     content: {
         position: "absolute", 
-        top: "20%", 
+        top: "15%", 
         left: 0, 
         right: 0, 
-        bottom: "25%", 
+        bottom: "30%", 
         zIndex: 20, 
         justifyContent: "space-between"
     },
-    title: {
-        color: "white", 
-        fontSize: 70, 
-        textAlign: "center", 
-        fontFamily: "PlayfairDisplayBold", 
-        letterSpacing: -2,
-    }
 })

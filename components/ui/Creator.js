@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         padding: 7, 
         borderRadius: 8,
         letterSpacing: 0.5,
-        fontFamily: "NunitoBold"
+        fontFamily: "NunitoBold",
     },
     work: {
         fontSize: 15, 

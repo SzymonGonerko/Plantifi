@@ -1,5 +1,4 @@
-import React from "react";
-import { useState  } from 'react';
+import React, { useState  } from "react";
 import { StyleSheet, Text, View, ImageBackground, Modal} from 'react-native';
 import { SquareButton } from '../ui/SquareButton';
 import { ShortLine } from '../ui/ShortLine';
@@ -86,8 +85,7 @@ const styles = StyleSheet.create({
     textName: {
       fontFamily: "NunitoBold",
       marginLeft: 24,
-      marginTop: 10,
-      marginBottom: 15,
+      marginVertical: 15,
       fontSize: 24,
     },
     profileInfo: {
