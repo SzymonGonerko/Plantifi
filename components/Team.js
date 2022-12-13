@@ -9,7 +9,7 @@ import { Title } from "./ui/Title";
 const config = 
     {
         toValue: 1,
-        duration: 600,
+        duration: 700,
         useNativeDriver: true 
     }
 
@@ -21,13 +21,15 @@ export const Team = (props) => {
         {
         head: useRef(new Animated.Value(0)).current,
         sg: useRef(new Animated.Value(0)).current,
+        ap: useRef(new Animated.Value(0)).current,
+        ktl: useRef(new Animated.Value(0)).current,
+        dk: useRef(new Animated.Value(0)).current,
         kg: useRef(new Animated.Value(0)).current,
         jc: useRef(new Animated.Value(0)).current,
-        dk: useRef(new Animated.Value(0)).current,
-        ap: useRef(new Animated.Value(0)).current,
         btns: useRef(new Animated.Value(0)).current,
         }
         )
+    
 
     useEffect(() => {
         let counter = -1
@@ -43,7 +45,6 @@ export const Team = (props) => {
         }, 250)
         return () => clearInterval(id)
     }, [])
-
 
     return <>
     <View style={[styles.container, {opacity: visibility}]}>
@@ -61,7 +62,8 @@ export const Team = (props) => {
                 <Title visibility={creators.head}/>
 
                 <Creator who={creators.ap} work={"UX/UI Designer"}>Alicja Popławska</Creator>
-                <Creator who={creators.kg} work={"UX/UI Designer"}>Klaudia Ginter</Creator>
+                <Creator who={creators.kg} work={"Lead UX/UI designer"}>Klaudia Ginter</Creator>
+                <Creator who={creators.ktl} work={"UX/UI Mentoring"}>Karolina Troka-Lewsza</Creator>
                 <Creator who={creators.jc} work={"UX/UI Designer"}>Jerzy Cwieczkowski</Creator>
                 <Creator who={creators.dk} work={"UX/UI Designer"}>Daniel Kujawa</Creator>
                 <Creator who={creators.sg} work={"frontend dev"}>Szymon Gonerko</Creator>
@@ -83,10 +85,10 @@ const styles = StyleSheet.create({
     },
     content: {
         position: "absolute", 
-        top: "15%", 
+        top: "13%", 
         left: 0, 
         right: 0, 
-        bottom: "30%", 
+        bottom: "25%", 
         zIndex: 20, 
         justifyContent: "space-between"
     },

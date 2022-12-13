@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         left: 0,
         right: 0,
-        bottom: "15%",
+        bottom: "13%",
         flexDirection: "row", 
         justifyContent: "space-around", 
         alignItems: "center",

@@ -16,10 +16,11 @@ const styles = StyleSheet.create({
         flexDirection: "row", 
         justifyContent: "space-between", 
         alignItems: "center",
-        marginHorizontal: 10
+        paddingHorizontal: 10,
+        width: "100%"
     },
     name: {
-        fontSize: 15, 
+        fontSize: 14, 
         color: "white", 
         backgroundColor: "#474646a1", 
         padding: 7, 
@@ -28,12 +29,13 @@ const styles = StyleSheet.create({
         fontFamily: "NunitoBold",
     },
     work: {
-        fontSize: 15, 
+        fontSize: 14, 
         color: "white",
         fontFamily: "NunitoItalic",
         textTransform: "uppercase",
-        backgroundColor: "#666666c4", 
+        backgroundColor: "#666666c4",
+        letterSpacing: -0.3,
         borderRadius: 8,
-        padding: 7, 
+        padding: 7,
     }
 })
