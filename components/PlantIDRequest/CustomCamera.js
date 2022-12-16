@@ -71,7 +71,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
           exif: false
         }
         let newPhoto = await cameraRef.current.takePictureAsync(options)
-        setupRequestIntialNumber("8").then((howManyReuqestLeft) => {
+        setupRequestIntialNumber("6").then((howManyReuqestLeft) => {
           if (howManyReuqestLeft < 0) return Alert.alert(
             "Dziękujemy za...", 
             `skorzystanie z wersji testowej. Mamy nadzieję, że dowiedziałeś/aś się czegoś nowego o roślinach!`,

@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, ImageBackground, Modal, Alert } from 'react-native';
 import { PlantsSeparator } from '../ui/PlantsSeparator';
 import { Button } from '../ui/Button';
 import { CustomCamera } from './CustomCamera';
 import AntDesign from "react-native-vector-icons/AntDesign"
+import { IconButton } from "@react-native-material/core";
+import { HowManyPhotosLeft } from "../HowManyPhotosLeft";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressHandler}) => {
+    const [howManyLeft, setHowManyLeft] = useState(0)
+
+    useEffect(() => {
+        const getDataFromStorage = async () => {
+            try {
+                const howManyIsAsString = await AsyncStorage.getItem('howMany')
+                if (howManyIsAsString !== null) {
+                    let number = parseInt(howManyIsAsString)
+                    number = number - 7
+                    setHowManyLeft(Math.abs(number))
+                }
+              } catch(e) {
+                console.log(e)
+              }
+        }
+        getDataFromStorage()
+    }, [isVisible])
+
 
 
     return <>
@@ -18,6 +39,7 @@ export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressH
             </View>
 
             <View style={styles.box}>
+                <IconButton onPress={onPressCamera} style={{position: "absolute", zIndex: 50, right: 7, top: 7}} icon={<AntDesign name={"close"} style={{fontSize: 25}}/>} />
                 <Text style={styles.title}>Jak zrobić poprawne zdjęcie?</Text>
 
                 <View>
@@ -38,6 +60,8 @@ export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressH
                     </PlantsSeparator>
                     <Text style={styles.text}>Poczekaj aż aparat złapie ostrość i zrób zdjęcie</Text>
                 </View>
+
+                <HowManyPhotosLeft howManyLeft={howManyLeft}/>
 
 
                 <Button 
@@ -64,8 +88,8 @@ const styles = StyleSheet.create({
         backgroundColor: "white", 
         left: "10%", 
         right: "10%", 
-        top: "10%", 
-        bottom: "10%",
+        top: "8%", 
+        bottom: "8%",
         borderRadius: 16,
     },
     title: {
@@ -73,7 +97,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         fontSize: 25,
         textAlign: "center",
-        marginTop: 10
+        paddingTop: 30
     },
     text: {
         paddingHorizontal: 50,

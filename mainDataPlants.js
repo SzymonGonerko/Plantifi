@@ -23,6 +23,8 @@ export const livingroomPlants = [
     [require("./assets/images/searchPlants/PandanPachnący.jpg"), {name: "Pandan Pachnący", description: "do łazienki", profile: profileData.pandanPachnący}],
     [require("./assets/images/KaktusGrusona.jpg"), {name: "Kaktus Grusona", description: "do sypialni", profile: profileData.kaktusGrusona}],
     [require("./assets/images/Bananowiec.jpg"), {name: "Bananowiec", description: "do kuchni", profile: profileData.bananowiec}],
+    [require("./assets/images/searchPlants/Rododendron.jpg"), {name: "Rododendron", description: "do ogrodu", profile: profileData.rododendron}],
+    [require("./assets/images/searchPlants/Ostrokrzew.jpg"), {name: "Ostrokrzew", description: "do ogrodu", profile: profileData.ostrokrzew}],
   ]
 
   export const lostPlants = [

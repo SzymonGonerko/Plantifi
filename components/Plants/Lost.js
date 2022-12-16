@@ -22,7 +22,7 @@ export const Lost = () => {
             renderItem={({ item, _ }) => <LostPlantsCard src={item[0]} name={item[1].name}/>}
         />
         <View style={styles.btnContainer}>
-            <Button styleContainer={{height: 46}}>Zapal znicz</Button>
+            <Button styleContainer={{height: 46}}>Upamiętnij</Button>
         </View>
     </View>
     </>

@@ -17,6 +17,7 @@ export const General = ({profile}) => {
                         {profile.type === "łatwa pielęgnacja" ? <Image style={styles.innerIcon} resizeMode={"contain"} source={require("../../assets/icons/exploreIcons/Easy.png")}/>: null}
                         {profile.type === "do łazienki" ? <Image style={styles.innerIcon} source={require("../../assets/icons/exploreIcons/bathroomIcon.png")}/>: null}
                         {profile.type === "lubiące słońce" ? <Image style={styles.innerIcon} source={require("../../assets/icons/exploreIcons/Sun.png")}/>: null}
+                        {profile.type === "do ogrodu" ? <Image style={styles.innerIcon} source={require("../../assets/icons/exploreIcons/Garden.png")}/>: null}
                         {profile.type === "przyjazne zwierzętom" ? <Image style={styles.innerIcon} source={require("../../assets/icons/exploreIcons/Animals.png")}/>: null}
                         <Text style={styles.defaultText}>{profile.type}</Text>
                     </View>

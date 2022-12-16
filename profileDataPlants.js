@@ -1335,6 +1335,81 @@ rosiczka: {
     }
 },
 
+rododendron: {
+  general: {
+      type: "do ogrodu",
+      size: "do 3 m",
+      care: "trudna",
+      description: 'Rododendron należy niewątpliwie do najważniejszych, a zarazem najbardziej wymagających krzewów kwiatowych. Często bywa, że znane od dawna i uprawiane w postaci licznych odmian gatunki roślin mają nie jedną, ale dwie albo i trzy nazwy potoczne. Tak jest w przypadku rododendronu. Różanecznik, rododendron, azalia to ten sam rodzaj roślin z rodziny wrzosowatych.'
+    },
+    requirements: {
+      insolation: {inWords: "niskie", inPercentage: 24},
+      temperature: {inWords: "od -25°C od 30°C", inPercentage: 23},
+      position: {inWords: "przy", inPercentage: 20},
+      whiff: {inWords: "wysokie", inPercentage: 70},
+      humidity: {inWords: "średnia", inPercentage: 52},
+    },
+    care: {
+      watering: {
+        inWords: "Rododendrony powinniśmy podlewać regularnie, nawet zimą. Łatwo rozpoznać zapotrzebowanie roślin na wodę, obserwując liście roślin - jeżeli są skierowane do dołu, roślina koniecznie wymaga podlewania, kiedy ustawione są poziomo, możemy podlać, natomiast kiedy liście są wygięte do góry, podlewanie nie jest konieczne.",
+        inPercentage: 60,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Przesadzanie rododendronów trzeba wykonać w taki sposób, aby ograniczyć stres związany z przesadzeniem i zapewnić roślinie jak najlepsze warunki na nowym stanowisku.Rododendrony dobrze jest sadzić na początku wiosny lub też jesienią. Jak wiadomo, są to rośliny z dość płytkim systemem korzeniowym. Taka sytuacja powoduje, że susza im nie służy, ale równocześnie, wilgotne i chłodne warunki atmosferyczne są idealne do przygotowania się do sadzenia.",
+        inPercentage: 40,
+        step: 3
+      },
+      cutting: {
+        inWords: "Cięcie odmładzające rododendronów wykonuje się na przełomie zimy i wiosny. Ścina się wszystkie pędy na wysokości 20-50 cm od ziemi lub – w przypadku egzemplarzy zaszczepionych na pniu – nad miejscem szczepienia. Rany o średnicy powyżej 2 cm warto zabezpieczyć – odpowiednia jest np. Maść ogrodnicza.",
+        inPercentage: 60,
+        step: 2
+      },
+      fertilizating: {
+        inWords: "Zazwyczaj nawożenie rododendronów rozpoczynamy w kwietniu, zaś kończymy w połowie lipca. W tym okresie stosuje się nawozy azotowe, które wspomagają rozwój masy zielonej różaneczników i azalii. W późniejszym okresie, od sierpnia do września, można podać nawozy jesienne, ubogie w azot lub niezawierające go wcale, bogate za to w inne składniki. Dzięki temu roślina nie będzie już pobudzana do wzrostu i dobrze przygotuje się do zimy.",
+        inPercentage: 55,
+        step: 3
+      }
+    }
+},
+ostrokrzew: {
+  general: {
+      type: "do ogrodu",
+      size: "do 10 m",
+      care: "średnia",
+      description: 'Ostrokrzew kolczasty jest wysokim krzewem zimozielonym uprawianym na szeroką skalę w Ameryce Północnej i Europie Zachodniej. Roślina ta ma charakterystyczne ostro zakończone błyszczące liście i krwistoczerwone owoce, które pojawiają się we wrześniu i zdobią krzew przez całą zimę. Co ważne, owoce ostrokrzewu są trujące. Ostrokrzew kolczasty kwitnie od kwietnia do czerwca - obsypuje się wtedy białymi kwiatami. Ogromną zaletą ostrokrzewu jest również to, że bez problemu znosi nawet bardzo niskie temperatury. Szacuje się, że da sobie radę nawet przy -25 stopniach Celsjusza! '
+    },
+    requirements: {
+      insolation: {inWords: "niskie", inPercentage: 15},
+      temperature: {inWords: "od -15°C od 25°C", inPercentage: 32},
+      position: {inWords: "dalej", inPercentage: 60},
+      whiff: {inWords: "wysokie", inPercentage: 63},
+      humidity: {inWords: "wysoka", inPercentage: 70},
+    },
+    care: {
+      watering: {
+        inWords: "Ostrokrzew kolczasty nie lubi mieć zbyt mokro. Jedynie młode krzewy trzeba podlewać. Starsze dobrze sobie radzą bez podlewania, nawet podczas suszy. Ostrokrzew kolczasty nie ma dużych wymagań pokarmowych.",
+        inPercentage: 47,
+        step: 2
+      },
+      transplanting: {
+        inWords: "Najlepszym terminem sadzenia ostrokrzewu jest wiosna lub wczesna jesień. Należy dobrze wybrać miejsce dla ostrokrzewu, gdyż roślina ta źle znosi przesadzanie.",
+        inPercentage: 35,
+        step: 3
+      },
+      cutting: {
+        inWords: "Zasadnicze cięcie zwykle robi się w kwietniu (IV). Potem nie jest to bezpieczne ze względu na pszczoły, których mnóstwo odwiedza kwiaty ostrokrzewów. Ostrokrzewy można ciąć praktycznie cały rok, nawet zimą.",
+        inPercentage: 80,
+        step: 0
+      },
+      fertilizating: {
+        inWords: "Ostrokrzew kolczasty nie ma dużych wymagań pokarmowych. Do nawożenia wystarczą 1-2 dawki nawozu uniwersalnego do krzewów ozdobnych według dawki na opakowaniu, w odstępie 2-3 tygodni. ",
+        inPercentage: 39,
+        step: 3
+      }
+    }
+},
+
 }
 
 export default profileData
