@@ -63,12 +63,12 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         alignItems: "center",
         width: 90,
-        height: 80
+        height: 85
     },
     tagTextContainer: {
-        position: "relative", 
+        position: "relative",
         width: "100%", 
-        height: "80%"
+        height: "100%"
     },
     tagText: {
         position: 'absolute',
@@ -83,8 +83,9 @@ const styles = StyleSheet.create({
         fontSize: 13,
         fontFamily: "NunitoBold",
         textAlign: "center",
-        lineHeight: 13,
+        lineHeight: 14,
         width: "100%",
+        height: "100%",
         color: "#54795E"
     },
     squareContainer: {

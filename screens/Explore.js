@@ -57,7 +57,7 @@ export const Explore = ({onPressShowMainApp, onPressThemeBar, onFocus, onBlur}) 
                     src={item[0]}/>}
         />
 
-        <LongLineSeparator/>
+        <LongLineSeparator style={{marginTop: 15}}/>
         {selectedCard[3] === false ? <ExploreStartSection/>:<EasyCare/>}
         <View style={{width: 50, height: 200}}/>
 

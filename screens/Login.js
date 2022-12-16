@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, View, Dimensions, ImageBackground, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, Alert} from 'react-native';
 import { SquareButton } from '../components/ui/SquareButton';
 import { LoginForm } from '../components/Login/LoginForm';
@@ -21,20 +21,7 @@ if (!permission) {
   }
 
   if (!permission.granted) {
-     Alert.alert(
-        "Dostęp do aparatu",
-        "Aby rozpoznać Twoją rośline aplikacja Plantify potrzebuje dostępu do aparatu",
-        [
-          {
-            text: "Odmawiam",      
-            onPress: () => Alert.alert("Dostęp do aparatu", "dostęp do apraratu jest wyłączony. Spróbuj ponownie przy następnym uruchomieniu aplikacji"),
-          },
-          { 
-            text: "Zezwalam", 
-            onPress: () => requestPermission(),
-          }
-        ]
-      );;
+    requestPermission()
   }
 
 
