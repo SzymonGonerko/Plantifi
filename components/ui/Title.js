@@ -7,7 +7,7 @@ export const Title = ({visibility}) => {
     return (
     <View style={[{flexDirection: "row", justifyContent: "center"}, {opacity: visibility}]}>
         <Text style={styles.title}>
-            Plantify
+            Plantifi
         </Text>
         <View style={{paddingTop: 20}}>
             <FontAwesome name="copyright" size={13} color="#ffffff" />

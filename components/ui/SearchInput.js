@@ -5,7 +5,7 @@ import { OutlinedTextField } from 'rn-material-ui-textfield'
 import AntDesign from "react-native-vector-icons/AntDesign"
 
 
-export const SearchInput = ({onChange, style}) => {
+export const SearchInput = ({onChange, style, onFocus, onBlur}) => {
     return <OutlinedTextField
     inputContainerStyle={[styles.searchInputContainer, style]}
     tintColor={"black"}
@@ -13,6 +13,8 @@ export const SearchInput = ({onChange, style}) => {
     placeholder="Jakiej rośliny szukasz ?"
     activeLineWidth={0}
     onChangeText={(e) => onChange(e)}
+    onFocus={onFocus}
+    onBlur={onBlur}
     lineWidth={0}
     style={{fontFamily: "NunitoRegular"}}
     labelTextStyle={styles.searchLabel}

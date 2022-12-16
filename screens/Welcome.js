@@ -66,7 +66,7 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
         <View style={styles.contentContainer}>
             <View style={styles.welcomeText}>
                 <Text style={styles.text}>Witaj</Text>
-                <Text style={styles.text}>w Plantify</Text>
+                <Text style={styles.text}>w Plantifi</Text>
             </View>
             <View style={styles.btnsContainer}>
                 <Button onPress={onPressLogin} styleContainer={{marginHorizontal: 20}}>Zaloguj się</Button>

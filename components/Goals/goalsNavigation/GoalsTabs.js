@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         top: 0,
-        height: 45,
+        height: 35,
         padding: 0,
         borderBottomWidth: 4,
         borderBottomColor: "#e6e7e8",

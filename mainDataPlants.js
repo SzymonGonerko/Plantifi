@@ -80,6 +80,7 @@ export const livingroomPlants = [
     [require("./assets/images/toDoListPlants/AnturiumScherzera.jpg"), {name: "Anturium Scherzera", whatNeed: "Potrzebuje Wody! (15ml)"}],
     [require("./assets/images/toDoListPlants/MonsteraAdansoni.jpg"), {name: "Monstera Adansoni", whatNeed: "Potrzebuje przesadzenia!"}],
     [require("./assets/images/toDoListPlants/CactusParodia.jpg"), {name: "Cactus Parodia", whatNeed: "Potrzebuje drenażu doniczki!"}],
+    [require("./assets/images/toDoListPlants/Bananowiec.jpg"), {name: "Bananowiec", whatNeed: "Potrzebuje przesadzenia!"}],
   ]
 
   export const calendarPlants = [

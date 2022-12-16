@@ -4,7 +4,8 @@ import { StyleSheet, Text, View, Pressable} from 'react-native';
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 
-export const CustomCheckbox = ({onPressInfoHandler, labelText, helper}) => {
+export const CustomCheckbox = (props) => {
+    const {onPressInfoHandler, labelText, helper} = props
     return <>
             <View style={styles.container}>
                 <BouncyCheckbox 

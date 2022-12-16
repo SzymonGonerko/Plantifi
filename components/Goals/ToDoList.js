@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 export const ToDoList = () => {
     const [plantsData, setPlantsData] = useState(toDoListPlants)
-    const [itemHeight, setItemHeight] = useState([120, 120, 120])
+    const [itemHeight, setItemHeight] = useState([])
 
     const onPressHandler = () => {
         Alert.alert("Pracuję nad tym...", "aplikacja jest w fazie testowej", [{text: "okey", style: "default"}])
@@ -40,7 +40,7 @@ export const ToDoList = () => {
             </View>
         </View>
         <Text style={styles.isDoneText}>Zrobione? Przesuń w lewo!</Text>
-        <LongLineSeparator/>
+        <LongLineSeparator style={{marginBottom: 0}}/>
         <View style={{flexDirection: "column"}}>
             <GestureHandlerRootView>
                 {plantsData.map((item, i) => { 
@@ -49,10 +49,10 @@ export const ToDoList = () => {
                     childrenContainerStyle={{backgroundColor: "#F2F2F2"}} 
                     key={i} 
                     renderRightActions={RightSwipeSquare}>
-                        <View style={{paddingHorizontal: 24, overflow: "hidden", height: itemHeight[i]}} key={i}>
-                            <View style={{flexDirection: "row"}}>
+                        <View style={{paddingHorizontal: 24, height: itemHeight[i], overflow: "hidden" }} key={i}>
+                            <View style={{flexDirection: "row", paddingTop: 10}}>
                                 <Image source={item[0]} style={{width: 67, height: 80, borderRadius: 8}}/>
-                                <View style={{flexDirection: "column", justifyContent: "space-between", marginLeft: 20}}>
+                                <View style={{flexDirection: "column", justifyContent: "space-around", marginLeft: 20}}>
                                     <View>
                                         <Text style={styles.title}>{item[1].name}</Text>
                                         <View style={{flexDirection: "row", alignItems: "center"}}>
@@ -69,7 +69,7 @@ export const ToDoList = () => {
                                 </View>
                                 
                             </View>
-                            <LongLineSeparator/>
+                            <LongLineSeparator style={{marginBottom: 0, marginTop: 10,}}/>
                     </View>
                 </Swipeable>
                 })}
@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
         fontFamily: "NunitoBold",
         fontSize: 20,
         marginBottom: 12,
+        marginTop: 20,
         marginHorizontal: 24
     },
     btnsContainer: {

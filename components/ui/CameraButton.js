@@ -5,7 +5,7 @@ import { StyleSheet, View, ImageBackground, Dimensions, Pressable } from 'react-
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 import { PhotoInstruction } from '../PlantIDRequest/PhotoInstruction';
 
-const windowWidth = Dimensions.get('screen').width;
+const screenWidth = Dimensions.get('screen').width;
 
 export const CameraButton = () => {
     const [showPhotoInstruction, setShowPhotoInstruction] = useState(false)
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         height: 56,
         justifyContent: "center",
         alignItems: "center",
-        top: -30,
+        top: -25
     },
     pressed: {
         opacity: 0.75,
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
     },
     imgBackground: {
         position: "absolute",
-        width: windowWidth + 50, 
-        top: -48, 
+        width: screenWidth + 45, 
+        top: -40, 
         bottom: 0, 
     }
 })

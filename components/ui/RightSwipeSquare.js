@@ -17,11 +17,10 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
             flexDirection: "column",
             backgroundColor: "#54795E",
             width: 109,
-            height: 90,
             borderRadius: 7
         },
         checkedIcon: {
-            fontSize: 35,
+            fontSize: 30,
             color: "white"
         },
         text: {

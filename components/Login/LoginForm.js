@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Alert} from 'react-native';
 
 import * as Notifications from 'expo-notifications';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -11,19 +12,19 @@ Notifications.setNotificationHandler({
   }),
 });
 
-import { useState } from 'react';
 import { OutlinedTextField } from 'rn-material-ui-textfield'
-import AntDesign from "react-native-vector-icons/AntDesign"
-import Octicons from "react-native-vector-icons/Octicons"
-import Feather from "react-native-vector-icons/Feather"
 import {Button} from "../ui/Button"
 import { IconButton } from "@react-native-material/core";
 import { CustomCheckbox } from '../ui/CustomCheckbox';
+import AntDesign from "react-native-vector-icons/AntDesign"
+import Octicons from "react-native-vector-icons/Octicons"
+import Feather from "react-native-vector-icons/Feather"
 
 export const LoginForm = ({onFocusHandler, onBlurHandler, onPressShowMainApp}) => {
 const [correctLogin, setCorrectLogin] = useState(false)
 const [correctPasword, setCorrectPassword] = useState(false)
 const [securePassword, setSecurePassword] = useState(true)
+const [checked, setIsChecked] = useState(false)
 const [form, setForm] = useState({
     login: "",
     password: ""
@@ -63,12 +64,10 @@ const onChangePasswordHandler = (e) => {
 }
 
 const onSubmitHandler = () => {
-    if (form.password !== "1234") {
-        setCorrectPassword(true)
-    } else {
-        setCorrectPassword(false)
-    }
-    if (form.password === "1234" && (form.login === "anna.kowalska@gmail.com" || form.login === "Anna.kowalska@gmail.com")) {
+    const correctLogin = form.login === "anna.kowalska@gmail.com" || form.login === "Anna.kowalska@gmail.com"
+    if (form.password !== "1234") setCorrectPassword(true)
+    else setCorrectPassword(false)
+    if (form.password === "1234" && correctLogin) {
         onPressShowMainApp()
         schedulePushNotification()
     }

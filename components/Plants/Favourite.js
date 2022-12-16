@@ -5,7 +5,7 @@ import { searchPlants } from '../../mainDataPlants';
 import { Card } from '../ui/Card';
 import { SearchInput } from '../ui/SearchInput';
 
-export const Favourite = () => {
+export const Favourite = ({onFocus, onBlur}) => {
     const [plants, setPlants] = useState(searchPlants)
     const [searchingPlants, setSearchingPlants] = useState(searchPlants)
     const [textInput, setTextInput] = useState("")
@@ -18,7 +18,7 @@ export const Favourite = () => {
 
     return <>
     <View style={styles.container}>
-        <SearchInput onChange={onChangeTextHandler}/>
+        <SearchInput onFocus={onFocus} onBlur={onBlur} onChange={onChangeTextHandler}/>
     </View>
     <FlatList
         keyExtractor={(item) => item}

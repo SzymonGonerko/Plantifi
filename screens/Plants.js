@@ -5,12 +5,12 @@ import { PlantsNavigator } from '../components/Plants/plantsNavigation/PlantsNav
 import { Camera } from 'expo-camera';
 
 
-export const Plants = ({onPressShowMainApp, onPressThemeBar}) => {
+export const Plants = ({onPressShowMainApp, onPressThemeBar, onFocus, onBlur}) => {
 
     return (
         <SafeAreaView style={styles.container}>
                 <Header onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp}>Moje Rośliny</Header>
-                <PlantsNavigator/>
+                <PlantsNavigator onFocus={onFocus} onBlur={onBlur}/>
         </SafeAreaView>
     )
 }

@@ -61,9 +61,6 @@ export const RightNavBar = ({isVisible, showMenu}) => {
                                 </Button>
                                 <LongLineSeparator/>
                                 <Button navBtn={true} styleContainer={styles.buttonContainer} styleButton={styles.btn} styleText={styles.buttonText}>
-                                    Powiadomienia
-                                </Button>
-                                <Button navBtn={true} styleContainer={styles.buttonContainer} styleButton={styles.btn} styleText={styles.buttonText}>
                                     Ustawienia
                                 </Button>
                                 <Button navBtn={true} styleContainer={styles.buttonContainer} styleButton={styles.btn} styleText={styles.buttonText}>

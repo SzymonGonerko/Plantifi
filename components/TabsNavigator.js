@@ -1,4 +1,4 @@
-import React, { useRef }  from "react";
+import React, { useRef, useState }  from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Animated} from 'react-native';
 import { NavIcon } from "./ui/NavIcon";
@@ -27,6 +27,7 @@ const dir = {
 
 export const TabsNavigator = (props) => {
   const {onPressShowMainApp, onPressThemeBar} = props
+  const [navPosition, setNavPosition] = useState(-20)
     const listTab = {
         fadePlants: useRef(new Animated.Value(1)).current,
         fadeExplore: useRef(new Animated.Value(0)).current,
@@ -51,6 +52,13 @@ export const TabsNavigator = (props) => {
         }).start()
       }
 
+      const onBlurInputHandler = () => {
+        setNavPosition(-20)
+      }
+      const onFocusInputHandler = () => {
+        setNavPosition(-1000)
+      }
+
 
 
 
@@ -60,7 +68,7 @@ return <>
     screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: styles.tabBar,
+        tabBarStyle: [styles.tabBar, {bottom: navPosition}],
     }}
     >
         <Tab.Screen 
@@ -76,7 +84,7 @@ return <>
                   navigation.navigate('Plants');
                 },
               })}>
-            {(props) => <Plants {...props} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+            {(props) => <Plants {...props} onFocus={onFocusInputHandler} onBlur={onBlurInputHandler} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
         </Tab.Screen>
 
         <Tab.Screen
@@ -93,7 +101,7 @@ return <>
                 },
           })}
         >
-          {(props) => <Explore {...props} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+          {(props) => <Explore {...props} onFocus={onFocusInputHandler} onBlur={onBlurInputHandler} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
         </Tab.Screen>
 
         <Tab.Screen 
@@ -147,8 +155,8 @@ const styles = StyleSheet.create({
         position: "absolute",
         left: 10,
         right: 10,
-        bottom: 0,
-        height: 90,
+        bottom: 20,
+        height: 85,
         padding: 0,
         elevation: 0,
         borderWidth: 0

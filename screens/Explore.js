@@ -11,7 +11,7 @@ import { ExploreStartSection } from '../components/Explore/ExploreStartSection';
 import { EasyCare } from '../components/Explore/EasyCare';
 
 
-export const Explore = ({onPressShowMainApp, onPressThemeBar}) => {
+export const Explore = ({onPressShowMainApp, onPressThemeBar, onFocus, onBlur}) => {
     const [textInput, setTextInput] = useState("")
     const [selectedCard, setSelectedCard] = useState([false, false, false, false, false, false])
 
@@ -36,7 +36,7 @@ export const Explore = ({onPressShowMainApp, onPressThemeBar}) => {
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
         
         <View style={styles.inputContainer}>
-            <SearchInput style={{minWidth: 270, borderColor: "#5964768E"}} onChange={onChangeTextHandler}/>
+            <SearchInput onFocus={onFocus} onBlur={onBlur} style={{minWidth: 270, borderColor: "#5964768E"}} onChange={onChangeTextHandler}/>
             <SquareButton styleButton={{backgroundColor: "#F2F2F2"}} styleContainer={{marginTop: 20, marginLeft: 10}} type={'slider'}/>
         </View>
         <Text style={styles.plantsCategory}>

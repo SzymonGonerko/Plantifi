@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator();
 
 
 
-export const PlantsTabs = () => {
+export const PlantsTabs = ({onFocus, onBlur}) => {
     const listTab = {
         fadeCollection: useRef(new Animated.Value(1)).current,
         fadeFavourite: useRef(new Animated.Value(0)).current,
@@ -54,41 +54,41 @@ return <>
     }}
     >
         <Tab.Screen 
-            name='Collection' 
-            component={Collection}
-            options={{
-                tabBarLabelStyle: styles.label,
-                tabBarIcon: () => <TabSeparator animOpacity={listTab.fadeCollection}/>,
-                tabBarLabel: "Moja kolekcja",
-                tabBarActiveTintColor: "#54795E"
-            }}
-            listeners={({ navigation }) => ({
+          name='Collection'
+          options={{
+            tabBarLabelStyle: styles.label,
+            tabBarIcon: () => <TabSeparator animOpacity={listTab.fadeCollection}/>,
+            tabBarLabel: "Moja kolekcja",
+            tabBarActiveTintColor: "#54795E"
+        }}
+          listeners={({ navigation }) => ({
                 tabPress: (e) => {
                   e.preventDefault();
                   fadeIn(listTab.fadeCollection)
                   navigation.navigate('Collection');
                 },
-              })}
-        
-        />
+              })}>
+            {(props) => <Collection {...props} />}
+        </Tab.Screen>
 
-        <Tab.Screen
-            name='Favourite' 
-            component={Favourite}
-            options={{
-                tabBarLabelStyle: styles.label,
-                tabBarIcon: () => <TabSeparator animOpacity={listTab.fadeFavourite}/>,
-                tabBarLabel: "Ulubione",
-                tabBarActiveTintColor: "#54795E"
+
+        <Tab.Screen 
+          name='Favourite'
+          options={{
+            tabBarLabelStyle: styles.label,
+            tabBarIcon: () => <TabSeparator animOpacity={listTab.fadeFavourite}/>,
+            tabBarLabel: "Ulubione",
+            tabBarActiveTintColor: "#54795E"
             }}
-            listeners={({ navigation }) => ({
+          listeners={({ navigation }) => ({
                 tabPress: (e) => {
                   e.preventDefault();
                   fadeIn(listTab.fadeFavourite)
                   navigation.navigate('Favourite');
                 },
-              })}
-        />
+              })}>
+            {(props) => <Favourite onFocus={onFocus} onBlur={onBlur} {...props} />}
+        </Tab.Screen>
 
         <Tab.Screen 
             name='Lost' 
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         top: 0,
-        height: 45,
+        height: 35,
         padding: 0,
         borderBottomWidth: 4,
         borderBottomColor: "#e6e7e8",
