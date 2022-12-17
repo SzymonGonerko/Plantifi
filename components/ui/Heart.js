@@ -5,12 +5,13 @@ import { StyleSheet, View, Pressable, Animated} from 'react-native';
 import Entypo from "react-native-vector-icons/Entypo"
 import Feather from "react-native-vector-icons/Feather"
 
-export const Heart = ({bottomPosition}) => {
+export const Heart = ({bottomPosition, onPress}) => {
     const heartOpacity = useRef(new Animated.Value(1)).current;
     const heartGrowUp = useRef(new Animated.Value(1)).current;
     const [isFirstTap, setIsFirstTap] = useState(true)
 
     const heartAnimation = () => {
+        onPress ? onPress(): null
         if (isFirstTap) {
             Animated.timing(heartOpacity, {
                 toValue: 0,

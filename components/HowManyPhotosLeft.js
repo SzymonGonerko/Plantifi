@@ -5,7 +5,7 @@ export const HowManyPhotosLeft = ({howManyLeft}) => {
     return <>
                 <View style={styles.container}>
                     <View style={styles.line}/>
-                    <Text style={styles.text}>Twoje Zdjęcia:</Text>
+                    <Text style={styles.text}>Twoje zdjęcia:</Text>
                     <View style={styles.box}>
                         <Text style={styles.number}>{howManyLeft < 7 ? howManyLeft : 7}/7</Text>
                     </View>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     text: {
-        paddingHorizontal: 9, 
+        paddingHorizontal: 10, 
         fontFamily: "NunitoBold", 
         color: "#54795E"
     },

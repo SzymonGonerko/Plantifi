@@ -27,7 +27,7 @@ const dir = {
 
 export const TabsNavigator = (props) => {
   const {onPressShowMainApp, onPressThemeBar} = props
-  const [navPosition, setNavPosition] = useState(-20)
+  const [navPosition, setNavPosition] = useState(-25)
     const listTab = {
         fadePlants: useRef(new Animated.Value(1)).current,
         fadeExplore: useRef(new Animated.Value(0)).current,

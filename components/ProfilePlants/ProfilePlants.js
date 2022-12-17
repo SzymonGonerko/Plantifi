@@ -1,10 +1,11 @@
-import React, { useState  } from "react";
-import { StyleSheet, Text, View, ImageBackground, Modal} from 'react-native';
+import React, { useState, useRef  } from "react";
+import { StyleSheet, Text, View, ImageBackground, Modal, Animated} from 'react-native';
 import { SquareButton } from '../ui/SquareButton';
 import { ShortLine } from '../ui/ShortLine';
 import { ModalPlantsNavigation } from './ModalPlantsNavigation';
 import { AddNewPlants } from './AddNewPlants';
 import { Heart } from "../ui/Heart"
+import { InfoLike } from "../ui/InfoLike";
 
 
 import {Button} from "../ui/Button"
@@ -14,7 +15,27 @@ import AntDesign from "react-native-vector-icons/AntDesign"
 
 export const ProfilePlants = (props) => {
   const {isVisible, onPressButtonSquare, src, name, profile, addNewPlantsToCollecton} = props
+  const InfoLikeOpacity = useRef(new Animated.Value(0)).current;
   const [addPlants, setAddPlants] = useState(false)
+  const [infoAddedToFavourite, setAddedToFavourite] = useState(false)
+
+  const onPressHeart = () => {
+    setAddedToFavourite(prev => !prev)
+    Animated.timing(InfoLikeOpacity, {
+      toValue: 1,
+      duration: 250,
+      useNativeDriver: true
+    }).start(() => {
+      setTimeout(() => {
+        Animated.timing(InfoLikeOpacity, {
+          toValue: 0,
+          duration: 600,
+          useNativeDriver: true
+        }).start()
+      }, 600)
+
+    });
+  }
 
 
   const resetState = () => {
@@ -36,13 +57,14 @@ export const ProfilePlants = (props) => {
     visible={isVisible}
     >
         <View style={styles.bgcContainer}>
+            {infoAddedToFavourite && <InfoLike opacity={InfoLikeOpacity} name={name}/>}
             <ImageBackground
             source={src} 
             style={styles.background}
             imageStyle={styles.img}
             />
             <SquareButton styleContainer={styles.btnSqure} reset={resetState} onPress={onPressButtonSquare} type={"arrow"}/>
-            <Heart bottomPosition={-18}/>
+            <Heart onPress={onPressHeart} bottomPosition={-18}/>
         </View>
 
         <View style={styles.profileInfo}>
