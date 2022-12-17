@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         flexDirection: "row",
         zIndex: 3, 
-        top: "20%", 
+        top: "45%", 
         left: "10%", 
         right: "10%", 
         height: 90, 

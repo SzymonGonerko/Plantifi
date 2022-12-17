@@ -30,7 +30,7 @@ export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressH
 
 
     return <>
-    <Modal animationType="slide" visible={isVisible}>
+    <Modal animationType="slide" visible={isVisible} statusBarTranslucent={true}>
         {!showCamera &&
         <View style={{flex: 1}}>
             <View style={{flex: 1}}>

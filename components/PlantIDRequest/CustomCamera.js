@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
       },
       sqr: {
         position: "absolute", 
-        top: 20, 
+        top: 50, 
         left: 20, 
         zIndex: 2
       },
