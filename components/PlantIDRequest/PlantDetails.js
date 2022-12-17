@@ -102,6 +102,7 @@ export const PlantDetails = ({onPressSquare, data, setCorrectGrammar}) => {
 
 const styles = StyleSheet.create({
     bgcContainer: {
+      marginTop: 25,
       width: "100%",
       height: "40%",
       borderRadius: 17
