@@ -22,7 +22,7 @@ export const Header = ({children, onPressShowMainApp, onPressThemeBar, onHeader}
     return <>
             <View style={styles.headerContainer}>
                 <View>
-                    <SquareButton onHeader={true} type={"arrow"} onPress={goBack} styleButton={{backgroundColor: "white"}}/>
+                    <SquareButton onHeader={true} type={"arrow"} styleButton={{backgroundColor: "white"}}/>
                 </View>
                 <View> 
                     <Text style={[styles.headerText, {transform: [{translateY: -3}]}]}>{children}</Text>
@@ -31,7 +31,7 @@ export const Header = ({children, onPressShowMainApp, onPressThemeBar, onHeader}
                     <SquareButton type={"nav"} onPress={showMenu} styleContainer={{borderWidth: 1, borderColor: "#54795E"}} styleButton={{backgroundColor: "white"}}/>
                 </View>
             </View>
-            <RightNavBar showMenu={showMenu} isVisible={navVisibility} />
+            <RightNavBar goBack={goBack} showMenu={showMenu} isVisible={navVisibility} />
     </>
 }
 

@@ -8,7 +8,7 @@ import { LongLineSeparator } from './ui/LongLineSeparator';
 import { Button } from './ui/Button';
 import { SquareButton} from "./ui/SquareButton"
 
-export const RightNavBar = ({isVisible, showMenu}) => {
+export const RightNavBar = ({isVisible, showMenu, goBack}) => {
     const [typeAnimation, setTypeAnimation] = useState("fadeInRight")
 
 
@@ -73,7 +73,7 @@ export const RightNavBar = ({isVisible, showMenu}) => {
                                 <LongLineSeparator/>
 
                                 <View style={{flexDirection: "row", alignItems: "center", marginBottom: 20}}>
-                                    <SquareButton styleContainer={styles.squareBtn} styleButton={{backgroundColor: "white"}} type={"logOut"}/>
+                                    <SquareButton onPress={goBack} styleContainer={styles.squareBtn} styleButton={{backgroundColor: "white"}} type={"logOut"}/>
                                     <Text style={styles.logOutText}>Wyloguj się</Text>
                                 </View>
                                 
