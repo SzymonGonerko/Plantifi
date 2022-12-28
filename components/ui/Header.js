@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { SquareButton } from './SquareButton';
 import { RightNavBar } from '../RightNavBar';
 
-export const Header = ({children, onPressShowMainApp, onPressThemeBar, onHeader}) => {
+export const Header = ({children, onPressShowMainApp, onPressThemeBar, onPressArrowBack, navigation}) => {
     const [navVisibility, setNavVisiliblity] = useState(false)
 
     const goBack = () => {
@@ -22,7 +22,7 @@ export const Header = ({children, onPressShowMainApp, onPressThemeBar, onHeader}
     return <>
             <View style={styles.headerContainer}>
                 <View>
-                    <SquareButton onHeader={true} type={"arrow"} styleButton={{backgroundColor: "white"}}/>
+                    <SquareButton onPress={() => onPressArrowBack(navigation)} onHeader={true} type={"arrow"} styleButton={{backgroundColor: "white"}}/>
                 </View>
                 <View> 
                     <Text style={[styles.headerText, {transform: [{translateY: -3}]}]}>{children}</Text>

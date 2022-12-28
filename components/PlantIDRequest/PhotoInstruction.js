@@ -66,7 +66,7 @@ export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressH
 
                 <Button 
                     onPress={onPressHandler} 
-                    styleContainer={{height: 48, marginHorizontal: 20}}
+                    styleContainer={{height: 45, marginHorizontal: 20, marginTop: 15}}
                     icon={<AntDesign name='right' style={styles.iconStyle}/> }
                     >
                         Zaczynamy!
@@ -95,9 +95,9 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: "PlayfairDisplayBold",
         paddingHorizontal: 10,
-        fontSize: 25,
+        fontSize: 30,
         textAlign: "center",
-        paddingTop: 30
+        paddingTop: 30,
     },
     text: {
         paddingHorizontal: 50,

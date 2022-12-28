@@ -4,10 +4,11 @@ import { Header } from "../components/ui/Header"
 import { GoalsNavigator } from '../components/Goals/goalsNavigation/GoalsNavigator';
 
 
-export const Goals = ({onPressShowMainApp, onPressThemeBar}) => {
+export const Goals = (props) => {
+    const {onPressShowMainApp, onPressThemeBar, onPressArrowBack, navigation} = props
     return (
         <View style={styles.container}>
-            <Header onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar}>
+            <Header navigation={navigation} onPressArrowBack={onPressArrowBack} onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar}>
                 Moje Zadania
             </Header>
             

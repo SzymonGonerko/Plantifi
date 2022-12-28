@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     },
     bgcContainer: {
       width: "100%",
-      height: "42%",
+      height: "40%",
       borderRadius: 17
   },
   background: {

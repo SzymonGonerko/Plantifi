@@ -14,7 +14,7 @@ export const NavIcon = ({source, text, fadeAnim}) => {
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: "center",
+        height: "100%",
         alignItems: "center",
     },
     plantsIcon: {
@@ -25,8 +25,6 @@ const styles = StyleSheet.create({
         fontSize: 11,
         fontFamily: "NunitoRegular",
         color: "#54795E",
+        width: "100%"
     },
-    con: {
-        alignItems: "center",
-    }
 })

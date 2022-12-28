@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         height: 56,
         justifyContent: "center",
         alignItems: "center",
-        top: -25
+        top: -45
     },
     pressed: {
         opacity: 0.75,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     imgBackground: {
         position: "absolute",
         width: screenWidth + 15, 
-        top: -47, 
+        top: -60, 
         bottom: 0, 
     }
 })

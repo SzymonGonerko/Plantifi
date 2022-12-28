@@ -27,13 +27,14 @@ const dir = {
 
 export const TabsNavigator = (props) => {
   const {onPressShowMainApp, onPressThemeBar} = props
+  const [nav, setNav] = useState({history: [0], isPressedNav: false})
   const [navPosition, setNavPosition] = useState(-25)
-    const listTab = {
-        fadePlants: useRef(new Animated.Value(1)).current,
-        fadeExplore: useRef(new Animated.Value(0)).current,
-        fadeGoals: useRef(new Animated.Value(0)).current,
-        fadeShop: useRef(new Animated.Value(0)).current
-    }
+  const listTab = {
+      fadePlants: useRef(new Animated.Value(1)).current,
+      fadeExplore: useRef(new Animated.Value(0)).current,
+      fadeGoals: useRef(new Animated.Value(0)).current,
+      fadeShop: useRef(new Animated.Value(0)).current
+  }
 
     const fadeOut = (thisOne) => {
         Animated.timing(thisOne, {
@@ -53,10 +54,39 @@ export const TabsNavigator = (props) => {
       }
 
       const onBlurInputHandler = () => {
-        setNavPosition(-20)
+        setNavPosition(-25)
       }
       const onFocusInputHandler = () => {
         setNavPosition(-1000)
+      }
+
+      const onPressTabHandler = (index) => {
+        setNav(prev => {
+          const newState = prev.history[prev.history.length - 1] === index ? prev : {history: [...prev.history, index], isPressedNav: true};
+          return newState
+        })
+      }
+
+      const onPressArrowBack = (navigation) => {
+        let tabIndex
+        setNav(prev => {
+          if (prev.isPressedNav) {
+              let sliceTheLast = [...prev.history].slice(0, -1)
+              tabIndex = sliceTheLast.pop()
+              return {history: [...sliceTheLast], isPressedNav: false}
+          } 
+          else {
+            tabIndex = [...prev.history].pop()
+            return {history: [...prev.history], isPressedNav: true}
+          }
+        })
+        switch (tabIndex) {
+          case 3: return (fadeIn(listTab.fadeShop), navigation.navigate("Shop"))
+          case 2: return (fadeIn(listTab.fadeGoals), navigation.navigate("Goals"))
+          case 1: return (fadeIn(listTab.fadeExplore), navigation.navigate("Explore"))
+          case 0: return (fadeIn(listTab.fadePlants), navigation.navigate("Plants"))
+          default: return (fadeIn(listTab.fadePlants), navigation.navigate("Plants"))
+        }
       }
 
 
@@ -82,9 +112,10 @@ return <>
                   e.preventDefault();
                   fadeIn(listTab.fadePlants)
                   navigation.navigate('Plants');
+                  onPressTabHandler(0)
                 },
               })}>
-            {(props) => <Plants {...props} onFocus={onFocusInputHandler} onBlur={onBlurInputHandler} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+            {(props) => <Plants {...props} onPressArrowBack={onPressArrowBack} onFocus={onFocusInputHandler} onBlur={onBlurInputHandler} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
         </Tab.Screen>
 
         <Tab.Screen
@@ -98,10 +129,11 @@ return <>
                 e.preventDefault();
                 fadeIn(listTab.fadeExplore)
                 navigation.navigate('Explore');
+                onPressTabHandler(1)
                 },
           })}
         >
-          {(props) => <Explore {...props} onFocus={onFocusInputHandler} onBlur={onBlurInputHandler} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+          {(props) => <Explore {...props} onPressArrowBack={onPressArrowBack}  onFocus={onFocusInputHandler} onBlur={onBlurInputHandler} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
         </Tab.Screen>
 
         <Tab.Screen 
@@ -124,10 +156,11 @@ return <>
                 e.preventDefault();
                 fadeIn(listTab.fadeGoals)
                 navigation.navigate('Goals')
+                onPressTabHandler(2)
               },
             })}
         >
-            {(props) => <Goals {...props} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+            {(props) => <Goals  {...props} onPressArrowBack={onPressArrowBack}onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
         </Tab.Screen>
 
         <Tab.Screen
@@ -140,11 +173,12 @@ return <>
               tabPress: (e) => {
                 e.preventDefault();
                 fadeIn(listTab.fadeShop)
-                navigation.navigate('Shop');
+                navigation.navigate('Shop')
+                onPressTabHandler(3)
               },
             })}
         >
-          {(props) => <Shop {...props} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+          {(props) => <Shop onPressArrowBack={onPressArrowBack} {...props} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
       </Tab.Screen>
 
     </Tab.Navigator>
@@ -156,7 +190,7 @@ const styles = StyleSheet.create({
         left: 10,
         right: 10,
         bottom: 20,
-        height: 85,
+        height: 75,
         padding: 0,
         elevation: 0,
         borderWidth: 0

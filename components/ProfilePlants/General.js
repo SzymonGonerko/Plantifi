@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
     tag: {
         flexDirection: "column",
         alignContent: "space-between",
-        width: "25%"
+        minWidth: "25%",
+        maxWidth: "33%"
     },
     tagText: {
         textTransform: "uppercase",

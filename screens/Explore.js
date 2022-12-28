@@ -11,7 +11,8 @@ import { ExploreStartSection } from '../components/Explore/ExploreStartSection';
 import { EasyCare } from '../components/Explore/EasyCare';
 
 
-export const Explore = ({onPressShowMainApp, onPressThemeBar, onFocus, onBlur}) => {
+export const Explore = (props) => {
+    const {onPressShowMainApp, onPressThemeBar, onFocus, onBlur, onPressArrowBack, navigation} = props
     const [textInput, setTextInput] = useState("")
     const [selectedCard, setSelectedCard] = useState([false, false, false, false, false, false])
 
@@ -32,7 +33,7 @@ export const Explore = ({onPressShowMainApp, onPressThemeBar, onFocus, onBlur}) 
         }, [])
 
     return (<>
-    <Header onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar} >Odkrywaj</Header>
+    <Header navigation={navigation} onPressArrowBack={onPressArrowBack} onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar} >Odkrywaj</Header>
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
         
         <View style={styles.inputContainer}>

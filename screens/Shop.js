@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, View, TouchableOpacity, Image, Pressable, Alert, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { Header } from "../components/ui/Header"
 
-export const Shop = ({onPressShowMainApp, onPressThemeBar}) => {
+export const Shop = (props) => {
+    const {onPressShowMainApp, onPressThemeBar, onPressArrowBack, navigation} = props
     return <>
-    <Header onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar}>
+    <Header navigation={navigation} onPressArrowBack={onPressArrowBack} onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar}>
             Sklep
     </Header>
     <View style={styles.container}>

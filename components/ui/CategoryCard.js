@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         alignItems: "center",
         width: 90,
-        height: 85
+        height: 90
     },
     tagTextContainer: {
         position: "relative",

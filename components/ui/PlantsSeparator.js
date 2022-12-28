@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         color: "black",
         fontFamily: "NunitoBold",
         fontSize: 16,
-        width: "25%",
+        paddingHorizontal: 10,
         textAlign: "center"
     },
     lineLeft: {

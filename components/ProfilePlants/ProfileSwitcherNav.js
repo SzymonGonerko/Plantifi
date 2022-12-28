@@ -6,7 +6,7 @@ export const ProfileSwitcherNav = ({general, requirements, care, onPress}) => {
     return <>
     <View style={styles.container}>
 
-        <View style={{flexDirection: "row", justifyContent: "center"}}>
+        <View style={{flexDirection: "row", justifyContent: "space-between", width: "100%"}}>
             <Pressable onPress={onPress.bind(this, "general")} style={styles.press}>
                 <Text style={[styles.defaultText, (general && styles.selected)]}>Ogólne</Text>
                 {general && <View style={styles.line}/>}
@@ -37,13 +37,12 @@ const styles = StyleSheet.create({
     container: {
         width: "100%", 
         flexDirection: "column",
-        justifyContent: "space-around"
     },
     press: {
-        height: 40,
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
+        minWidth: "25%",
+        paddingVertical: 10,
+        justifyContent: "space-between",
+        alignItems: "center",
     },
     defaultText: {
         fontFamily: "NunitoBold",
@@ -68,7 +67,7 @@ const styles = StyleSheet.create({
         right: 0,
         zIndex: -2, 
         opacity: 0.1, 
-        width: "100%", 
+        width: "150%", 
         height: 4, 
         backgroundColor: "#64768E"
     }

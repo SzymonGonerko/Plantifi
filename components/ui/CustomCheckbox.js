@@ -17,7 +17,7 @@ export const CustomCheckbox = (props) => {
                 iconImageStyle={styles.iconStyle}
                 />
                 <Pressable onPress={onPressInfoHandler}>
-                    <Text style={[styles.passwordForgotten, {transform: [{translateY: 4}]}]}>
+                    <Text style={styles.passwordForgotten}>
                         {helper}
                     </Text>
                 </Pressable>
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         justifyContent: "space-between",
+        alignItems: "center",
         marginTop: 15
     },
     passwordForgotten: {

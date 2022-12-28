@@ -14,12 +14,10 @@ export const LostPlantsCard = ({src, name}) => {
 
 const styles = StyleSheet.create({
     container: {
-        position: 'relative',
         width: 67,
         height: 64,
-        borderRadius: 100,
         marginRight: 21,
-        elevation: 4,
+        elevation: 6,
         marginBottom: 16,
     },
     imgs: {
@@ -28,14 +26,12 @@ const styles = StyleSheet.create({
         borderRadius: 8,
     },
     nameText: {
-        position: 'relative',
         bottom: 20,
         fontFamily: "NunitoRegular",
         fontSize: 14,
         textAlign: "center"
     },
     tomstoneIcon: {
-        position: 'relative',
         width: 20,
         height: 27,
         top: -20,
