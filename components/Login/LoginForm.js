@@ -24,7 +24,6 @@ export const LoginForm = ({onFocusHandler, onBlurHandler, onPressShowMainApp}) =
 const [correctLogin, setCorrectLogin] = useState(false)
 const [correctPasword, setCorrectPassword] = useState(false)
 const [securePassword, setSecurePassword] = useState(true)
-const [checked, setIsChecked] = useState(false)
 const [form, setForm] = useState({
     login: "",
     password: ""

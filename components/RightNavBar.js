@@ -37,8 +37,8 @@ export const RightNavBar = ({isVisible, showMenu, goBack}) => {
                             </View>
 
                             <View>
-                                <Text style={styles.userName}>Karolina Kowalska</Text>
-                                <Text style={styles.userEmail}>karolina.kowalska@gmail.com</Text>
+                                <Text style={styles.userName}>Anna Kowalska</Text>
+                                <Text style={styles.userEmail}>Anna.kowalska@gmail.com</Text>
                             </View>
 
                             <LongLineSeparator/>
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     icon: {
         position: "absolute",
         bottom: 0,
-        right: -25,
+        right: -20,
         width: 19,
         height: 19
     },
