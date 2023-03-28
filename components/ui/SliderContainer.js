@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react';
 import React from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 import { Slider } from "@miblanchard/react-native-slider";
+import { globalStyles } from '../globalStyles';
 
 
 const borderWidth = 3;
@@ -67,7 +68,6 @@ export const SliderContainer = (props) => {
             props.children,
             (child) => {
                 if (!!child && child.type === Slider) {
-                    
                     return React.cloneElement(child, {
                         onValueChange: setValue,
                         renderTrackMarkComponent,
@@ -81,7 +81,6 @@ export const SliderContainer = (props) => {
             },
         );
     };
-
     return (
         <View style={styles.sliderContainer}>
                 <Text style={styles.title}>
@@ -95,14 +94,14 @@ export const SliderContainer = (props) => {
 
 const trackMarkStyles = StyleSheet.create({
     activeMark: {
-        borderColor: '#C4C4C4',
+        borderColor: globalStyles.greyColor,
         borderWidth,
         borderRadius: 30,
         left: "100%",
         top: 15
     },
     inactiveMark: {
-        borderColor: '#54795E',
+        borderColor: globalStyles.mainColor,
         borderWidth,
         borderRadius: 30,
         left: "100%",
@@ -122,7 +121,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: "NunitoBold",
-        color: "#495566",
+        color: globalStyles.accentFontColor,
         fontSize: 16,
         left: "0%"
     }

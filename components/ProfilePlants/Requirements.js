@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import { LongLineSeparator } from '../ui/LongLineSeparator';
 import Feather from "react-native-vector-icons/Feather"
+import { globalStyles } from "../globalStyles";
 
 
 export const Requirements = ({profile}) => {
@@ -86,19 +87,19 @@ const styles = StyleSheet.create({
         position: "relative", 
         width: "100%", 
         height: 4, 
-        backgroundColor: "#ECEEF0", 
+        backgroundColor: globalStyles.lightGrey, 
         borderRadius: 10, 
         marginTop: 9
     },
     defaultText: {
         fontFamily: "NunitoBold",
         fontSize: 16,
-        color: "#495566"
+        color: globalStyles.accentFontColor
     },
     currentValueLine: {
         position: "absolute",
         height: 4, 
-        backgroundColor: "#495566", 
+        backgroundColor: globalStyles.accentFontColor, 
         borderRadius: 10
     },
     listContainer: {
@@ -120,8 +121,5 @@ const styles = StyleSheet.create({
         flexGrow: 2, 
         justifyContent: "center", 
         paddingLeft: 5
-    },
-    valueItemList: {
-
     }
 })

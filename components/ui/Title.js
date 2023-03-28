@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { StyleSheet, Pressable, Animated} from 'react-native';
+import React from "react";
+import { StyleSheet } from 'react-native';
 import { View, Text } from "react-native-animatable";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 

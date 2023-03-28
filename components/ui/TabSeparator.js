@@ -7,7 +7,7 @@ export const TabSeparator = ({animOpacity}) => {
 const styles = StyleSheet.create({
     tabSeparator: {
       position: "absolute",
-      bottom: -33.5,
+      bottom: -34,
       width: 77,
       height: 4,
       backgroundColor: "#54795E",

@@ -1,9 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, View, Dimensions} from 'react-native';
 
-  
   const {width} = Dimensions.get('screen');
-  
   export const SlideItem = ({item}) => {
   
     return (

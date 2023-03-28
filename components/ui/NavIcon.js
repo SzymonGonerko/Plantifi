@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, View, ImageBackground, Animated } from 'react-native';
+import { globalStyles } from "../globalStyles";
 
 export const NavIcon = ({source, text, fadeAnim}) => {
 
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 11,
         fontFamily: "NunitoRegular",
-        color: "#54795E",
+        color: globalStyles.mainColor,
         width: "100%"
     },
 })

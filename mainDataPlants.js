@@ -28,9 +28,9 @@ export const livingroomPlants = [
   ]
 
   export const lostPlants = [
-    [require("./assets/images/lostPlants/Orchidea.jpg"), {name: "Orchidea"}],
-    [require("./assets/images/lostPlants/Palma.jpg"), {name: "Palma"}],
-    [require("./assets/images/lostPlants/AloeVera.jpg"), {name: "Aloe Vera"}],
+    [require("./assets/images/lostPlants/Orchidea.jpg"), {name: "Orchidea", selected: false}],
+    [require("./assets/images/lostPlants/Palma.jpg"), {name: "Palma", selected: false}],
+    [require("./assets/images/lostPlants/AloeVera.jpg"), {name: "Aloe Vera", selected: false}],
   ]
 
   export const plantsCategory = [
@@ -38,7 +38,7 @@ export const livingroomPlants = [
     [require("./assets/icons/exploreIcons/Animals.png"), {name: "Przyjazne Zwierzętom"}],
     [require("./assets/icons/exploreIcons/Garden.png"), {name: "Do ogrodu"}],
     [require("./assets/icons/exploreIcons/Easy.png"), {name: "Łatwa pielęgnacja"}],
-    [require("./assets/icons/exploreIcons/Bathroom.png"), {name: "Do łazienki"}],
+    [require("./assets/icons/exploreIcons/bathroomIcon.png"), {name: "Do łazienki"}],
     [require("./assets/icons/exploreIcons/Air.png"), {name: "Filtrujące powietrze"}],
   ]
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Pressable, StyleSheet, Text, View, Alert} from 'react-native';
+import { globalStyles } from "../globalStyles";
 
 const days = ["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"];
 
@@ -36,13 +37,13 @@ const styles = StyleSheet.create({
     topText: {
         fontFamily: "NunitoRegular",
         fontSize: 16,
-        color: "#3F4246",
+        color: globalStyles.accentColor,
         marginBottom: 5
     },
     bottomText: {
         fontFamily: "NunitoBold",
         fontSize: 18,
-        color: "#36455A"
+        color: globalStyles.accentFontColor
     },
     wrapper: {
         flexDirection: "row", 
@@ -52,9 +53,9 @@ const styles = StyleSheet.create({
     changeText: {
         fontFamily: "NunitoBold",
         fontSize: 15,
-        color: "#54795E",
+        color: globalStyles.mainColor,
         textDecorationLine: "underline",
-        textDecorationColor: "#54795E",
+        textDecorationColor: globalStyles.mainColor,
         textDecorationStyle: "solid"
     }
 })

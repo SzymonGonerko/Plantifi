@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View} from 'react-native';
 import { IconButton } from "@react-native-material/core";
 import AntDesign from "react-native-vector-icons/AntDesign"
+import { globalStyles } from "../globalStyles";
 
 const alphabet = ["X","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
@@ -30,20 +31,14 @@ const styles = StyleSheet.create({
         width: 30,
         height: 30,
     },
-    iconClose: {
-        width: 30,
-        height: 30,
-        backgroundColor: "#f4433617"
-    },
     close: {
         fontSize: 20,
-        color: "#9EA09E",
+        color: globalStyles.accentFontColor,
     },
-
     letter: {
         textAlign: "center",
         fontFamily: "NunitoBold",
         fontSize: 16,
-        color: "#9EA09E",
+        color: globalStyles.accentFontColor,
     }
 })

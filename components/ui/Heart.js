@@ -4,6 +4,7 @@ import { StyleSheet, View, Pressable, Animated} from 'react-native';
 
 import Entypo from "react-native-vector-icons/Entypo"
 import Feather from "react-native-vector-icons/Feather"
+import { globalStyles } from "../globalStyles";
 
 export const Heart = ({bottomPosition, onPress}) => {
     const heartOpacity = useRef(new Animated.Value(1)).current;
@@ -47,7 +48,7 @@ export const Heart = ({bottomPosition, onPress}) => {
         <Animated.View style={[
           {
             flex: 1,
-            backgroundColor: "#FF6262",
+            backgroundColor: globalStyles.heartColor,
             opacity: heartOpacity,
             transform: [{ scale: heartGrowUp }]
           }
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         width: "100%", 
         height: "100%", 
-        backgroundColor: "#54795E", 
+        backgroundColor: globalStyles.mainColor, 
     },
     icon: {
         fontSize: 35, 

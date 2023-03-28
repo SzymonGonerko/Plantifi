@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, Modal, Alert} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Modal} from 'react-native';
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { IconButton } from "@react-native-material/core";
+import { globalStyles } from '../globalStyles';
 
 export const PopUpSuccess = ({onPressClose}) => {
     return <>
@@ -22,8 +23,6 @@ export const PopUpSuccess = ({onPressClose}) => {
                         <MaterialCommunityIcons name='check-circle-outline' style={styles.checkedIcon}/>
                         <Text style={styles.defaultText}>Udało Ci się dodać nową roślinę!</Text>
                     </View>
-                    
-                    
                 </View>
             </View>
         </Modal>
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
         bottom: 0, 
         left: 0, 
         right: 0, 
-        backgroundColor: "#3b424a87"
+        backgroundColor: globalStyles.backgroundAlfa
     },
     container: {
         position: "absolute", 
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: "NunitoBold",
         fontSize: 24,
-        color: "#36455A"
+        color: globalStyles.accentFontColor
     },
     titleLine: {
         flexDirection: "row", 

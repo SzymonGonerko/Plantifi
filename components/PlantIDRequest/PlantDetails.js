@@ -10,6 +10,7 @@ import { PopUpSuccess } from "../ui/PopUpSuccess";
 import { Pagination } from "../ui/Pagination";
 import { SlideItem } from "../ui/SlideItem";
 import { Heart } from "../ui/Heart"
+import { globalStyles } from "../globalStyles";
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
   },
 
   profileInfo: {
-    backgroundColor: "#FBFBFB",
+    backgroundColor: globalStyles.backgroundLightGrey ,
     marginHorizontal: 10,
     marginTop: -20,
     borderRadius: 20,
@@ -168,7 +169,7 @@ textDescription: {
   marginLeft: 7,
   lineHeight: 19,
   fontSize: 14,
-  color: "#495566",
+  color: globalStyles.accentFontColor,
   letterSpacing: 0.5,
   height: "100%"
 },

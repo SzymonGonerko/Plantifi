@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from 'react';
-import { StyleSheet, View, Modal, Image, Text } from 'react-native';
+import { StyleSheet, View, Modal, Image, Text, Linking } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { IconButton } from "@react-native-material/core";
 import AntDesign from "react-native-vector-icons/AntDesign"
@@ -66,7 +66,7 @@ export const RightNavBar = ({isVisible, showMenu, goBack}) => {
                                 <Button navBtn={true} styleContainer={styles.buttonContainer} styleButton={styles.btn} styleText={styles.buttonText}>
                                     Pomoc
                                 </Button>
-                                <Button navBtn={true} styleContainer={styles.buttonContainer} styleButton={styles.btn} styleText={styles.buttonText}>
+                                <Button onPress={() => Linking.openURL('https://www.freeprivacypolicy.com/live/b5c76656-2246-4380-92f4-6c0dbec3b42b')} navBtn={true} styleContainer={styles.buttonContainer} styleButton={styles.btn} styleText={styles.buttonText}>
                                     Polityka prywatności
                                 </Button>
 

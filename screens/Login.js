@@ -14,24 +14,7 @@ const {width, height} = Dimensions.get('screen');
 
 export const Login = ({onPressHandlerPrev, onPressThemeBar, onPressShowMainApp}) => {
 const [loginText, setLoginText] = useState("Zaloguj się")
-const [permission, requestPermission] = Camera.useCameraPermissions();
-const [request , setRequest] = useState(true)
 
-
-if (!permission) {
-    return null;
-  }
-  if (!permission.granted) {
-    if (request)
-    Alert.alert('Wysłanie zdjęcia', 'Aby aplikacja rozpoznała Twoją roślinę konieczne jest udostępnienie i przetwarzanie twoich danych (wykonane zdjęcie, idnetyfikator zdjęcia). Czy wyrażasz zgodnę na udostępnienie nieniejszych danych ?', [
-      {
-        text: 'nie',
-        onPress: () => setRequest(false),
-        style: 'cancel',
-      },
-      {text: 'tak', onPress: () => requestPermission()},
-    ]);
-  }
 
 
 

@@ -43,9 +43,7 @@ export const CategoryCard = ({src, name, onPress, index, isSelected}) => {
             <Pressable 
             style={({pressed}) => pressed ? [styles.buttonInnerContainer, styles.pressed] : [styles.buttonInnerContainer]}
             onPress={() => (onPress(index), fadeIn())} android_ripple={{color: "#9BA9BC"}}>
-
                 <ImageBackground source={src} resizeMode="contain" imageStyle={styles.imgs} style={styles.imgs}/>
-
             </Pressable>
         </View>
 

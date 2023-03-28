@@ -7,6 +7,7 @@ import * as ImagePicker from "expo-image-picker"
 import { PickerImage } from '../PickerImage';
 import { DateRemember } from '../ui/DateRemember';
 import { RecommendedCare } from './RecommendedCare';
+import { globalStyles } from "../globalStyles";
 
 import ToggleSwitch from 'toggle-switch-react-native'
 
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
     titleText: {
         fontFamily: "NunitoBold",
         fontSize: 18,
-        color: "#36455A",
+        color: globalStyles.accentColor,
     },
     rectWrapper: {
         width: "100%", 
@@ -158,7 +159,7 @@ const styles = StyleSheet.create({
         width: "48%", 
         height: 40, 
         borderRadius: 8,
-        borderColor: "#9EA09E",
+        borderColor: globalStyles.greyColor,
         borderWidth: 1,
         marginBottom: 11
     },
@@ -176,11 +177,11 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     text: {
-        color: "#9EA09E",
+        color: globalStyles.greyColor,
         fontFamily: "NunitoBold"
     },
     label: {
-        color: "#36455A",
+        color: globalStyles.accentFontColor,
         fontFamily: "NunitoBold",
         fontSize: 18,
     },

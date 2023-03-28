@@ -7,12 +7,17 @@ import { Separator } from '../components/ui/Separator';
 import { TextInfo } from '../components/TextInfo';
 import * as Animatable from 'react-native-animatable';
 import { Team } from "../components/Team";
+import { Camera } from 'expo-camera';
+import { DataUser } from "../components/ui/DataUser";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const {width, height} = Dimensions.get('screen');
 
 export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
     const [teamVisible, setTeamVisible] = useState(false)
     const visibility = useRef(new Animated.Value(0)).current
+    const [request , setRequest] = useState(false)
+    const [permission, requestPermission] = Camera.useCameraPermissions();
 
 
     const onPressHandler = () => {
@@ -45,15 +50,30 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
         }
     }
 
+    const checkFormSafety = async () => {
+        try {
+            const isAgree = await AsyncStorage.getItem('isAgree')
+            if (isAgree === null) {
+              setRequest(true)
+            } 
+            else {
+              requestPermission()
+            }
+          } catch(e) {
+            console.log(e)
+          }
+    }
+
     useEffect(() => {
+        checkFormSafety()
         NavigationBar.setBackgroundColorAsync('transparent')
         NavigationBar.setPositionAsync('absolute')
     }, [])
 
 
     return <>
-    <Animatable.View animation={anim}  style={styles.container}>
-    <Pressable style={styles.container}>
+    <Animatable.View animation={anim} style={styles.container}>
+    <View style={styles.container}>
  
         <View style={styles.bgcContainer}>
             <View style={styles.bgcFilter}/>
@@ -84,7 +104,8 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
             </View>
 
         </View>
-        </Pressable>
+        </View>
+        {request && <DataUser setRequest={setRequest} />}
         {teamVisible && <Team visibility={visibility} onPressTeamInfo={onPressTeamInfo}/>}
     </Animatable.View>
     </>
@@ -128,7 +149,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: "35%",
         bottom: "50%",
-        left: "10%",
+        left: "7%",
         right: 0,
         zIndex: 2,
     },

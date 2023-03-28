@@ -10,7 +10,7 @@ export const SearchInput = ({onChange, style, onFocus, onBlur}) => {
     inputContainerStyle={[styles.searchInputContainer, style]}
     tintColor={"black"}
     contentInset={{input: 12}}
-    placeholder="Jakiej rośliny szukasz ?"
+    placeholder="Jakiej rośliny szukasz?"
     activeLineWidth={0}
     onChangeText={(e) => onChange(e)}
     onFocus={onFocus}

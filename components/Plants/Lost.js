@@ -10,7 +10,7 @@ export const Lost = () => {
 
     return <>
     <View style={styles.container}>
-        <Text style={styles.userNameText}>Karolina,</Text>
+        <Text style={styles.userNameText}>Anna,</Text>
         <Text style={styles.defaultText}>
             To historia Twoich roślin, które odeszły do zielonego nieba. Pamiętaj o nich aby nie popełnić tych samych błędów!
         </Text>

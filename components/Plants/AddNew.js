@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View} from 'react-native';
 import { SquareButton } from '../ui/SquareButton';
+import { globalStyles } from "../globalStyles";
 
 export const AddNew = () => {
     return <>
@@ -8,7 +9,7 @@ export const AddNew = () => {
         <Text style={styles.title}>Moje rośliny</Text>
         <View style={styles.wrapper}>
             <Text style={styles.defaultText}>Dodaj</Text>
-            <SquareButton type={"add"} styleContainer={{borderWidth: 1, borderColor: "#54795E"}} styleButton={{backgroundColor: "white"}}/>
+            <SquareButton type={"add"} styleContainer={{borderWidth: 1, borderColor: globalStyles.mainColor}} styleButton={{backgroundColor: "white"}}/>
         </View>
     </View>
     </>

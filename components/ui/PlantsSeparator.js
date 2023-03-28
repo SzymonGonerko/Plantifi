@@ -15,7 +15,7 @@ export const PlantsSeparator = ({styleContainer, styleText, children, onlyText, 
         </Text>
       
         <View style={[styles.lineRight, {width: (onlyText ? "70%": "58%")}, lineStyle]}/>
-        {!onlyText &&<View style={styles.iconContainer}>
+        {!onlyText && <View style={styles.iconContainer}>
             <AntDesign name='right' style={{color: "black", fontSize: 18}}/>
         </View>}
         
@@ -49,6 +49,6 @@ const styles = StyleSheet.create({
     iconContainer: {
         justifyContent: "center",
         flexDirection: "row",
-        width: "15%"
+        width: "10%"
     }
 })

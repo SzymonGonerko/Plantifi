@@ -19,7 +19,7 @@ export const TextInfo = ({onPressTeamInfo}) => {
 
         <Pressable style={styles.teamsContainer} onPress={onPressTeamInfo}>
             <Text style={[styles.defaultText, styles.textTeam]}>
-                Plantifi© Team 2022
+                Plantifi© Team 2023
             </Text>
             <FontAwesome name="info-circle" size={11} color="#54795E"/>
         </Pressable>

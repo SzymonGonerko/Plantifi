@@ -2,13 +2,14 @@ import React from "react";
 import { StyleSheet, View, Image, Pressable} from 'react-native';
 import { CloseCircle } from './ui/CloseCircle';
 import Octicons from "react-native-vector-icons/Octicons"
+import { globalStyles } from "./globalStyles";
 
 export const PickerImage = ({addPick, onCancel, defaultImg, src, uri}) => {
     return <>
             <View style={styles.square}>
                 <View style={styles.pressContainer}>
                     <Pressable onPress={addPick} android_ripple={{color: "black"}} style={styles.pressWrapper}>
-                        <Octicons name={"plus"} style={{fontSize: 30, color: "#54795E"}}/>
+                        <Octicons name={"plus"} style={{fontSize: 30, color: globalStyles.mainColor}}/>
                     </Pressable>
                 </View>
                 {defaultImg && <Image style={styles.uploadedImage} source={src}/>}

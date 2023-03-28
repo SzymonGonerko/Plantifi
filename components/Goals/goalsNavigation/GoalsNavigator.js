@@ -10,10 +10,11 @@ export const GoalsNavigator = () => {
   return <>
         <Stack.Navigator
           initialRouteName="Root"
-          
           screenOptions={{headerShown: false}}
           >
-          <Stack.Screen name="Root" component={GoalsTabs} />
+          <Stack.Screen 
+            name="Root" 
+            component={GoalsTabs}/>
         </Stack.Navigator>
 </>
 };

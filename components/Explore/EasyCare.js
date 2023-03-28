@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
-import { useEffect, useRef, useState } from 'react';
+import { StyleSheet, Text, View} from 'react-native';
+import { useState } from 'react';
 import { Card } from '../ui/Card';
 import { easyCareCollectionPlants } from '../../mainDataPlants';
 import { Slider } from '../ui/Slider';

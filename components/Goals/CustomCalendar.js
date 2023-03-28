@@ -7,6 +7,7 @@ import {
     polishMonthNamesShort, 
     polishDayNames,
 } from '../../dateSetup';
+import { globalStyles } from "../globalStyles";
 
 import {toDoListPlants, calendarPlants} from "../../mainDataPlants"
 
@@ -66,7 +67,7 @@ LocaleConfig.locales['pl'] = {
         width: 40, 
         height: 40, 
         borderWidth: 1,
-        borderColor: "#DFDFDF",
+        borderColor: globalStyles.background,
         justifyContent: "center", 
         alignItems: "center", 
         borderRadius: 4
@@ -75,7 +76,7 @@ LocaleConfig.locales['pl'] = {
         width: 40, 
         height: 40, 
         borderWidth: 1,
-        borderColor: "#54795E",
+        borderColor: globalStyles.mainColor,
         justifyContent: "center", 
         alignItems: "center", 
         borderRadius: 4,
@@ -101,8 +102,8 @@ LocaleConfig.locales['pl'] = {
         width: 40, 
         height: 40, 
         borderWidth: 1.2,
-        borderColor: "#54795E",
-        backgroundColor: "#54795E",
+        borderColor: globalStyles.mainColor,
+        backgroundColor: globalStyles.mainColor,
         justifyContent: "center",
         alignItems: "center", 
         borderRadius: 4
@@ -116,7 +117,7 @@ LocaleConfig.locales['pl'] = {
         width: 5,
         height: 5,
         borderRadius: 50,
-        backgroundColor: "#54795E"
+        backgroundColor: globalStyles.mainColor
     },
     selectedDot: {
         width: 5,

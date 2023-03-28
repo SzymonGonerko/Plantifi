@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import { LongLineSeparator } from '../ui/LongLineSeparator';
+import { globalStyles } from "../globalStyles";
 
 import AntDesign from "react-native-vector-icons/AntDesign"
 
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
     defaultText: {
         fontFamily: "NunitoRegular",
         fontSize: 14,
-        color: "#6A6F7D",
+        color: globalStyles.accentFontColor,
         marginLeft: 5
     },
     textTitleDescription:{
@@ -99,12 +100,12 @@ const styles = StyleSheet.create({
         marginLeft: 7,
         lineHeight: 19,
         fontSize: 14,
-        color: "#495566",
+        color: globalStyles.accentFontColor,
         letterSpacing: 0.5,
         height: "100%"
     },
     iconStyle: {
-        color: "#54795E", 
+        color: globalStyles.mainColor, 
         fontSize: 18
     },
 })

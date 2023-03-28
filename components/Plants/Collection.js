@@ -12,7 +12,7 @@ export const Collection = () => {
     <ScrollView showsVerticalScrollIndicator={false}>
     <View style={[styles.container]}>
         <PlantsNeeded
-            userName={"Karolina"}
+            userName={"Anna"}
             howManyPlants={3}/>
         <AddNew/>
     </View>

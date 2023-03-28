@@ -3,6 +3,7 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import { StyleSheet, Animated} from 'react-native';
 import { useEffect, useRef } from "react";
 import * as NavigationBar from 'expo-navigation-bar';
+import { globalStyles } from "../../globalStyles";
 
 import { Collection } from "../Collection";
 import { Favourite } from "../Favourite";
@@ -78,7 +79,7 @@ return <>
             tabBarLabelStyle: styles.label,
             tabBarIcon: () => <TabSeparator animOpacity={listTab.fadeFavourite}/>,
             tabBarLabel: "Ulubione",
-            tabBarActiveTintColor: "#54795E"
+            tabBarActiveTintColor: globalStyles.mainColor
             }}
           listeners={({ navigation }) => ({
                 tabPress: (e) => {
@@ -97,7 +98,7 @@ return <>
                 tabBarLabelStyle: styles.label,
                 tabBarIcon: () => <TabSeparator animOpacity={listTab.fadeLost}/>,
                 tabBarLabel: "Utracone",
-                tabBarActiveTintColor: "#54795E"
+                tabBarActiveTintColor: globalStyles.mainColor
             }}
             listeners={({ navigation }) => ({
                 tabPress: (e) => {
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
         height: 35,
         padding: 0,
         borderBottomWidth: 4,
-        borderBottomColor: "#e6e7e8",
+        borderBottomColor: globalStyles.background,
         elevation: 0,
         borderTopWidth: 0
     },

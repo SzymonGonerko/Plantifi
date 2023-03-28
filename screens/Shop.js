@@ -11,7 +11,7 @@ export const Shop = (props) => {
     <View style={styles.container}>
         <Text style={styles.title}>Tu może być Twój sklep!</Text>
         <Text style={styles.infoText}>
-            Plantify czeka na inwestora. Jeżeli zajmujesz się sprzedażą roślin lub artykułów z nimi zawiaznych, to napisz do nas !
+            Plantifi czeka na inwestora. Jeżeli zajmujesz się sprzedażą roślin lub artykułów z nimi zawiaznych, to napisz do nas !
         </Text>
     </View>
     </>

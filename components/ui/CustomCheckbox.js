@@ -5,13 +5,14 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 
 export const CustomCheckbox = (props) => {
-    const {onPressInfoHandler, labelText, helper} = props
+    const {onPressInfoHandler, onPress, labelText, helper, style} = props
     return <>
-            <View style={styles.container}>
+            <View style={[styles.container, style]}>
                 <BouncyCheckbox 
                 innerIconStyle={{borderRadius: 4}}
                 fillColor="#54795E"
                 text={labelText}
+                onPress={() => onPress ? onPress(): null}
                 iconStyle={{borderRadius: 4}}
                 textStyle={styles.textStyleCheckbox}
                 iconImageStyle={styles.iconStyle}

@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
+import { globalStyles } from "../globalStyles";
 
 export const Separator = ({styleContainer, styleText, children}) => {
     return <>
@@ -26,13 +27,13 @@ const styles = StyleSheet.create({
         fontFamily: "NunitoRegular",
     },
     lineLeft: {
-        backgroundColor: "#737578",
+        backgroundColor: globalStyles.background,
         width: "50%",
         height: 1,
         marginRight: 10
     },
     lineRight: {
-        backgroundColor: "#737578",
+        backgroundColor: globalStyles.background,
         width: "50%",
         height: 1,
         marginLeft: 10

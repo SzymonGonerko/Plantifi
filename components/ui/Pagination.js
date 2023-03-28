@@ -1,5 +1,6 @@
 import {StyleSheet, Animated, View, Dimensions} from 'react-native';
 import React from 'react';
+import { globalStyles } from '../globalStyles';
 
 const {width} = Dimensions.get('screen');
 
@@ -52,6 +53,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ccc',
   },
   dotActive: {
-    backgroundColor: '#71977B',
+    backgroundColor: globalStyles.mainColor,
   },
 });

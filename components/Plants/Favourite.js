@@ -6,7 +6,7 @@ import { Card } from '../ui/Card';
 import { SearchInput } from '../ui/SearchInput';
 
 export const Favourite = ({onFocus, onBlur}) => {
-    const [plants, setPlants] = useState(searchPlants)
+    const [plants, _] = useState(searchPlants)
     const [searchingPlants, setSearchingPlants] = useState(searchPlants)
     const [textInput, setTextInput] = useState("")
 

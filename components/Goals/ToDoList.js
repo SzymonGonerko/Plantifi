@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Pressable, Alert, Image, ScrollView } from 'react-native';
 import { LongLineSeparator } from '../ui/LongLineSeparator';
 import { toDoListPlants } from '../../mainDataPlants';
+import { globalStyles } from "../globalStyles";
 import { Swipeable, GestureHandlerRootView } from 'react-native-gesture-handler';
 import { RightSwipeSquare } from "../ui/RightSwipeSquare"
 import { useState } from 'react';
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
         height: 36,
         borderRadius: 8,
         borderWidth: 1,
-        borderColor: "#54795E",
+        borderColor: globalStyles.mainColor,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "white"
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
         height: 36,
         borderRadius: 8,
         borderWidth: 1,
-        borderColor: "#9EA09E",
+        borderColor: globalStyles.background,
         justifyContent: "center",
         alignItems: "center"
     },
@@ -141,14 +142,14 @@ const styles = StyleSheet.create({
     },
     itemListText: {
         fontFamily: "NunitoRegular",
-        color: "#495566",
+        color: globalStyles.accentFontColor,
         fontSize: 16,
         marginLeft: 6,
         marginTop: 2
     },
     instruction: {
         fontFamily: "NunitoBold",
-        color: "#54795E",
+        color: globalStyles.mainColor,
         fontSize: 16
     },
     taskDescription: {

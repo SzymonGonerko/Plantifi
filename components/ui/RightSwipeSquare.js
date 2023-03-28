@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View} from 'react-native';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
+import { globalStyles } from "../globalStyles";
 
 
     export const RightSwipeSquare = () => {
@@ -15,7 +16,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            backgroundColor: "#54795E",
+            backgroundColor: globalStyles.mainColor,
             width: 109,
             borderRadius: 7
         },

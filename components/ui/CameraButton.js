@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from 'react';
 import { StyleSheet, View, ImageBackground, Dimensions, Pressable } from 'react-native';
+import { globalStyles } from "../globalStyles";
 
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 import { PhotoInstruction } from '../PlantIDRequest/PhotoInstruction';
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     circle: {
         overflow: 'hidden',
         borderRadius: 200,
-        backgroundColor: "#54795E",
+        backgroundColor: globalStyles.mainColor,
         width: 56,
         height: 56,
         justifyContent: "center",
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     circleContainer: {
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#54795E",
+        backgroundColor: globalStyles.mainColor,
         borderRadius: 200,
         elevation: 2,
         width: "100%",

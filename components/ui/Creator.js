@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text} from 'react-native';
 import { View } from "react-native-animatable";
+import { globalStyles } from "../globalStyles";
 
 export const Creator = ({who, children, work}) => {
     return <>
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     name: {
         fontSize: 14, 
         color: "white", 
-        backgroundColor: "#474646a1", 
+        backgroundColor: globalStyles.backgroundAlfa, 
         padding: 7, 
         borderRadius: 8,
         letterSpacing: 0.5,
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
         color: "white",
         fontFamily: "NunitoItalic",
         textTransform: "uppercase",
-        backgroundColor: "#666666c4",
+        backgroundColor: globalStyles.backgroundAlfa,
         letterSpacing: -0.3,
         borderRadius: 8,
         padding: 7,

@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Pressable} from 'react-native';
+import { globalStyles } from "../globalStyles";
 
 export const ProfileSwitcherNav = ({general, requirements, care, onPress}) => {
 
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
     },
     selected: {
-        color: "#54795E",
+        color: globalStyles.mainColor,
     },
     line: {
         position: "absolute", 
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
         bottom: -4, 
         width: "60%", 
         height: 4, 
-        backgroundColor: "#54795E",
+        backgroundColor: globalStyles.mainColor,
         borderRadius: 10
     },
     underlineItem: {
@@ -69,6 +70,6 @@ const styles = StyleSheet.create({
         opacity: 0.1, 
         width: "150%", 
         height: 4, 
-        backgroundColor: "#64768E"
+        backgroundColor: globalStyles.lineColor
     }
 })

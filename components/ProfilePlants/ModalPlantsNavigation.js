@@ -32,8 +32,7 @@ export const ModalPlantsNavigation = ({profile}) => {
               general={nav.general}
               requirements={nav.requirements}
               care={nav.care}
-              onPress={onPressHandler}
-            />
+              onPress={onPressHandler}/>
             {nav.general && profile && <General profile={profile.general}/>}
             {nav.requirements && <Requirements profile={profile.requirements}/>}
             {nav.care && <Care profile={profile.care}/>}

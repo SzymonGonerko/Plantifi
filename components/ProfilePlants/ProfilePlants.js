@@ -6,6 +6,7 @@ import { ModalPlantsNavigation } from './ModalPlantsNavigation';
 import { AddNewPlants } from './AddNewPlants';
 import { Heart } from "../ui/Heart"
 import { InfoLike } from "../ui/InfoLike";
+import { globalStyles } from "../globalStyles";
 
 
 import {Button} from "../ui/Button"
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
     },
     profileInfo: {
       flex: 1,
-      backgroundColor: "#FBFBFB",
+      backgroundColor: globalStyles.backgroundLightGrey,
       height: "75%",
       marginTop: -10,
       marginHorizontal: 10,

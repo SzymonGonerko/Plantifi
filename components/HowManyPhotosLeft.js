@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View} from 'react-native';
+import { globalStyles } from "./globalStyles";
 
 export const HowManyPhotosLeft = ({howManyLeft}) => {
     return <>
@@ -23,10 +24,10 @@ const styles = StyleSheet.create({
     line: {
         height: 1, 
         width: "25%", 
-        backgroundColor: "#54795E"
+        backgroundColor: globalStyles.mainColor
     },
     box: {
-        borderColor: "#54795E", 
+        borderColor: globalStyles.mainColor, 
         borderWidth: 2, 
         justifyContent: "center", 
         paddingHorizontal: 14, 
@@ -36,12 +37,12 @@ const styles = StyleSheet.create({
     text: {
         paddingHorizontal: 10, 
         fontFamily: "NunitoBold", 
-        color: "#54795E"
+        color: globalStyles.mainColor
     },
     number: {
         fontFamily: "NunitoBold",
         fontSize: 16,
-        color: "#54795E"
+        color: globalStyles.mainColor
 
     }
 })

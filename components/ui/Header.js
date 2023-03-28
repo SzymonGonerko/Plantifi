@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SquareButton } from './SquareButton';
 import { RightNavBar } from '../RightNavBar';
+import { globalStyles } from "../globalStyles";
 
 export const Header = ({children, onPressShowMainApp, onPressThemeBar, onPressArrowBack, navigation}) => {
     const [navVisibility, setNavVisiliblity] = useState(false)
@@ -17,8 +18,6 @@ export const Header = ({children, onPressShowMainApp, onPressThemeBar, onPressAr
         setNavVisiliblity(prev => !prev)
     }
     
-
-
     return <>
             <View style={styles.headerContainer}>
                 <View>
@@ -28,7 +27,7 @@ export const Header = ({children, onPressShowMainApp, onPressThemeBar, onPressAr
                     <Text style={[styles.headerText, {transform: [{translateY: -3}]}]}>{children}</Text>
                 </View>
                 <View>
-                    <SquareButton type={"nav"} onPress={showMenu} styleContainer={{borderWidth: 1, borderColor: "#54795E"}} styleButton={{backgroundColor: "white"}}/>
+                    <SquareButton type={"nav"} onPress={showMenu} styleContainer={styles.squareButton} styleButton={{backgroundColor: "white"}}/>
                 </View>
             </View>
             <RightNavBar goBack={goBack} showMenu={showMenu} isVisible={navVisibility} />
@@ -47,6 +46,10 @@ const styles = StyleSheet.create({
     headerText: {
         fontSize: 26,
         fontFamily: "PlayfairDisplayBold"
+    },
+    squareButton: {
+        borderWidth: 1, 
+        borderColor: globalStyles.mainColor
     }
 
 })

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import AntDesign from "react-native-vector-icons/AntDesign"
 
 
-export const PlantsNeeded = ({userName, children, howManyPlants}) => {
+export const PlantsNeeded = ({userName, howManyPlants}) => {
     const [images, setimages] = useState([
         require("../../assets/images/plants/First.jpg"),
         require("../../assets/images/plants/Second.jpg"),

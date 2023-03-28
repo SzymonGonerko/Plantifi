@@ -6,6 +6,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 import { CustomCalendar } from './CustomCalendar';
 import { toDoListPlants } from "../../mainDataPlants"
+import { globalStyles } from "../globalStyles";
 
 
 const today = new Date()
@@ -70,7 +71,7 @@ export const DateSection = () => {
 
 const styles = StyleSheet.create({
     separator: {
-        backgroundColor: "#54795E",
+        backgroundColor: globalStyles.mainColor,
         left: 20,
         width: "90%",
         height: 1,
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
     },
     itemListText: {
         fontFamily: "NunitoRegular",
-        color: "#495566",
+        color: globalStyles.accentColor,
         fontSize: 16,
         marginLeft: 6,
         marginTop: 2

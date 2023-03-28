@@ -66,7 +66,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
 
       const takePhoto = async () => {
         const options = {
-          quality: 0.8,
+          quality: 0.7,
           base64: true,
           exif: false
         }

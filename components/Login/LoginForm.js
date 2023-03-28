@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View, Alert} from 'react-native';
 
 import * as Notifications from 'expo-notifications';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { globalStyles } from "../globalStyles";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -88,9 +88,9 @@ const setVisiblePassword = () => {
             onFocus={onFocusHandler}
             activeLineWidth={1.2}
             onBlur={onBlurHandler}
-            baseColor={correctLogin ? "green" : "#64768E"}
+            baseColor={correctLogin ? globalStyles.successColor : globalStyles.accentFontColor}
             inputContainerStyle={styles.loginInputContainer}
-            tintColor={correctLogin ? "green" : "black"}
+            tintColor={correctLogin ? globalStyles.successColor : "black"}
             title={correctLogin ? "Zweryfikowaliśmy Twój Email!" : ""}
             contentInset={{input: 11}}
             labelTextStyle={styles.loginLabel}
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
         top: 5
     },
     circleIcon: {
-        color: "green", 
+        color: globalStyles.successColor, 
         fontSize: 20, 
         marginBottom: 1
     }

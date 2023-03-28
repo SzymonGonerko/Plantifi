@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { StyleSheet, Animated, Text } from 'react-native';
+import { StyleSheet, Animated } from 'react-native';
 
 export const WaitingAnimation = () => {
     const [animation, setAnimation] = useState(new Animated.Value(0));

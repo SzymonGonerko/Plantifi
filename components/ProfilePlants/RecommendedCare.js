@@ -3,6 +3,7 @@ import { Pressable, StyleSheet, Text, View, Image, Alert} from 'react-native';
 import { Slider } from "@miblanchard/react-native-slider";
 import { SliderContainer } from '../ui/SliderContainer';
 import { PlantsSeparator } from '../ui/PlantsSeparator';
+import { globalStyles } from '../globalStyles';
 
 
 
@@ -11,8 +12,6 @@ export const RecommendedCare = ({profile}) => {
     const onPressHandler = () => {
         Alert.alert("Pracuję nad tym...", "aplikacja jest w fazie testowej", [{text: "okey", style: "default"}])
     }
-
-
 
     return <>
             <View style={styles.squareContainer}>
@@ -65,7 +64,7 @@ export const RecommendedCare = ({profile}) => {
 
 const styles = StyleSheet.create({
     header: {
-        color: "#495566",
+        color: globalStyles.accentFontColor,
         fontSize: 16,
         fontFamily: "NunitoRegular"
 

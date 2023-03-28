@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, Pressable, Animated, FlatList, ScrollView} from 'react-native';
+import { StyleSheet, Text, Dimensions, FlatList} from 'react-native';
 import { Card } from '../ui/Card';
+import { globalStyles } from "../globalStyles";
 
 import { dailyPlants } from '../../mainDataPlants';
 import { likedPlants } from '../../mainDataPlants';
@@ -75,6 +76,6 @@ const styles = StyleSheet.create({
         fontFamily: "NunitoBold",
         fontSize: 15,
         marginTop: 8,
-        color: "#54795E"
+        color: globalStyles.mainColor
     }
 })

@@ -11,7 +11,6 @@ export const Goals = (props) => {
             <Header navigation={navigation} onPressArrowBack={onPressArrowBack} onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar}>
                 Moje Zadania
             </Header>
-            
             <GoalsNavigator/>
         </View>
     )

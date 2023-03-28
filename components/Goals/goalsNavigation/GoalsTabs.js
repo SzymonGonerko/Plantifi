@@ -2,6 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Animated} from 'react-native';
 import { useRef } from "react";
+import { globalStyles } from "../../globalStyles";
 
 import { ToDoList } from "../ToDoList";
 import { TabSeparator } from "../../ui/TabSeparator";
@@ -51,7 +52,7 @@ return <>
             options={{
                 tabBarLabelStyle: styles.label,
                 tabBarIcon: () => <TabSeparator animOpacity={listTab.fadeToDoList}/>,
-                tabBarLabel: "To do list",
+                tabBarLabel: "Do zrobienia",
                 tabBarActiveTintColor: "#54795E"
             }}
             listeners={({ navigation }) => ({
@@ -95,8 +96,8 @@ const styles = StyleSheet.create({
         top: 0,
         height: 35,
         padding: 0,
-        borderBottomWidth: 4,
-        borderBottomColor: "#e6e7e8",
+        borderBottomWidth: 5,
+        borderBottomColor: globalStyles.background,
         elevation: 0,
         borderTopWidth: 0
     },

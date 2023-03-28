@@ -3,6 +3,7 @@ import { StyleSheet, Text, Pressable} from 'react-native';
 import { View } from "react-native-animatable";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
+import { globalStyles } from "./globalStyles";
 import * as WebBrowser from 'expo-web-browser';
 
 export const GithubFigma = ({btns}) => {
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         width: "40%", 
         height: 40, 
-        backgroundColor: "#474646c4",
+        backgroundColor: globalStyles.backgroundAlfa,
         borderColor: "#4e7c5b",
         borderWidth: 1,
 

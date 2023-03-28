@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View, ImageBackground, Modal, Alert } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Modal } from 'react-native';
 import { PlantsSeparator } from '../ui/PlantsSeparator';
 import { Button } from '../ui/Button';
 import { CustomCamera } from './CustomCamera';
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { IconButton } from "@react-native-material/core";
 import { HowManyPhotosLeft } from "../HowManyPhotosLeft";
+import { globalStyles } from "../globalStyles";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressHandler}) => {
@@ -116,5 +117,5 @@ const styles = StyleSheet.create({
 const lines = StyleSheet.create({
     line: {width: "85%"},
     container: {width: "100%"},
-    text: {width: "10%", color: "#54795E", fontFamily: "PlayfairDisplayBold", fontSize: 23}
+    text: {width: "10%", color: globalStyles.mainColor, fontFamily: "PlayfairDisplayBold", fontSize: 23}
 })

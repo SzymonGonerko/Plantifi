@@ -6,6 +6,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { ProfilePlants } from '../ProfilePlants/ProfilePlants';
 import { PopUpSuccess } from './PopUpSuccess';
+import { globalStyles } from "../globalStyles";
 
 
 export const Card = ({src, takenCare, needWater, days, name, description, cardStyle, liked, profile}) => {
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
         top: 8,
         right: 0,
         zIndex: 2,
-        backgroundColor: "#ffffff73",
+        backgroundColor: globalStyles.tagColor,
         paddingTop: 4,
         paddingBottom: 3,
         paddingLeft: 11,
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
     },
     nameTextContainer: {
         position: 'absolute',
-        backgroundColor: "#ffffff73",
+        backgroundColor: globalStyles.tagColor,
         zIndex: 2,
         bottom: 0,
         left: 0,

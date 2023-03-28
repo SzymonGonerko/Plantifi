@@ -5,10 +5,7 @@ import {TabsNavigator} from "./TabsNavigator";
 
 const Stack = createNativeStackNavigator();
 
-
-
 export const MainNavigator = ({onPressShowMainApp, onPressThemeBar}) => {
-
   return <>
       <NavigationContainer>
         <Stack.Navigator

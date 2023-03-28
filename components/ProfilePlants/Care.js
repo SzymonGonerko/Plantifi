@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import { LongLineSeparator } from '../ui/LongLineSeparator';
+import { globalStyles } from "../globalStyles";
 
 export const Care = ({profile}) => {
     return <>
@@ -84,26 +85,26 @@ const styles = StyleSheet.create({
         position: "relative", 
         width: "100%", 
         height: 4, 
-        backgroundColor: "#ECEEF0", 
+        backgroundColor: globalStyles.lightGrey, 
         borderRadius: 10, 
         marginTop: 9
     },
     currentValueLine: {
         position: "absolute",
         height: 4, 
-        backgroundColor: "#495566", 
+        backgroundColor: globalStyles.accentColor, 
         borderRadius: 10
     },
     titleList: {
         fontFamily: "NunitoBold",
         fontSize: 16,
-        color: "#495566",
+        color: globalStyles.accentFontColor,
         marginLeft: 11
     },
     defaultText: {
         fontFamily: "NunitoRegular",
         fontSize: 14,
-        color: "#495566",
+        color: globalStyles.accentFontColor,
         letterSpacing: 0.1
     }
     

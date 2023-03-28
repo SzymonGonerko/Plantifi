@@ -1,12 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground, Image} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, Pressable} from 'react-native';
 
 export const LostPlantsCard = ({src, name}) => {
     return <>
     <View style={styles.container}>
+        <Pressable style={styles.container}>
         <ImageBackground source={src} resizeMode="center" imageStyle={styles.imgs} style={styles.imgs}/>
         <Image resizeMode='contain' style={styles.tomstoneIcon} source={require("../../assets/icons/tombstone.png")}/>
         <Text style={styles.nameText}>{name}</Text>
+        </Pressable>
     </View>
     </>
 }

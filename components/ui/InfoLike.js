@@ -1,7 +1,8 @@
-import React, { useState  } from "react";
-import { StyleSheet, Text, ImageBackground, Modal} from 'react-native';
+import React from "react";
+import { StyleSheet, Text} from 'react-native';
 import { View } from "react-native-animatable";
 import Feather from "react-native-vector-icons/Feather"
+import { globalStyles } from "../globalStyles";
 
 
 export const InfoLike = ({name, opacity}) => {
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     name: {
         fontFamily: "NunitoRegular",
         fontSize: 14,
-        color: "#495566"
+        color: globalStyles.accentFontColor
     },
     added: {
         fontFamily: "NunitoBold",
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         width: 30, 
         height: 30, 
-        backgroundColor: "#54795E",
+        backgroundColor: globalStyles.mainColor,
         borderRadius: 200
     },
 })
