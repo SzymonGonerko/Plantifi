@@ -2,7 +2,7 @@
   "expo": {
     "name": "Plantifi",
     "slug": "plantifi",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -26,7 +26,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.szymon1993.plantifi",
-      "versionCode": 11,
+      "versionCode": 12,
       "permissions": [
         "android.permission.ACCESS_MEDIA_LOCATION",
         "android.permission.ACCESS_NETWORK_STATE",
@@ -46,6 +46,8 @@
         "android.permission.RECORD_AUDIO",
         "android.permission.SCHEDULE_EXACT_ALARM",
         "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT",
         "android.permission.VIBRATE",
         "android.permission.WAKE_LOCK",
         "android.permission.WRITE_CALENDAR",

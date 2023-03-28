@@ -2,7 +2,6 @@ import React from "react";
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 
-
 import { useEffect, useCallback, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
@@ -22,10 +21,7 @@ import PlayfairDisplayRegular from "./assets/fonts/PlayfairDisplayRegular.ttf"
 import Inter from "./assets/fonts/Inter.ttf"
 import { View } from 'react-native-animatable';
 
-
 SplashScreen.preventAutoHideAsync();
-
-
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false)
@@ -95,7 +91,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
