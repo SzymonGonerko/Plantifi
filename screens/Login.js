@@ -5,7 +5,6 @@ import { LoginForm } from '../components/Login/LoginForm';
 import { Separator } from '../components/ui/Separator';
 import { CustomIcon } from '../components/ui/CustomIcon';
 import { useState } from 'react';
-import { Camera } from 'expo-camera';
 
 const {width, height} = Dimensions.get('screen');
 

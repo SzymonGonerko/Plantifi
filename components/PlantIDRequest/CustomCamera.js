@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, View, TouchableOpacity, Image, Pressable, Alert } from 'react-native';
 import * as ImagePicker from "expo-image-picker"
 import { Camera, CameraType } from 'expo-camera';
 import { useState, useRef } from 'react';
-import {APP_PLANTID_API_KEY, APP_PLANTID_API_URL} from '@env'
 import {SquareButton} from "../ui/SquareButton"
 import { WaitingAnimation } from "../ui/WaitingAnimation";
 import { PlantDetails } from "./PlantDetails";
@@ -84,7 +83,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
           setPhoto(newPhoto)
   
           const data = {
-            api_key: APP_PLANTID_API_KEY,
+            api_key: `${process.env.APP_PLANTID_API_KEY}`,
             images: [newPhoto.base64],
             modifiers: ["crops_fast", "similar_images"],
             plant_language: "pl",
@@ -96,7 +95,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
               ],
           };
   
-          fetch(APP_PLANTID_API_URL, {
+          fetch(`${process.env.APP_PLANTID_API_URL}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

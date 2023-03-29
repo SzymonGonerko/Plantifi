@@ -1,10 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, Pressable} from 'react-native';
+import { StyleSheet, Text, Pressable, Linking} from 'react-native';
 import { View } from "react-native-animatable";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import { globalStyles } from "./globalStyles";
-import * as WebBrowser from 'expo-web-browser';
 
 export const GithubFigma = ({btns}) => {
     const github = 'https://github.com/SzymonGonerko/Plantify'
@@ -14,13 +13,13 @@ export const GithubFigma = ({btns}) => {
     return <>
                 <View style={[styles.container, {opacity: btns}]}>
 
-                    <Pressable style={[styles.btnContent]} onPress={() => WebBrowser.openBrowserAsync(github)}>
+                    <Pressable style={[styles.btnContent]} onPress={() => Linking.openURL(github)}>
                         <Text style={styles.btnText}>GitHub</Text>
                         <FontAwesome name="github" size={20} color="#ffffff"/>
                     </Pressable>
 
                     
-                    <Pressable style={[styles.btnContent]} onPress={() => WebBrowser.openBrowserAsync(figma)}>
+                    <Pressable style={[styles.btnContent]} onPress={() => Linking.openURL(figma)}>
                         <Text style={styles.btnText}>Figma</Text>
                         <Feather name="figma" size={20} color="#ffffff"/>
                     </Pressable>

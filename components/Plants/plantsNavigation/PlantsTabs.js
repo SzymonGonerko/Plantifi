@@ -40,7 +40,6 @@ export const PlantsTabs = ({onFocus, onBlur}) => {
 
       useEffect(() => {
         NavigationBar.setPositionAsync("relative")
-        NavigationBar.setBackgroundColorAsync('white')
       }, [])
 
 

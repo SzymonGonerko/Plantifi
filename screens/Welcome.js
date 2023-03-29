@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions, ImageBackground, Pressable, Alert, Animated } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ImageBackground, Alert, Animated } from 'react-native';
 import * as NavigationBar from 'expo-navigation-bar';
 import { useEffect, useState, useRef } from 'react';
 import { Button } from '../components/ui/Button';

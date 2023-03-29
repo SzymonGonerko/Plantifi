@@ -4,10 +4,10 @@ module.exports = function(api) {
     presets: ['babel-preset-expo', 'module:metro-react-native-babel-preset'],
     plugins: [
       ["module:react-native-dotenv", {
-        "envName": "APP_ENV",
+        "envName": "REACT_APP",
         "moduleName": "@env",
         "path": ".env",
-        "safe": false,
+        "safe": true,
         "allowUndefined": true,
         "verbose": false
       }]
