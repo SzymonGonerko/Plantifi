@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import { LongLineSeparator } from '../ui/LongLineSeparator';
 import { globalStyles } from "../globalStyles";
+import { LinearGradient } from 'expo-linear-gradient';
 
 import AntDesign from "react-native-vector-icons/AntDesign"
 
@@ -48,6 +49,10 @@ export const General = ({profile}) => {
                 {profile.description}
                 </Text>
             </ScrollView>
+            <LinearGradient
+                colors={['transparent', 'rgba(200,200,200,0.8)']}
+                style={[{height: 20}, {transform: [{translateY: -20}]}]}
+            />
 
         </View>
 

@@ -73,7 +73,7 @@ const onSubmitHandler = () => {
 }
 
 const onPressInfoHandler = () => {
-    Alert.alert("Pracuję nad tym...", "aplikacja jest w fazie testowej. Email: anna.kowalska@gmail.com, Hasło: 1234", [{text: "okey", style: "default"}])
+    Alert.alert("Pracuję nad tym...", `Aktualnie Plantifi nie ma bazy użytkowników. \n\n𝗟𝗼𝗴𝗶𝗻: anna.kowalska@gmail.com, \n𝗛𝗮𝘀𝗹𝗼: 1234`, [{text: "okey", style: "default"}])
 }
 
 const setVisiblePassword = () => {

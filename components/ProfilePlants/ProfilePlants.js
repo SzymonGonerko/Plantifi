@@ -1,5 +1,6 @@
 import React, { useState, useRef  } from "react";
-import { StyleSheet, Text, View, ImageBackground, Modal, Animated} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Animated} from 'react-native';
+import * as Animatable from 'react-native-animatable';
 import { SquareButton } from '../ui/SquareButton';
 import { ShortLine } from '../ui/ShortLine';
 import { ModalPlantsNavigation } from './ModalPlantsNavigation';
@@ -15,7 +16,7 @@ import AntDesign from "react-native-vector-icons/AntDesign"
 
 
 export const ProfilePlants = (props) => {
-  const {isVisible, onPressButtonSquare, src, name, profile, addNewPlantsToCollecton} = props
+  const {onPressButtonSquare, src, name, profile, onSuccesAddedPlant} = props
   const InfoLikeOpacity = useRef(new Animated.Value(0)).current;
   const [addPlants, setAddPlants] = useState(false)
   const [infoAddedToFavourite, setAddedToFavourite] = useState(false)
@@ -38,7 +39,6 @@ export const ProfilePlants = (props) => {
     });
   }
 
-
   const resetState = () => {
     setAddPlants(false)
   }
@@ -47,16 +47,13 @@ export const ProfilePlants = (props) => {
     setAddPlants(true)
     if (addPlants) {
       setAddPlants(false)
-      addNewPlantsToCollecton()
+      onSuccesAddedPlant()
     }
   }
 
 
     return <>
-    <Modal
-    animationType="slide"
-    visible={isVisible}
-    >
+    <Animatable.View duration={300} animation={"pulse"} style={{height: "100%"}}>
         <View style={styles.bgcContainer}>
             {infoAddedToFavourite && <InfoLike opacity={InfoLikeOpacity} name={name}/>}
             <ImageBackground
@@ -85,8 +82,7 @@ export const ProfilePlants = (props) => {
               {addPlants ? "Zapisz do mojej kolekcji" : "Dodaj do moich roślin"}
             </Button>
         </View>
-    </Modal>
-    
+    </Animatable.View>
     </>
 }
 
@@ -95,6 +91,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "35%",
         borderRadius: 17,
+        marginTop: 25
     },
     background: {
         height: "100%",
@@ -135,7 +132,7 @@ const styles = StyleSheet.create({
   },
   btnStyle: {
     height: 50,
-    marginVertical: 15,
+    marginBottom: 20,
     marginHorizontal: 10
   }
     });

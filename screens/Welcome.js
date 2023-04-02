@@ -21,13 +21,12 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
 
 
     const onPressHandler = () => {
-        Alert.alert("Wpisz", "aplikacja jest w fazie testowej. Login to: anna.kowalska@gmail.com, hasło to: 1234", [{text: "okey", style: "default"}])
+        Alert.alert("Wpisz", `Aktualnie Plantifi nie ma bazy użytkowników. \n\n𝗟𝗼𝗴𝗶𝗻: anna.kowalska@gmail.com, \n𝗛𝗮𝘀𝗹𝗼: 1234`, [{text: "okey", style: "default"}])
     }
 
     const onPressLogin = () => {
         onPressHandlerAnim()
         onPressTheme()
-        NavigationBar.setVisibilityAsync("visible")
         NavigationBar.setBackgroundColorAsync('white')
         NavigationBar.setPositionAsync('absolute')
     }
@@ -67,6 +66,7 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
     useEffect(() => {
         checkFormSafety()
         NavigationBar.setBackgroundColorAsync('transparent')
+        NavigationBar.setBehaviorAsync('overlay-swipe')
         NavigationBar.setPositionAsync('absolute')
     }, [])
 

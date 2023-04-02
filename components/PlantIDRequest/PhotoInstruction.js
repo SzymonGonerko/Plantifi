@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View, ImageBackground, Modal } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { PlantsSeparator } from '../ui/PlantsSeparator';
 import { Button } from '../ui/Button';
 import { CustomCamera } from './CustomCamera';
@@ -9,8 +9,13 @@ import { HowManyPhotosLeft } from "../HowManyPhotosLeft";
 import { globalStyles } from "../globalStyles";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressHandler}) => {
+export const PhotoInstruction = ({onPressCamera}) => {
     const [howManyLeft, setHowManyLeft] = useState(0)
+    const [showCamera, setShowCamera] = useState(false)
+
+    const onPressHandler = () => {
+      setShowCamera(prev => !prev)
+   }
 
     useEffect(() => {
         const getDataFromStorage = async () => {
@@ -26,15 +31,14 @@ export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressH
               }
         }
         getDataFromStorage()
-    }, [isVisible])
+    }, [])
 
 
 
     return <>
-    <Modal animationType="slide" visible={isVisible} statusBarTranslucent={true}>
-        {!showCamera &&
-        <View style={{flex: 1}}>
-            <View style={{flex: 1}}>
+    <View style={{height: "100%"}}>
+        {!showCamera && <View style={{}}>
+            <View style={{}}>
                 <ImageBackground source={require("../../assets/images/instructionBackground.png")} style={{position: "absolute" ,width: "100%", height: "100%"}}/>
                 <View style={{width: "100%", height: "100%", backgroundColor: "#202327cc"}}/>
             </View>
@@ -76,8 +80,7 @@ export const PhotoInstruction = ({isVisible, onPressCamera, showCamera, onPressH
         </View>}
 
         {showCamera && <CustomCamera onPressHandler={onPressHandler} onPressCamera={onPressCamera}/>}
-
-    </Modal>
+    </View>
     </>
 }
 
@@ -89,8 +92,8 @@ const styles = StyleSheet.create({
         backgroundColor: "white", 
         left: "10%", 
         right: "10%", 
-        top: "8%", 
-        bottom: "8%",
+        top: "10%", 
+        bottom: "10%",
         borderRadius: 16,
     },
     title: {

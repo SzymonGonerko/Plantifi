@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Modal} from 'react-native';
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { IconButton } from "@react-native-material/core";
 import { globalStyles } from '../globalStyles';
+import * as Animatable from 'react-native-animatable';
 
 export const PopUpSuccess = ({onPressClose}) => {
+    const [typeAnimation, setTypeAnimation] = useState("")
+
+    const onCloseHandler = () => {
+        setTypeAnimation("fadeOut")
+        setTimeout(() => {
+            onPressClose()
+        }, 250)
+    }
+
     return <>
-        <Modal 
-        animationType="fade"
-        transparent={true}
-        visible={true}>
-            <View style={styles.background}>
+            <Animatable.View 
+                duration={250} 
+                animation={typeAnimation} 
+                style={styles.background}
+            >
                 <View style={styles.container}>
                     <View style={styles.titleLine}>
                         <Text style={styles.title}>Nowy członek rodziny!</Text>
-                        <IconButton onPress={onPressClose} style={{position: "absolute", right: 20}} icon={<AntDesign name={"close"} style={{fontSize: 25}}/>} />
+                        <IconButton onPress={onCloseHandler} style={{position: "absolute", right: 20}} icon={<AntDesign name={"close"} style={{fontSize: 25}}/>} />
                     </View>
 
                     <View style={styles.textLine}>
@@ -24,18 +34,20 @@ export const PopUpSuccess = ({onPressClose}) => {
                         <Text style={styles.defaultText}>Udało Ci się dodać nową roślinę!</Text>
                     </View>
                 </View>
-            </View>
-        </Modal>
+            </Animatable.View>
+
     </>
 }
 
 const styles = StyleSheet.create({
     background: {
         position: "absolute", 
-        top: -20, 
+        top: 0, 
         bottom: 0, 
         left: 0, 
-        right: 0, 
+        right: 0,
+        height: "100%",
+        width: "100%",
         backgroundColor: globalStyles.backgroundAlfa
     },
     container: {
@@ -45,7 +57,7 @@ const styles = StyleSheet.create({
         bottom: 0, 
         left: 0, 
         right: 0, 
-        height: 176, 
+        height: 150, 
         backgroundColor: "white",
     },
     checkedIcon: {

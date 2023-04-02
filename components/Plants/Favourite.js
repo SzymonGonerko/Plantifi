@@ -5,7 +5,7 @@ import { searchPlants } from '../../mainDataPlants';
 import { Card } from '../ui/Card';
 import { SearchInput } from '../ui/SearchInput';
 
-export const Favourite = ({onFocus, onBlur}) => {
+export const Favourite = ({onFocus, onBlur, onPressProfilePlant}) => {
     const [plants, _] = useState(searchPlants)
     const [searchingPlants, setSearchingPlants] = useState(searchPlants)
     const [textInput, setTextInput] = useState("")
@@ -31,6 +31,7 @@ export const Favourite = ({onFocus, onBlur}) => {
             <Card
                 cardStyle={{width: "40%"}}
                 name={item[1].name}
+                onPressProfilePlant={onPressProfilePlant}
                 profile={item[1].profile}
                 description={item[1].description}
                 src={item[0]}/>}

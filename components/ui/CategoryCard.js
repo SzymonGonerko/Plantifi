@@ -9,6 +9,7 @@ export const CategoryCard = ({src, name, onPress, index, isSelected}) => {
 
     useEffect(() => {
         if (!isSelected) fadeOut()
+        else fadeIn ()
     }, [isSelected])
     
     const fadeIn = () => {

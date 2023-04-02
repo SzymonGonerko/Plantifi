@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View, FlatList, ScrollView, Alert} from 'react-native';
-import { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, FlatList, ScrollView} from 'react-native';
+import { useState } from 'react';
 import { Header } from '../components/ui/Header';
 import { SearchInput } from '../components/ui/SearchInput';
 import { SquareButton } from '../components/ui/SquareButton';
@@ -12,9 +12,9 @@ import { EasyCare } from '../components/Explore/EasyCare';
 
 
 export const Explore = (props) => {
-    const {onPressShowMainApp, onPressThemeBar, onFocus, onBlur, onPressArrowBack, navigation} = props
+    const {onFocus, onBlur, onPressArrowBack, navigation, showMenu, onPressProfilePlant} = props
     const [textInput, setTextInput] = useState("")
-    const [selectedCard, setSelectedCard] = useState([false, false, false, false, false, false])
+    const [selectedCard, setSelectedCard] = useState([false, false, false, true, false, false])
 
     const onChangeTextHandler = (e) => {
         setTextInput(e)
@@ -28,12 +28,15 @@ export const Explore = (props) => {
         }))
         }
 
-        useEffect(() => {
-            Alert.alert("Nawigacja", "w nawigacji możesz dotknąć kategorię łatwa pielęgnacja", [{text: "okey", style: "default"}])
-        }, [])
 
     return (<>
-    <Header navigation={navigation} onPressArrowBack={onPressArrowBack} onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar} >Odkrywaj</Header>
+    <Header 
+        showMenu={showMenu} 
+        navigation={navigation} 
+        onPressArrowBack={onPressArrowBack}
+        >
+            Odkrywaj
+    </Header>
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
         
         <View style={styles.inputContainer}>
@@ -59,10 +62,10 @@ export const Explore = (props) => {
         />
 
         <LongLineSeparator style={{marginTop: 15}}/>
-        {selectedCard[3] === false ? <ExploreStartSection/>:<EasyCare/>}
+        {selectedCard[3] === false ? 
+            <ExploreStartSection onPressProfilePlant={onPressProfilePlant}/>:
+            <EasyCare onPressProfilePlant={onPressProfilePlant}/>}
         <View style={{width: 50, height: 200}}/>
-
-
     </ScrollView>
 
     </>

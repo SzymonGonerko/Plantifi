@@ -1,33 +1,32 @@
 import React from "react";
 import { useState } from 'react';
-import { StyleSheet, View, Modal, Image, Text, Linking } from 'react-native';
+import { StyleSheet, View, Image, Text, Linking } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { IconButton } from "@react-native-material/core";
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { LongLineSeparator } from './ui/LongLineSeparator';
 import { Button } from './ui/Button';
 import { SquareButton} from "./ui/SquareButton"
+import { globalStyles } from "./globalStyles";
 
-export const RightNavBar = ({isVisible, showMenu, goBack}) => {
+export const RightNavBar = ({goBack, showMenu}) => {
     const [typeAnimation, setTypeAnimation] = useState("fadeInRight")
+    const [bgcTypeAnimation, setBgcTypeAnimation] = useState("fadeIn")
 
 
     const onPressHandler = () => {
         setTypeAnimation("fadeOutRight")
+        setBgcTypeAnimation("fadeOut")
         setTimeout(() => {
             showMenu()
-            setTypeAnimation("fadeInRight")
-        }, 200)
+        }, 260)
     }
 
 
     return <>
-            <Modal 
-                animationType="fade"
-                transparent={true}
-                visible={isVisible}>
-                    <View style={styles.container}>
-                        <Animatable.View style={styles.nav} duration={200} easing="ease-out" iterationCount={1} animation={typeAnimation}>
+            <View style={{position: "absolute", width: "100%", height: "100%"}}>
+            <Animatable.View style={styles.bgc} duration={250} easing="ease-out" animation={bgcTypeAnimation} />
+            <Animatable.View style={styles.nav} duration={250} easing="ease-out" animation={typeAnimation}>
                             <View style={styles.avatar}>
                                 <IconButton onPress={onPressHandler} style={styles.closeIcon} icon={<AntDesign name={"close"} style={{fontSize: 25}}/>}/>
                                 <View style={[styles.imgContainer, {transform: [{translateX: -36}, {translateY: -36}]}]}>
@@ -73,36 +72,36 @@ export const RightNavBar = ({isVisible, showMenu, goBack}) => {
                                 <LongLineSeparator/>
 
                                 <View style={{flexDirection: "row", alignItems: "center", marginBottom: 20}}>
-                                    <SquareButton onPress={goBack} styleContainer={styles.squareBtn} styleButton={{backgroundColor: "white"}} type={"logOut"}/>
+                                    <SquareButton onPress={() => goBack()} styleContainer={styles.squareBtn} styleButton={{backgroundColor: "white"}} type={"logOut"}/>
                                     <Text style={styles.logOutText}>Wyloguj się</Text>
                                 </View>
-                                
                             </View>
-
-
                         </Animatable.View>
-                    </View>
-
-            </Modal>
+            </View>
     </>
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#49556652",
+    bgc: {
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        backgroundColor: globalStyles.backgroundAlfa,
     },
     nav: {
-        backgroundColor: "white", 
+        backgroundColor: "white",
+        position: "absolute",
+        zIndex: 444,
         height: "100%",
-        width: "60%",
-        left: "40%",
+        width: "55%",
+        left: "45%",
         elevation: 5,
     },
     avatar: {
         position: "relative",
         width: "100%",
-        height: 120
+        height: 120,
+        marginTop: 20
     },
     closeIcon: {
         position: "absolute",

@@ -6,8 +6,9 @@ import { useState, useRef } from 'react';
 import {SquareButton} from "../ui/SquareButton"
 import { WaitingAnimation } from "../ui/WaitingAnimation";
 import { PlantDetails } from "./PlantDetails";
+import { Dimensions } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+const {width, height} = Dimensions.get('screen');
 
 export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     const [type, setType] = useState(CameraType.back);
@@ -83,7 +84,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
           setPhoto(newPhoto)
   
           const data = {
-            api_key: `${process.env.APP_PLANTID_API_KEY}`,
+            api_key: `${process.env.REACT_APP_PLANTID_API_KEY}`,
             images: [newPhoto.base64],
             modifiers: ["crops_fast", "similar_images"],
             plant_language: "pl",
@@ -95,7 +96,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
               ],
           };
   
-          fetch(`${process.env.APP_PLANTID_API_URL}`, {
+          fetch(`${process.env.REACT_APP_PLANTID_API_URL}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -124,14 +125,13 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
           isHightProbability ? setplantsIDResponse(true) : setplantsIDResponse(false)
           setIsStartRequest(false)
         })
-        .catch(() => {
+        .catch((e) => {
           setplantsIDResponse(false)
           setIsStartRequest(false)
           Alert.alert("Upss...", `aplikacja nie rozpoznała rośliny...pamiętaj o poprawnym zrobieniu zdjęcia. ${setCorrectGrammar(howManyReuqestLeft)}`)
         })   
         })
       }
-
 
       const pickImage = async () => {
         const result = await ImagePicker.launchImageLibraryAsync({
@@ -150,11 +150,10 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     return <>
     <View style={styles.container}>
         {!plantsIDResponse &&
-          <View style={{flex: 1}}>
+          <View style={{}}>
             {isStartRequest && <WaitingAnimation/>}
-            <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={styles.sqr}/>
             <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
-            
+                <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={styles.sqr}/>
                 <Image source={require("../../assets/icons/frame.png")} resizeMode={"contain"} style={styles.frame}/>
                 <View style={styles.buttonsContainer}>
 
@@ -189,12 +188,12 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+      height: "100%"
       },
       camera: {
-        flex: 1,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        height: "100%"
       },
       frame: {
         width: "70%",
@@ -202,15 +201,14 @@ const styles = StyleSheet.create({
         marginBottom: 50
       },
       sqr: {
-        position: "absolute", 
-        top: 50, 
-        left: 20, 
-        zIndex: 2
+        position: "absolute",
+        top: "7%",
+        left: "8%",
       },
       buttonsContainer: {
         position: "absolute", 
         zIndex: 20, 
-        bottom: 20, 
+        bottom: 50, 
         flexDirection: "row", 
         width: "100%", 
         justifyContent: "space-around", 

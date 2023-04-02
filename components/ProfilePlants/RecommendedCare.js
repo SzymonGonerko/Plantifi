@@ -58,7 +58,6 @@ export const RecommendedCare = ({profile}) => {
             <Text style={styles.rememberText}>
                 Nasze rekomendacje dotyczące przypomnień oparte są na wiedzy ekspertów i danych encyklopedycznych. Powinieneś jednak obserwować swoją roślinę, czy na pewno spełnia to jej potrzeby!
             </Text>
-            
     </>
 }
 
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
     squareContainer: {
         flexDirection: "column", 
         justifyContent: "space-between", 
-        marginTop: 20, 
+        marginTop: 20,
     },
     squareIcon: {
         width: 48, 

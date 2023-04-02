@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import { LongLineSeparator } from '../ui/LongLineSeparator';
 import { globalStyles } from "../globalStyles";
+import { LinearGradient } from 'expo-linear-gradient';
 
 export const Care = ({profile}) => {
     return <>
@@ -23,7 +24,7 @@ export const Care = ({profile}) => {
                     )
                 })}
             </View>
-            <LongLineSeparator style={{marginTop: 15, marginBottom: 10}}/>
+            <LongLineSeparator style={{marginTop: 10, marginBottom: 10}}/>
             <ScrollView showsVerticalScrollIndicator={false}>
                 {Object.entries(profile).map(([key, val], i) => {
                         return (
@@ -47,6 +48,11 @@ export const Care = ({profile}) => {
                         )
                     })}
             </ScrollView>
+            <LinearGradient
+                colors={['transparent', 'rgba(200,200,200,0.8)']}
+                style={[{height: 20}, {transform: [{translateY: -20}]}]}
+            />
+            
     </View>
     
     </>
@@ -57,7 +63,7 @@ const styles = StyleSheet.create({
     squareContainer: {
         flexDirection: "row", 
         justifyContent: "space-between", 
-        marginTop: 20, 
+        marginTop: 15, 
         marginHorizontal: 10
     },
     itemWrapper: {

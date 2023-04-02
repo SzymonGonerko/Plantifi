@@ -9,7 +9,7 @@ import { likedPlants } from '../../mainDataPlants';
 
 const windowWidth = Dimensions.get('window').width;
 
-export const ExploreStartSection = () => {
+export const ExploreStartSection = ({onPressProfilePlant}) => {
     return <>
         <Text style={styles.plantsCategory}>
             Użytkownicy lubią:
@@ -23,6 +23,7 @@ export const ExploreStartSection = () => {
             renderItem={({ item }) => 
             <Card
                 name={item[1].name}
+                onPressProfilePlant={onPressProfilePlant}
                 liked={item[1].liked}
                 profile={item[1].profile}
                 src={item[0]}/>}
@@ -40,6 +41,7 @@ export const ExploreStartSection = () => {
             <Card
                 cardStyle={{width: windowWidth - 40}}
                 name={item[1].name}
+                onPressProfilePlant={onPressProfilePlant}
                 profile={item[1].profile}
                 liked={item[1].liked}
                 src={item[0]}/>}

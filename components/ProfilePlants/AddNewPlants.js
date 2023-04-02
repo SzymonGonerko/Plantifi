@@ -8,6 +8,7 @@ import { PickerImage } from '../PickerImage';
 import { DateRemember } from '../ui/DateRemember';
 import { RecommendedCare } from './RecommendedCare';
 import { globalStyles } from "../globalStyles";
+import { LinearGradient } from 'expo-linear-gradient';
 
 import ToggleSwitch from 'toggle-switch-react-native'
 
@@ -133,6 +134,10 @@ export const AddNewPlants = ({src, care}) => {
         </View>
 
     </ScrollView>
+    <LinearGradient
+                colors={['transparent', 'rgba(200,200,200,0.8)']}
+                style={[{height: 20}, {transform: [{translateY: -20}]}]}
+            />
     </>
 }
 

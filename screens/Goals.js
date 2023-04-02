@@ -5,11 +5,15 @@ import { GoalsNavigator } from '../components/Goals/goalsNavigation/GoalsNavigat
 
 
 export const Goals = (props) => {
-    const {onPressShowMainApp, onPressThemeBar, onPressArrowBack, navigation} = props
+    const {onPressArrowBack, navigation, showMenu} = props
     return (
         <View style={styles.container}>
-            <Header navigation={navigation} onPressArrowBack={onPressArrowBack} onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar}>
-                Moje Zadania
+            <Header 
+                showMenu={showMenu} 
+                navigation={navigation} 
+                onPressArrowBack={onPressArrowBack}
+                >
+                    Moje Zadania
             </Header>
             <GoalsNavigator/>
         </View>

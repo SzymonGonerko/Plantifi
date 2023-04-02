@@ -3,9 +3,13 @@ import { StyleSheet, View, Text } from 'react-native';
 import { Header } from "../components/ui/Header"
 
 export const Shop = (props) => {
-    const {onPressShowMainApp, onPressThemeBar, onPressArrowBack, navigation} = props
+    const {onPressArrowBack, navigation, showMenu} = props
     return <>
-    <Header navigation={navigation} onPressArrowBack={onPressArrowBack} onPressShowMainApp={onPressShowMainApp} onPressThemeBar={onPressThemeBar}>
+    <Header 
+        showMenu={showMenu} 
+        navigation={navigation} 
+        onPressArrowBack={onPressArrowBack}
+        >
             Sklep
     </Header>
     <View style={styles.container}>

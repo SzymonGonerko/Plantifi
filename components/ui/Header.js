@@ -1,22 +1,9 @@
 import React from "react";
-import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SquareButton } from './SquareButton';
-import { RightNavBar } from '../RightNavBar';
 import { globalStyles } from "../globalStyles";
 
-export const Header = ({children, onPressShowMainApp, onPressThemeBar, onPressArrowBack, navigation}) => {
-    const [navVisibility, setNavVisiliblity] = useState(false)
-
-    const goBack = () => {
-        onPressThemeBar()
-        onPressShowMainApp()
-        return null
-    }
-    
-    const showMenu = () => {
-        setNavVisiliblity(prev => !prev)
-    }
+export const Header = ({children, onPressArrowBack, navigation, showMenu}) => {
     
     return <>
             <View style={styles.headerContainer}>
@@ -27,10 +14,14 @@ export const Header = ({children, onPressShowMainApp, onPressThemeBar, onPressAr
                     <Text style={[styles.headerText, {transform: [{translateY: -3}]}]}>{children}</Text>
                 </View>
                 <View>
-                    <SquareButton type={"nav"} onPress={showMenu} styleContainer={styles.squareButton} styleButton={{backgroundColor: "white"}}/>
+                    <SquareButton 
+                        type={"nav"} 
+                        onPress={() => showMenu()} 
+                        styleContainer={styles.squareButton} 
+                        styleButton={{backgroundColor: "white"}}
+                    />
                 </View>
             </View>
-            <RightNavBar goBack={goBack} showMenu={showMenu} isVisible={navVisibility} />
     </>
 }
 

@@ -6,7 +6,7 @@ import { PlantsSeparator } from '../ui/PlantsSeparator';
 import { livingroomPlants, bedroomPlants } from '../../mainDataPlants';
 import { Card } from '../ui/Card';
 
-export const Collection = () => {
+export const Collection = ({onPressProfilePlant}) => {
 
     return <>
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -30,6 +30,7 @@ export const Collection = () => {
                 renderItem={({ item, _ }) => 
                     <Card 
                         name={item[1].name}
+                        onPressProfilePlant={onPressProfilePlant}
                         src={item[0]}
                         profile={item[1].profile}
                         takenCare={item[1].takenCare} 
@@ -51,6 +52,7 @@ export const Collection = () => {
                         <Card 
                             name={item[1].name}
                             src={item[0]}
+                            onPressProfilePlant={onPressProfilePlant}
                             profile={item[1].profile}
                             takenCare={item[1].takenCare} 
                             needWater={item[1].needWater}

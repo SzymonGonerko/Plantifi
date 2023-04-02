@@ -5,12 +5,22 @@ import { PlantsNavigator } from '../components/Plants/plantsNavigation/PlantsNav
 
 
 export const Plants = (props) => {
-    const {onPressShowMainApp, onPressThemeBar, onFocus, onBlur, onPressArrowBack, navigation} = props
+    const {onFocus, onBlur, onPressArrowBack, navigation, showMenu, onPressProfilePlant} = props
 
     return (
         <SafeAreaView style={styles.container}>
-                <Header navigation={navigation} onPressArrowBack={onPressArrowBack} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp}>Moje Rośliny</Header>
-                <PlantsNavigator onFocus={onFocus} onBlur={onBlur}/>
+                <Header 
+                    showMenu={showMenu} 
+                    navigation={navigation} 
+                    onPressArrowBack={onPressArrowBack}
+                    >
+                        Moje Rośliny
+                    </Header>
+                <PlantsNavigator 
+                    onFocus={onFocus} 
+                    onBlur={onBlur} 
+                    onPressProfilePlant={onPressProfilePlant}
+                />
         </SafeAreaView>
     )
 }

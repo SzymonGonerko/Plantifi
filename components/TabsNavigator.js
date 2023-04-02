@@ -1,8 +1,9 @@
-import React, { useRef, useState }  from "react";
+import React, { useEffect, useRef, useState }  from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Animated} from 'react-native';
 import { NavIcon } from "./ui/NavIcon";
 import { CameraButton } from "./ui/CameraButton";
+import * as NavigationBar from 'expo-navigation-bar';
 
 import { Plants } from "../screens/Plants";
 import { Explore } from "../screens/Explore";
@@ -25,8 +26,9 @@ const dir = {
 }
 
 
+
 export const TabsNavigator = (props) => {
-  const {onPressShowMainApp, onPressThemeBar} = props
+  const {toggleNavCamera, showMenu, onPressProfilePlant} = props
   const [nav, setNav] = useState({history: [0], isPressedNav: false})
   const [navPosition, setNavPosition] = useState(-25)
   const listTab = {
@@ -115,7 +117,7 @@ return <>
                   onPressTabHandler(0)
                 },
               })}>
-            {(props) => <Plants {...props} onPressArrowBack={onPressArrowBack} onFocus={onFocusInputHandler} onBlur={onBlurInputHandler} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+            {(props) => <Plants {...props} onPressProfilePlant={onPressProfilePlant} showMenu={showMenu} onPressArrowBack={onPressArrowBack} onFocus={onFocusInputHandler} onBlur={onBlurInputHandler} />}
         </Tab.Screen>
 
         <Tab.Screen
@@ -133,7 +135,7 @@ return <>
                 },
           })}
         >
-          {(props) => <Explore {...props} onPressArrowBack={onPressArrowBack}  onFocus={onFocusInputHandler} onBlur={onBlurInputHandler} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+          {(props) => <Explore {...props} onPressProfilePlant={onPressProfilePlant} showMenu={showMenu} onPressArrowBack={onPressArrowBack}  onFocus={onFocusInputHandler} onBlur={onBlurInputHandler}/>}
         </Tab.Screen>
 
         <Tab.Screen 
@@ -141,7 +143,7 @@ return <>
             component={Camera}
             options={{
                 tabBarItemStyle: styles.defaultTab,
-                tabBarButton: () => <CameraButton/>
+                tabBarButton: () => <CameraButton toggleNavCamera={toggleNavCamera}/>
             }}
         />
 
@@ -160,7 +162,7 @@ return <>
               },
             })}
         >
-            {(props) => <Goals  {...props} onPressArrowBack={onPressArrowBack}onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+            {(props) => <Goals {...props} showMenu={showMenu} onPressArrowBack={onPressArrowBack}/>}
         </Tab.Screen>
 
         <Tab.Screen
@@ -178,7 +180,7 @@ return <>
               },
             })}
         >
-          {(props) => <Shop onPressArrowBack={onPressArrowBack} {...props} onPressThemeBar={onPressThemeBar} onPressShowMainApp={onPressShowMainApp} />}
+          {(props) => <Shop onPressArrowBack={onPressArrowBack} {...props} showMenu={showMenu} />}
       </Tab.Screen>
 
     </Tab.Navigator>
@@ -190,7 +192,7 @@ const styles = StyleSheet.create({
         left: 10,
         right: 10,
         bottom: 20,
-        height: 75,
+        height: 80,
         padding: 0,
         elevation: 0,
         borderWidth: 0
@@ -200,7 +202,7 @@ const styles = StyleSheet.create({
         height: 30,
     },
     defaultTab: {
-      top: -10,
+      top: -15,
       zIndex: 4
     }
 })

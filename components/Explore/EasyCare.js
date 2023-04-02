@@ -8,7 +8,7 @@ import { Slider } from '../ui/Slider';
 const sorted = easyCareCollectionPlants.sort((a,b) => a[1].name.localeCompare(b[1].name))
 
 
-export const EasyCare = () => {
+export const EasyCare = ({onPressProfilePlant}) => {
     const [sortedEasyCareCollectionPlants, setSortedEasyCareCollectionPlants] = useState(sorted)
 
 
@@ -25,7 +25,7 @@ export const EasyCare = () => {
 
     return <>
         <Text style={styles.plantsCategory}>
-            Rośliny łatwe w pielęgnacji
+            Rośliny łatwe w pielęgnacji:
         </Text>
         
         <View style={styles.easyCareContainer}>
@@ -33,6 +33,7 @@ export const EasyCare = () => {
                 {sortedEasyCareCollectionPlants.map((item, i) => 
                         <Card
                         cardStyle={{marginLeft: 0, marginRight: 0}}
+                        onPressProfilePlant={onPressProfilePlant}
                         profile={item[1].profile}
                         key={i}
                         name={item[1].name}

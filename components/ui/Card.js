@@ -4,24 +4,15 @@ import { StyleSheet, Text, View, ImageBackground, Pressable} from 'react-native'
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import AntDesign from "react-native-vector-icons/AntDesign"
-import { ProfilePlants } from '../ProfilePlants/ProfilePlants';
-import { PopUpSuccess } from './PopUpSuccess';
 import { globalStyles } from "../globalStyles";
 
 
-export const Card = ({src, takenCare, needWater, days, name, description, cardStyle, liked, profile}) => {
-    const [profileModal, setProfileModal] = useState(false)
-    const [addedNew, setAddedNew] = useState(false)
+export const Card = ({src, takenCare, needWater, days, name, description, cardStyle, liked, profile, onPressProfilePlant}) => {
 
-
-    const addPlantsToCollection = () => {
-        setProfileModal(false)
-        setAddedNew(true)
-    }
 
     return <>
     <View style={[styles.container, cardStyle]}>
-        <Pressable onPress={() => (setProfileModal(true))}>
+        <Pressable onPress={() => (onPressProfilePlant(name, src, profile))}>
             <View style={styles.tagContainer}>
             {needWater && <MaterialCommunityIcons name='watering-can' style={{color: "#6b6a6a", fontSize: 15, margin: 1}}/>}
             {liked && <AntDesign name='heart' style={{color: "black", fontSize: 11, margin: 1}}/>}
@@ -39,15 +30,6 @@ export const Card = ({src, takenCare, needWater, days, name, description, cardSt
             <ImageBackground source={src} resizeMode="cover" imageStyle={styles.imgs} style={styles.imgs}/>
         </Pressable>
     </View>
-    <ProfilePlants 
-    onPressButtonSquare={() => setProfileModal(false)}
-    src={src}
-    name={name}
-    profile={profile}
-    addNewPlantsToCollecton={addPlantsToCollection}
-    isVisible={profileModal}/>
-
-    {addedNew && <PopUpSuccess onPressClose={() => setAddedNew(false)}/>}
     </>
 }
 

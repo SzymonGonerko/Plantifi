@@ -8,18 +8,15 @@ import { PhotoInstruction } from '../PlantIDRequest/PhotoInstruction';
 
 const screenWidth = Dimensions.get('screen').width;
 
-export const CameraButton = () => {
-    const [showPhotoInstruction, setShowPhotoInstruction] = useState(false)
-    const [showCamera, setShowCamera] = useState(false)
+export const CameraButton = ({toggleNavCamera}) => {
+
 
 
     const onPressCamera = () => {
-        setShowPhotoInstruction(prev => !prev)
+        toggleNavCamera()
     }
 
-    const onPressHandler = () => {
-        setShowCamera(prev => !prev)
-     }
+
 
     return <>
     <View style={styles.container}>
@@ -32,7 +29,6 @@ export const CameraButton = () => {
                 </Pressable>
             </View>
     </View>
-    <PhotoInstruction onPressHandler={onPressHandler} showCamera={showCamera} onPressCamera={onPressCamera} isVisible={showPhotoInstruction}/>
     </>
 }
 

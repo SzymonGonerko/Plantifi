@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator();
 
 
 
-export const PlantsTabs = ({onFocus, onBlur}) => {
+export const PlantsTabs = ({onFocus, onBlur, onPressProfilePlant}) => {
     const listTab = {
         fadeCollection: useRef(new Animated.Value(1)).current,
         fadeFavourite: useRef(new Animated.Value(0)).current,
@@ -40,6 +40,8 @@ export const PlantsTabs = ({onFocus, onBlur}) => {
 
       useEffect(() => {
         NavigationBar.setPositionAsync("relative")
+        NavigationBar.setVisibilityAsync("hidden")
+        NavigationBar.setButtonStyleAsync("dark")
       }, [])
 
 
@@ -68,7 +70,7 @@ return <>
                   navigation.navigate('Collection');
                 },
               })}>
-            {(props) => <Collection {...props} />}
+            {(props) => <Collection {...props} onPressProfilePlant={onPressProfilePlant} />}
         </Tab.Screen>
 
 
@@ -87,7 +89,7 @@ return <>
                   navigation.navigate('Favourite');
                 },
               })}>
-            {(props) => <Favourite onFocus={onFocus} onBlur={onBlur} {...props} />}
+            {(props) => <Favourite onFocus={onFocus} onPressProfilePlant={onPressProfilePlant} onBlur={onBlur} {...props} />}
         </Tab.Screen>
 
         <Tab.Screen 
