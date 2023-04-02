@@ -93,6 +93,10 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
               "common_names", 
               "wiki_description",
               "wiki_image",
+              "watering",
+              "cuttings",
+              "suckers",
+              "propagation_methods"
               ],
           };
   
@@ -105,13 +109,15 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
         })
         .then((response) => response.json())
         .then(data => {
-          if ((data.suggestions[0]?.probability).toFixed(2) * 100 > 40) {
+          console.log(data.suggestions[0]?.plant_details)
+          if ((data.suggestions[0]?.probability).toFixed(2) * 100 > 35) {
             setDataPlant({
               name: data.suggestions[0]?.plant_details?.common_names[0],
               latin: data.suggestions[0]?.plant_details.scientific_name,
               description: data.suggestions[0]?.plant_details?.wiki_description.value,
               probability: (data.suggestions[0]?.probability).toFixed(2) * 100,
               img: [data.suggestions[0]?.plant_details.wiki_image.value, data.suggestions[0]?.similar_images[0]?.url, data.suggestions[0]?.similar_images[1]?.url],
+              watering: data.suggestions[0]?.plant_details.watering.max,
               howManyReuqestLeft,
             })
             return true
@@ -150,8 +156,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     return <>
     <View style={styles.container}>
         {!plantsIDResponse &&
-          <View style={{}}>
-            {isStartRequest && <WaitingAnimation/>}
+          <View style={{position: "absolute", width: "100%", top: 0, left: 0, height: "100%", width: "100%"}}>
             <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
                 <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={styles.sqr}/>
                 <Image source={require("../../assets/icons/frame.png")} resizeMode={"contain"} style={styles.frame}/>
@@ -175,6 +180,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
 
                 </View>
             </Camera>
+            {isStartRequest && <WaitingAnimation/>}
           </View>
           }
 
@@ -188,12 +194,17 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
 
 const styles = StyleSheet.create({
     container: {
-      height: "100%"
+      height: "100%",
+      width: "100%"
       },
       camera: {
-        justifyContent: "center",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
         alignItems: "center",
-        height: "100%"
+        justifyContent: "center",
       },
       frame: {
         width: "70%",

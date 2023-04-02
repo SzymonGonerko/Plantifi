@@ -12,7 +12,7 @@ export const Heart = ({bottomPosition, onPress}) => {
     const [isFirstTap, setIsFirstTap] = useState(true)
 
     const heartAnimation = () => {
-        onPress ? onPress(): null
+        if (onPress) onPress()
         if (isFirstTap) {
             Animated.timing(heartOpacity, {
                 toValue: 0,
@@ -44,24 +44,24 @@ export const Heart = ({bottomPosition, onPress}) => {
 
     return <>
     <View style={[styles.container, {bottom: bottomPosition}]}>
-
-        <Animated.View style={[
-          {
-            flex: 1,
-            backgroundColor: globalStyles.heartColor,
-            opacity: heartOpacity,
-            transform: [{ scale: heartGrowUp }]
-          }
-        ]}>
-            <Pressable style={styles.press} onPress={heartAnimation}>
+        <Pressable onPress={heartAnimation} style={{width: "100%", height: "100%"}}>
+            <Animated.View style={[
+            {
+                flex: 1,
+                backgroundColor: globalStyles.heartColor,
+                opacity: heartOpacity,
+                justifyContent: "center",
+                alignItems: "center",
+                transform: [{ scale: heartGrowUp }]
+            }
+            ]}>
                 <Entypo name={"heart"} color={"white"} style={styles.icon}/>
-            </Pressable>
-        </Animated.View>
+            </Animated.View>
 
-        <View style={styles.check}>
-            <Feather name={"check"} color={"white"} style={styles.icon}/>
-        </View>
-
+            <View style={styles.check}>
+                <Feather name={"check"} color={"white"} style={styles.icon}/>
+            </View>
+        </Pressable>
     </View>
     </>
 }
@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
         position: "absolute", 
         bottom: -20, 
         right: 30,
-        width: 57, 
-        height: 57, 
+        width: 55, 
+        height: 55, 
         backgroundColor: "white",
         zIndex: 4,
         borderRadius: 100,
@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
         elevation: 2
     },
     press: {
-        flex: 1, 
         justifyContent: "center", 
         alignItems: "center"
     },
@@ -95,9 +94,6 @@ const styles = StyleSheet.create({
     },
     icon: {
         fontSize: 35, 
-        marginTop: 5
+        marginTop: 5,
     }
-
-
-    
 })

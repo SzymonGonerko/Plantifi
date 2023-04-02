@@ -11,6 +11,7 @@ import { Pagination } from "../ui/Pagination";
 import { SlideItem } from "../ui/SlideItem";
 import { Heart } from "../ui/Heart"
 import { globalStyles } from "../globalStyles";
+import { LinearGradient } from 'expo-linear-gradient';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -23,7 +24,7 @@ export const PlantDetails = ({onPressSquare, data, setCorrectGrammar}) => {
 
 
   useEffect(() => {
-    Alert.alert("Świetnie!", `aplikacja rozpoznała Twoją roślinę! ${setCorrectGrammar(data.howManyReuqestLeft)}`)
+    Alert.alert("Świetnie!", `rozpoznaliśmy Twoją roślinę! ${setCorrectGrammar(data.howManyReuqestLeft)}`)
   }, [])
 
   const handleOnScroll = event => {
@@ -68,7 +69,7 @@ export const PlantDetails = ({onPressSquare, data, setCorrectGrammar}) => {
               onViewableItemsChanged={handleOnItemsChanged}
             />
             <Pagination data={data.img} scrollX={scrollX} index={index} />
-            <Heart bottomPosition={-8}/>
+            <Heart onPress={null} bottomPosition={-8}/>
 
             <SquareButton onPress={onPressSquare} styleContainer={styles.btnSqure} type={"arrow"}/>
         </View>
@@ -82,12 +83,24 @@ export const PlantDetails = ({onPressSquare, data, setCorrectGrammar}) => {
             
             <LongLineSeparator style={{marginTop: 10}}/>
             
-            <ScrollView showsVerticalScrollIndicator={false} style={{height: "23%"}} >
-            <Text style={styles.textTitleDescription}>OPIS</Text>
+            <ScrollView showsVerticalScrollIndicator={false} style={{height: "23%"}}>
+              <Text style={styles.textTitleDescription}>OPIS</Text>
                 <Text style={styles.textDescription}>
                 {data.description}
-                </Text>
+                {"\n"}
+              </Text>
+              <Text style={styles.textTitleDescription}>NAWODNIENIE</Text>
+                <Text style={styles.textDescription}>
+                  {data.watering === 1 ? `Ostrożnie z wodą! ${data.name} wymaga rzadkiego podlewania. Roślinkę nawadniaj tylko wtedy gdy ziemia jest bardzo sucha. Zbyt częste nawadnianie może prowadzić do choroby.`: null}
+                  {data.watering === 2 ? `${data.name} wymaga umiarkowanego podlewania. Zadbaj aby ziemia była lekko wolgotna. Zbyt rzadkie nawodnienie może powodować, że roślina nie będzie rosnąć, a jej przelanie może prowadzić do choroby.`: null}
+                  {data.watering === 3 ? `Nie żałuj wody! ${data.name} wymaga częstego podlewania. Najlepiej czuje się w wilgotnym otoczeniu. Zbyt rzadkie nawodnienie może powodować że roślina nie będzie rosnąć.`: null}
+                  {"\n"}
+              </Text>
             </ScrollView>
+            <LinearGradient
+                colors={['transparent', 'rgba(200,200,200,0.8)']}
+                style={[{height: 20}, {transform: [{translateY: -20}]}]}
+            />
             
             <Button
             onPress={addPlantsToCollection}
@@ -156,7 +169,6 @@ const styles = StyleSheet.create({
 },
 btnStyle: {
   height: 50,
-  marginTop: 20, 
 },
 textTitleDescription:{
   fontFamily: "NunitoBold",
@@ -171,7 +183,6 @@ textDescription: {
   fontSize: 14,
   color: globalStyles.accentFontColor,
   letterSpacing: 0.5,
-  height: "100%"
 },
   });
   

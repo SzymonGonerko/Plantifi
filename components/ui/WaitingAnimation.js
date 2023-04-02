@@ -40,21 +40,18 @@ export const WaitingAnimation = () => {
       };
 
 
-    return <>
-      <Animated.View style={[styles.container, bgcAnimations]}>
+    return <Animated.View style={[styles.container, bgcAnimations]}>
         <Animated.Text style={[styles.waitingText, {opacity: visible}]}>Jest wolny transfer jeszcze chwila...</Animated.Text>
       </Animated.View>
-    </>
 }
 
 const styles = StyleSheet.create({
     container: {
         position: "absolute", 
-        zIndex: 5, 
         top: 0, 
-        bottom: 0, 
-        left: 0, 
-        right: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
         justifyContent: "center",
         alignItems: "center"
     },
