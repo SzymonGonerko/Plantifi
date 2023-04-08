@@ -6,7 +6,7 @@ import Entypo from "react-native-vector-icons/Entypo"
 import Feather from "react-native-vector-icons/Feather"
 import { globalStyles } from "../globalStyles";
 
-export const Heart = ({bottomPosition, onPress}) => {
+export const Heart = ({bottomPosition, onPress, style}) => {
     const heartOpacity = useRef(new Animated.Value(1)).current;
     const heartGrowUp = useRef(new Animated.Value(1)).current;
     const [isFirstTap, setIsFirstTap] = useState(true)
@@ -43,7 +43,7 @@ export const Heart = ({bottomPosition, onPress}) => {
 
 
     return <>
-    <View style={[styles.container, {bottom: bottomPosition}]}>
+    <Animated.View style={[styles.container, {bottom: bottomPosition}, style]}>
         <Pressable onPress={heartAnimation} style={{width: "100%", height: "100%"}}>
             <Animated.View style={[
             {
@@ -62,7 +62,7 @@ export const Heart = ({bottomPosition, onPress}) => {
                 <Feather name={"check"} color={"white"} style={styles.icon}/>
             </View>
         </Pressable>
-    </View>
+    </Animated.View>
     </>
 }
 
