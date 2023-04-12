@@ -65,9 +65,8 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
 
     useEffect(() => {
         checkFormSafety()
-        NavigationBar.setBackgroundColorAsync('transparent')
         NavigationBar.setBehaviorAsync('overlay-swipe')
-        NavigationBar.setPositionAsync('absolute')
+        NavigationBar.setVisibilityAsync("hidden")
     }, [])
 
 

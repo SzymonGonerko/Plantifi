@@ -27,7 +27,7 @@ const BOTTOM_PROFILE_Y = height / 1.9;
 const MAX_PROFILE_HEIGHT = height/1.6
 const MID_PROFILE_HEIGHT = height/1.15
 
-const threshold = 20;
+const threshold = 50;
 
 export const ProfilePlants = (props) => {
   const {onPressButtonSquare, src, name, profile, onSuccesAddedPlant} = props
@@ -50,6 +50,8 @@ export const ProfilePlants = (props) => {
       onPanResponderGrant: () => {
         backgroundRef.setOffset(initBackgroundRef.current);
         profileRef.setOffset(initProfileRef.current);
+        backgroundRef.setValue(0)
+        profileRef.setValue(0)
         setStart(true)
       },
       onPanResponderMove: (_, g) => {
@@ -77,9 +79,7 @@ export const ProfilePlants = (props) => {
               autoSpring(MID_BGC_Y, MID_PROFILE_Y): 
               autoSpring(MIN_BGC_Y, TOP_PROFILE_Y);
           } else {
-            initBackgroundRef.current === MIN_BGC_Y ? 
-              autoSpring(MID_BGC_Y, MID_PROFILE_Y): 
-              autoSpring(MIN_BGC_Y, TOP_PROFILE_Y);
+            autoSpring(MID_BGC_Y, MID_PROFILE_Y)
           }
         }
       },
@@ -90,10 +90,12 @@ export const ProfilePlants = (props) => {
 
     Animated.spring(backgroundRef, {
       toValue: bacVal,
+      friction: 6,
       useNativeDriver: false,
     }).start();
     Animated.spring(profileRef, {
       toValue: profVal,
+      friction: 6,
       useNativeDriver: false,
     }).start();
     initBackgroundRef.current = bacVal;

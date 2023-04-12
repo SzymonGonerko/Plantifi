@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { StyleSheet, Text, View, Dimensions, ImageBackground, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, Alert} from 'react-native';
 import { SquareButton } from '../components/ui/SquareButton';
 import { LoginForm } from '../components/Login/LoginForm';
@@ -13,9 +13,6 @@ const {width, height} = Dimensions.get('screen');
 
 export const Login = ({onPressHandlerPrev, onPressThemeBar, onPressShowMainApp}) => {
 const [loginText, setLoginText] = useState("Zaloguj się")
-
-
-
 
 const onFocusHandler = () => {
   setLoginText("Cześć!")
