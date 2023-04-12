@@ -76,6 +76,7 @@ export const livingroomPlants = [
     [require("./assets/images/easyCarePlants/EchmeaWstęgowata.jpg"), {name: "Echmea Wstęgowata", liked: 348, profile: profileData.echmeaWstęgowata}],
     [require("./assets/images/easyCarePlants/CisPospolity.jpg"), {name: "Cis Pospolity", liked: 214, profile: profileData.cisPospolity}],
     [require("./assets/images/easyCarePlants/JaskierOstry.jpg"), {name: "Jaskier Ostry", liked: 132, profile: profileData.jaskierOstry}],
+    [require("./assets/images/easyCarePlants/KrokusWiosenny.jpg"), {name: "Krokus wiosenny", liked: 982, profile: profileData.krokusWiosenny}]
   ]
 
   export const toDoListPlants = [

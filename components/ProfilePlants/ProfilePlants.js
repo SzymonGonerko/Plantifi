@@ -27,7 +27,7 @@ const BOTTOM_PROFILE_Y = height / 1.9;
 const MAX_PROFILE_HEIGHT = height/1.6
 const MID_PROFILE_HEIGHT = height/1.15
 
-const threshold = 70;
+const threshold = 20;
 
 export const ProfilePlants = (props) => {
   const {onPressButtonSquare, src, name, profile, onSuccesAddedPlant} = props
@@ -57,10 +57,10 @@ export const ProfilePlants = (props) => {
         profileRef.setValue(g.dy)
       },
       onPanResponderRelease: (_, g) => {
-        backgroundRef.flattenOffset();
-        profileRef.flattenOffset();
         setStart(false)
         if (Math.abs(g.dy) < 5) return
+        backgroundRef.flattenOffset();
+        profileRef.flattenOffset();
         if (g.dy > 0) {
           if (g.dy < threshold) {
             initBackgroundRef.current === MAX_BGC_Y ? 
@@ -87,16 +87,17 @@ export const ProfilePlants = (props) => {
   ).current;
 
   const autoSpring = (bacVal, profVal) => {
-    initBackgroundRef.current = bacVal;
-    initProfileRef.current = profVal;
+
     Animated.spring(backgroundRef, {
-      toValue: initBackgroundRef.current,
+      toValue: bacVal,
       useNativeDriver: false,
     }).start();
     Animated.spring(profileRef, {
-      toValue: initProfileRef.current,
+      toValue: profVal,
       useNativeDriver: false,
     }).start();
+    initBackgroundRef.current = bacVal;
+    initProfileRef.current = profVal;
     if (profVal === TOP_PROFILE_Y) {
       Animated.timing(profileHeight, {
         toValue: MID_PROFILE_HEIGHT,

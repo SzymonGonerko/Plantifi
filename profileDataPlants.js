@@ -1340,7 +1340,7 @@ rododendron: {
       type: "do ogrodu",
       size: "do 3 m",
       care: "trudna",
-      description: 'Rododendron należy niewątpliwie do najważniejszych, a zarazem najbardziej wymagających krzewów kwiatowych. Często bywa, że znane od dawna i uprawiane w postaci licznych odmian gatunki roślin mają nie jedną, ale dwie albo i trzy nazwy potoczne. Tak jest w przypadku rododendronu. Różanecznik, rododendron, azalia to ten sam rodzaj roślin z rodziny wrzosowatych.'
+      description: 'Różanecznik, azalia, rododendron (Rhododendron L.) – rodzaj roślin z rodziny wrzosowatych (Ericaceae). Obejmuje ponad tysiąc gatunków. W stanie naturalnym występują głównie w Azji, w mniejszej liczbie gatunków w obydwu Amerykach i w Europie. Rosną zwykle na obszarach górskich, na glebach próchnicznych i kwaśnych, często także na torfowiskach i na glebach oraz skałach wapiennych. Zasiedlają lasy, formacje krzewiaste i wrzosowiska. Nieliczne gatunki są epifitami. Kwiaty są u części gatunków wonne, u innych nie. Zapylane są przez owady, niektóre gatunki w Himalajach także przez ptaki. Różanecznik jest jednym z częściej uprawianych i bardziej zróżnicowanych rodzajów krzewów ozdobnych w strefie umiarkowanej, zwłaszcza na obszarach o dużych opadach w sezonie wegetacyjnym. W obrębie podrodzajów łatwo się krzyżują, co pozwoliło wyhodować wiele tysięcy odmian uprawnych. Te gatunki i odmiany, które mają zimozielone, skórzaste liście, nazywane są zwyczajowo rododendronami lub różanecznikami, natomiast te o miękkich, lekko owłosionych i zrzucanych na zimę lub półzimotrwałych liściach nazywa się azaliami. Te ostatnie z kolei można podzielić na gatunki o liściach w dużej mierze opadających zimą i o liściach zimozielonych. Mimo że azalie i różaneczniki zaliczane są do tego samego rodzaju Rhododendron – w praktyce ogrodniczej w dalszym ciągu używa się utartych od dawna tradycyjnych nazw.'
     },
     requirements: {
       insolation: {inWords: "niskie", inPercentage: 24},
@@ -1406,6 +1406,43 @@ ostrokrzew: {
         inWords: "Ostrokrzew kolczasty nie ma dużych wymagań pokarmowych. Do nawożenia wystarczą 1-2 dawki nawozu uniwersalnego do krzewów ozdobnych według dawki na opakowaniu, w odstępie 2-3 tygodni. ",
         inPercentage: 39,
         step: 3
+      }
+    }
+},
+krokusWiosenny: {
+  general: {
+      type: "do ogrodu",
+      size: "10-15 cm",
+      care: "łatwa",
+      description: 'Krokus wiosenny (Crocus vernus) to wieloletnia, ozdobna, a także przyprawowa roślina bulwiasta, należąca do rodziny kosaćcowatych (Iridaceae). Krokusy występują naturalnie na łąkach górskich w Europie, na obszarze Tatr, Alp, Pirenejów oraz na Bałkanach. Rośliny są znane ze swoich niewielkich rozmiarów – osiągają do 10-15 cm wysokości. Liście są wąskie (trawiaste), z jasnym, białym paskiem ciągnącym się wzdłuż środka i wyrastają po 2-4 na roślinę. Krokus wiosenny kwitnie od lutego do kwietnia (często przebija się przez leżącą jeszcze warstwę śniegu). Roślina jest zaliczana do najpiękniejszych kwiatów wiosny. Każda cebulka (bulwka) wytwarza tylko jeden kwiat. Kwiaty mają po 6 płatków, ciemnożółty lub pomarańczowy słupek, 3 żółte pylniki, a gardziel okwiatu posiada włoski. Większość odmian krokusów ma płatki w różnych odcieniach fioletu, ale występują też odmiany białe, żółte oraz wielokolorowe. Są pachnące i bardzo lubiane przez owady zapylające, w tym pszczoły.'
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 57},
+      temperature: {inWords: "od 10°C od 20°C", inPercentage: 28},
+      position: {inWords: "dalej", inPercentage: 60},
+      whiff: {inWords: "wysokie", inPercentage: 80},
+      humidity: {inWords: "wysoka", inPercentage: 70},
+    },
+    care: {
+      watering: {
+        inWords: "Krokusy należy przede wszystkim podlać obficie zaraz po posadzeniu. W późniejszym okresie należy dbać, aby ziemia była nieustannie wilgotna.",
+        inPercentage: 59,
+        step: 3
+      },
+      transplanting: {
+        inWords: "Co trzy, cztery lata trzeba przesadzać rośliny w inne miejsce. Krokusy można łatwo rozmnożyć przez oddzielenie bulw przybyszowych. Z dużej bulwy matecznej tworzy się ich kilka i wszystkie mogą posłużyć do uprawy w kolejnym sezonie.",
+        inPercentage: 20,
+        step: 3
+      },
+      cutting: {
+        inWords: "Pod koniec maja ustaje wzrost bulw i zaczynają usychać liście, można je ścinać lub skosić wraz z trawą.",
+        inPercentage: 10,
+        step: 0
+      },
+      fertilizating: {
+        inWords: "Rośliny zasila się nawozami wieloskładnikowymi w drugiej połowie marca lub na początku kwietnia. Jest to moment, w którym rośliny wypuszczają liście i najbardziej potrzebują cennych składników odżywczych. W tym celu najlepiej użyć kompostu lub obornika w dawce 5 kg na metr kwadratowy.",
+        inPercentage: 15,
+        step: 4
       }
     }
 },
