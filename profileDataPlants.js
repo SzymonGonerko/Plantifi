@@ -1446,6 +1446,80 @@ krokusWiosenny: {
       }
     }
 },
+liliaWodna: {
+  general: {
+      type: "do ogrodu",
+      size: "pow. do 50cm",
+      care: "średnia",
+      description: 'Lilia wodna (Nymphaea alba L.) to zwyczajowe określenie grzybieni białych – wodnej byliny należącej do rodziny Nymphaeaceae, nazywanej również nenufarem. Jej charakterystyczną cechą są efektowne kwiaty o pięknym aromacie, pływające na powierzchni wody. W stanie dzikim lilie wodne występują niemal w całej Europie, na Bliskim Wschodzie i wyspach Morza Śródziemnego oraz w pasie wybrzeża Afryki północnej. Nazwa rodzajowa Nymphaea wywodzi się z języka greckiego i oznacza roślinę należącą do nimf. Według starogreckiego podania lilia wodna wyrosła z ciała nimfy zmarłej z powodu zazdrości o Heraklesa. Nazwa gatunkowa alba z kolei pochodzi z języka łacińskiego, oznacza „biały” i nawiązuje do barwy kwiatów.'
+    },
+    requirements: {
+      insolation: {inWords: "wysokie", inPercentage: 76},
+      temperature: {inWords: "od 20°C", inPercentage: 74},
+      position: {inWords: "dalej", inPercentage: 90},
+      whiff: {inWords: "średnie", inPercentage: 50},
+      humidity: {inWords: "wysoka", inPercentage: 99},
+    },
+    care: {
+      watering: {
+        inWords: "Lilie wodne rozwijają się dobrze w wodzie miękkiej i kwaśnej o pH 5,5-7,0. Rośliny sadzimy od połowy maja. Grzybienie kochają słońce i tylko niektóre odmiany kwitną bujnie w częściowo zacienionym oczku wodnym. Co roku wskazane jest nawożenie roślin.",
+        inPercentage: 99,
+        step: 1
+      },
+      transplanting: {
+        inWords: "Zwykle lilie wodne przesadza się raz na kilka lat, najlepiej wiosną, zanim rozwiną się liście. Można je też przesadzać pod koniec lata (we wrześniu), kiedy kończą już wzrost, ale jest jeszcze na tyle wcześnie, że zdążą się przed zimą ukorzenić. Przy okazji przesadzania można lilie wodne rozmnożyć przez podział roślin.",
+        inPercentage: 24,
+        step: 4
+      },
+      cutting: {
+        inWords: "Po przekwitnieniu powinniśmy obciąć jedynie kwiatostan lilii, wcześniej obrywając uschłe liście, tak aby roślina nie próbowała ich odżywiać. Ograniczmy również podlewanie do niezbędnego minimum. Należy zostawić ulistnioną łodygę w spokoju, ponieważ jest ona niezbędna do wzmocnienia przed zimą",
+        inPercentage: 10,
+        step: 1
+      },
+      fertilizating: {
+        inWords: "Coroczne nawożenie lilii wodnych jest wskazane, chociaż nie można przesadzać z dawkami nawozów. W sklepach ogrodniczych można kupić nawozy dla roślin wodnych, w tym specjalistyczne dla lilii wodnych. Warty uwagi jest również obornik granulowany dla roślin wodnych.",
+        inPercentage: 30,
+        step: 3
+      }
+    }
+},
+pokrzywaBrazylijska: {
+  general: {
+      type: "do salonu",
+      size: "od 25 do 80cm",
+      care: "łatwa",
+      description: 'Pokrzywa brazylijska jest używana przez meksykańskich Indian w rytualnych obrządkach ponieważ ma właściwości rozluźniające i lekko psychoaktywne. Wyjątkowa roślina o zachwycających liściach w pięknych kolorach i kształtach. Kwiaty nie mają większego znaczenia, są niepozorne, purpurowobiałe, zielonkawe bądź niebieskobiałe, zebrane w wydłużone grona. Roślina kwitnie rzadko, od października do czerwca. Dorasta do około 80cm, pędy wzniesione często różnie wybarwione, przy potarciu charakterystycznie pachną. Liście jajowate, ząbkowane około 20cmetrowe w dotyku miękkie i aksamitne w smaku bardzo gorzkie. Są mocno i jaskrawo wybarwione, mają charakterystyczny rysunek w innym kolorze. Roślina bardzo łatwa w uprawie, ma małe wymagania glebowe ale dobrze rośnie na glebie żyznej, stanowisko koniecznie słoneczne. Ziemia musi być przepuszczalna, roślina nie lubi nadmiaru wilgoci. Nawożenie od lutego do października. Bardzo ładnie wygląda posadzona na rabatach bylinowych, sprawdza się w pojemnikach na tarasach i balkonach, może być ozdobą mieszkań. Kwiaty należy uszczykiwać co powoduje rozkrzewianie rośliny. Roślina wieloletnia lub jednoroczna w zależności od klimatu. U nas przez okres zimowy trzymamy w mieszkaniach. Rozmnażamy z nasion lub bardzo łatwo przez sadzonki pędowe trzymane w wodzie.'
+    },
+    requirements: {
+      insolation: {inWords: "średnie", inPercentage: 72},
+      temperature: {inWords: "od 21°C do 35°C", inPercentage: 54},
+      position: {inWords: "dalej", inPercentage: 21},
+      whiff: {inWords: "wysokie", inPercentage: 70},
+      humidity: {inWords: "średnia", inPercentage: 61},
+    },
+    care: {
+      watering: {
+        inWords: "Najlepiej rośnie w półcieniu. Warto jednak wiedzieć, że jeśli zdecydujemy się na uprawę na miejscy bardziej słonecznym, to jej liście będą wówczas bardzo intensywnie zabarwione. Bardzo ważne w uprawie tej rośliny jest podlewanie. Powinno być regularne i bardziej obfite na stanowiskach słonecznych. Roślina szybko reaguje na brak wody więdnięciem, a nawet zasychaniem. Aby pobudzić ją do silnego rozkrzewiania, warto usuwać wierzchołkowe kwiatostany. Pokrzywkę brazylijską rozmnażamy z nasion lub z pędów. Sadzonki ścinamy w marcu z wybijających się pędów (ok.6 cm).",
+        inPercentage: 72,
+        step: 1
+      },
+      transplanting: {
+        inWords: "Koleusów lepiej wcale nie przesadzać lecz co roku odmładzać z sadzonek. Przez zimę bowiem tracą ładny pokrój. Młode koleusy rosną bardzo szybko",
+        inPercentage: 3,
+        step: 4
+      },
+      cutting: {
+        inWords: "Przez uszczykiwanie wierzchołków zapewniasz swojej roślinie więcej pędów bocznych i jednocześnie usuwasz pąki kwiatowe. Uszczykiwanie wierzchołków to po prostu obcinanie stożka wzrostu. To stymuluje roślinę do wypuszczania nowych pędów od podstawy niższych liści.",
+        inPercentage: 40,
+        step: 3
+      },
+      fertilizating: {
+        inWords: "Po wysadzeniu na miejsce stałe, zaleca się je zasilać nawozami dla roślin o ozdobnych liściach, np. Nawóz płynny do roślin zielonych Target. Koleusy należy regularnie podlewać, jednak szczególnie w trakcie uprawy w pojemnikach należy unikać zalewania roślin. Na brak wody roślina reaguje dość szybkim więdnięciem. Po przesuszeniu potrafi się jednak regenerować, ale traci często ładny wygląd.",
+        inPercentage: 30,
+        step: 3
+      }
+    }
+},
 
 }
 

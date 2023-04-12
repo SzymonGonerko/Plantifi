@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { StyleSheet, View, TouchableOpacity, Image, Pressable, Alert } from 'react-native';
 import * as ImagePicker from "expo-image-picker"
 import { Camera, CameraType } from 'expo-camera';
@@ -6,9 +6,7 @@ import { useState, useRef } from 'react';
 import {SquareButton} from "../ui/SquareButton"
 import { WaitingAnimation } from "../ui/WaitingAnimation";
 import { PlantDetails } from "./PlantDetails";
-import { Dimensions } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-const {width, height} = Dimensions.get('screen');
 
 export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     const [type, setType] = useState(CameraType.back);
@@ -66,7 +64,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
 
       const takePhoto = async () => {
         const options = {
-          quality: 0.7,
+          quality: 0.8,
           base64: true,
           exif: false
         }
@@ -158,7 +156,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
         {!plantsIDResponse &&
           <View style={{position: "absolute", width: "100%", top: 0, left: 0, height: "100%", width: "100%"}}>
             <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
-                <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={styles.sqr}/>
+                
                 <Image source={require("../../assets/icons/frame.png")} resizeMode={"contain"} style={styles.frame}/>
                 <View style={styles.buttonsContainer}>
 
@@ -180,6 +178,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
 
                 </View>
             </Camera>
+            <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={styles.sqr}/>
             {isStartRequest && <WaitingAnimation/>}
           </View>
           }

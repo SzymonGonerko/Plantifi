@@ -22,7 +22,7 @@ const MIN_BGC_Y = 0;
 
 const TOP_PROFILE_Y = MID_BGC_Y + 40;
 const MID_PROFILE_Y = 0;
-const BOTTOM_PROFILE_Y = height / 1.9;
+const BOTTOM_PROFILE_Y = height / 1.85;
 
 const MAX_PROFILE_HEIGHT = height/1.6
 const MID_PROFILE_HEIGHT = height/1.15
@@ -193,7 +193,7 @@ export const ProfilePlants = (props) => {
 const styles = StyleSheet.create({
       bgcContainer: {
         position: "absolute",
-        top: 33,
+        top: 36,
         left: 0,
         width,
         borderRadius: 17,
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
       position: "absolute",
       top: height/2.7,
       left: "2%",
-      width: "95.5%",
+      width: "95.7%",
       backgroundColor: globalStyles.backgroundLightGrey,
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,

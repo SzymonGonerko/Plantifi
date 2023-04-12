@@ -2,7 +2,7 @@
   "expo": {
     "name": "Plantifi",
     "slug": "plantifi",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -31,7 +31,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.szymon1993.plantifi",
-      "versionCode": 12
+      "versionCode": 13
     },
     "web": {
       "favicon": "./assets/icon.png"

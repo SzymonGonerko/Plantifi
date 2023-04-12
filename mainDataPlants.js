@@ -25,6 +25,8 @@ export const livingroomPlants = [
     [require("./assets/images/Bananowiec.jpg"), {name: "Bananowiec", description: "do kuchni", profile: profileData.bananowiec}],
     [require("./assets/images/searchPlants/Rododendron.jpg"), {name: "Rododendron", description: "do ogrodu", profile: profileData.rododendron}],
     [require("./assets/images/searchPlants/Ostrokrzew.jpg"), {name: "Ostrokrzew", description: "do ogrodu", profile: profileData.ostrokrzew}],
+    [require("./assets/images/searchPlants/LiliaWodna.jpg"), {name: "Lilia wodna", description: "do ogrodu", profile: profileData.liliaWodna}],
+    [require("./assets/images/searchPlants/PokrzywaBrazylijska.jpg"), {name: "Pokrzywa Brazylijska", description: "do salonu", profile: profileData.pokrzywaBrazylijska}],
   ]
 
   export const lostPlants = [
