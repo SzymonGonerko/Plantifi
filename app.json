@@ -2,7 +2,7 @@
   "expo": {
     "name": "Plantifi",
     "slug": "plantifi",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -31,7 +31,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.szymon1993.plantifi",
-      "versionCode": 13
+      "versionCode": 14
     },
     "web": {
       "favicon": "./assets/icon.png"
@@ -42,6 +42,16 @@
         {
           "color": "#54795E",
           "backgroundColor": "#54795E"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 33,
+            "targetSdkVersion": 33,
+            "buildToolsVersion": "33.0.0"
+          }
         }
       ]
     ],

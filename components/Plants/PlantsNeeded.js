@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
         height: 64,
         borderRadius: 8,
         marginRight: 20,
-        elevation: 4,
         marginBottom: 16,
     },
     userNameText: {
