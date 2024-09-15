@@ -2,7 +2,7 @@
   "expo": {
     "name": "Plantifi",
     "slug": "plantifi",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -21,7 +21,7 @@
       "supportsTablet": false
     },
     "android": {
-      "blockedPermissions": [        
+      "blockedPermissions": [
         "ACCESS_BACKGROUND_LOCATION",
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION"
@@ -53,7 +53,8 @@
             "buildToolsVersion": "33.0.0"
           }
         }
-      ]
+      ],
+      "expo-font"
     ],
     "extra": {
       "eas": {

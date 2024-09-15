@@ -7,7 +7,7 @@ import { Separator } from '../components/ui/Separator';
 import { TextInfo } from '../components/TextInfo';
 import * as Animatable from 'react-native-animatable';
 import { Team } from "../components/Team";
-import { Camera } from 'expo-camera';
+import { useCameraPermissions  } from 'expo-camera';
 import { DataUser } from "../components/ui/DataUser";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -17,7 +17,7 @@ export const Welcome = ({anim, onPressHandlerAnim, onPressTheme}) => {
     const [teamVisible, setTeamVisible] = useState(false)
     const visibility = useRef(new Animated.Value(0)).current
     const [request , setRequest] = useState(false)
-    const [permission, requestPermission] = Camera.useCameraPermissions();
+    const [permission, requestPermission] = useCameraPermissions();
 
 
     const onPressHandler = () => {

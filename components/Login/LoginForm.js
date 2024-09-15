@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { StyleSheet, View, Alert} from 'react-native';
+import React, { useState, useRef } from "react";
+import { StyleSheet, View, Alert, TextInput, Text, Animated, Platform} from 'react-native';
 
 import * as Notifications from 'expo-notifications';
+import * as Animatable from 'react-native-animatable';
 import { globalStyles } from "../globalStyles";
 
 Notifications.setNotificationHandler({
@@ -12,7 +13,6 @@ Notifications.setNotificationHandler({
   }),
 });
 
-import { OutlinedTextField } from 'rn-material-ui-textfield'
 import {Button} from "../ui/Button"
 import { IconButton } from "@react-native-material/core";
 import { CustomCheckbox } from '../ui/CustomCheckbox';
@@ -21,6 +21,10 @@ import Octicons from "react-native-vector-icons/Octicons"
 import Feather from "react-native-vector-icons/Feather"
 
 export const LoginForm = ({onFocusHandler, onBlurHandler, onPressShowMainApp}) => {
+const emailLabel = useRef(new Animated.Value(14)).current
+const passwordLabel = useRef(new Animated.Value(14)).current
+const firstRef = useRef();
+const secondRef = useRef();
 const [correctLogin, setCorrectLogin] = useState(false)
 const [correctPasword, setCorrectPassword] = useState(false)
 const [securePassword, setSecurePassword] = useState(true)
@@ -79,39 +83,100 @@ const setVisiblePassword = () => {
     setSecurePassword(prev => !prev)
 }
 
+const blur = () => {
+    if (form.login == "") {
+        Animated.timing(emailLabel, {
+            toValue: 14,
+            duration: 100,
+            useNativeDriver: true
+          }).start(() => {})
+    }
+    if (form.password == "") {
+        Animated.timing(passwordLabel, {
+            toValue: 14,
+            duration: 100,
+            useNativeDriver: true
+          }).start(() => {})
+    }
+    onBlurHandler()
+}
+
+const focuseHandlerLogin = () => {
+    onFocusHandler()
+    Animated.timing(emailLabel, {
+        toValue: -12,
+        duration: 100,
+        useNativeDriver: true
+      }).start(() => {})
+}
+
+const focuseHandlerPassword = () => {
+    onFocusHandler()
+    Animated.timing(passwordLabel, {
+        toValue: -12,
+        duration: 100,
+        useNativeDriver: true
+      }).start(() => {})
+}
+
     return <>
         <View style={styles.container}>
-          <OutlinedTextField
-            label="email"
-            keyboardType="email-address"
-            onFocus={onFocusHandler}
-            activeLineWidth={1.2}
-            onBlur={onBlurHandler}
-            baseColor={correctLogin ? globalStyles.successColor : globalStyles.accentFontColor}
-            inputContainerStyle={styles.loginInputContainer}
-            tintColor={correctLogin ? globalStyles.successColor : "black"}
-            title={correctLogin ? "Zweryfikowaliśmy Twój Email!" : ""}
-            contentInset={{input: 11}}
-            labelTextStyle={styles.loginLabel}
-            renderRightAccessory={() => correctLogin && <Octicons name='check-circle' style={styles.circleIcon}/>}
-            onChangeText={(e) => onChangeLoginHandler(e)}
-            />
 
-          <OutlinedTextField
-            label="Hasło"
-            baseColor={correctPasword ? "red" : "#64768E"}
-            inputContainerStyle={styles.passwordInputContainer}
-            keyboardType={"number-pad"}
-            activeLineWidth={1.2}
-            tintColor={correctPasword ? "red" : "black"}
-            title={correctPasword ? "Hasło niepoprawne!" : ""}
-            secureTextEntry={securePassword}
-            contentInset={{input: 11}}
-            labelTextStyle={styles.passwordLabel}
-            renderRightAccessory={() => 
-                <IconButton onPress={setVisiblePassword} style={styles.iconButton} icon={<Feather name={securePassword ? "eye": "eye-off"} style={{fontSize: 20}}/>} />}
-            onChangeText={(e) => onChangePasswordHandler(e)}
-            />
+        <View style={{marginBottom: 20}}>
+            <Animatable.View style={[styles.labelContainer, {transform: [{translateY: emailLabel}]}]}>
+                <Text style={{fontFamily: "NunitoRegular", color: globalStyles.accentColor}}>Email</Text>
+            </Animatable.View>
+            <View style={styles.inputContainer}>
+                <TextInput
+                    label="Email"
+                    ref={firstRef}
+                    mode="outlined"
+                    inputMode="email"
+                    cursorColor={"black"}
+                    keyboardType="email-address"
+                    returnKeyType="next"
+                    onFocus={focuseHandlerLogin}
+                    onBlur={blur}
+                    style={{width: "85%", height: "100%"}}
+                    onChangeText={e => onChangeLoginHandler(e)}
+                    onSubmitEditing={(e) => {
+                        secondRef.current.focus();
+                      }}
+                />
+                <View style={styles.iconsContainer}>
+                {correctLogin && <Octicons name='check-circle' style={styles.circleIcon}/>}
+                </View>
+            </View>
+        </View>
+
+
+        <View style={{marginBottom: 20}}>
+            <Animatable.View style={[styles.labelContainer, {transform: [{translateY: passwordLabel}]}]}>
+                <Text style={{fontFamily: "NunitoRegular", color: globalStyles.accentColor}}>Hasło</Text>
+            </Animatable.View>
+            <View style={styles.inputContainer}>
+                <TextInput
+                    label={"Hasło"}
+                    ref={secondRef}
+                    mode={"outlined"}
+                    inputMode={"decimal"}
+                    autoComplete={"current-password"}
+                    secureTextEntry={securePassword ? true:false}
+                    cursorColor={"black"}
+                    returnKeyType={"send"}
+                    onSubmitEditing={onSubmitHandler}
+                    onFocus={focuseHandlerPassword}
+                    onBlur={blur}
+                    style={{width: "85%", height: "100%"}}
+                    onChangeText={e => onChangePasswordHandler(e)}
+                    
+                />
+                <View style={styles.iconsContainer}>
+                    <IconButton onPress={setVisiblePassword} style={styles.iconButton} icon={<Feather name={securePassword ? "eye": "eye-off"} style={{fontSize: 20}}/>} />
+                </View>
+            </View>
+        </View>
+
             <CustomCheckbox 
                 onPressInfoHandler={onPressInfoHandler}
                 helper={"Zapomniałem hasła"}
@@ -148,12 +213,6 @@ const styles = StyleSheet.create({
         top: -3,
         fontFamily: "NunitoRegular",
     },
-    passwordInputContainer: {
-        height: 45, 
-        backgroundColor: "white", 
-        borderRadius: 10,
-        marginTop: 10
-    },
     passwordLabel: {
         position: "relative", 
         top: -3,
@@ -167,15 +226,42 @@ const styles = StyleSheet.create({
         fontSize: 18
     },
     iconButton: {
-        position: "absolute", 
-        right: 10, 
         width: 38, 
         height: 35, 
-        top: 5
     },
     circleIcon: {
         color: globalStyles.successColor, 
         fontSize: 20, 
         marginBottom: 1
-    }
+    },
+    labelContainer: {
+        fontFamily: "NunitoRegular",
+        backgroundColor: "white",
+        alignSelf: "flex-start",
+        paddingHorizontal: 3,
+        marginStart: 10,
+        zIndex: 1,
+        elevation: 1,
+        shadowColor: "white",
+        position: "absolute",
+    },
+    iconsContainer: {
+        width: "15%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    inputContainer: {
+        borderWidth: 1,
+        borderRadius: 8,
+        padding: 8,
+        zIndex: 0,
+        borderColor: globalStyles.accentColor,
+        display: "flex",
+        flexWrap: "wrap",
+        height: 48,
+        width: "100%",
+        alignContent: "space-between"
+    },
 })
