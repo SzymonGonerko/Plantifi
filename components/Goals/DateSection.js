@@ -1,8 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import { useState } from 'react';
 import { LongLineSeparator} from "../ui/LongLineSeparator"
-import { ScrollView } from 'react-native-gesture-handler';
 
 import { CustomCalendar } from './CustomCalendar';
 import { toDoListPlants } from "../../mainDataPlants"
@@ -30,7 +29,7 @@ export const DateSection = () => {
         }
     }
 
-    return <ScrollView showsVerticalScrollIndicator={false}>
+    return <ScrollView>
                 <View style={{height: 45}}/>
                 <CustomCalendar 
                 onPressDayHandler={handlePress}
@@ -114,5 +113,4 @@ const styles = StyleSheet.create({
     tagDate: {
         marginBottom: 10
     }
-    
 })

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions, ImageBackground, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, Alert} from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ImageBackground, KeyboardAvoidingView,Platform, TouchableWithoutFeedback, Keyboard, Alert} from 'react-native';
 import { SquareButton } from '../components/ui/SquareButton';
 import { LoginForm } from '../components/Login/LoginForm';
 import { Separator } from '../components/ui/Separator';
@@ -25,7 +25,7 @@ const onBlurHandler = () => {
 
     return <>
     <KeyboardAvoidingView
-    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    behavior={'height'}
     style={styles.containerKey}
     >
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -71,7 +71,9 @@ const styles = StyleSheet.create({
   containerKey: {
     position: 'absolute',
     top: 0,
+    bottom: 0,
     left: 0,
+    right: 0,
     zIndex: -2
     },
     container: {

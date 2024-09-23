@@ -3,13 +3,13 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { globalStyles } from "../globalStyles";
 import { CustomCheckbox } from "./CustomCheckbox";
 import { Button } from "./Button";
-import { Camera } from "expo-camera";
+import { useCameraPermissions } from "expo-camera";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export const DataUser = ({setRequest}) => {
     const [agree, setAgree] = useState(false)
-    const [_, requestPermission] = Camera.useCameraPermissions();
+    const [permission, requestPermission] = useCameraPermissions();
 
     const onPressCheckBox = () => {
         setAgree(p => !p)
