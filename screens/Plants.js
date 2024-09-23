@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Alert} from 'react-native';
+import { StyleSheet, SafeAreaView} from 'react-native';
 import { Header } from '../components/ui/Header';
 import { PlantsNavigator } from '../components/Plants/plantsNavigation/PlantsNavigator';
 

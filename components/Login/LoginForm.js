@@ -111,7 +111,6 @@ const focuseHandlerLogin = () => {
 }
 
 const focuseHandlerPassword = () => {
-    onFocusHandler()
     Animated.timing(passwordLabel, {
         toValue: -12,
         duration: 100,

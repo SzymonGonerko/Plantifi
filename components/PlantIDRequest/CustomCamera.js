@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, TouchableOpacity, Image, Pressable, Alert } from 'react-native';
 import * as ImagePicker from "expo-image-picker"
-import { Camera, CameraType } from 'expo-camera';
+import { CameraView, CameraType } from 'expo-camera';
 import { useState, useRef } from 'react';
 import {SquareButton} from "../ui/SquareButton"
 import { WaitingAnimation } from "../ui/WaitingAnimation";
@@ -9,7 +9,7 @@ import { PlantDetails } from "./PlantDetails";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const CustomCamera = ({onPressCamera, onPressHandler}) => {
-    const [type, setType] = useState(CameraType.back);
+    const [facing, setFacing] = useState('back');
     const cameraRef = useRef()
     const [photo, setPhoto] = useState()
     const [plantsIDResponse, setplantsIDResponse] = useState(false)
@@ -59,7 +59,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
 
     
       const toggleCameraType = () => {
-        setType(current => (current === CameraType.back ? CameraType.front : CameraType.back));
+        setFacing(current => (current === 'back' ? 'front' : 'back'));
       }
 
       const takePhoto = async () => {
@@ -72,7 +72,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
         setupRequestIntialNumber("6").then((howManyReuqestLeft) => {
           if (howManyReuqestLeft < 0) return Alert.alert(
             "Dziękujemy za...", 
-            `skorzystanie z wersji testowej. Mamy nadzieję, że dowiedziałeś/aś się czegoś nowego o roślinach!`,
+            "skorzystanie z wersji testowej. Mamy nadzieję, że dowiedziałeś/aś się czegoś nowego o roślinach!",
             [              {
               text: "ok",      
               onPress: () => onPressSquare(),
@@ -80,9 +80,9 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
             )
           setIsStartRequest(true)
           setPhoto(newPhoto)
-  
+          
           const data = {
-            api_key: `${process.env.REACT_APP_PLANTID_API_KEY}`,
+            api_key: process.env.EXPO_PUBLIC_API_KEY,
             images: [newPhoto.base64],
             modifiers: ["crops_fast", "similar_images"],
             plant_language: "pl",
@@ -98,7 +98,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
               ],
           };
   
-          fetch(`${process.env.REACT_APP_PLANTID_API_URL}`, {
+          fetch(process.env.EXPO_PUBLIC_API_URL, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -120,6 +120,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
             })
             return true
           } else {
+            console.log("alert")
             Alert.alert("Niska trafność", `Wynik wyszukiwania ma niską trafność, pamiętaj o poprawnym zrobieniu zdjęcia. ${setCorrectGrammar(howManyReuqestLeft)}`)
             return false
           }
@@ -155,7 +156,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
     <View style={styles.container}>
         {!plantsIDResponse &&
           <View style={{position: "absolute", width: "100%", top: 0, left: 0, height: "100%", width: "100%"}}>
-            <Camera style={styles.camera} type={type} ratio={"16:9"} ref={cameraRef}>
+            <CameraView style={styles.camera} ratio={"16:9"} facing={facing} ref={cameraRef}>
                 
                 <Image source={require("../../assets/icons/frame.png")} resizeMode={"contain"} style={styles.frame}/>
                 <View style={styles.buttonsContainer}>
@@ -177,7 +178,7 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
 
 
                 </View>
-            </Camera>
+            </CameraView>
             <SquareButton onPress={onPressSquare} type={"arrow"} styleContainer={styles.sqr}/>
             {isStartRequest && <WaitingAnimation/>}
           </View>
