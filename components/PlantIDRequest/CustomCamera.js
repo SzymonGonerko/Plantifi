@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, TouchableOpacity, Image, Pressable, Alert } from 'react-native';
 import * as ImagePicker from "expo-image-picker"
-import { CameraView, CameraType } from 'expo-camera';
+import { CameraView } from 'expo-camera';
 import { useState, useRef } from 'react';
 import {SquareButton} from "../ui/SquareButton"
 import { WaitingAnimation } from "../ui/WaitingAnimation";
@@ -81,60 +81,54 @@ export const CustomCamera = ({onPressCamera, onPressHandler}) => {
           setIsStartRequest(true)
           setPhoto(newPhoto)
           
-          const data = {
-            api_key: process.env.EXPO_PUBLIC_API_KEY,
-            images: [newPhoto.base64],
-            modifiers: ["crops_fast", "similar_images"],
-            plant_language: "pl",
-            plant_details: 
-              [
-              "common_names", 
-              "wiki_description",
-              "wiki_image",
-              "watering",
-              "cuttings",
-              "suckers",
-              "propagation_methods"
-              ],
-          };
-  
-          fetch(process.env.EXPO_PUBLIC_API_URL, {
+        const myHeaders = new Headers();
+        myHeaders.append("Api-Key", process.env.EXPO_PUBLIC_API_KEY);
+        myHeaders.append("Content-Type", "application/json");
+        const queryParams = new URLSearchParams({ details: ["common_names", "url", "description", "name_authority", "image", "images", "watering"], language: "pl" });
+        
+        const params = JSON.stringify({
+          "images": [newPhoto.base64],
+          "similar_images": true,
+        });
+        
+        const options = {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-        .then((response) => response.json())
-        .then(data => {
-          console.log(data.suggestions[0]?.plant_details)
-          if ((data.suggestions[0]?.probability).toFixed(2) * 100 > 35) {
-            setDataPlant({
-              name: data.suggestions[0]?.plant_details?.common_names[0],
-              latin: data.suggestions[0]?.plant_details.scientific_name,
-              description: data.suggestions[0]?.plant_details?.wiki_description.value,
-              probability: (data.suggestions[0]?.probability).toFixed(2) * 100,
-              img: [data.suggestions[0]?.plant_details.wiki_image.value, data.suggestions[0]?.similar_images[0]?.url, data.suggestions[0]?.similar_images[1]?.url],
-              watering: data.suggestions[0]?.plant_details.watering.max,
-              howManyReuqestLeft,
-            })
-            return true
-          } else {
-            console.log("alert")
-            Alert.alert("Niska trafność", `Wynik wyszukiwania ma niską trafność, pamiętaj o poprawnym zrobieniu zdjęcia. ${setCorrectGrammar(howManyReuqestLeft)}`)
-            return false
-          }
-
-        })       
-        .then((isHightProbability) => {
-          isHightProbability ? setplantsIDResponse(true) : setplantsIDResponse(false)
-          setIsStartRequest(false)
-        })
-        .catch((e) => {
+          headers: myHeaders,
+          body: params,
+          redirect: 'follow',
+        };
+        fetch(process.env.EXPO_PUBLIC_API_URL + queryParams, options)
+          .then(response => response.text())
+          .then(raw => {
+            const data = JSON.parse(raw)
+            console.log(raw)
+            if ((data.result.classification.suggestions[0].probability).toFixed(2) * 100 > 38) {
+              const mainDir = data.result.classification.suggestions[0]
+              setDataPlant({
+                name: mainDir.name,
+                latin: mainDir.details.name_authority,
+                description: mainDir.details.description.value,
+                probability: (mainDir.probability).toFixed(2) * 100,
+                img: [mainDir.details.image.value, mainDir.similar_images[0].url, mainDir.similar_images[1].url],
+                watering: mainDir.details.watering.max,
+                howManyReuqestLeft,
+              })
+              return true
+            } else {
+                    console.log("alert")
+                    Alert.alert("Niska trafność", `Wynik wyszukiwania ma niską trafność, pamiętaj o poprawnym zrobieniu zdjęcia. ${setCorrectGrammar(howManyReuqestLeft)}`)
+                    return false
+            }
+          })
+          .then((isHightProbability) => {
+            isHightProbability ? setplantsIDResponse(true) : setplantsIDResponse(false)
+            setIsStartRequest(false)
+          })
+          .catch(e => {
           setplantsIDResponse(false)
           setIsStartRequest(false)
           Alert.alert("Upss...", `aplikacja nie rozpoznała rośliny...pamiętaj o poprawnym zrobieniu zdjęcia. ${setCorrectGrammar(howManyReuqestLeft)}`)
-        })   
+          });
         })
       }
 

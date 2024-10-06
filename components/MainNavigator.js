@@ -53,7 +53,7 @@ export const MainNavigator = ({onPressShowMainApp, onPressThemeBar}) => {
   }
 
   return <>
-      {!toggle && <NavigationContainer>
+      <NavigationContainer>
         <Stack.Navigator
           initialRouteName="Root"
           screenOptions={{headerShown: false}}>
@@ -61,7 +61,7 @@ export const MainNavigator = ({onPressShowMainApp, onPressThemeBar}) => {
               {(props) => <TabsNavigator {...props} onPressProfilePlant={onPressProfilePlant} showMenu={showMenu} toggleNavCamera={toggleNavCamera}/>}
             </Stack.Screen>
         </Stack.Navigator>
-      </NavigationContainer>}
+      </NavigationContainer>
       {toggle && <PhotoInstruction onPressCamera={onPressCamera} />}
       {showRightNav && <RightNavBar goBack={goBack} showMenu={showMenu}/>}
       {showProfilePlant && dataPlant}
